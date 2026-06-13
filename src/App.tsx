@@ -511,7 +511,7 @@ function App() {
 
     setSelectedSlot(slot)
   }
-
+  // test
   return (
     <main className={`app-shell ${screen}`}>
       <section className="backdrop">
@@ -646,7 +646,7 @@ function App() {
                       getSlotRole(slot),
                     ]
                       .filter(Boolean)
-                    .join(' ')}
+                      .join(' ')}
                     onClick={() => handleSlotClick(slot)}
                     onPointerDown={() => {
                       if (card) {
@@ -701,17 +701,17 @@ function App() {
               '--fly-to-w': `${Math.max(80, flyingCard.to.width - 16)}px`,
               '--fly-to-h': `${Math.max(72, flyingCard.to.height - 38)}px`,
             } as CSSProperties &
-              Record<
-                | '--fly-from-x'
-                | '--fly-from-y'
-                | '--fly-to-x'
-                | '--fly-to-y'
-                | '--fly-from-w'
-                | '--fly-from-h'
-                | '--fly-to-w'
-                | '--fly-to-h',
-                string
-              >
+            Record<
+              | '--fly-from-x'
+              | '--fly-from-y'
+              | '--fly-to-x'
+              | '--fly-to-y'
+              | '--fly-from-w'
+              | '--fly-from-h'
+              | '--fly-to-w'
+              | '--fly-to-h',
+              string
+            >
           }
         >
           <PlayerCardTile
