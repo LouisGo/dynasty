@@ -30,6 +30,7 @@ import {
   type OfferCard,
   type PlayerCard,
   type Position,
+  type ResultSummary,
   type Tier,
 } from './game/types'
 
@@ -152,6 +153,41 @@ const teamCodeByPlayerId: Record<string, string> = {
   'gilbert-arenas': 'was',
   'demar-derozan': 'tor',
   'john-wall': 'was',
+  'shai-gilgeous-alexander': 'okc',
+  'victor-wembanyama': 'sas',
+  'anthony-edwards': 'min',
+  'jalen-brunson': 'ny',
+  'cade-cunningham': 'det',
+  'jaylen-brown': 'bos',
+  'jayson-tatum': 'bos',
+  'donovan-mitchell': 'cle',
+  'tyrese-haliburton': 'ind',
+  'devin-booker': 'phx',
+  'tyrese-maxey': 'phi',
+  'karl-anthony-towns': 'ny',
+  'trae-young': 'atl',
+  'bam-adebayo': 'mia',
+  'jamal-murray': 'den',
+  'scottie-barnes': 'tor',
+  'jalen-johnson': 'atl',
+  'paolo-banchero': 'orl',
+  'alperen-sengun': 'hou',
+  'lamelo-ball': 'cha',
+  'og-anunoby': 'ny',
+  'stephon-castle': 'sas',
+  'deni-avdija': 'por',
+  'cooper-flagg': 'dal',
+  'ja-morant': 'mem',
+  'jalen-williams': 'okc',
+  'evan-mobley': 'cle',
+  'pascal-siakam': 'ind',
+  'chet-holmgren': 'okc',
+  'amen-thompson': 'hou',
+  'tyler-herro': 'mia',
+  'franz-wagner': 'orl',
+  'austin-reaves': 'lal',
+  'lauri-markkanen': 'uta',
+  'brandon-miller': 'cha',
 }
 
 function getTeamLogoUrl(code: string) {
@@ -241,6 +277,62 @@ function getResultReason(reason: GameOverReason) {
 
 function getTeamCode(playerId: string) {
   return teamCodeByPlayerId[playerId]
+}
+
+function getMetricTone(value: number, excellent: number, good: number) {
+  if (value >= excellent) {
+    return 'metric-excellent'
+  }
+
+  if (value >= good) {
+    return 'metric-good'
+  }
+
+  return 'metric-normal'
+}
+
+function getResultLineup(result: ResultSummary) {
+  return COURT_SLOTS.map((slot) => {
+    if (slot === SIXTH_SLOT) {
+      const card = result.sixthMan ? poolIndex.get(result.sixthMan.playerId) : null
+      return {
+        slot,
+        card,
+        pricePaid: result.sixthMan?.pricePaid ?? 0,
+      }
+    }
+
+    const starter = result.starters.find((item) => item.slot === slot)
+    const card = starter ? poolIndex.get(starter.playerId) : null
+    return {
+      slot,
+      card,
+      pricePaid: starter?.pricePaid ?? 0,
+    }
+  })
+}
+
+function RestartIcon() {
+  return (
+    <svg className="restart-icon" aria-hidden="true" viewBox="0 0 24 24">
+      <path
+        d="M6.3 7.6A7.7 7.7 0 1 1 4.7 12"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+      <path
+        d="M6.4 3.8v3.8h3.8"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+    </svg>
+  )
 }
 
 function getTargetSlotForOffer(offer: OfferCard, arrangement: GameState['lineupArrangement']) {
@@ -334,6 +426,18 @@ function App() {
     [],
   )
 
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+  }, [])
+
+  function scrollToPageTop() {
+    window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    })
+  }
+
   function beginDraggingSlot(slot: CourtSlotId) {
     draggingSlotRef.current = slot
     setDraggingSlot(slot)
@@ -351,6 +455,7 @@ function App() {
     setSelectedSlot(null)
     clearDraggingSlot()
     setScreen('draft')
+    scrollToPageTop()
   }
 
   function commitSign(offer: OfferCard) {
@@ -511,7 +616,6 @@ function App() {
 
     setSelectedSlot(slot)
   }
-  // test
   return (
     <main className={`app-shell ${screen}`}>
       <section className="backdrop">
@@ -606,11 +710,17 @@ function App() {
           </section>
 
           <section className="action-bar">
-            <button type="button" className="ghost-button" onClick={handleSkip} disabled={!canSkip}>
-              {skipLabel}
+            <button
+              type="button"
+              className="ghost-button restart-icon-button"
+              onClick={startRun}
+              aria-label="重新开始"
+              title="重新开始"
+            >
+              <RestartIcon />
             </button>
-            <button type="button" className="ghost-button" onClick={startRun}>
-              重新开始
+            <button type="button" className="primary-button skip-button" onClick={handleSkip} disabled={!canSkip}>
+              {skipLabel}
             </button>
           </section>
 
@@ -728,73 +838,63 @@ function App() {
           <div className="result-hero">
             <p className="eyebrow">{getResultReason(gameState.result.gameOverReason)}</p>
             <h2>王朝评分</h2>
-            <p>预算、平衡和巨星浓度共同决定这支队的历史分量。</p>
+            <p>
+              实力 {gameState.result.strengthScore} · 平衡 {gameState.result.balanceScore} · 巨星{' '}
+              {gameState.result.superstarScore} · 花费 {gameState.result.budgetSpent}
+            </p>
           </div>
 
           <section className="result-metrics">
-            <article>
+            <article
+              className={getMetricTone(gameState.result.dynastyScore, 90, 85)}
+            >
               <span>王朝评分</span>
               <strong>{gameState.result.dynastyScore}</strong>
             </article>
-            <article>
+            <article
+              className={getMetricTone(gameState.result.projectedWins, 72, 65)}
+            >
               <span>预计战绩</span>
               <strong>
                 {gameState.result.projectedWins}-{gameState.result.projectedLosses}
               </strong>
             </article>
-            <article>
+            <article
+              className={getMetricTone(gameState.result.championshipOdds, 80, 60)}
+            >
               <span>夺冠概率</span>
               <strong>{gameState.result.championshipOdds}%</strong>
             </article>
           </section>
 
-          <section className="lineup-board">
-            {gameState.result.starters.map((starter) => {
-              const card = poolIndex.get(starter.playerId)
-              if (!card) {
-                return null
-              }
-
+          <section className="result-lineup-grid" aria-label="最终阵容">
+            {getResultLineup(gameState.result).map(({ slot, card, pricePaid }) => {
               return (
                 <article
-                  key={`${starter.slot}-${starter.playerId}`}
-                  className={`lineup-row ${tierClassName(card.tier)}`}
+                  key={slot}
+                  className={`result-lineup-card ${card ? 'is-filled' : 'is-empty'}`}
                 >
-                  <span>{starter.slot}</span>
-                  <div>
-                    <strong>{card.name}</strong>
-                    <p>{formatPositions(card.positions)}</p>
-                  </div>
-                  <div className="lineup-value">
-                    <span>{starter.pricePaid} 预算</span>
-                    <strong>{starter.ovr}</strong>
-                  </div>
+                  <span className="result-slot-label">{formatSlotLabel(slot)}</span>
+                  {card ? (
+                    <PlayerCardTile
+                      card={card}
+                      price={pricePaid}
+                      size="large"
+                      statusLabel={formatSlotLabel(slot)}
+                      className="result-player-card"
+                    />
+                  ) : (
+                    <div className="result-empty-slot">
+                      <strong>{formatSlotLabel(slot)}</strong>
+                      <span>空位</span>
+                    </div>
+                  )}
                 </article>
               )
             })}
-
-            {gameState.result.sixthMan && (
-              <article className="lineup-row lineup-bench">
-                <span>第六人</span>
-                <div>
-                  <strong>{poolIndex.get(gameState.result.sixthMan.playerId)?.name}</strong>
-                  <p>第六人</p>
-                </div>
-                <div className="lineup-value">
-                  <span>{gameState.result.sixthMan.pricePaid} 预算</span>
-                  <strong>{gameState.result.sixthMan.ovr}</strong>
-                </div>
-              </article>
-            )}
           </section>
 
           <section className="result-summary">
-            <p>
-              实力 <strong>{gameState.result.strengthScore}</strong> · 平衡{' '}
-              <strong>{gameState.result.balanceScore}</strong> · 巨星{' '}
-              <strong>{gameState.result.superstarScore}</strong> · 花费{' '}
-              <strong>{gameState.result.budgetSpent}</strong>
-            </p>
             <button type="button" className="primary-button" onClick={startRun}>
               再来一局
             </button>

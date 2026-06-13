@@ -1386,5 +1386,528 @@
     "tagline": "预算紧张时的可靠轮换。",
     "source": "snapshot-2026-06-13",
     "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "shai-gilgeous-alexander",
+    "name": "Shai Gilgeous-Alexander",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 98,
+    "tier": "T0",
+    "contractCost": 24,
+    "rarityWeight": 2,
+    "tagline": "历史级建队核心。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "victor-wembanyama",
+    "name": "Victor Wembanyama",
+    "positions": [
+      "C",
+      "PF"
+    ],
+    "sourceRating": 97,
+    "tier": "T0",
+    "contractCost": 23,
+    "rarityWeight": 3,
+    "tagline": "历史级建队核心。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "anthony-edwards",
+    "name": "Anthony Edwards",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 96,
+    "tier": "T1",
+    "contractCost": 22,
+    "rarityWeight": 4,
+    "tagline": "能改变阵容上限的超巨。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "jalen-brunson",
+    "name": "Jalen Brunson",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 96,
+    "tier": "T1",
+    "contractCost": 22,
+    "rarityWeight": 4,
+    "tagline": "能改变阵容上限的超巨。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "cade-cunningham",
+    "name": "Cade Cunningham",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 95,
+    "tier": "T1",
+    "contractCost": 21,
+    "rarityWeight": 5,
+    "tagline": "能改变阵容上限的超巨。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "jaylen-brown",
+    "name": "Jaylen Brown",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 95,
+    "tier": "T1",
+    "contractCost": 21,
+    "rarityWeight": 5,
+    "tagline": "能改变阵容上限的超巨。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "jayson-tatum",
+    "name": "Jayson Tatum",
+    "positions": [
+      "PF",
+      "SF"
+    ],
+    "sourceRating": 93,
+    "tier": "T2",
+    "contractCost": 19,
+    "rarityWeight": 7,
+    "tagline": "稳定的明星主力。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "donovan-mitchell",
+    "name": "Donovan Mitchell",
+    "positions": [
+      "SG",
+      "PG"
+    ],
+    "sourceRating": 93,
+    "tier": "T2",
+    "contractCost": 19,
+    "rarityWeight": 7,
+    "tagline": "稳定的明星主力。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "tyrese-haliburton",
+    "name": "Tyrese Haliburton",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 93,
+    "tier": "T2",
+    "contractCost": 19,
+    "rarityWeight": 7,
+    "tagline": "稳定的明星主力。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "devin-booker",
+    "name": "Devin Booker",
+    "positions": [
+      "SG",
+      "PG"
+    ],
+    "sourceRating": 93,
+    "tier": "T2",
+    "contractCost": 19,
+    "rarityWeight": 7,
+    "tagline": "稳定的明星主力。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "tyrese-maxey",
+    "name": "Tyrese Maxey",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 93,
+    "tier": "T2",
+    "contractCost": 19,
+    "rarityWeight": 7,
+    "tagline": "稳定的明星主力。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "karl-anthony-towns",
+    "name": "Karl-Anthony Towns",
+    "positions": [
+      "C",
+      "PF"
+    ],
+    "sourceRating": 91,
+    "tier": "T3",
+    "contractCost": 17,
+    "rarityWeight": 9,
+    "tagline": "稳定的明星主力。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "trae-young",
+    "name": "Trae Young",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "bam-adebayo",
+    "name": "Bam Adebayo",
+    "positions": [
+      "C",
+      "PF"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "jamal-murray",
+    "name": "Jamal Murray",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "scottie-barnes",
+    "name": "Scottie Barnes",
+    "positions": [
+      "PF",
+      "PG"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "jalen-johnson",
+    "name": "Jalen Johnson",
+    "positions": [
+      "PF",
+      "SF"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "paolo-banchero",
+    "name": "Paolo Banchero",
+    "positions": [
+      "PF",
+      "SF"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "alperen-sengun",
+    "name": "Alperen Sengun",
+    "positions": [
+      "C",
+      "PF"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "lamelo-ball",
+    "name": "LaMelo Ball",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "og-anunoby",
+    "name": "OG Anunoby",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "stephon-castle",
+    "name": "Stephon Castle",
+    "positions": [
+      "SG",
+      "PG"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "deni-avdija",
+    "name": "Deni Avdija",
+    "positions": [
+      "SF",
+      "SG"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "cooper-flagg",
+    "name": "Cooper Flagg",
+    "positions": [
+      "SF",
+      "PG"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "ja-morant",
+    "name": "Ja Morant",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 87,
+    "tier": "T3",
+    "contractCost": 13,
+    "rarityWeight": 13,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "jalen-williams",
+    "name": "Jalen Williams",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 87,
+    "tier": "T3",
+    "contractCost": 13,
+    "rarityWeight": 13,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "evan-mobley",
+    "name": "Evan Mobley",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 87,
+    "tier": "T3",
+    "contractCost": 13,
+    "rarityWeight": 13,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "pascal-siakam",
+    "name": "Pascal Siakam",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 87,
+    "tier": "T3",
+    "contractCost": 13,
+    "rarityWeight": 13,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "chet-holmgren",
+    "name": "Chet Holmgren",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 87,
+    "tier": "T3",
+    "contractCost": 13,
+    "rarityWeight": 13,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "amen-thompson",
+    "name": "Amen Thompson",
+    "positions": [
+      "SG",
+      "PG"
+    ],
+    "sourceRating": 87,
+    "tier": "T3",
+    "contractCost": 13,
+    "rarityWeight": 13,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "tyler-herro",
+    "name": "Tyler Herro",
+    "positions": [
+      "SG",
+      "PG"
+    ],
+    "sourceRating": 87,
+    "tier": "T3",
+    "contractCost": 13,
+    "rarityWeight": 13,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "franz-wagner",
+    "name": "Franz Wagner",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 87,
+    "tier": "T3",
+    "contractCost": 13,
+    "rarityWeight": 13,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "austin-reaves",
+    "name": "Austin Reaves",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 87,
+    "tier": "T3",
+    "contractCost": 13,
+    "rarityWeight": 13,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "lauri-markkanen",
+    "name": "Lauri Markkanen",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 87,
+    "tier": "T3",
+    "contractCost": 13,
+    "rarityWeight": 13,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
+  },
+  {
+    "id": "brandon-miller",
+    "name": "Brandon Miller",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 87,
+    "tier": "T3",
+    "contractCost": 13,
+    "rarityWeight": 13,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-2k26-current-ratings-2026-06-14",
+    "sourceStatus": "current-2k26-ratings"
   }
 ]

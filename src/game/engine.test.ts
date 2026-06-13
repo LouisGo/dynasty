@@ -86,12 +86,16 @@ describe('price and supply model', () => {
     expect(getPlayerWeight(rotation)).toBeGreaterThan(getPlayerWeight(jordan))
   })
 
-  it('keeps the draft pool focused on recognizable modern-era players', () => {
+  it('keeps the draft pool expanded with recognizable modern-era and current stars', () => {
     const ids = new Set(pool.map((card) => card.id))
 
-    expect(pool.length).toBeLessThanOrEqual(100)
+    expect(pool.length).toBeGreaterThanOrEqual(120)
     expect(ids.has('bill-russell')).toBe(true)
     expect(ids.has('wilt-chamberlain')).toBe(true)
+    expect(ids.has('shai-gilgeous-alexander')).toBe(true)
+    expect(ids.has('victor-wembanyama')).toBe(true)
+    expect(ids.has('jalen-brunson')).toBe(true)
+    expect(ids.has('anthony-edwards')).toBe(true)
     expect(ids.has('bob-cousy')).toBe(false)
     expect(ids.has('george-mikan')).toBe(false)
     expect(ids.has('oscar-robertson')).toBe(false)
