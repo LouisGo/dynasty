@@ -16,6 +16,22 @@ npm run dev
 http://192.168.31.34:5175/
 ```
 
+## GitHub Pages
+
+仓库已经支持用 GitHub Actions 部署到 GitHub Pages。
+
+发布步骤：
+
+```text
+GitHub -> dynasty -> Settings -> Pages -> Source: GitHub Actions
+```
+
+推送到 `main` 后会自动构建并发布，项目站点地址应为：
+
+```text
+https://louisgo.github.io/dynasty/
+```
+
 ## 核心规则
 
 - 开局 `100` 王朝点，目标是锁定 `5 名首发 + 1 名第六人`。
