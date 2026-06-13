@@ -1,26 +1,33 @@
-import { useMemo, useState } from 'react'
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type CSSProperties,
+  type MouseEvent as ReactMouseEvent,
+} from 'react'
 import legendPool from './data/legend-pool.json'
 import './App.css'
 import {
-  canConfirmArrangement,
-  confirmLineup,
   createInitialState,
   createSeededRng,
-  getCardPower,
   skipOfferGroup,
   signOffer,
   setArrangement,
 } from './game/engine'
 import {
   COURT_SLOTS,
+  FREE_SKIP_COUNT,
+  MAX_ROUNDS,
   OFFER_COUNT,
+  PAID_SKIP_COST,
   ROSTER_TARGET,
-  SKIP_TOKENS,
   SIXTH_SLOT,
   type CourtSlotId,
+  type DraftedPlayer,
+  type GameOverReason,
   type GameState,
   type OfferCard,
-  type OwnedCard,
   type PlayerCard,
   type Position,
   type Tier,
@@ -30,61 +37,121 @@ const pool = legendPool as PlayerCard[]
 const poolIndex = new Map(pool.map((card) => [card.id, card]))
 
 type Screen = 'landing' | 'draft' | 'result'
+type CardSize = 'large' | 'mini'
 
-interface TeamMeta {
-  code: string
-  name: string
+interface PlayerCardTileProps {
+  card: PlayerCard
+  price: number
+  size: CardSize
+  statusLabel: string
+  index?: number
+  className?: string
 }
 
-const teamByPlayerId: Record<string, TeamMeta> = {
-  'michael-jordan': { code: 'chi', name: 'Chicago Bulls' },
-  'lebron-james': { code: 'cle', name: 'Cleveland Cavaliers' },
-  'kareem-abdul-jabbar': { code: 'lal', name: 'Los Angeles Lakers' },
-  'magic-johnson': { code: 'lal', name: 'Los Angeles Lakers' },
-  'kobe-bryant': { code: 'lal', name: 'Los Angeles Lakers' },
-  'shaquille-oneal': { code: 'lal', name: 'Los Angeles Lakers' },
-  'tim-duncan': { code: 'sas', name: 'San Antonio Spurs' },
-  'larry-bird': { code: 'bos', name: 'Boston Celtics' },
-  'hakeem-olajuwon': { code: 'hou', name: 'Houston Rockets' },
-  'wilt-chamberlain': { code: 'lal', name: 'Los Angeles Lakers' },
-  'stephen-curry': { code: 'gs', name: 'Golden State Warriors' },
-  'bill-russell': { code: 'bos', name: 'Boston Celtics' },
-  'kevin-durant': { code: 'bkn', name: 'Brooklyn Nets' },
-  'oscar-robertson': { code: 'mil', name: 'Milwaukee Bucks' },
-  'jerry-west': { code: 'lal', name: 'Los Angeles Lakers' },
-  'julius-erving': { code: 'phi', name: 'Philadelphia 76ers' },
-  'dirk-nowitzki': { code: 'dal', name: 'Dallas Mavericks' },
-  'kevin-garnett': { code: 'min', name: 'Minnesota Timberwolves' },
-  'moses-malone': { code: 'phi', name: 'Philadelphia 76ers' },
-  'nikola-jokic': { code: 'den', name: 'Denver Nuggets' },
-  'giannis-antetokounmpo': { code: 'mil', name: 'Milwaukee Bucks' },
-  'dwyane-wade': { code: 'mia', name: 'Miami Heat' },
-  'isiah-thomas': { code: 'det', name: 'Detroit Pistons' },
-  'charles-barkley': { code: 'phx', name: 'Phoenix Suns' },
-  'allen-iverson': { code: 'phi', name: 'Philadelphia 76ers' },
-  'scottie-pippen': { code: 'chi', name: 'Chicago Bulls' },
-  'david-robinson': { code: 'sas', name: 'San Antonio Spurs' },
-  'john-stockton': { code: 'uta', name: 'Utah Jazz' },
-  'karl-malone': { code: 'uta', name: 'Utah Jazz' },
-  'elgin-baylor': { code: 'lal', name: 'Los Angeles Lakers' },
-  'chris-paul': { code: 'lac', name: 'Los Angeles Clippers' },
-  'kawhi-leonard': { code: 'tor', name: 'Toronto Raptors' },
-  'steve-nash': { code: 'phx', name: 'Phoenix Suns' },
-  'james-harden': { code: 'hou', name: 'Houston Rockets' },
-  'tracy-mcgrady': { code: 'orl', name: 'Orlando Magic' },
-  'patrick-ewing': { code: 'ny', name: 'New York Knicks' },
-  'clyde-drexler': { code: 'hou', name: 'Houston Rockets' },
-  'ray-allen': { code: 'sea', name: 'Seattle SuperSonics' },
-  'reggie-miller': { code: 'ind', name: 'Indiana Pacers' },
-  'manu-ginobili': { code: 'sas', name: 'San Antonio Spurs' },
-  'pau-gasol': { code: 'lal', name: 'Los Angeles Lakers' },
-  'dwight-howard': { code: 'orl', name: 'Orlando Magic' },
-  'yao-ming': { code: 'hou', name: 'Houston Rockets' },
-  'vince-carter': { code: 'tor', name: 'Toronto Raptors' },
-  'damian-lillard': { code: 'por', name: 'Portland Trail Blazers' },
-  'dominique-wilkins': { code: 'atl', name: 'Atlanta Hawks' },
-  'paul-pierce': { code: 'bos', name: 'Boston Celtics' },
-  'dennis-rodman': { code: 'chi', name: 'Chicago Bulls' },
+interface FlyingCardState {
+  card: PlayerCard
+  price: number
+  statusLabel: string
+  from: DOMRect
+  to: DOMRect
+}
+
+const teamCodeByPlayerId: Record<string, string> = {
+  'michael-jordan': 'chi',
+  'lebron-james': 'cle',
+  'kareem-abdul-jabbar': 'lal',
+  'magic-johnson': 'lal',
+  'kobe-bryant': 'lal',
+  'shaquille-oneal': 'lal',
+  'tim-duncan': 'sas',
+  'larry-bird': 'bos',
+  'hakeem-olajuwon': 'hou',
+  'wilt-chamberlain': 'lal',
+  'stephen-curry': 'gs',
+  'bill-russell': 'bos',
+  'kevin-durant': 'gs',
+  'julius-erving': 'phi',
+  'dirk-nowitzki': 'dal',
+  'kevin-garnett': 'min',
+  'moses-malone': 'phi',
+  'nikola-jokic': 'den',
+  'giannis-antetokounmpo': 'mil',
+  'dwyane-wade': 'mia',
+  'isiah-thomas': 'det',
+  'charles-barkley': 'phx',
+  'allen-iverson': 'phi',
+  'scottie-pippen': 'chi',
+  'david-robinson': 'sas',
+  'john-stockton': 'uta',
+  'karl-malone': 'uta',
+  'chris-paul': 'lac',
+  'kawhi-leonard': 'tor',
+  'steve-nash': 'phx',
+  'james-harden': 'hou',
+  'tracy-mcgrady': 'orl',
+  'patrick-ewing': 'ny',
+  'clyde-drexler': 'por',
+  'ray-allen': 'sea',
+  'reggie-miller': 'ind',
+  'manu-ginobili': 'sas',
+  'pau-gasol': 'lal',
+  'dwight-howard': 'orl',
+  'yao-ming': 'hou',
+  'vince-carter': 'tor',
+  'damian-lillard': 'por',
+  'dominique-wilkins': 'atl',
+  'paul-pierce': 'bos',
+  'dennis-rodman': 'chi',
+  'gary-payton': 'sea',
+  'jason-kidd': 'dal',
+  'rick-barry': 'gs',
+  'george-gervin': 'sas',
+  'elvin-hayes': 'was',
+  'bob-mcadoo': 'lac',
+  'anthony-davis': 'lal',
+  'russell-westbrook': 'okc',
+  'luka-doncic': 'dal',
+  'joel-embiid': 'phi',
+  'nate-archibald': 'sac',
+  'alex-english': 'den',
+  'bernard-king': 'ny',
+  'chris-webber': 'sac',
+  alonzomourning: 'mia',
+  'dikembe-mutombo': 'den',
+  'tony-parker': 'sas',
+  'carmelo-anthony': 'ny',
+  'klay-thompson': 'gs',
+  'draymond-green': 'gs',
+  'jimmy-butler': 'mia',
+  'paul-george': 'ind',
+  'kyrie-irving': 'cle',
+  'grant-hill': 'det',
+  'penny-hardaway': 'orl',
+  'shawn-kemp': 'sea',
+  'mitch-richmond': 'sac',
+  'joe-dumars': 'det',
+  'sidney-moncrief': 'mil',
+  'artis-gilmore': 'chi',
+  'robert-parish': 'bos',
+  'kevin-mchale': 'bos',
+  'bill-walton': 'por',
+  'tim-hardaway': 'gs',
+  'mark-price': 'cle',
+  'derrick-rose': 'chi',
+  'chauncey-billups': 'det',
+  'rajon-rondo': 'bos',
+  'amar-e-stoudemire': 'phx',
+  'chris-bosh': 'tor',
+  'blake-griffin': 'lac',
+  'lamarcus-aldridge': 'por',
+  'marc-gasol': 'mem',
+  'ben-wallace': 'det',
+  'rasheed-wallace': 'det',
+  'peja-stojakovic': 'sac',
+  'chris-mullin': 'gs',
+  'gilbert-arenas': 'was',
+  'demar-derozan': 'tor',
+  'john-wall': 'was',
 }
 
 function getTeamLogoUrl(code: string) {
@@ -95,13 +162,17 @@ function randomSeed() {
   return Math.floor(Math.random() * 1_000_000_000)
 }
 
-function getRosterCard(owned: OwnedCard) {
+function getRosterCard(owned: DraftedPlayer) {
   const card = poolIndex.get(owned.playerId)
   if (!card) {
     throw new Error(`Missing player ${owned.playerId}`)
   }
 
-  return card
+  return {
+    ...card,
+    pricePaid: owned.pricePaid,
+    assignedSlot: owned.assignedSlot,
+  }
 }
 
 function formatPositions(positions: Position[]) {
@@ -113,11 +184,119 @@ function tierClassName(tier: Tier) {
 }
 
 function formatSlotLabel(slot: CourtSlotId) {
-  return slot === SIXTH_SLOT ? '6' : slot
+  return slot === SIXTH_SLOT ? '第六人' : slot
 }
 
 function getSlotRole(slot: CourtSlotId) {
   return slot === SIXTH_SLOT ? 'bench' : 'starter'
+}
+
+function getOfferStateText(offer: OfferCard) {
+  if (offer.offerState === 'too-expensive') {
+    return '预算不足'
+  }
+
+  if (offer.offerState === 'duplicate') {
+    return '已拥有'
+  }
+
+  if (offer.offerState === 'slot-blocked') {
+    return '无可用位置'
+  }
+
+  return '可签约'
+}
+
+function getRatingLabel(ovr: number) {
+  if (ovr >= 97) {
+    return '历史级核心'
+  }
+
+  if (ovr >= 94) {
+    return '超巨即战力'
+  }
+
+  if (ovr >= 90) {
+    return '明星主力'
+  }
+
+  if (ovr >= 86) {
+    return '强力拼图'
+  }
+
+  return '轮换补强'
+}
+
+function getResultReason(reason: GameOverReason) {
+  if (reason === 'lineup-complete') {
+    return '六人阵容完成'
+  }
+
+  if (reason === 'budget-exhausted') {
+    return '预算不足'
+  }
+
+  return '20 回合结束'
+}
+
+function getTeamCode(playerId: string) {
+  return teamCodeByPlayerId[playerId]
+}
+
+function getTargetSlotForOffer(offer: OfferCard, arrangement: GameState['lineupArrangement']) {
+  const starterSlot = offer.positions.find((position) => arrangement[position] === null)
+  return starterSlot ?? SIXTH_SLOT
+}
+
+function PlayerCardTile({
+  card,
+  price,
+  size,
+  statusLabel,
+  index = 0,
+  className = '',
+}: PlayerCardTileProps) {
+  const teamCode = getTeamCode(card.id)
+
+  return (
+    <div
+      className={[
+        'player-card',
+        `player-card-${size}`,
+        tierClassName(card.tier),
+        className,
+      ]
+        .filter(Boolean)
+        .join(' ')}
+      style={{ '--offer-index': index } as CSSProperties & Record<'--offer-index', number>}
+    >
+      <span className="player-card-price">{price}</span>
+      {teamCode && (
+        <img
+          className="player-card-logo"
+          src={getTeamLogoUrl(teamCode)}
+          alt=""
+          onError={(event) => {
+            event.currentTarget.style.display = 'none'
+          }}
+        />
+      )}
+      <div className="player-card-head">
+        <h3>{card.name}</h3>
+        {size === 'large' && <p className="player-card-subtitle">{getRatingLabel(card.sourceRating)}</p>}
+      </div>
+      <div className="player-card-stats">
+        <div className="player-card-stat">
+          <span>总评</span>
+          <strong>{card.sourceRating}</strong>
+        </div>
+        <div className="player-card-stat">
+          <span>{statusLabel}</span>
+          <strong>{formatPositions(card.positions)}</strong>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 function App() {
@@ -125,42 +304,56 @@ function App() {
   const [rngSeed, setRngSeed] = useState<number>(() => randomSeed())
   const [selectedSlot, setSelectedSlot] = useState<CourtSlotId | null>(null)
   const [draggingSlot, setDraggingSlot] = useState<CourtSlotId | null>(null)
-  const [confirmOpen, setConfirmOpen] = useState(false)
+  const [flyingCard, setFlyingCard] = useState<FlyingCardState | null>(null)
+  const draggingSlotRef = useRef<CourtSlotId | null>(null)
+  const signTimerRef = useRef<number | null>(null)
   const [gameState, setGameState] = useState<GameState>(() =>
     createInitialState(pool, createSeededRng(randomSeed())),
   )
 
   const rosterCards = useMemo(
-    () =>
-      gameState.roster.map((owned) => {
-        const card = getRosterCard(owned)
-        return {
-          ...card,
-          stars: owned.stars,
-          totalCost: owned.totalCost,
-          power: getCardPower(card, owned.stars),
-        }
-      }),
+    () => gameState.roster.map((owned) => getRosterCard(owned)),
     [gameState.roster],
   )
   const rosterCardMap = useMemo(
     () => new Map(rosterCards.map((card) => [card.id, card])),
     [rosterCards],
   )
-  const needsLineupConfirm = gameState.roster.length >= ROSTER_TARGET && !gameState.result
-  const arrangementReady = canConfirmArrangement(gameState.roster, gameState.lineupArrangement, pool)
+  const skipLabel =
+    gameState.freeSkipsRemaining > 0
+      ? `跳过本轮（免费 ${gameState.freeSkipsRemaining}）`
+      : `跳过本轮（-${PAID_SKIP_COST} 预算）`
+  const canSkip = gameState.freeSkipsRemaining > 0 || gameState.budgetRemaining >= PAID_SKIP_COST
+
+  useEffect(
+    () => () => {
+      if (signTimerRef.current !== null) {
+        window.clearTimeout(signTimerRef.current)
+      }
+    },
+    [],
+  )
+
+  function beginDraggingSlot(slot: CourtSlotId) {
+    draggingSlotRef.current = slot
+    setDraggingSlot(slot)
+  }
+
+  function clearDraggingSlot() {
+    draggingSlotRef.current = null
+    setDraggingSlot(null)
+  }
 
   function startRun() {
     const nextSeed = randomSeed()
     setRngSeed(nextSeed)
     setGameState(createInitialState(pool, createSeededRng(nextSeed)))
     setSelectedSlot(null)
-    setDraggingSlot(null)
-    setConfirmOpen(false)
+    clearDraggingSlot()
     setScreen('draft')
   }
 
-  function handleSign(offer: OfferCard) {
+  function commitSign(offer: OfferCard) {
     if (offer.offerState !== 'enabled') {
       return
     }
@@ -169,26 +362,54 @@ function App() {
       gameState,
       offer.id,
       pool,
-      createSeededRng(rngSeed + gameState.offerCount * 17),
+      createSeededRng(rngSeed + gameState.round * 17),
     )
     setGameState(nextState)
     setSelectedSlot(null)
-    setDraggingSlot(null)
-    setConfirmOpen(false)
+    clearDraggingSlot()
     setScreen(nextState.result ? 'result' : 'draft')
   }
 
+  function handleSign(offer: OfferCard, event: ReactMouseEvent<HTMLButtonElement>) {
+    if (offer.offerState !== 'enabled' || flyingCard) {
+      return
+    }
+
+    const targetSlot = getTargetSlotForOffer(offer, gameState.lineupArrangement)
+    const targetElement = document.querySelector<HTMLElement>(`[data-court-slot="${targetSlot}"]`)
+
+    if (!targetElement) {
+      commitSign(offer)
+      return
+    }
+
+    setFlyingCard({
+      card: offer,
+      price: offer.price,
+      statusLabel: getOfferStateText(offer),
+      from: event.currentTarget.getBoundingClientRect(),
+      to: targetElement.getBoundingClientRect(),
+    })
+
+    signTimerRef.current = window.setTimeout(() => {
+      commitSign(offer)
+      setFlyingCard(null)
+      signTimerRef.current = null
+    }, 430)
+  }
+
   function handleSkip() {
-    if (gameState.skipsRemaining <= 0) {
+    if (!canSkip || flyingCard) {
       return
     }
 
     const nextState = skipOfferGroup(
       gameState,
       pool,
-      createSeededRng(rngSeed + gameState.offerCount * 31 + 7),
+      createSeededRng(rngSeed + gameState.round * 31 + 7),
     )
     setGameState(nextState)
+    setScreen(nextState.result ? 'result' : 'draft')
   }
 
   function swapSlots(from: CourtSlotId, to: CourtSlotId) {
@@ -203,8 +424,72 @@ function App() {
     }
     setGameState(setArrangement(gameState, arrangement, pool))
     setSelectedSlot(null)
-    setDraggingSlot(null)
+    clearDraggingSlot()
   }
+
+  useEffect(() => {
+    function finishDragAt(clientX: number, clientY: number) {
+      const sourceSlot = draggingSlotRef.current
+      if (!sourceSlot) {
+        return
+      }
+
+      const target = document.elementFromPoint(clientX, clientY) as HTMLElement | null
+      const slotElement = target?.closest<HTMLElement>('[data-court-slot]')
+      const targetSlot = slotElement?.dataset.courtSlot as CourtSlotId | undefined
+
+      if (targetSlot && targetSlot !== sourceSlot) {
+        setGameState((current) => {
+          const arrangement = {
+            ...current.lineupArrangement,
+            [sourceSlot]: current.lineupArrangement[targetSlot],
+            [targetSlot]: current.lineupArrangement[sourceSlot],
+          }
+          return setArrangement(current, arrangement, pool)
+        })
+        setSelectedSlot(null)
+      }
+
+      draggingSlotRef.current = null
+      setDraggingSlot(null)
+    }
+
+    function clearDrag() {
+      draggingSlotRef.current = null
+      setDraggingSlot(null)
+    }
+
+    function handleWindowPointerUp(event: PointerEvent) {
+      finishDragAt(event.clientX, event.clientY)
+    }
+
+    function handleWindowMouseUp(event: MouseEvent) {
+      finishDragAt(event.clientX, event.clientY)
+    }
+
+    function handleWindowTouchEnd(event: TouchEvent) {
+      const touch = event.changedTouches[0]
+      if (touch) {
+        finishDragAt(touch.clientX, touch.clientY)
+      } else {
+        clearDrag()
+      }
+    }
+
+    window.addEventListener('pointerup', handleWindowPointerUp)
+    window.addEventListener('pointercancel', clearDrag)
+    window.addEventListener('mouseup', handleWindowMouseUp)
+    window.addEventListener('touchend', handleWindowTouchEnd)
+    window.addEventListener('touchcancel', clearDrag)
+
+    return () => {
+      window.removeEventListener('pointerup', handleWindowPointerUp)
+      window.removeEventListener('pointercancel', clearDrag)
+      window.removeEventListener('mouseup', handleWindowMouseUp)
+      window.removeEventListener('touchend', handleWindowTouchEnd)
+      window.removeEventListener('touchcancel', clearDrag)
+    }
+  }, [])
 
   function handleSlotClick(slot: CourtSlotId) {
     if (!gameState.lineupArrangement[slot]) {
@@ -227,27 +512,6 @@ function App() {
     setSelectedSlot(slot)
   }
 
-  function handleDrop(from: CourtSlotId, to: CourtSlotId) {
-    swapSlots(from, to)
-  }
-
-  function openConfirm() {
-    if (!needsLineupConfirm || !arrangementReady) {
-      return
-    }
-
-    setConfirmOpen(true)
-  }
-
-  function handleConfirmLineup() {
-    const nextState = confirmLineup(gameState, pool)
-    setGameState(nextState)
-    setConfirmOpen(false)
-    setSelectedSlot(null)
-    setDraggingSlot(null)
-    setScreen('result')
-  }
-
   return (
     <main className={`app-shell ${screen}`}>
       <section className="backdrop">
@@ -259,32 +523,34 @@ function App() {
       {screen === 'landing' && (
         <section className="screen landing-screen">
           <div className="landing-copy">
-            <p className="eyebrow">DYNASTY DRAFT</p>
-            <h1>只盯这 4 张牌，抽出你心里的 NBA 历史王朝。</h1>
+            <p className="eyebrow">王朝选秀</p>
+            <h1>100 预算，20 回合，抽一套历史王朝。</h1>
             <p className="landing-body">
-              每轮只看 4 张候选卡。你可以直接签，也可以有限次跳过等下一组报价。真正的爽点，不是填表，而是每次看见神卡时那一下心跳。
+              每轮四张历史球星卡，价格每次重掷。签下一人或跳过，填满五个首发和第六人即结算。
             </p>
             <div className="landing-actions">
               <button type="button" className="primary-button" onClick={startRun}>
-                开始抽王朝
+                开始选秀
               </button>
-              <p className="micro-copy">手机优先。无限重开。先收 6 人池，再拖拽确认首发与第六人。</p>
+              <p className="micro-copy">
+                {FREE_SKIP_COUNT} 次免费跳过，用完后每次消耗 {PAID_SKIP_COST} 预算。
+              </p>
             </div>
           </div>
 
           <div className="landing-poster">
             <div className="poster-strip">
-              <span>{OFFER_COUNT} CARDS</span>
-              <span>{SKIP_TOKENS} SKIPS</span>
-              <span>100 BUDGET</span>
+              <span>{OFFER_COUNT} 张候选</span>
+              <span>{MAX_ROUNDS} 回合</span>
+              <span>100 预算</span>
             </div>
             <div className="poster-metric">
               <strong>6</strong>
-              <span>人池成型即结算</span>
+              <span>PG / SG / SF / PF / C / 第六人</span>
             </div>
             <div className="poster-detail">
-              <p>强卡更贵，重复能升星。</p>
-              <p>6 人成型后，手动摆上你的球场。</p>
+              <p>OVR 越高越稀有，价格每次出现都会重掷。</p>
+              <p>第六人不限位置，重复球员禁止签约。</p>
             </div>
           </div>
         </section>
@@ -295,101 +561,66 @@ function App() {
           <header className="draft-header">
             <div className="status-row">
               <article className="status-chip">
-                <span>点数</span>
+                <span>预算</span>
                 <strong>{gameState.budgetRemaining}</strong>
               </article>
               <article className="status-chip">
-                <span>已签</span>
+                <span>回合</span>
+                <strong>
+                  {gameState.round}/{MAX_ROUNDS}
+                </strong>
+              </article>
+              <article className="status-chip">
+                <span>阵容</span>
                 <strong>
                   {gameState.roster.length}/{ROSTER_TARGET}
                 </strong>
               </article>
               <article className="status-chip">
-                <span>跳过</span>
-                <strong>{gameState.skipsRemaining}</strong>
+                <span>免费跳过</span>
+                <strong>{gameState.freeSkipsRemaining}</strong>
               </article>
             </div>
           </header>
 
-          <section className="offer-stage">
-            {gameState.currentOffers.length > 0 ? (
-              gameState.currentOffers.map((offer) => (
+          <section className="offer-stage" key={gameState.round}>
+            {gameState.currentOffers.map((offer, index) => {
+              return (
                 <button
                   key={offer.id}
                   type="button"
-                  className={`offer-card ${tierClassName(offer.tier)} ${offer.offerState !== 'enabled' ? 'is-disabled' : ''}`}
-                  onClick={() => handleSign(offer)}
-                  disabled={offer.offerState !== 'enabled'}
+                  className={`offer-card-button ${offer.offerState !== 'enabled' ? 'is-disabled' : ''}`}
+                  onClick={(event) => handleSign(offer, event)}
+                  disabled={offer.offerState !== 'enabled' || Boolean(flyingCard)}
                 >
-                  <div className="offer-corners">
-                    <span className="offer-tier-mark">{offer.tier}</span>
-                    <span className="offer-cost-mark">{offer.price}</span>
-                  </div>
-                  <div className="offer-head">
-                    <h3>{offer.name}</h3>
-                    <div className="offer-teamline">
-                      <img
-                        className="offer-team-logo"
-                        src={getTeamLogoUrl(teamByPlayerId[offer.id]?.code ?? 'nba')}
-                        alt=""
-                      />
-                      <p>{teamByPlayerId[offer.id]?.name ?? 'NBA Legend'}</p>
-                    </div>
-                  </div>
-                  <div className="offer-stats">
-                    <div className="offer-stat">
-                      <span>总评</span>
-                      <strong>{offer.sourceRating}</strong>
-                    </div>
-                    <div className="offer-stat">
-                      <span>位置</span>
-                      <strong>{formatPositions(offer.positions)}</strong>
-                    </div>
-                  </div>
+                  <PlayerCardTile
+                    card={offer}
+                    price={offer.price}
+                    size="large"
+                    statusLabel={getOfferStateText(offer)}
+                    index={index}
+                  />
                 </button>
-              ))
-            ) : (
-              <div className="offer-stage-placeholder">
-                <span>LINEUP READY</span>
-              </div>
-            )}
+              )
+            })}
           </section>
 
           <section className="action-bar">
-            {!needsLineupConfirm && (
-              <button
-                type="button"
-                className="ghost-button"
-                onClick={handleSkip}
-                disabled={gameState.skipsRemaining <= 0}
-              >
-                {gameState.skipsRemaining > 0 ? `跳过本轮 (${gameState.skipsRemaining})` : '跳过已用尽'}
-              </button>
-            )}
-            {needsLineupConfirm && (
-              <button
-                type="button"
-                className="primary-button"
-                onClick={openConfirm}
-                disabled={!arrangementReady}
-              >
-                确认阵容
-              </button>
-            )}
+            <button type="button" className="ghost-button" onClick={handleSkip} disabled={!canSkip}>
+              {skipLabel}
+            </button>
             <button type="button" className="ghost-button" onClick={startRun}>
-              这局不满意，重开
+              重新开始
             </button>
           </section>
 
-          <section className="court-editor">
-            <div className="court-surface">
-              <div className="court-half" />
-              <div className="court-paint" />
-              <div className="court-rim" />
-              <div className="court-backboard" />
-              <div className="court-arc" />
-              <div className="court-free-throw" />
+          <p className="pool-note">{gameState.lastAction}</p>
 
+          <section className="court-editor">
+            <div
+              className="court-surface"
+              onPointerCancel={clearDraggingSlot}
+            >
               {COURT_SLOTS.map((slot) => {
                 const playerId = gameState.lineupArrangement[slot]
                 const card = playerId ? rosterCardMap.get(playerId) : null
@@ -404,6 +635,7 @@ function App() {
                   <button
                     key={slot}
                     type="button"
+                    data-court-slot={slot}
                     className={[
                       'court-slot',
                       `slot-${slot.toLowerCase()}`,
@@ -414,44 +646,35 @@ function App() {
                       getSlotRole(slot),
                     ]
                       .filter(Boolean)
-                      .join(' ')}
+                    .join(' ')}
                     onClick={() => handleSlotClick(slot)}
-                    onDragOver={(event) => {
-                      if (draggingSlot) {
-                        event.preventDefault()
+                    onPointerDown={() => {
+                      if (card) {
+                        beginDraggingSlot(slot)
                       }
                     }}
-                    onDrop={(event) => {
-                      event.preventDefault()
-                      const from = event.dataTransfer.getData('text/plain') as CourtSlotId
-                      if (from) {
-                        handleDrop(from, slot)
+                    onMouseDown={() => {
+                      if (card) {
+                        beginDraggingSlot(slot)
+                      }
+                    }}
+                    onTouchStart={() => {
+                      if (card) {
+                        beginDraggingSlot(slot)
                       }
                     }}
                   >
                     <span className="court-slot-label">{formatSlotLabel(slot)}</span>
                     {card ? (
                       <span
-                        className={`court-player-chip ${tierClassName(card.tier)}`}
-                        draggable
-                        onDragStart={(event) => {
-                          event.dataTransfer.setData('text/plain', slot)
-                          event.dataTransfer.effectAllowed = 'move'
-                          setDraggingSlot(slot)
-                        }}
-                        onDragEnd={() => setDraggingSlot(null)}
+                        className="court-player-chip"
                       >
-                        <img
-                          className="court-player-logo"
-                          src={getTeamLogoUrl(teamByPlayerId[card.id]?.code ?? 'nba')}
-                          alt=""
+                        <PlayerCardTile
+                          card={card}
+                          price={card.pricePaid}
+                          size="mini"
+                          statusLabel="可签约"
                         />
-                        <span className="court-player-copy">
-                          <strong>{card.name}</strong>
-                          <em>
-                            {card.power} · {'★'.repeat(card.stars)}
-                          </em>
-                        </span>
                       </span>
                     ) : (
                       <span className="court-slot-empty-dot" />
@@ -461,52 +684,67 @@ function App() {
               })}
             </div>
           </section>
-
-          {confirmOpen && (
-            <div className="confirm-overlay" role="presentation" onClick={() => setConfirmOpen(false)}>
-              <div
-                className="confirm-modal"
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="confirm-lineup-title"
-                onClick={(event) => event.stopPropagation()}
-              >
-                <p className="eyebrow">LOCK IN</p>
-                <h3 id="confirm-lineup-title">确认这套首发与第六人？</h3>
-                <div className="confirm-actions">
-                  <button type="button" className="ghost-button" onClick={() => setConfirmOpen(false)}>
-                    再调一下
-                  </button>
-                  <button type="button" className="primary-button" onClick={handleConfirmLineup}>
-                    进入总评
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
         </section>
+      )}
+
+      {flyingCard && (
+        <div
+          className="flying-card"
+          style={
+            {
+              '--fly-from-x': `${flyingCard.from.left}px`,
+              '--fly-from-y': `${flyingCard.from.top}px`,
+              '--fly-to-x': `${flyingCard.to.left + 8}px`,
+              '--fly-to-y': `${flyingCard.to.top + 30}px`,
+              '--fly-from-w': `${flyingCard.from.width}px`,
+              '--fly-from-h': `${flyingCard.from.height}px`,
+              '--fly-to-w': `${Math.max(80, flyingCard.to.width - 16)}px`,
+              '--fly-to-h': `${Math.max(72, flyingCard.to.height - 38)}px`,
+            } as CSSProperties &
+              Record<
+                | '--fly-from-x'
+                | '--fly-from-y'
+                | '--fly-to-x'
+                | '--fly-to-y'
+                | '--fly-from-w'
+                | '--fly-from-h'
+                | '--fly-to-w'
+                | '--fly-to-h',
+                string
+              >
+          }
+        >
+          <PlayerCardTile
+            card={flyingCard.card}
+            price={flyingCard.price}
+            size="large"
+            statusLabel={flyingCard.statusLabel}
+          />
+        </div>
       )}
 
       {screen === 'result' && gameState.result && (
         <section className="screen result-screen">
           <div className="result-hero">
-            <p className="eyebrow">FINAL SHEET</p>
-            <h2>{gameState.result.title.label}</h2>
-            <p>{gameState.result.title.subtitle}</p>
+            <p className="eyebrow">{getResultReason(gameState.result.gameOverReason)}</p>
+            <h2>王朝评分</h2>
+            <p>预算、平衡和巨星浓度共同决定这支队的历史分量。</p>
           </div>
 
           <section className="result-metrics">
             <article>
-              <span>阵容总评</span>
-              <strong>{gameState.result.teamRating}</strong>
+              <span>王朝评分</span>
+              <strong>{gameState.result.dynastyScore}</strong>
             </article>
             <article>
-              <span>总火力</span>
-              <strong>{gameState.result.totalPower}</strong>
+              <span>预计战绩</span>
+              <strong>
+                {gameState.result.projectedWins}-{gameState.result.projectedLosses}
+              </strong>
             </article>
             <article>
-              <span>预算效率</span>
-              <strong>{gameState.result.efficiencyScore}</strong>
+              <span>夺冠概率</span>
+              <strong>{gameState.result.championshipOdds}%</strong>
             </article>
           </section>
 
@@ -528,34 +766,37 @@ function App() {
                     <p>{formatPositions(card.positions)}</p>
                   </div>
                   <div className="lineup-value">
-                    <span>{'★'.repeat(starter.stars)}</span>
-                    <strong>{starter.power}</strong>
+                    <span>{starter.pricePaid} 预算</span>
+                    <strong>{starter.ovr}</strong>
                   </div>
                 </article>
               )
             })}
 
-            <article className="lineup-row lineup-bench">
-              <span>6TH</span>
-              <div>
-                <strong>{poolIndex.get(gameState.result.sixthMan.playerId)?.name}</strong>
-                <p>第六人火力储备</p>
-              </div>
-              <div className="lineup-value">
-                <span>{'★'.repeat(gameState.result.sixthMan.stars)}</span>
-                <strong>{gameState.result.sixthMan.power}</strong>
-              </div>
-            </article>
+            {gameState.result.sixthMan && (
+              <article className="lineup-row lineup-bench">
+                <span>第六人</span>
+                <div>
+                  <strong>{poolIndex.get(gameState.result.sixthMan.playerId)?.name}</strong>
+                  <p>第六人</p>
+                </div>
+                <div className="lineup-value">
+                  <span>{gameState.result.sixthMan.pricePaid} 预算</span>
+                  <strong>{gameState.result.sixthMan.ovr}</strong>
+                </div>
+              </article>
+            )}
           </section>
 
           <section className="result-summary">
             <p>
-              花了 <strong>{gameState.result.budgetSpent}</strong> 王朝点，还剩{' '}
-              <strong>{gameState.result.budgetRemaining}</strong>。全队累计{' '}
-              <strong>{gameState.result.totalStars}</strong> 星。
+              实力 <strong>{gameState.result.strengthScore}</strong> · 平衡{' '}
+              <strong>{gameState.result.balanceScore}</strong> · 巨星{' '}
+              <strong>{gameState.result.superstarScore}</strong> · 花费{' '}
+              <strong>{gameState.result.budgetSpent}</strong>
             </p>
             <button type="button" className="primary-button" onClick={startRun}>
-              再抽一套历史阵容
+              再来一局
             </button>
           </section>
         </section>

@@ -8,11 +8,11 @@
     ],
     "sourceRating": 99,
     "tier": "T0",
-    "contractCost": 30,
-    "rarityWeight": 0.45,
-    "tagline": "Closing time turns into folklore.",
+    "contractCost": 25,
+    "rarityWeight": 1,
+    "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "lebron-james",
@@ -25,11 +25,11 @@
     ],
     "sourceRating": 98,
     "tier": "T0",
-    "contractCost": 30,
-    "rarityWeight": 0.62,
-    "tagline": "One card solves four lineup problems.",
+    "contractCost": 24,
+    "rarityWeight": 2,
+    "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "kareem-abdul-jabbar",
@@ -39,11 +39,11 @@
     ],
     "sourceRating": 98,
     "tier": "T0",
-    "contractCost": 30,
-    "rarityWeight": 0.58,
-    "tagline": "Skyhook tax included.",
+    "contractCost": 24,
+    "rarityWeight": 2,
+    "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "magic-johnson",
@@ -54,11 +54,11 @@
     ],
     "sourceRating": 97,
     "tier": "T0",
-    "contractCost": 30,
-    "rarityWeight": 0.72,
-    "tagline": "Fast break democracy at 6 foot 9.",
+    "contractCost": 23,
+    "rarityWeight": 3,
+    "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "kobe-bryant",
@@ -68,12 +68,12 @@
       "SF"
     ],
     "sourceRating": 97,
-    "tier": "T1",
-    "contractCost": 22,
-    "rarityWeight": 0.78,
-    "tagline": "Every tough shot feels pre-approved.",
+    "tier": "T0",
+    "contractCost": 23,
+    "rarityWeight": 3,
+    "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "shaquille-oneal",
@@ -82,12 +82,12 @@
       "C"
     ],
     "sourceRating": 97,
-    "tier": "T1",
-    "contractCost": 22,
-    "rarityWeight": 0.74,
-    "tagline": "A salary cap violation with shoulders.",
+    "tier": "T0",
+    "contractCost": 23,
+    "rarityWeight": 3,
+    "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "tim-duncan",
@@ -97,12 +97,12 @@
       "C"
     ],
     "sourceRating": 97,
-    "tier": "T1",
-    "contractCost": 22,
-    "rarityWeight": 0.76,
-    "tagline": "The cleanest foundation in the pool.",
+    "tier": "T0",
+    "contractCost": 23,
+    "rarityWeight": 3,
+    "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "larry-bird",
@@ -112,12 +112,12 @@
       "PF"
     ],
     "sourceRating": 97,
-    "tier": "T1",
-    "contractCost": 22,
-    "rarityWeight": 0.82,
-    "tagline": "Trash talk bundled with perfect spacing.",
+    "tier": "T0",
+    "contractCost": 23,
+    "rarityWeight": 3,
+    "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "hakeem-olajuwon",
@@ -126,12 +126,12 @@
       "C"
     ],
     "sourceRating": 97,
-    "tier": "T1",
-    "contractCost": 22,
-    "rarityWeight": 0.68,
-    "tagline": "Dream shakes the draft board.",
+    "tier": "T0",
+    "contractCost": 23,
+    "rarityWeight": 3,
+    "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "wilt-chamberlain",
@@ -140,12 +140,12 @@
       "C"
     ],
     "sourceRating": 97,
-    "tier": "T1",
-    "contractCost": 22,
-    "rarityWeight": 0.64,
-    "tagline": "Raw dominance, zero explanation needed.",
+    "tier": "T0",
+    "contractCost": 23,
+    "rarityWeight": 3,
+    "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "stephen-curry",
@@ -157,10 +157,10 @@
     "sourceRating": 96,
     "tier": "T1",
     "contractCost": 22,
-    "rarityWeight": 0.85,
-    "tagline": "Pull-up gravity on a budget you can feel.",
+    "rarityWeight": 4,
+    "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "bill-russell",
@@ -171,10 +171,10 @@
     "sourceRating": 96,
     "tier": "T1",
     "contractCost": 22,
-    "rarityWeight": 0.63,
-    "tagline": "Defense becomes architecture.",
+    "rarityWeight": 4,
+    "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "kevin-durant",
@@ -184,42 +184,12 @@
       "PF"
     ],
     "sourceRating": 96,
-    "tier": "T2",
-    "contractCost": 16,
-    "rarityWeight": 0.95,
-    "tagline": "Mismatch math with seven-foot release.",
+    "tier": "T1",
+    "contractCost": 22,
+    "rarityWeight": 4,
+    "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
-  },
-  {
-    "id": "oscar-robertson",
-    "name": "Oscar Robertson",
-    "positions": [
-      "PG",
-      "SG"
-    ],
-    "sourceRating": 95,
-    "tier": "T2",
-    "contractCost": 16,
-    "rarityWeight": 0.91,
-    "tagline": "Old-school heliocentrism with broad shoulders.",
-    "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
-  },
-  {
-    "id": "jerry-west",
-    "name": "Jerry West",
-    "positions": [
-      "PG",
-      "SG"
-    ],
-    "sourceRating": 95,
-    "tier": "T2",
-    "contractCost": 16,
-    "rarityWeight": 0.92,
-    "tagline": "Logo range before the logo existed.",
-    "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "julius-erving",
@@ -229,12 +199,12 @@
       "SF"
     ],
     "sourceRating": 95,
-    "tier": "T2",
-    "contractCost": 16,
-    "rarityWeight": 0.88,
-    "tagline": "Transition elegance with lift.",
+    "tier": "T1",
+    "contractCost": 21,
+    "rarityWeight": 5,
+    "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "dirk-nowitzki",
@@ -244,12 +214,12 @@
       "C"
     ],
     "sourceRating": 95,
-    "tier": "T2",
-    "contractCost": 16,
-    "rarityWeight": 0.86,
-    "tagline": "Stretch gravity for people who miss miracles.",
+    "tier": "T1",
+    "contractCost": 21,
+    "rarityWeight": 5,
+    "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "kevin-garnett",
@@ -259,12 +229,12 @@
       "C"
     ],
     "sourceRating": 95,
-    "tier": "T2",
-    "contractCost": 16,
-    "rarityWeight": 0.84,
-    "tagline": "Switch everything. Scream at everyone.",
+    "tier": "T1",
+    "contractCost": 21,
+    "rarityWeight": 5,
+    "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "moses-malone",
@@ -273,12 +243,12 @@
       "C"
     ],
     "sourceRating": 95,
-    "tier": "T2",
-    "contractCost": 16,
-    "rarityWeight": 0.8,
-    "tagline": "Second jumps, second chances, no apologies.",
+    "tier": "T1",
+    "contractCost": 21,
+    "rarityWeight": 5,
+    "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "nikola-jokic",
@@ -287,12 +257,12 @@
       "C"
     ],
     "sourceRating": 95,
-    "tier": "T2",
-    "contractCost": 16,
-    "rarityWeight": 0.79,
-    "tagline": "The offense now orbits your center.",
+    "tier": "T1",
+    "contractCost": 21,
+    "rarityWeight": 5,
+    "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "giannis-antetokounmpo",
@@ -303,12 +273,12 @@
       "C"
     ],
     "sourceRating": 95,
-    "tier": "T2",
-    "contractCost": 16,
-    "rarityWeight": 0.82,
-    "tagline": "Long strides, short rebuilding timelines.",
+    "tier": "T1",
+    "contractCost": 21,
+    "rarityWeight": 5,
+    "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "dwyane-wade",
@@ -318,12 +288,12 @@
       "SG"
     ],
     "sourceRating": 95,
-    "tier": "T2",
-    "contractCost": 16,
-    "rarityWeight": 0.9,
-    "tagline": "Pressure at the rim, every possession.",
+    "tier": "T1",
+    "contractCost": 21,
+    "rarityWeight": 5,
+    "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "isiah-thomas",
@@ -333,11 +303,11 @@
     ],
     "sourceRating": 94,
     "tier": "T2",
-    "contractCost": 16,
-    "rarityWeight": 0.96,
-    "tagline": "Small frame, championship ego.",
+    "contractCost": 20,
+    "rarityWeight": 6,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "charles-barkley",
@@ -348,11 +318,11 @@
     ],
     "sourceRating": 94,
     "tier": "T2",
-    "contractCost": 16,
-    "rarityWeight": 0.93,
-    "tagline": "Chaos rebounding with star billing.",
+    "contractCost": 20,
+    "rarityWeight": 6,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "allen-iverson",
@@ -362,12 +332,12 @@
       "SG"
     ],
     "sourceRating": 94,
-    "tier": "T3",
-    "contractCost": 11,
-    "rarityWeight": 1.04,
-    "tagline": "One crossover from changing the whole mood.",
+    "tier": "T2",
+    "contractCost": 20,
+    "rarityWeight": 6,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "scottie-pippen",
@@ -378,12 +348,12 @@
       "PF"
     ],
     "sourceRating": 94,
-    "tier": "T3",
-    "contractCost": 11,
-    "rarityWeight": 1.02,
-    "tagline": "Plug him anywhere and exhale.",
+    "tier": "T2",
+    "contractCost": 20,
+    "rarityWeight": 6,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "david-robinson",
@@ -392,12 +362,12 @@
       "C"
     ],
     "sourceRating": 94,
-    "tier": "T3",
-    "contractCost": 11,
-    "rarityWeight": 1,
-    "tagline": "Rim protection with a runway gait.",
+    "tier": "T2",
+    "contractCost": 20,
+    "rarityWeight": 6,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "john-stockton",
@@ -406,12 +376,12 @@
       "PG"
     ],
     "sourceRating": 94,
-    "tier": "T3",
-    "contractCost": 11,
-    "rarityWeight": 1.08,
-    "tagline": "Predictable in the best possible way.",
+    "tier": "T2",
+    "contractCost": 20,
+    "rarityWeight": 6,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "karl-malone",
@@ -420,27 +390,12 @@
       "PF"
     ],
     "sourceRating": 94,
-    "tier": "T3",
-    "contractCost": 11,
-    "rarityWeight": 1.03,
-    "tagline": "Regular season machine, now in your pocket.",
+    "tier": "T2",
+    "contractCost": 20,
+    "rarityWeight": 6,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
-  },
-  {
-    "id": "elgin-baylor",
-    "name": "Elgin Baylor",
-    "positions": [
-      "SF",
-      "PF"
-    ],
-    "sourceRating": 94,
-    "tier": "T3",
-    "contractCost": 11,
-    "rarityWeight": 1.05,
-    "tagline": "Pre-merger creativity with real bite.",
-    "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "chris-paul",
@@ -449,12 +404,12 @@
       "PG"
     ],
     "sourceRating": 93,
-    "tier": "T3",
-    "contractCost": 11,
-    "rarityWeight": 1.12,
-    "tagline": "Midrange order and turnover control.",
+    "tier": "T2",
+    "contractCost": 19,
+    "rarityWeight": 7,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "kawhi-leonard",
@@ -464,12 +419,12 @@
       "PF"
     ],
     "sourceRating": 93,
-    "tier": "T3",
-    "contractCost": 11,
-    "rarityWeight": 1,
-    "tagline": "Two-way silence, loud results.",
+    "tier": "T2",
+    "contractCost": 19,
+    "rarityWeight": 7,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "steve-nash",
@@ -478,12 +433,12 @@
       "PG"
     ],
     "sourceRating": 93,
-    "tier": "T3",
-    "contractCost": 11,
-    "rarityWeight": 1.11,
-    "tagline": "Seven seconds from solving a drought.",
+    "tier": "T2",
+    "contractCost": 19,
+    "rarityWeight": 7,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "james-harden",
@@ -493,12 +448,12 @@
       "SG"
     ],
     "sourceRating": 93,
-    "tier": "T3",
-    "contractCost": 11,
-    "rarityWeight": 1.1,
-    "tagline": "Usage rate as a lifestyle choice.",
+    "tier": "T2",
+    "contractCost": 19,
+    "rarityWeight": 7,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "tracy-mcgrady",
@@ -508,12 +463,12 @@
       "SF"
     ],
     "sourceRating": 93,
-    "tier": "T3",
-    "contractCost": 11,
-    "rarityWeight": 1.06,
-    "tagline": "A smooth pull-up and a little regret.",
+    "tier": "T2",
+    "contractCost": 19,
+    "rarityWeight": 7,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "patrick-ewing",
@@ -522,12 +477,12 @@
       "C"
     ],
     "sourceRating": 93,
-    "tier": "T3",
-    "contractCost": 11,
-    "rarityWeight": 1.01,
-    "tagline": "Big market burden, big-time post game.",
+    "tier": "T2",
+    "contractCost": 19,
+    "rarityWeight": 7,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "clyde-drexler",
@@ -537,12 +492,12 @@
       "SF"
     ],
     "sourceRating": 92,
-    "tier": "T4",
-    "contractCost": 7,
-    "rarityWeight": 1.24,
-    "tagline": "Fast break violence with soft landings.",
+    "tier": "T2",
+    "contractCost": 18,
+    "rarityWeight": 8,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "ray-allen",
@@ -552,12 +507,12 @@
       "SF"
     ],
     "sourceRating": 92,
-    "tier": "T4",
-    "contractCost": 7,
-    "rarityWeight": 1.28,
-    "tagline": "One swing pass away from punishment.",
+    "tier": "T2",
+    "contractCost": 18,
+    "rarityWeight": 8,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "reggie-miller",
@@ -567,12 +522,12 @@
       "SF"
     ],
     "sourceRating": 92,
-    "tier": "T4",
-    "contractCost": 7,
-    "rarityWeight": 1.26,
-    "tagline": "Shotmaking with villain energy.",
+    "tier": "T2",
+    "contractCost": 18,
+    "rarityWeight": 8,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "manu-ginobili",
@@ -582,12 +537,12 @@
       "SF"
     ],
     "sourceRating": 92,
-    "tier": "T4",
-    "contractCost": 7,
-    "rarityWeight": 1.31,
-    "tagline": "The bench suddenly has genius.",
+    "tier": "T2",
+    "contractCost": 18,
+    "rarityWeight": 8,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "pau-gasol",
@@ -597,12 +552,12 @@
       "C"
     ],
     "sourceRating": 92,
-    "tier": "T4",
-    "contractCost": 7,
-    "rarityWeight": 1.29,
-    "tagline": "High-post calm, title-team instincts.",
+    "tier": "T2",
+    "contractCost": 18,
+    "rarityWeight": 8,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "dwight-howard",
@@ -611,12 +566,12 @@
       "C"
     ],
     "sourceRating": 92,
-    "tier": "T4",
-    "contractCost": 7,
-    "rarityWeight": 1.27,
-    "tagline": "Peak rim pressure in affordable form.",
+    "tier": "T2",
+    "contractCost": 18,
+    "rarityWeight": 8,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "yao-ming",
@@ -625,12 +580,12 @@
       "C"
     ],
     "sourceRating": 92,
-    "tier": "T4",
-    "contractCost": 7,
-    "rarityWeight": 1.25,
-    "tagline": "Touch and scale in one expensive problem.",
+    "tier": "T2",
+    "contractCost": 18,
+    "rarityWeight": 8,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "vince-carter",
@@ -640,12 +595,12 @@
       "SF"
     ],
     "sourceRating": 91,
-    "tier": "T4",
-    "contractCost": 7,
-    "rarityWeight": 1.34,
-    "tagline": "Pure style points with real production.",
+    "tier": "T3",
+    "contractCost": 17,
+    "rarityWeight": 9,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "damian-lillard",
@@ -654,12 +609,12 @@
       "PG"
     ],
     "sourceRating": 91,
-    "tier": "T4",
-    "contractCost": 7,
-    "rarityWeight": 1.36,
-    "tagline": "Range first, consequences later.",
+    "tier": "T3",
+    "contractCost": 17,
+    "rarityWeight": 9,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "dominique-wilkins",
@@ -669,12 +624,12 @@
       "PF"
     ],
     "sourceRating": 91,
-    "tier": "T4",
-    "contractCost": 7,
-    "rarityWeight": 1.33,
-    "tagline": "Aerial scoring in bright lights.",
+    "tier": "T3",
+    "contractCost": 17,
+    "rarityWeight": 9,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "paul-pierce",
@@ -684,12 +639,12 @@
       "PF"
     ],
     "sourceRating": 91,
-    "tier": "T4",
-    "contractCost": 7,
-    "rarityWeight": 1.32,
-    "tagline": "Slow feet, cold blood.",
+    "tier": "T3",
+    "contractCost": 17,
+    "rarityWeight": 9,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
   },
   {
     "id": "dennis-rodman",
@@ -699,11 +654,737 @@
       "C"
     ],
     "sourceRating": 91,
-    "tier": "T4",
-    "contractCost": 7,
-    "rarityWeight": 1.3,
-    "tagline": "If possessions had a bodyguard.",
+    "tier": "T3",
+    "contractCost": 17,
+    "rarityWeight": 9,
+    "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "snapshot"
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "gary-payton",
+    "name": "Gary Payton",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 90,
+    "tier": "T3",
+    "contractCost": 16,
+    "rarityWeight": 10,
+    "tagline": "稳定的明星主力。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "jason-kidd",
+    "name": "Jason Kidd",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 90,
+    "tier": "T3",
+    "contractCost": 16,
+    "rarityWeight": 10,
+    "tagline": "稳定的明星主力。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "rick-barry",
+    "name": "Rick Barry",
+    "positions": [
+      "SF"
+    ],
+    "sourceRating": 90,
+    "tier": "T3",
+    "contractCost": 16,
+    "rarityWeight": 10,
+    "tagline": "稳定的明星主力。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "george-gervin",
+    "name": "George Gervin",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 90,
+    "tier": "T3",
+    "contractCost": 16,
+    "rarityWeight": 10,
+    "tagline": "稳定的明星主力。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "elvin-hayes",
+    "name": "Elvin Hayes",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 90,
+    "tier": "T3",
+    "contractCost": 16,
+    "rarityWeight": 10,
+    "tagline": "稳定的明星主力。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "bob-mcadoo",
+    "name": "Bob McAdoo",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 90,
+    "tier": "T3",
+    "contractCost": 16,
+    "rarityWeight": 10,
+    "tagline": "稳定的明星主力。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "anthony-davis",
+    "name": "Anthony Davis",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 90,
+    "tier": "T3",
+    "contractCost": 16,
+    "rarityWeight": 10,
+    "tagline": "稳定的明星主力。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "russell-westbrook",
+    "name": "Russell Westbrook",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 90,
+    "tier": "T3",
+    "contractCost": 16,
+    "rarityWeight": 10,
+    "tagline": "稳定的明星主力。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "luka-doncic",
+    "name": "Luka Doncic",
+    "positions": [
+      "PG",
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 90,
+    "tier": "T3",
+    "contractCost": 16,
+    "rarityWeight": 10,
+    "tagline": "稳定的明星主力。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "joel-embiid",
+    "name": "Joel Embiid",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 90,
+    "tier": "T3",
+    "contractCost": 16,
+    "rarityWeight": 10,
+    "tagline": "稳定的明星主力。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "nate-archibald",
+    "name": "Nate Archibald",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "alex-english",
+    "name": "Alex English",
+    "positions": [
+      "SF"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "bernard-king",
+    "name": "Bernard King",
+    "positions": [
+      "SF"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "chris-webber",
+    "name": "Chris Webber",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "alonzomourning",
+    "name": "Alonzo Mourning",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "dikembe-mutombo",
+    "name": "Dikembe Mutombo",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "tony-parker",
+    "name": "Tony Parker",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "carmelo-anthony",
+    "name": "Carmelo Anthony",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "klay-thompson",
+    "name": "Klay Thompson",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "draymond-green",
+    "name": "Draymond Green",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "jimmy-butler",
+    "name": "Jimmy Butler",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "paul-george",
+    "name": "Paul George",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "kyrie-irving",
+    "name": "Kyrie Irving",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "grant-hill",
+    "name": "Grant Hill",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "penny-hardaway",
+    "name": "Penny Hardaway",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "shawn-kemp",
+    "name": "Shawn Kemp",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "mitch-richmond",
+    "name": "Mitch Richmond",
+    "positions": [
+      "SG"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "joe-dumars",
+    "name": "Joe Dumars",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "sidney-moncrief",
+    "name": "Sidney Moncrief",
+    "positions": [
+      "SG"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "artis-gilmore",
+    "name": "Artis Gilmore",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "robert-parish",
+    "name": "Robert Parish",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "kevin-mchale",
+    "name": "Kevin McHale",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "bill-walton",
+    "name": "Bill Walton",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "tim-hardaway",
+    "name": "Tim Hardaway",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "mark-price",
+    "name": "Mark Price",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "derrick-rose",
+    "name": "Derrick Rose",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "chauncey-billups",
+    "name": "Chauncey Billups",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "rajon-rondo",
+    "name": "Rajon Rondo",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "amar-e-stoudemire",
+    "name": "Amar'e Stoudemire",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "chris-bosh",
+    "name": "Chris Bosh",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "blake-griffin",
+    "name": "Blake Griffin",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "lamarcus-aldridge",
+    "name": "LaMarcus Aldridge",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "marc-gasol",
+    "name": "Marc Gasol",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "ben-wallace",
+    "name": "Ben Wallace",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "rasheed-wallace",
+    "name": "Rasheed Wallace",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "peja-stojakovic",
+    "name": "Peja Stojakovic",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 85,
+    "tier": "T4",
+    "contractCost": 11,
+    "rarityWeight": 15,
+    "tagline": "预算紧张时的可靠轮换。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "chris-mullin",
+    "name": "Chris Mullin",
+    "positions": [
+      "SF"
+    ],
+    "sourceRating": 85,
+    "tier": "T4",
+    "contractCost": 11,
+    "rarityWeight": 15,
+    "tagline": "预算紧张时的可靠轮换。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "gilbert-arenas",
+    "name": "Gilbert Arenas",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 85,
+    "tier": "T4",
+    "contractCost": 11,
+    "rarityWeight": 15,
+    "tagline": "预算紧张时的可靠轮换。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "demar-derozan",
+    "name": "DeMar DeRozan",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 85,
+    "tier": "T4",
+    "contractCost": 11,
+    "rarityWeight": 15,
+    "tagline": "预算紧张时的可靠轮换。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
+  },
+  {
+    "id": "john-wall",
+    "name": "John Wall",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 84,
+    "tier": "T4",
+    "contractCost": 10,
+    "rarityWeight": 16,
+    "tagline": "预算紧张时的可靠轮换。",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot"
   }
 ]

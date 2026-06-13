@@ -8,12 +8,48 @@ const seedPath = path.join(__dirname, 'data', 'legend-seed-snapshot.json')
 const overridesPath = path.join(__dirname, 'data', 'legend-overrides.json')
 const outputPath = path.join(projectRoot, 'src', 'data', 'legend-pool.json')
 
-const TIER_COST = {
-  T0: 30,
-  T1: 22,
-  T2: 16,
-  T3: 11,
-  T4: 7,
+function getTier(sourceRating) {
+  if (sourceRating >= 97) {
+    return 'T0'
+  }
+
+  if (sourceRating >= 95) {
+    return 'T1'
+  }
+
+  if (sourceRating >= 92) {
+    return 'T2'
+  }
+
+  if (sourceRating >= 86) {
+    return 'T3'
+  }
+
+  return 'T4'
+}
+
+function getDefaultTagline(sourceRating) {
+  if (sourceRating >= 97) {
+    return '历史级建队核心。'
+  }
+
+  if (sourceRating >= 95) {
+    return '能改变阵容上限的超巨。'
+  }
+
+  if (sourceRating >= 90) {
+    return '稳定的明星主力。'
+  }
+
+  if (sourceRating >= 86) {
+    return '适合补齐阵容结构的强力拼图。'
+  }
+
+  if (sourceRating >= 78) {
+    return '预算紧张时的可靠轮换。'
+  }
+
+  return '最后预算下的补位选择。'
 }
 
 async function readJson(filePath) {
@@ -66,25 +102,30 @@ async function main() {
   const seed = await readJson(seedPath)
   const overrides = await readJson(overridesPath)
   const remote = await tryRemoteFetch()
+  const sourcePool = seed.length >= 150 ? seed : await readJson(outputPath)
 
-  const legendPool = seed.map((player) => {
+  const legendPool = sourcePool.map((player) => {
     const override = overrides[player.id]
+    const positions = override?.positions ?? player.positions
 
-    if (!override) {
-      throw new Error(`Missing override for ${player.id}`)
+    if (!positions) {
+      throw new Error(`Missing positions for ${player.id}`)
     }
+
+    const tier = getTier(player.sourceRating)
 
     return {
       id: player.id,
       name: player.name,
-      positions: override.positions,
+      positions,
       sourceRating: player.sourceRating,
-      tier: override.tier,
-      contractCost: TIER_COST[override.tier],
-      rarityWeight: override.rarityWeight,
-      tagline: override.tagline,
+      tier,
+      contractCost: Math.max(1, player.sourceRating - 74),
+      rarityWeight: Math.max(1, 100 - player.sourceRating),
+      tagline: player.tagline ?? override?.tagline ?? getDefaultTagline(player.sourceRating),
       source: player.source,
-      sourceStatus: remote.source,
+      sourceStatus:
+        player.sourceStatus === 'focused-modern-snapshot' ? player.sourceStatus : remote.source,
     }
   })
 

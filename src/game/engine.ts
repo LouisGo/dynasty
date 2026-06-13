@@ -1,48 +1,36 @@
-import { pickDynastyTitle } from './titles'
 import {
   COURT_SLOTS,
+  FREE_SKIP_COUNT,
+  MAX_ROUNDS,
   OFFER_COUNT,
+  PAID_SKIP_COST,
   ROSTER_TARGET,
-  SKIP_TOKENS,
   SIXTH_SLOT,
-  STAR_BONUS,
   STARTING_BUDGET,
   STARTING_POSITIONS,
+  type CourtSlotId,
+  type DraftedPlayer,
+  type GameOverReason,
   type GameState,
   type LineupArrangement,
-  type LineupSlot,
   type OfferCard,
   type OfferState,
-  type OwnedCard,
-  type PartialLineup,
   type PlayerCard,
+  type Position,
   type ResultSummary,
   type StarterAssignment,
 } from './types'
 
 type Rng = () => number
 
-interface CandidateOffer {
+interface PricedCandidate {
   card: PlayerCard
-  offerKind: 'new' | 'upgrade'
-  starTarget: number
   price: number
   offerState: OfferState
 }
 
-interface SearchResult {
-  assignments: LineupSlot[]
-  usedPlayerIds: Set<string>
-  filledCount: number
-  totalPower: number
-}
-
 function getPlayerIndex(pool: PlayerCard[]) {
   return new Map(pool.map((card) => [card.id, card]))
-}
-
-function getOwnedMap(roster: OwnedCard[]) {
-  return new Map(roster.map((owned) => [owned.playerId, owned]))
 }
 
 function createEmptyArrangement(): LineupArrangement {
@@ -56,61 +44,6 @@ function createEmptyArrangement(): LineupArrangement {
   }
 }
 
-function weightedPick<T extends { rarityWeight: number }>(
-  options: T[],
-  rng: Rng,
-  blocked = new Set<string>(),
-  idGetter: (item: T) => string,
-) {
-  const filtered = options.filter((option) => !blocked.has(idGetter(option)))
-  const total = filtered.reduce((sum, option) => sum + option.rarityWeight, 0)
-
-  if (!filtered.length || total <= 0) {
-    return null
-  }
-
-  let cursor = rng() * total
-  for (const option of filtered) {
-    cursor -= option.rarityWeight
-    if (cursor <= 0) {
-      return option
-    }
-  }
-
-  return filtered.at(-1) ?? null
-}
-
-function getPrice(card: PlayerCard, owned: OwnedCard | undefined) {
-  return owned ? Math.ceil(card.contractCost / 2) : card.contractCost
-}
-
-function getRequiredReserve(uniquePlayersAfter: number) {
-  return Math.max(0, ROSTER_TARGET - uniquePlayersAfter) * 7
-}
-
-function getOfferState(
-  budgetRemaining: number,
-  uniqueCount: number,
-  card: PlayerCard,
-  owned: OwnedCard | undefined,
-): OfferState {
-  if (owned && owned.stars >= 3) {
-    return 'maxed-out'
-  }
-
-  const price = getPrice(card, owned)
-  if (price > budgetRemaining) {
-    return 'too-expensive'
-  }
-
-  const uniqueAfter = uniqueCount + (owned ? 0 : 1)
-  if (budgetRemaining - price < getRequiredReserve(uniqueAfter)) {
-    return 'reserve-blocked'
-  }
-
-  return 'enabled'
-}
-
 export function createSeededRng(seed: number): Rng {
   let value = seed >>> 0
 
@@ -122,266 +55,129 @@ export function createSeededRng(seed: number): Rng {
   }
 }
 
-export function getCardPower(card: PlayerCard, stars: number) {
-  return card.sourceRating + (stars - 1) * STAR_BONUS
+export function getPlayerWeight(card: PlayerCard) {
+  return Math.max(1, 100 - card.sourceRating)
 }
 
-function searchBestAssignments(
-  roster: OwnedCard[],
-  poolIndex: Map<string, PlayerCard>,
-  requireFullLineup: boolean,
-): SearchResult {
-  const emptyAssignments = STARTING_POSITIONS.map((slot) => ({
-    slot,
-    playerId: null,
-    stars: 0,
-    power: 0,
-  }))
-
-  const best: SearchResult = {
-    assignments: emptyAssignments,
-    usedPlayerIds: new Set<string>(),
-    filledCount: requireFullLineup ? -1 : 0,
-    totalPower: 0,
-  }
-
-  function isBetter(result: SearchResult) {
-    if (result.filledCount !== best.filledCount) {
-      return result.filledCount > best.filledCount
-    }
-
-    return result.totalPower > best.totalPower
-  }
-
-  function walk(
-    positionIndex: number,
-    usedPlayerIds: Set<string>,
-    assignments: LineupSlot[],
-    filledCount: number,
-    totalPower: number,
-  ) {
-    if (positionIndex >= STARTING_POSITIONS.length) {
-      const result = {
-        assignments: assignments.map((assignment) => ({ ...assignment })),
-        usedPlayerIds: new Set(usedPlayerIds),
-        filledCount,
-        totalPower,
-      }
-
-      if (isBetter(result)) {
-        best.assignments = result.assignments
-        best.usedPlayerIds = result.usedPlayerIds
-        best.filledCount = result.filledCount
-        best.totalPower = result.totalPower
-      }
-
-      return
-    }
-
-    const slot = STARTING_POSITIONS[positionIndex]
-
-    if (!requireFullLineup) {
-      assignments[positionIndex] = { slot, playerId: null, stars: 0, power: 0 }
-      walk(positionIndex + 1, usedPlayerIds, assignments, filledCount, totalPower)
-    }
-
-    for (const owned of roster) {
-      if (usedPlayerIds.has(owned.playerId)) {
-        continue
-      }
-
-      const card = poolIndex.get(owned.playerId)
-      if (!card || !card.positions.includes(slot)) {
-        continue
-      }
-
-      usedPlayerIds.add(owned.playerId)
-      assignments[positionIndex] = {
-        slot,
-        playerId: owned.playerId,
-        stars: owned.stars,
-        power: getCardPower(card, owned.stars),
-      }
-      walk(
-        positionIndex + 1,
-        usedPlayerIds,
-        assignments,
-        filledCount + 1,
-        totalPower + getCardPower(card, owned.stars),
-      )
-      usedPlayerIds.delete(owned.playerId)
-    }
-  }
-
-  walk(0, new Set<string>(), emptyAssignments.map((slot) => ({ ...slot })), 0, 0)
-  return best
+export function calculateOfferPrice(card: PlayerCard, rng: Rng = Math.random) {
+  const randomFactor = 0.7 + rng() * 0.6
+  return Math.max(1, Math.round((card.sourceRating - 74) * randomFactor))
 }
 
-export function getPartialLineup(roster: OwnedCard[], pool: PlayerCard[]): PartialLineup {
-  const result = searchBestAssignments(roster, getPlayerIndex(pool), false)
-  const missingPositions = result.assignments
-    .filter((assignment) => assignment.playerId === null)
-    .map((assignment) => assignment.slot)
-
-  return {
-    assignments: result.assignments,
-    filledCount: result.filledCount,
-    totalPower: result.totalPower,
-    missingPositions,
-  }
+function getMinimumPossiblePrice(card: PlayerCard) {
+  return Math.max(1, Math.round((card.sourceRating - 74) * 0.7))
 }
 
-export function canFormStarter(roster: OwnedCard[], pool: PlayerCard[]) {
-  return searchBestAssignments(roster, getPlayerIndex(pool), true).filledCount === 5
-}
-
-export function createDefaultArrangement(roster: OwnedCard[], pool: PlayerCard[]): LineupArrangement {
-  const arrangement = createEmptyArrangement()
-  const playerIndex = getPlayerIndex(pool)
-  const best =
-    roster.length >= STARTING_POSITIONS.length
-      ? searchBestAssignments(roster, playerIndex, canFormStarter(roster, pool))
-      : searchBestAssignments(roster, playerIndex, false)
-
-  const assigned = new Set<string>()
-  for (const assignment of best.assignments) {
-    if (assignment.playerId) {
-      arrangement[assignment.slot] = assignment.playerId
-      assigned.add(assignment.playerId)
-    }
-  }
-
-  const leftovers = roster.filter((owned) => !assigned.has(owned.playerId))
-  if (leftovers[0]) {
-    arrangement.SIX = leftovers[0].playerId
-    assigned.add(leftovers[0].playerId)
-  }
-
-  const remainingSlots = COURT_SLOTS.filter((slot) => arrangement[slot] === null)
-  const unassignedPlayers = roster.filter((owned) => !assigned.has(owned.playerId))
-  unassignedPlayers.forEach((owned, index) => {
-    const slot = remainingSlots[index]
-    if (slot) {
-      arrangement[slot] = owned.playerId
-    }
-  })
-
-  return arrangement
-}
-
-export function syncArrangement(
-  current: LineupArrangement,
-  roster: OwnedCard[],
-  pool: PlayerCard[],
-): LineupArrangement {
-  const next = createEmptyArrangement()
-  const validIds = new Set(roster.map((owned) => owned.playerId))
-  const occupied = new Set<string>()
-
-  for (const slot of COURT_SLOTS) {
-    const playerId = current[slot]
-    if (playerId && validIds.has(playerId) && !occupied.has(playerId)) {
-      next[slot] = playerId
-      occupied.add(playerId)
-    }
-  }
-
-  const suggested = createDefaultArrangement(roster, pool)
-  for (const slot of COURT_SLOTS) {
-    if (next[slot] === null) {
-      const playerId = suggested[slot]
-      if (playerId && !occupied.has(playerId)) {
-        next[slot] = playerId
-        occupied.add(playerId)
-      }
-    }
-  }
-
-  const remainingPlayers = roster
-    .map((owned) => owned.playerId)
-    .filter((playerId) => !occupied.has(playerId))
-  const remainingSlots = COURT_SLOTS.filter((slot) => next[slot] === null)
-
-  remainingSlots.forEach((slot, index) => {
-    next[slot] = remainingPlayers[index] ?? null
-  })
-
-  return next
-}
-
-function pickOfferFromPool(
-  candidates: CandidateOffer[],
+function weightedPick<T>(
+  options: T[],
   rng: Rng,
-  blockedIds: Set<string>,
-  enabledOnly: boolean,
+  weightGetter: (item: T) => number,
+  blocked = new Set<string>(),
+  idGetter: (item: T) => string,
 ) {
-  const weighted = candidates
-    .filter((candidate) =>
-      enabledOnly ? candidate.offerState === 'enabled' : candidate.offerState !== 'maxed-out',
-    )
-    .map((candidate) => ({
-      ...candidate,
-      rarityWeight:
-        candidate.offerKind === 'upgrade' ? candidate.card.rarityWeight * 0.28 : candidate.card.rarityWeight,
-    }))
+  const filtered = options.filter((option) => !blocked.has(idGetter(option)))
+  const total = filtered.reduce((sum, option) => sum + weightGetter(option), 0)
 
-  return weightedPick(weighted, rng, blockedIds, (candidate) => candidate.card.id)
+  if (!filtered.length || total <= 0) {
+    return null
+  }
+
+  let cursor = rng() * total
+  for (const option of filtered) {
+    cursor -= weightGetter(option)
+    if (cursor <= 0) {
+      return option
+    }
+  }
+
+  return filtered.at(-1) ?? null
+}
+
+function getOpenStarterSlots(arrangement: LineupArrangement, card: PlayerCard) {
+  return STARTING_POSITIONS.filter(
+    (slot) => arrangement[slot] === null && card.positions.includes(slot),
+  )
+}
+
+function canFitOpenSlot(card: PlayerCard, arrangement: LineupArrangement) {
+  return arrangement[SIXTH_SLOT] === null || getOpenStarterSlots(arrangement, card).length > 0
+}
+
+function chooseSlotForPlayer(card: PlayerCard, arrangement: LineupArrangement): CourtSlotId {
+  const openStarterSlots = getOpenStarterSlots(arrangement, card)
+  if (openStarterSlots[0]) {
+    return openStarterSlots[0]
+  }
+
+  if (arrangement[SIXTH_SLOT] === null) {
+    return SIXTH_SLOT
+  }
+
+  throw new Error(`${card.name} cannot fit the remaining lineup slots.`)
+}
+
+function getOfferState(
+  card: PlayerCard,
+  price: number,
+  budgetRemaining: number,
+  roster: DraftedPlayer[],
+  arrangement: LineupArrangement,
+): OfferState {
+  if (roster.some((player) => player.playerId === card.id)) {
+    return 'duplicate'
+  }
+
+  if (!canFitOpenSlot(card, arrangement)) {
+    return 'slot-blocked'
+  }
+
+  if (price > budgetRemaining) {
+    return 'too-expensive'
+  }
+
+  return 'enabled'
+}
+
+export function canAnyPlayerBeBought(
+  roster: DraftedPlayer[],
+  arrangement: LineupArrangement,
+  budgetRemaining: number,
+  pool: PlayerCard[],
+) {
+  return pool.some(
+    (card) =>
+      !roster.some((player) => player.playerId === card.id) &&
+      canFitOpenSlot(card, arrangement) &&
+      getMinimumPossiblePrice(card) <= budgetRemaining,
+  )
 }
 
 export function generateOffers(
-  roster: OwnedCard[],
+  roster: DraftedPlayer[],
   budgetRemaining: number,
+  arrangement: LineupArrangement,
   pool: PlayerCard[],
   rng: Rng = Math.random,
 ): OfferCard[] {
-  const ownedMap = getOwnedMap(roster)
-  const uniqueCount = roster.length
-  const partial = getPartialLineup(roster, pool)
-  const candidates: CandidateOffer[] = pool.map((card) => {
-    const owned = ownedMap.get(card.id)
+  const candidates: PricedCandidate[] = pool.map((card) => {
+    const price = calculateOfferPrice(card, rng)
     return {
       card,
-      offerKind: owned ? 'upgrade' : 'new',
-      starTarget: owned ? Math.min(owned.stars + 1, 3) : 1,
-      price: getPrice(card, owned),
-      offerState: getOfferState(budgetRemaining, uniqueCount, card, owned),
+      price,
+      offerState: getOfferState(card, price, budgetRemaining, roster, arrangement),
     }
   })
   const blockedIds = new Set<string>()
   const offers: OfferCard[] = []
-  const needPositionGuard =
-    uniqueCount < STARTING_POSITIONS.length && partial.missingPositions.length > 0
-
-  if (!candidates.some((candidate) => candidate.offerState === 'enabled')) {
-    throw new Error('Offer generation failed: no enabled candidates remain.')
-  }
-
-  if (needPositionGuard) {
-    const forcedPool = candidates.filter(
-      (candidate) =>
-        candidate.offerState === 'enabled' &&
-        candidate.offerKind === 'new' &&
-        candidate.card.positions.some((position) => partial.missingPositions.includes(position)),
-    )
-    const forced = pickOfferFromPool(forcedPool, rng, blockedIds, true)
-
-    if (forced) {
-      blockedIds.add(forced.card.id)
-      offers.push({
-        ...forced.card,
-        offerKind: forced.offerKind,
-        starTarget: forced.starTarget,
-        price: forced.price,
-        offerState: forced.offerState,
-      })
-    }
-  }
 
   while (offers.length < OFFER_COUNT) {
-    const requireEnabled = !offers.some((offer) => offer.offerState === 'enabled')
-    const picked =
-      pickOfferFromPool(candidates, rng, blockedIds, requireEnabled) ??
-      pickOfferFromPool(candidates, rng, blockedIds, true)
+    const picked = weightedPick(
+      candidates,
+      rng,
+      (candidate) => getPlayerWeight(candidate.card),
+      blockedIds,
+      (candidate) => candidate.card.id,
+    )
 
     if (!picked) {
       break
@@ -390,27 +186,29 @@ export function generateOffers(
     blockedIds.add(picked.card.id)
     offers.push({
       ...picked.card,
-      offerKind: picked.offerKind,
-      starTarget: picked.starTarget,
       price: picked.price,
       offerState: picked.offerState,
     })
   }
 
-  if (!offers.some((offer) => offer.offerState === 'enabled')) {
-    throw new Error('Offer generation failed: no enabled card surfaced.')
-  }
-
-  if (needPositionGuard) {
-    const hasFixer = offers.some(
-      (offer) =>
-        offer.offerState === 'enabled' &&
-        offer.offerKind === 'new' &&
-        offer.positions.some((position) => partial.missingPositions.includes(position)),
+  const enabledCandidates = candidates.filter(
+    (candidate) => candidate.offerState === 'enabled' && !blockedIds.has(candidate.card.id),
+  )
+  if (!offers.some((offer) => offer.offerState === 'enabled') && enabledCandidates.length > 0) {
+    const replacement = weightedPick(
+      enabledCandidates,
+      rng,
+      (candidate) => getPlayerWeight(candidate.card),
+      new Set<string>(),
+      (candidate) => candidate.card.id,
     )
 
-    if (!hasFixer) {
-      throw new Error('Offer generation failed: no enabled card covers a missing starter slot.')
+    if (replacement) {
+      offers[offers.length - 1] = {
+        ...replacement.card,
+        price: replacement.price,
+        offerState: replacement.offerState,
+      }
     }
   }
 
@@ -418,96 +216,212 @@ export function generateOffers(
 }
 
 function createResultSummary(
-  roster: OwnedCard[],
+  roster: DraftedPlayer[],
   budgetRemaining: number,
   arrangement: LineupArrangement,
   pool: PlayerCard[],
+  roundReached: number,
+  gameOverReason: GameOverReason,
 ): ResultSummary {
   const playerIndex = getPlayerIndex(pool)
-  const ownedMap = getOwnedMap(roster)
-  const used = new Set<string>()
-  const starters = STARTING_POSITIONS.map((slot) => {
+  const rosterIndex = new Map(roster.map((player) => [player.playerId, player]))
+  const starters: StarterAssignment[] = []
+
+  for (const slot of STARTING_POSITIONS) {
     const playerId = arrangement[slot]
-    if (!playerId) {
-      throw new Error(`Missing player at ${slot}.`)
-    }
+    const card = playerId ? playerIndex.get(playerId) : null
+    const drafted = playerId ? rosterIndex.get(playerId) : null
 
-    if (used.has(playerId)) {
-      throw new Error(`Duplicate player assignment for ${playerId}.`)
+    if (playerId && card && drafted) {
+      starters.push({
+        slot,
+        playerId,
+        ovr: card.sourceRating,
+        pricePaid: drafted.pricePaid,
+      })
     }
-
-    const owned = ownedMap.get(playerId)
-    const card = playerIndex.get(playerId)
-    if (!owned || !card) {
-      throw new Error(`Unknown player ${playerId}.`)
-    }
-
-    if (!card.positions.includes(slot)) {
-      throw new Error(`${card.name} cannot start at ${slot}.`)
-    }
-
-    used.add(playerId)
-    return {
-      slot,
-      playerId,
-      stars: owned.stars,
-      power: getCardPower(card, owned.stars),
-    }
-  })
+  }
 
   const sixthPlayerId = arrangement[SIXTH_SLOT]
-  if (!sixthPlayerId) {
-    throw new Error('Missing sixth man.')
-  }
+  const sixthCard = sixthPlayerId ? playerIndex.get(sixthPlayerId) : null
+  const sixthDrafted = sixthPlayerId ? rosterIndex.get(sixthPlayerId) : null
+  const sixthMan =
+    sixthPlayerId && sixthCard && sixthDrafted
+      ? {
+          slot: SIXTH_SLOT,
+          playerId: sixthPlayerId,
+          ovr: sixthCard.sourceRating,
+          pricePaid: sixthDrafted.pricePaid,
+        }
+      : null
 
-  if (used.has(sixthPlayerId)) {
-    throw new Error('Sixth man duplicates a starter.')
-  }
-
-  const benchOwned = ownedMap.get(sixthPlayerId)
-  const benchCard = playerIndex.get(sixthPlayerId)
-  if (!benchOwned || !benchCard) {
-    throw new Error(`Unknown player ${sixthPlayerId}.`)
-  }
-
-  const sixthMan: StarterAssignment = {
-    slot: benchCard.positions[0] ?? 'SF',
-    playerId: sixthPlayerId,
-    stars: benchOwned.stars,
-    power: getCardPower(benchCard, benchOwned.stars),
-  }
-
-  const totalPower = starters.reduce((sum, starter) => sum + starter.power, 0) + sixthMan.power
-  const budgetSpent = STARTING_BUDGET - budgetRemaining
-  const teamRating = Math.round(totalPower / ROSTER_TARGET)
-  const efficiencyScore = Number((totalPower / Math.max(budgetSpent, 1)).toFixed(2))
-  const totalStars = roster.reduce((sum, player) => sum + player.stars, 0)
-  const summaryWithoutTitle = {
-    starters,
-    sixthMan,
-    totalPower,
-    teamRating,
-    efficiencyScore,
-    budgetSpent,
-    budgetRemaining,
-    totalStars,
-  }
+  const starterRatings = STARTING_POSITIONS.map((slot) => {
+    const playerId = arrangement[slot]
+    const card = playerId ? playerIndex.get(playerId) : null
+    return card?.sourceRating ?? 0
+  })
+  const sixthRating = sixthMan?.ovr ?? 0
+  const starterAverage =
+    starterRatings.reduce((sum, rating) => sum + rating, 0) / STARTING_POSITIONS.length
+  const strengthScore = starterAverage * 0.8 + sixthRating * 0.2
+  const isComplete = roster.length >= ROSTER_TARGET && COURT_SLOTS.every((slot) => arrangement[slot])
+  const nonZeroRatings = [...starterRatings, sixthRating].filter((rating) => rating > 0)
+  const ratingSpread =
+    nonZeroRatings.length > 0 ? Math.max(...nonZeroRatings) - Math.min(...nonZeroRatings) : 100
+  const balanceScore = getBalanceScore(isComplete, ratingSpread)
+  const superstarScore = getSuperstarScore(nonZeroRatings.filter((rating) => rating >= 95).length)
+  const dynastyScore = Math.min(
+    100,
+    Number((strengthScore * 0.6 + balanceScore + superstarScore).toFixed(1)),
+  )
+  const projectedWins = Math.min(82, Math.max(0, Math.round(15 + dynastyScore * 0.67)))
+  const championshipOdds = Math.round(
+    (1 / (1 + Math.exp(-((dynastyScore - 78) / 5)))) * 100,
+  )
 
   return {
-    ...summaryWithoutTitle,
-    title: pickDynastyTitle(summaryWithoutTitle, playerIndex),
+    starters,
+    sixthMan,
+    dynastyScore,
+    projectedWins,
+    projectedLosses: 82 - projectedWins,
+    championshipOdds,
+    strengthScore: Number(strengthScore.toFixed(1)),
+    balanceScore,
+    superstarScore,
+    budgetSpent: STARTING_BUDGET - budgetRemaining,
+    budgetRemaining,
+    roundReached,
+    gameOverReason,
+  }
+}
+
+function getBalanceScore(isComplete: boolean, ratingSpread: number) {
+  if (!isComplete) {
+    return 0
+  }
+
+  if (ratingSpread <= 5) {
+    return 20
+  }
+
+  if (ratingSpread <= 10) {
+    return 16
+  }
+
+  if (ratingSpread <= 15) {
+    return 12
+  }
+
+  return 8
+}
+
+function getSuperstarScore(superstarCount: number) {
+  if (superstarCount <= 0) {
+    return 5
+  }
+
+  if (superstarCount === 1) {
+    return 10
+  }
+
+  if (superstarCount === 2) {
+    return 15
+  }
+
+  if (superstarCount === 3) {
+    return 18
+  }
+
+  return 20
+}
+
+function finishRun(
+  state: Omit<GameState, 'result'>,
+  pool: PlayerCard[],
+  gameOverReason: GameOverReason,
+): GameState {
+  return {
+    ...state,
+    currentOffers: [],
+    result: createResultSummary(
+      state.roster,
+      state.budgetRemaining,
+      state.lineupArrangement,
+      pool,
+      state.round,
+      gameOverReason,
+    ),
+  }
+}
+
+function advanceOrFinish(
+  state: Omit<GameState, 'result'>,
+  pool: PlayerCard[],
+  rng: Rng,
+  lastAction: string,
+): GameState {
+  if (state.roster.length >= ROSTER_TARGET) {
+    return finishRun(
+      {
+        ...state,
+        lastAction: '六个位置全部填满，王朝实验进入结算。',
+      },
+      pool,
+      'lineup-complete',
+    )
+  }
+
+  if (state.round >= MAX_ROUNDS) {
+    return finishRun(
+      {
+        ...state,
+        lastAction: '20 回合已经用完，按当前阵容结算。',
+      },
+      pool,
+      'round-limit',
+    )
+  }
+
+  if (!canAnyPlayerBeBought(state.roster, state.lineupArrangement, state.budgetRemaining, pool)) {
+    return finishRun(
+      {
+        ...state,
+        lastAction: '剩余预算已经不足以购买任何可用球员。',
+      },
+      pool,
+      'budget-exhausted',
+    )
+  }
+
+  const nextRound = state.round + 1
+  return {
+    ...state,
+    round: nextRound,
+    currentOffers: generateOffers(
+      state.roster,
+      state.budgetRemaining,
+      state.lineupArrangement,
+      pool,
+      rng,
+    ),
+    lastAction,
+    result: null,
   }
 }
 
 export function createInitialState(pool: PlayerCard[], rng: Rng = Math.random): GameState {
+  const lineupArrangement = createEmptyArrangement()
+
   return {
     budgetRemaining: STARTING_BUDGET,
-    offerCount: 1,
-    skipsRemaining: SKIP_TOKENS,
+    round: 1,
+    freeSkipsRemaining: FREE_SKIP_COUNT,
+    paidSkipsUsed: 0,
     roster: [],
-    currentOffers: generateOffers([], STARTING_BUDGET, pool, rng),
-    lineupArrangement: createEmptyArrangement(),
-    lastAction: '第一组报价已送达，先定你的王朝底色。',
+    currentOffers: generateOffers([], STARTING_BUDGET, lineupArrangement, pool, rng),
+    lineupArrangement,
+    lastAction: '第一组历史报价已送达。预算 100，目标 6 人王朝。',
     result: null,
   }
 }
@@ -518,6 +432,10 @@ export function signOffer(
   pool: PlayerCard[],
   rng: Rng = Math.random,
 ): GameState {
+  if (state.result) {
+    throw new Error('Cannot sign after the run is complete.')
+  }
+
   const offer = state.currentOffers.find((candidate) => candidate.id === offerId)
   if (!offer) {
     throw new Error(`Offer ${offerId} not found.`)
@@ -527,55 +445,35 @@ export function signOffer(
     throw new Error(`Offer ${offerId} is not signable.`)
   }
 
-  const roster = state.roster.map((owned) => ({ ...owned }))
-  const existing = roster.find((owned) => owned.playerId === offer.id)
-  const player = pool.find((card) => card.id === offer.id)
-
-  if (!player) {
-    throw new Error(`Unknown player ${offer.id}`)
-  }
-
-  if (existing) {
-    existing.stars = Math.min(3, existing.stars + 1)
-    existing.totalCost += offer.price
-  } else {
-    roster.push({
+  const slot = chooseSlotForPlayer(offer, state.lineupArrangement)
+  const roster = [
+    ...state.roster,
+    {
       playerId: offer.id,
-      stars: 1,
-      totalCost: offer.price,
-    })
+      pricePaid: offer.price,
+      assignedSlot: slot,
+    },
+  ]
+  const lineupArrangement = {
+    ...state.lineupArrangement,
+    [slot]: offer.id,
   }
-
-  const budgetRemaining = state.budgetRemaining - offer.price
-  const lineupArrangement = syncArrangement(state.lineupArrangement, roster, pool)
-  const lastAction =
-    offer.offerKind === 'upgrade'
-      ? `${player.name} 升到 ${offer.starTarget} 星，预算压力也跟着上来了。`
-      : `${player.name} 加盟，阵容骨架更清晰了。`
-
-  if (roster.length >= ROSTER_TARGET) {
-    return {
-      budgetRemaining,
-      offerCount: state.offerCount,
-      skipsRemaining: state.skipsRemaining,
-      roster,
-      currentOffers: [],
-      lineupArrangement,
-      lastAction: '6 人池已成型，拖拽确认首发位置后再进入总评。',
-      result: null,
-    }
-  }
-
-  return {
-    budgetRemaining,
-    offerCount: state.offerCount + 1,
-    skipsRemaining: state.skipsRemaining,
+  const nextState = {
+    ...state,
+    budgetRemaining: state.budgetRemaining - offer.price,
     roster,
-    currentOffers: generateOffers(roster, budgetRemaining, pool, rng),
     lineupArrangement,
-    lastAction,
+    currentOffers: [],
     result: null,
   }
+  const slotLabel = slot === SIXTH_SLOT ? '第六人' : slot
+
+  return advanceOrFinish(
+    nextState,
+    pool,
+    rng,
+    `${offer.name} 以 ${offer.price} 预算加盟，落位 ${slotLabel}。`,
+  )
 }
 
 export function skipOfferGroup(
@@ -587,17 +485,29 @@ export function skipOfferGroup(
     throw new Error('Cannot skip after the run is complete.')
   }
 
-  if (state.skipsRemaining <= 0) {
-    throw new Error('No skips remaining.')
+  const isFreeSkip = state.freeSkipsRemaining > 0
+  if (!isFreeSkip && state.budgetRemaining < PAID_SKIP_COST) {
+    throw new Error('Not enough budget for a paid skip.')
   }
 
-  return {
+  const budgetRemaining = isFreeSkip
+    ? state.budgetRemaining
+    : state.budgetRemaining - PAID_SKIP_COST
+  const freeSkipsRemaining = isFreeSkip ? state.freeSkipsRemaining - 1 : 0
+  const paidSkipsUsed = isFreeSkip ? state.paidSkipsUsed : state.paidSkipsUsed + 1
+  const nextState = {
     ...state,
-    offerCount: state.offerCount + 1,
-    skipsRemaining: state.skipsRemaining - 1,
-    currentOffers: generateOffers(state.roster, state.budgetRemaining, pool, rng),
-    lastAction: `你跳过了这轮报价，还剩 ${state.skipsRemaining - 1} 次观望机会。`,
+    budgetRemaining,
+    freeSkipsRemaining,
+    paidSkipsUsed,
+    currentOffers: [],
+    result: null,
   }
+  const lastAction = isFreeSkip
+    ? `你免费跳过了本轮，还剩 ${freeSkipsRemaining} 次免费跳过。`
+    : `你花费 ${PAID_SKIP_COST} 预算跳过了本轮。`
+
+  return advanceOrFinish(nextState, pool, rng, lastAction)
 }
 
 export function setArrangement(
@@ -605,51 +515,48 @@ export function setArrangement(
   arrangement: LineupArrangement,
   pool: PlayerCard[],
 ): GameState {
-  return {
-    ...state,
-    lineupArrangement: syncArrangement(arrangement, state.roster, pool),
+  if (state.result) {
+    return state
   }
-}
 
-export function canConfirmArrangement(
-  roster: OwnedCard[],
-  arrangement: LineupArrangement,
-  pool: PlayerCard[],
-) {
   const playerIndex = getPlayerIndex(pool)
-  const validIds = new Set(roster.map((owned) => owned.playerId))
+  const validIds = new Set(state.roster.map((player) => player.playerId))
+  const next = createEmptyArrangement()
   const used = new Set<string>()
 
-  for (const slot of STARTING_POSITIONS) {
+  for (const slot of COURT_SLOTS) {
     const playerId = arrangement[slot]
-    if (!playerId || !validIds.has(playerId) || used.has(playerId)) {
-      return false
-    }
+    const card = playerId ? playerIndex.get(playerId) : null
+    const canUse =
+      playerId &&
+      card &&
+      validIds.has(playerId) &&
+      !used.has(playerId) &&
+      (slot === SIXTH_SLOT || card.positions.includes(slot as Position))
 
-    const card = playerIndex.get(playerId)
-    if (!card || !card.positions.includes(slot)) {
-      return false
+    if (canUse) {
+      next[slot] = playerId
+      used.add(playerId)
     }
-
-    used.add(playerId)
   }
 
-  const sixthPlayerId = arrangement[SIXTH_SLOT]
-  return Boolean(sixthPlayerId && validIds.has(sixthPlayerId) && !used.has(sixthPlayerId))
-}
+  for (const player of state.roster) {
+    if (used.has(player.playerId)) {
+      continue
+    }
 
-export function confirmLineup(state: GameState, pool: PlayerCard[]): GameState {
-  if (!canConfirmArrangement(state.roster, state.lineupArrangement, pool)) {
-    throw new Error('Lineup arrangement is incomplete or invalid.')
+    const card = playerIndex.get(player.playerId)
+    if (!card) {
+      continue
+    }
+
+    const slot = chooseSlotForPlayer(card, next)
+    next[slot] = player.playerId
+    used.add(player.playerId)
   }
 
   return {
     ...state,
-    result: createResultSummary(
-      state.roster,
-      state.budgetRemaining,
-      state.lineupArrangement,
-      pool,
-    ),
+    lineupArrangement: next,
   }
 }
