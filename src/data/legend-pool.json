@@ -1,0 +1,709 @@
+[
+  {
+    "id": "michael-jordan",
+    "name": "Michael Jordan",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 99,
+    "tier": "T0",
+    "contractCost": 30,
+    "rarityWeight": 0.45,
+    "tagline": "Closing time turns into folklore.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "lebron-james",
+    "name": "LeBron James",
+    "positions": [
+      "PG",
+      "SG",
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 98,
+    "tier": "T0",
+    "contractCost": 30,
+    "rarityWeight": 0.62,
+    "tagline": "One card solves four lineup problems.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "kareem-abdul-jabbar",
+    "name": "Kareem Abdul-Jabbar",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 98,
+    "tier": "T0",
+    "contractCost": 30,
+    "rarityWeight": 0.58,
+    "tagline": "Skyhook tax included.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "magic-johnson",
+    "name": "Magic Johnson",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 97,
+    "tier": "T0",
+    "contractCost": 30,
+    "rarityWeight": 0.72,
+    "tagline": "Fast break democracy at 6 foot 9.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "kobe-bryant",
+    "name": "Kobe Bryant",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 97,
+    "tier": "T1",
+    "contractCost": 22,
+    "rarityWeight": 0.78,
+    "tagline": "Every tough shot feels pre-approved.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "shaquille-oneal",
+    "name": "Shaquille O'Neal",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 97,
+    "tier": "T1",
+    "contractCost": 22,
+    "rarityWeight": 0.74,
+    "tagline": "A salary cap violation with shoulders.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "tim-duncan",
+    "name": "Tim Duncan",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 97,
+    "tier": "T1",
+    "contractCost": 22,
+    "rarityWeight": 0.76,
+    "tagline": "The cleanest foundation in the pool.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "larry-bird",
+    "name": "Larry Bird",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 97,
+    "tier": "T1",
+    "contractCost": 22,
+    "rarityWeight": 0.82,
+    "tagline": "Trash talk bundled with perfect spacing.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "hakeem-olajuwon",
+    "name": "Hakeem Olajuwon",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 97,
+    "tier": "T1",
+    "contractCost": 22,
+    "rarityWeight": 0.68,
+    "tagline": "Dream shakes the draft board.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "wilt-chamberlain",
+    "name": "Wilt Chamberlain",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 97,
+    "tier": "T1",
+    "contractCost": 22,
+    "rarityWeight": 0.64,
+    "tagline": "Raw dominance, zero explanation needed.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "stephen-curry",
+    "name": "Stephen Curry",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 96,
+    "tier": "T1",
+    "contractCost": 22,
+    "rarityWeight": 0.85,
+    "tagline": "Pull-up gravity on a budget you can feel.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "bill-russell",
+    "name": "Bill Russell",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 96,
+    "tier": "T1",
+    "contractCost": 22,
+    "rarityWeight": 0.63,
+    "tagline": "Defense becomes architecture.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "kevin-durant",
+    "name": "Kevin Durant",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 96,
+    "tier": "T2",
+    "contractCost": 16,
+    "rarityWeight": 0.95,
+    "tagline": "Mismatch math with seven-foot release.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "oscar-robertson",
+    "name": "Oscar Robertson",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 95,
+    "tier": "T2",
+    "contractCost": 16,
+    "rarityWeight": 0.91,
+    "tagline": "Old-school heliocentrism with broad shoulders.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "jerry-west",
+    "name": "Jerry West",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 95,
+    "tier": "T2",
+    "contractCost": 16,
+    "rarityWeight": 0.92,
+    "tagline": "Logo range before the logo existed.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "julius-erving",
+    "name": "Julius Erving",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 95,
+    "tier": "T2",
+    "contractCost": 16,
+    "rarityWeight": 0.88,
+    "tagline": "Transition elegance with lift.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "dirk-nowitzki",
+    "name": "Dirk Nowitzki",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 95,
+    "tier": "T2",
+    "contractCost": 16,
+    "rarityWeight": 0.86,
+    "tagline": "Stretch gravity for people who miss miracles.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "kevin-garnett",
+    "name": "Kevin Garnett",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 95,
+    "tier": "T2",
+    "contractCost": 16,
+    "rarityWeight": 0.84,
+    "tagline": "Switch everything. Scream at everyone.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "moses-malone",
+    "name": "Moses Malone",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 95,
+    "tier": "T2",
+    "contractCost": 16,
+    "rarityWeight": 0.8,
+    "tagline": "Second jumps, second chances, no apologies.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "nikola-jokic",
+    "name": "Nikola Jokic",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 95,
+    "tier": "T2",
+    "contractCost": 16,
+    "rarityWeight": 0.79,
+    "tagline": "The offense now orbits your center.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "giannis-antetokounmpo",
+    "name": "Giannis Antetokounmpo",
+    "positions": [
+      "SF",
+      "PF",
+      "C"
+    ],
+    "sourceRating": 95,
+    "tier": "T2",
+    "contractCost": 16,
+    "rarityWeight": 0.82,
+    "tagline": "Long strides, short rebuilding timelines.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "dwyane-wade",
+    "name": "Dwyane Wade",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 95,
+    "tier": "T2",
+    "contractCost": 16,
+    "rarityWeight": 0.9,
+    "tagline": "Pressure at the rim, every possession.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "isiah-thomas",
+    "name": "Isiah Thomas",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 94,
+    "tier": "T2",
+    "contractCost": 16,
+    "rarityWeight": 0.96,
+    "tagline": "Small frame, championship ego.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "charles-barkley",
+    "name": "Charles Barkley",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 94,
+    "tier": "T2",
+    "contractCost": 16,
+    "rarityWeight": 0.93,
+    "tagline": "Chaos rebounding with star billing.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "allen-iverson",
+    "name": "Allen Iverson",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 94,
+    "tier": "T3",
+    "contractCost": 11,
+    "rarityWeight": 1.04,
+    "tagline": "One crossover from changing the whole mood.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "scottie-pippen",
+    "name": "Scottie Pippen",
+    "positions": [
+      "SG",
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 94,
+    "tier": "T3",
+    "contractCost": 11,
+    "rarityWeight": 1.02,
+    "tagline": "Plug him anywhere and exhale.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "david-robinson",
+    "name": "David Robinson",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 94,
+    "tier": "T3",
+    "contractCost": 11,
+    "rarityWeight": 1,
+    "tagline": "Rim protection with a runway gait.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "john-stockton",
+    "name": "John Stockton",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 94,
+    "tier": "T3",
+    "contractCost": 11,
+    "rarityWeight": 1.08,
+    "tagline": "Predictable in the best possible way.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "karl-malone",
+    "name": "Karl Malone",
+    "positions": [
+      "PF"
+    ],
+    "sourceRating": 94,
+    "tier": "T3",
+    "contractCost": 11,
+    "rarityWeight": 1.03,
+    "tagline": "Regular season machine, now in your pocket.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "elgin-baylor",
+    "name": "Elgin Baylor",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 94,
+    "tier": "T3",
+    "contractCost": 11,
+    "rarityWeight": 1.05,
+    "tagline": "Pre-merger creativity with real bite.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "chris-paul",
+    "name": "Chris Paul",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 93,
+    "tier": "T3",
+    "contractCost": 11,
+    "rarityWeight": 1.12,
+    "tagline": "Midrange order and turnover control.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "kawhi-leonard",
+    "name": "Kawhi Leonard",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 93,
+    "tier": "T3",
+    "contractCost": 11,
+    "rarityWeight": 1,
+    "tagline": "Two-way silence, loud results.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "steve-nash",
+    "name": "Steve Nash",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 93,
+    "tier": "T3",
+    "contractCost": 11,
+    "rarityWeight": 1.11,
+    "tagline": "Seven seconds from solving a drought.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "james-harden",
+    "name": "James Harden",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 93,
+    "tier": "T3",
+    "contractCost": 11,
+    "rarityWeight": 1.1,
+    "tagline": "Usage rate as a lifestyle choice.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "tracy-mcgrady",
+    "name": "Tracy McGrady",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 93,
+    "tier": "T3",
+    "contractCost": 11,
+    "rarityWeight": 1.06,
+    "tagline": "A smooth pull-up and a little regret.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "patrick-ewing",
+    "name": "Patrick Ewing",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 93,
+    "tier": "T3",
+    "contractCost": 11,
+    "rarityWeight": 1.01,
+    "tagline": "Big market burden, big-time post game.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "clyde-drexler",
+    "name": "Clyde Drexler",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 92,
+    "tier": "T4",
+    "contractCost": 7,
+    "rarityWeight": 1.24,
+    "tagline": "Fast break violence with soft landings.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "ray-allen",
+    "name": "Ray Allen",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 92,
+    "tier": "T4",
+    "contractCost": 7,
+    "rarityWeight": 1.28,
+    "tagline": "One swing pass away from punishment.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "reggie-miller",
+    "name": "Reggie Miller",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 92,
+    "tier": "T4",
+    "contractCost": 7,
+    "rarityWeight": 1.26,
+    "tagline": "Shotmaking with villain energy.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "manu-ginobili",
+    "name": "Manu Ginobili",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 92,
+    "tier": "T4",
+    "contractCost": 7,
+    "rarityWeight": 1.31,
+    "tagline": "The bench suddenly has genius.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "pau-gasol",
+    "name": "Pau Gasol",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 92,
+    "tier": "T4",
+    "contractCost": 7,
+    "rarityWeight": 1.29,
+    "tagline": "High-post calm, title-team instincts.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "dwight-howard",
+    "name": "Dwight Howard",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 92,
+    "tier": "T4",
+    "contractCost": 7,
+    "rarityWeight": 1.27,
+    "tagline": "Peak rim pressure in affordable form.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "yao-ming",
+    "name": "Yao Ming",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 92,
+    "tier": "T4",
+    "contractCost": 7,
+    "rarityWeight": 1.25,
+    "tagline": "Touch and scale in one expensive problem.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "vince-carter",
+    "name": "Vince Carter",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 91,
+    "tier": "T4",
+    "contractCost": 7,
+    "rarityWeight": 1.34,
+    "tagline": "Pure style points with real production.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "damian-lillard",
+    "name": "Damian Lillard",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 91,
+    "tier": "T4",
+    "contractCost": 7,
+    "rarityWeight": 1.36,
+    "tagline": "Range first, consequences later.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "dominique-wilkins",
+    "name": "Dominique Wilkins",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 91,
+    "tier": "T4",
+    "contractCost": 7,
+    "rarityWeight": 1.33,
+    "tagline": "Aerial scoring in bright lights.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "paul-pierce",
+    "name": "Paul Pierce",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 91,
+    "tier": "T4",
+    "contractCost": 7,
+    "rarityWeight": 1.32,
+    "tagline": "Slow feet, cold blood.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  },
+  {
+    "id": "dennis-rodman",
+    "name": "Dennis Rodman",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 91,
+    "tier": "T4",
+    "contractCost": 7,
+    "rarityWeight": 1.3,
+    "tagline": "If possessions had a bodyguard.",
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "snapshot"
+  }
+]
