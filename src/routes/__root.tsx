@@ -1,4 +1,5 @@
-import { createRootRoute, Outlet, useRouterState } from '@tanstack/react-router'
+import { createRootRoute, Outlet, useRouterState, useNavigate } from '@tanstack/react-router'
+import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { Backdrop } from '../components/Backdrop'
 import { PlayerDetailOverlay } from '../components/PlayerDetailOverlay'
@@ -9,7 +10,18 @@ import { useGameStore } from '../stores/gameStore'
 function RootLayout() {
   const playerDetail = useGameStore((s) => s.playerDetail)
   const closePlayerDetail = useGameStore((s) => s.closePlayerDetail)
+  const navigate = useNavigate()
   const pathname = useRouterState({ select: (s) => s.location.pathname })
+
+  // On page refresh, force redirect to home so the user always starts fresh
+  useEffect(() => {
+    const loadedKey = 'nba-draft-loaded'
+    const isReload = !sessionStorage.getItem(loadedKey)
+    sessionStorage.setItem(loadedKey, '1')
+    if (isReload && pathname !== '/') {
+      navigate({ to: '/', replace: true })
+    }
+  }, [])
 
   return (
     <>

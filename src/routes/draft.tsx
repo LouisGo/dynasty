@@ -37,7 +37,7 @@ function DraftRoute() {
       resultTimerRef.current = window.setTimeout(() => {
         useGameStore.setState({ isResultPending: false })
         resultScheduledRef.current = false
-        navigate({ to: '/result' })
+        navigate({ to: '/result', replace: true })
         scrollToPageTop()
         resultTimerRef.current = null
       }, 2500)

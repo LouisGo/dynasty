@@ -17,6 +17,12 @@ function ResultRoute() {
   useEffect(() => {
     document.title = '阵容结算 — NBA Dynasty Draft'
     scrollToPageTop()
+
+    // Guard: if there's no result (e.g. direct navigation, page refresh handled by root),
+    // redirect to home so the user can start a new game
+    if (!result) {
+      navigate({ to: '/', replace: true })
+    }
   }, [])
 
   function handlePlayAgain() {

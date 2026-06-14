@@ -1026,7 +1026,8 @@
 
 .player-detail-head span,
 .player-detail-head p,
-.player-detail-section h3 {
+.player-detail-groups h3,
+.player-detail-attributes h3 {
   margin: 0;
   color: rgba(247, 240, 228, 0.58);
   font-size: 0.68rem;
@@ -1053,7 +1054,7 @@
   gap: 0.45rem;
 }
 
-.player-detail-core article {
+.player-detail-core-item {
   min-width: 0;
   display: grid;
   gap: 0.22rem;
@@ -1064,7 +1065,8 @@
 }
 
 .player-detail-core span,
-.player-detail-row span {
+.player-detail-group-label,
+.player-detail-attribute-label {
   color: rgba(247, 240, 228, 0.62);
   font-size: 0.65rem;
   line-height: 1.1;
@@ -1076,7 +1078,8 @@
 }
 
 .player-detail-core i,
-.player-detail-row i {
+.player-detail-group-bar,
+.player-detail-attribute-bar {
   display: block;
   height: 0.22rem;
   overflow: hidden;
@@ -1085,8 +1088,8 @@
 }
 
 .player-detail-core i::before,
-.player-detail-row i::before {
-  content: '';
+.player-detail-group-bar-fill,
+.player-detail-attribute-bar-fill {
   display: block;
   width: var(--score);
   height: 100%;
@@ -1096,27 +1099,36 @@
   animation: rating-meter-in 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.player-detail-section {
+.player-detail-group-bar-fill::before,
+.player-detail-attribute-bar-fill::before {
+  display: none;
+}
+
+.player-detail-groups,
+.player-detail-attributes {
   display: grid;
   gap: 0.42rem;
 }
 
-.player-detail-section h3 {
+.player-detail-groups h3,
+.player-detail-attributes h3 {
   color: rgba(247, 240, 228, 0.74);
   letter-spacing: 0.04em;
 }
 
-.player-detail-rows {
+.player-detail-groups-grid {
   display: grid;
-  gap: 0.34rem;
-}
-
-.player-detail-rows.compact {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.36rem 0.5rem;
 }
 
-.player-detail-row {
+.player-detail-attributes-grid {
+  display: grid;
+  gap: 0.34rem;
+}
+
+.player-detail-group-item,
+.player-detail-attribute-item {
   min-width: 0;
   display: grid;
   grid-template-columns: 4.6rem minmax(0, 1fr) 2rem;
@@ -1124,12 +1136,13 @@
   gap: 0.45rem;
 }
 
-.player-detail-rows.compact .player-detail-row {
+.player-detail-group-item {
   grid-template-columns: 3.9rem minmax(0, 1fr) 1.55rem;
   gap: 0.32rem;
 }
 
-.player-detail-row strong {
+.player-detail-group-item strong,
+.player-detail-attribute-item strong {
   justify-self: end;
   color: #f8ead3;
   font-size: 0.78rem;
