@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import legendPool from '../data/legend-pool.json'
+import { buildPlayerPool } from './test-utils'
 import {
   calculateOfferPrice,
   createInitialState,
@@ -393,5 +394,76 @@ describe('run completion and scoring', () => {
     const finished = skipOfferGroup(roundTwenty, pool, createSeededRng(8))
 
     expect(finished.result?.gameOverReason).toBe('round-limit')
+  })
+})
+
+describe('Faker-based property tests', () => {
+  it('signOffer never produces negative budget with random pools', () => {
+    for (let i = 0; i < 20; i++) {
+      const fakerPool = buildPlayerPool(50)
+      const state = createInitialState(fakerPool, createSeededRng(i * 100 + 1))
+
+      // Try signing offers for multiple rounds
+      let current = state
+      for (let round = 0; round < 5; round++) {
+        const signable = current.currentOffers.find(
+          (o) => o.offerState === 'enabled' && o.price <= current.budgetRemaining,
+        )
+        if (signable) {
+          const next = signOffer(current, signable.id, fakerPool, createSeededRng(i * 100 + round))
+          expect(next.budgetRemaining).toBeGreaterThanOrEqual(0)
+          current = next
+          if (current.result) break
+        } else {
+          current = skipOfferGroup(current, fakerPool, createSeededRng(i * 200 + round))
+          if (current.result) break
+        }
+      }
+    }
+  })
+
+  it('createInitialState always produces valid state', () => {
+    for (let i = 0; i < 10; i++) {
+      const fakerPool = buildPlayerPool(30)
+      const state = createInitialState(fakerPool, createSeededRng(i * 42))
+
+      expect(state.budgetRemaining).toBe(STARTING_BUDGET)
+      expect(state.round).toBe(1)
+      expect(state.freeSkipsRemaining).toBe(FREE_SKIP_COUNT)
+      expect(state.paidSkipsUsed).toBe(0)
+      expect(state.roster).toHaveLength(0)
+      expect(state.currentOffers).toHaveLength(4)
+      expect(state.result).toBeNull()
+
+      // At least one offer should be signable
+      const signableCount = state.currentOffers.filter(
+        (o) => o.offerState === 'enabled' && o.price <= state.budgetRemaining,
+      ).length
+      expect(signableCount).toBeGreaterThanOrEqual(1)
+    }
+  })
+
+  it('full draft run with faker pool never crashes', () => {
+    for (let i = 0; i < 5; i++) {
+      const fakerPool = buildPlayerPool(40)
+      let state = createInitialState(fakerPool, createSeededRng(i * 77))
+
+      for (let round = 0; round < MAX_ROUNDS; round++) {
+        if (state.result) break
+
+        const signable = state.currentOffers.find(
+          (o) => o.offerState === 'enabled' && o.price <= state.budgetRemaining,
+        )
+        if (signable) {
+          state = signOffer(state, signable.id, fakerPool, createSeededRng(i * 300 + round))
+        } else {
+          state = skipOfferGroup(state, fakerPool, createSeededRng(i * 400 + round))
+        }
+
+        // Invariants
+        expect(state.budgetRemaining).toBeGreaterThanOrEqual(0)
+        expect(state.roster.length).toBeLessThanOrEqual(ROSTER_TARGET)
+      }
+    }
   })
 })

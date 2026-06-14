@@ -1,0 +1,94 @@
+.tier-t0 {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(255, 244, 184, 0.22), transparent 34%),
+    linear-gradient(155deg, rgba(255, 211, 102, 0.36), rgba(143, 84, 18, 0.2) 48%, rgba(30, 18, 8, 0.88)),
+    #2a1909;
+  border-color: rgba(255, 220, 132, 0.64);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 246, 210, 0.2),
+    0 24px 48px rgba(190, 128, 34, 0.26);
+}
+
+.tier-t1 {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(255, 206, 170, 0.18), transparent 34%),
+    linear-gradient(155deg, rgba(219, 94, 68, 0.3), rgba(98, 35, 27, 0.22) 52%, rgba(26, 13, 12, 0.86)),
+    #22100e;
+  border-color: rgba(236, 119, 88, 0.5);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 228, 213, 0.14),
+    0 22px 44px rgba(155, 52, 36, 0.2);
+}
+
+.player-card-large.tier-t0,
+.player-card-large.tier-t1 {
+  border-color: transparent;
+  background-origin: border-box;
+  background-clip: padding-box, padding-box, padding-box, border-box;
+  animation-name: deal-card, card-border-flow;
+  animation-duration: 360ms, 3000ms;
+  animation-timing-function: ease-out, linear;
+  animation-delay: calc(var(--offer-index, 0) * 70ms), 0ms;
+  animation-iteration-count: 1, infinite;
+  animation-fill-mode: both, none;
+}
+
+.player-card-large.tier-t0 {
+  background-image:
+    radial-gradient(circle at 80% 10%, rgba(255, 244, 184, 0.22), transparent 34%),
+    linear-gradient(155deg, rgba(255, 211, 102, 0.36), rgba(143, 84, 18, 0.2) 48%, rgba(30, 18, 8, 0.88)),
+    linear-gradient(#2a1909, #2a1909),
+    conic-gradient(from var(--card-shine-angle, 0deg),
+      rgba(255, 255, 255, 0.18),
+      rgba(255, 224, 140, 0.96),
+      rgba(255, 128, 69, 0.74),
+      rgba(160, 219, 255, 0.7),
+      rgba(255, 244, 184, 0.98),
+      rgba(255, 255, 255, 0.18));
+}
+
+.player-card-large.tier-t1 {
+  background-image:
+    radial-gradient(circle at 80% 10%, rgba(255, 206, 170, 0.18), transparent 34%),
+    linear-gradient(155deg, rgba(219, 94, 68, 0.3), rgba(98, 35, 27, 0.22) 52%, rgba(26, 13, 12, 0.86)),
+    linear-gradient(#22100e, #22100e),
+    conic-gradient(from var(--card-shine-angle, 0deg),
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 194, 128, 0.86),
+      rgba(235, 91, 70, 0.72),
+      rgba(255, 227, 178, 0.82),
+      rgba(255, 255, 255, 0.12));
+}
+
+.tier-t2 {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(170, 219, 255, 0.16), transparent 34%),
+    linear-gradient(155deg, rgba(69, 128, 195, 0.28), rgba(31, 55, 94, 0.2) 50%, rgba(12, 18, 31, 0.88)),
+    #101928;
+  border-color: rgba(105, 164, 232, 0.42);
+  box-shadow:
+    inset 0 1px 0 rgba(220, 238, 255, 0.12),
+    0 20px 40px rgba(32, 72, 128, 0.18);
+}
+
+.tier-t3 {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(207, 190, 255, 0.12), transparent 34%),
+    linear-gradient(155deg, rgba(111, 95, 166, 0.26), rgba(47, 40, 81, 0.18) 52%, rgba(18, 17, 30, 0.9)),
+    #171522;
+  border-color: rgba(139, 125, 206, 0.34);
+  box-shadow:
+    inset 0 1px 0 rgba(222, 211, 255, 0.12),
+    0 18px 36px rgba(48, 42, 92, 0.16);
+}
+
+.tier-t4 {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(214, 222, 234, 0.1), transparent 34%),
+    linear-gradient(155deg, rgba(105, 112, 126, 0.22), rgba(46, 50, 59, 0.16) 48%, rgba(14, 15, 20, 0.9)),
+    #12151b;
+  border-color: rgba(154, 163, 178, 0.26);
+  box-shadow:
+    inset 0 1px 0 rgba(224, 230, 240, 0.08),
+    0 16px 32px rgba(24, 27, 35, 0.14);
+}

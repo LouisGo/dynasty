@@ -1,0 +1,184 @@
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes deal-card {
+  from {
+    opacity: 0;
+    transform: translateY(14px) rotateX(8deg) scale(0.965);
+    filter: saturate(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0) scale(1);
+    filter: saturate(1);
+  }
+}
+
+@keyframes pack-flash {
+  0% {
+    opacity: 0;
+    transform: translateX(-12%) scale(0.98);
+  }
+  24% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(12%) scale(1.02);
+  }
+}
+
+@keyframes pending-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pending-loader {
+  from {
+    transform: scaleX(0.38);
+    opacity: 0.28;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 0.72;
+  }
+}
+
+@keyframes budget-chip-shine {
+  0%, 46% {
+    opacity: 0;
+    transform: translateX(-42%);
+  }
+  58% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(42%);
+  }
+}
+
+@keyframes budget-value-pop {
+  0% {
+    transform: scale(1.08);
+    filter: saturate(1.18);
+  }
+  100% {
+    transform: scale(1);
+    filter: saturate(1);
+  }
+}
+
+@keyframes player-detail-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes player-detail-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+    filter: saturate(0.82);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: saturate(1);
+  }
+}
+
+@keyframes rating-meter-in {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes result-screen-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+    filter: saturate(0.82);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: saturate(1);
+  }
+}
+
+@keyframes result-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slot-card-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(8px);
+    filter: blur(2px) saturate(0.86);
+  }
+  45% {
+    opacity: 0.42;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0) saturate(1);
+  }
+}
+
+@keyframes offer-card-group-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: saturate(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+    filter: saturate(0.82) blur(1px);
+  }
+}
+
+@keyframes offer-card-selected-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: saturate(1);
+  }
+  38% {
+    opacity: 0.92;
+    transform: translateY(3px) scale(1.018);
+    filter: saturate(1.12);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.94);
+    filter: saturate(0.82) blur(1px);
+  }
+}
+
+@keyframes card-border-flow {
+  to {
+    --card-shine-angle: 360deg;
+  }
+}
