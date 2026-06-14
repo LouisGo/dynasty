@@ -365,7 +365,7 @@ function createResultSummary(
   const coreSpread =
     Math.max(coreAverages.offense, coreAverages.defense, coreAverages.physical, coreAverages.mentality) -
     Math.min(coreAverages.offense, coreAverages.defense, coreAverages.physical, coreAverages.mentality)
-  const strengthScore = Number(Math.min(60, coreRating * 0.6).toFixed(1))
+  const strengthScore = Number(Math.min(65, coreRating * 0.7).toFixed(1))
   const balanceScore = getStructureScore(isComplete, roster.length, ratingSpread, coreSpread)
   const superstarScore = getStarPowerScore(nonZeroRatings)
   const budgetSpent = STARTING_BUDGET - budgetRemaining
@@ -374,9 +374,9 @@ function createResultSummary(
     100,
     Number((strengthScore + balanceScore + superstarScore + budgetScore).toFixed(1)),
   )
-  const projectedWins = Math.min(82, Math.max(0, Math.round(35 + dynastyScore * 0.45)))
+  const projectedWins = Math.min(82, Math.max(0, Math.round(20 + dynastyScore * 0.6)))
   const championshipOdds = Math.round(
-    (1 / (1 + Math.exp(-((dynastyScore - 84) / 5)))) * 100,
+    (1 / (1 + Math.exp(-((dynastyScore - 80) / 4.5)))) * 100,
   )
 
   return {
@@ -390,10 +390,10 @@ function createResultSummary(
     balanceScore,
     superstarScore,
     budgetScore,
-    offenseScore: coreAverages.offense,
-    defenseScore: coreAverages.defense,
-    physicalScore: coreAverages.physical,
-    mentalityScore: coreAverages.mentality,
+    offenseScore: Math.min(99, Math.round(coreAverages.offense * 1.1)),
+    defenseScore: Math.min(99, Math.round(coreAverages.defense * 1.1)),
+    physicalScore: Math.min(99, Math.round(coreAverages.physical * 1.1)),
+    mentalityScore: Math.min(99, Math.round(coreAverages.mentality * 1.1)),
     budgetSpent,
     budgetRemaining,
     roundReached,

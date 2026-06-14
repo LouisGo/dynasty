@@ -2,6 +2,8 @@ import { createRootRoute, Outlet, useRouterState } from '@tanstack/react-router'
 import { AnimatePresence, motion } from 'motion/react'
 import { Backdrop } from '../components/Backdrop'
 import { PlayerDetailOverlay } from '../components/PlayerDetailOverlay'
+import { DragPreview } from '../components/DragPreview'
+import { ResultPendingOverlay } from '../components/ResultPendingOverlay'
 import { useGameStore } from '../stores/gameStore'
 
 function RootLayout() {
@@ -23,6 +25,11 @@ function RootLayout() {
           <Outlet />
         </motion.div>
       </AnimatePresence>
+
+      {/* Fixed-position overlays render outside the motion wrapper so CSS transforms don't create a new containing block */}
+      <DragPreview />
+      <ResultPendingOverlay />
+
       <AnimatePresence>
         {playerDetail && (
           <PlayerDetailOverlay

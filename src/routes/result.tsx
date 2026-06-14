@@ -39,17 +39,17 @@ function ResultRoute() {
         </div>
 
         <section className="result-metrics">
-          <article className={getMetricTone(result.dynastyScore, 90, 85)}>
+          <article className={getMetricTone(result.dynastyScore, 88, 75)}>
             <span>王朝评分</span>
             <strong>{result.dynastyScore}</strong>
           </article>
-          <article className={getMetricTone(result.projectedWins, 72, 65)}>
+          <article className={getMetricTone(result.projectedWins, 68, 55)}>
             <span>预计战绩</span>
             <strong>
               {result.projectedWins}-{result.projectedLosses}
             </strong>
           </article>
-          <article className={getMetricTone(result.championshipOdds, 80, 60)}>
+          <article className={getMetricTone(result.championshipOdds, 70, 35)}>
             <span>夺冠概率</span>
             <strong>{result.championshipOdds}%</strong>
           </article>

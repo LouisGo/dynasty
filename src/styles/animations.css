@@ -182,3 +182,26 @@
     --card-shine-angle: 360deg;
   }
 }
+
+@keyframes card-shine-sweep {
+  0% {
+    transform: translate(-100%, -100%);
+    opacity: 0;
+  }
+  6% {
+    opacity: 0;
+  }
+  16% {
+    opacity: 0.85;
+  }
+  30% {
+    opacity: 0.85;
+  }
+  44% {
+    transform: translate(100%, 100%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

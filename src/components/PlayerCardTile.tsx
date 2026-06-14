@@ -55,6 +55,7 @@ export function PlayerCardTile({
       style={{ '--offer-index': index } as CSSProperties & Record<'--offer-index', number>}
       {...(hasLongPress ? longPressHandlers : {})}
     >
+      <div className="player-card-shine" />
       <span className="player-card-price">{formatPriceLabel(price)}</span>
       {teamCode && (
         <img

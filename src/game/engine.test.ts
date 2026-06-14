@@ -380,7 +380,7 @@ describe('run completion and scoring', () => {
     expect(finished.result?.offenseScore).toBeGreaterThan(80)
     expect(finished.result?.defenseScore).toBeGreaterThan(80)
     expect(finished.result?.projectedWins).toBe(
-      Math.round(35 + (finished.result?.dynastyScore ?? 0) * 0.45),
+      Math.round(20 + (finished.result?.dynastyScore ?? 0) * 0.6),
     )
     expect(finished.result?.championshipOdds).toBeLessThan(100)
   })

@@ -7,8 +7,6 @@ import { BudgetChip, StatusChips } from '../components/BudgetChip'
 import { OfferGrid } from '../components/OfferGrid'
 import { ActionBar } from '../components/ActionBar'
 import { CourtEditor } from '../components/CourtEditor'
-import { DragPreview } from '../components/DragPreview'
-import { ResultPendingOverlay } from '../components/ResultPendingOverlay'
 
 function DraftRoute() {
   const navigate = useNavigate()
@@ -62,9 +60,6 @@ function DraftRoute() {
 
         <CourtEditor />
       </section>
-
-      <ResultPendingOverlay />
-      <DragPreview />
     </main>
   )
 }

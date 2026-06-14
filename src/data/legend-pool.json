@@ -11,7 +11,7 @@
     "tier": "T0",
     "contractCost": 25,
     "rarityWeight": 1,
-    "tagline": "历史级建队核心。",
+    "tagline": "GOAT",
     "source": "snapshot-2026-06-13",
     "sourceStatus": "focused-modern-snapshot",
     "ratingModelVersion": "2k-attributes-v1",
@@ -50,7 +50,7 @@
   {
     "id": "lebron-james",
     "name": "LeBron James",
-    "chineseName": "勒布朗·詹姆斯",
+    "chineseName": "乐邦·詹士",
     "positions": [
       "PG",
       "SG",
