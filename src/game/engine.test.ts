@@ -12,7 +12,6 @@ import {
 import {
   FREE_SKIP_COUNT,
   MAX_ROUNDS,
-  PAID_SKIP_COST,
   ROSTER_TARGET,
   STARTING_BUDGET,
   type GameState,
@@ -26,9 +25,9 @@ function buildState(overrides: Partial<GameState>): GameState {
     budgetRemaining: STARTING_BUDGET,
     round: 1,
     freeSkipsRemaining: FREE_SKIP_COUNT,
-    paidSkipsUsed: 0,
     roster: [],
     currentOffers: [],
+    seenOfferIds: [],
     lineupArrangement: { PG: null, SG: null, SF: null, PF: null, C: null, SIX: null },
     lastAction: '',
     result: null,
@@ -61,45 +60,109 @@ function playGreedyRun(seed: number) {
 }
 
 describe('price and supply model', () => {
-  it('prices every card from OVR with a 0.7 to 1.3 random factor', () => {
+  it('prices cards from OVR with tier-specific random factors', () => {
     const jordan = pool.find((card) => card.id === 'michael-jordan')
-    if (!jordan) {
-      throw new Error('Michael Jordan test fixture missing.')
+    const thomas = pool.find((card) => card.id === 'isiah-thomas')
+    const rotation = pool.find((card) => card.id === 'john-wall')
+    if (!jordan || !thomas || !rotation) {
+      throw new Error('Price test fixtures missing.')
     }
 
-    const low = calculateOfferPrice(jordan, () => 0)
-    const high = calculateOfferPrice(jordan, () => 0.999999)
+    expect(calculateOfferPrice(jordan, () => 0)).toBe(23)
+    expect(calculateOfferPrice(jordan, () => 0.999999)).toBe(29)
 
-    expect(low).toBe(18)
-    expect(high).toBe(32)
+    expect(calculateOfferPrice(thomas, () => 0)).toBe(17)
+    expect(calculateOfferPrice(thomas, () => 0.999999)).toBe(23)
+
+    expect(calculateOfferPrice(rotation, () => 0)).toBe(8)
+    expect(calculateOfferPrice(rotation, () => 0.999999)).toBe(12)
   })
 
-  it('uses 100 - OVR as the appearance weight', () => {
+  it('uses card rarity weight as the appearance weight within each offer slot', () => {
     const jordan = pool.find((card) => card.id === 'michael-jordan')
     const rotation = pool.find((card) => card.sourceRating <= 85)
     if (!jordan || !rotation) {
       throw new Error('Weight test fixtures missing.')
     }
 
-    expect(getPlayerWeight(jordan)).toBe(1)
-    expect(getPlayerWeight(rotation)).toBe(100 - rotation.sourceRating)
+    expect(getPlayerWeight(jordan)).toBe(jordan.rarityWeight)
+    expect(getPlayerWeight(rotation)).toBe(rotation.rarityWeight)
     expect(getPlayerWeight(rotation)).toBeGreaterThan(getPlayerWeight(jordan))
   })
 
   it('keeps the draft pool expanded with recognizable modern-era and current stars', () => {
     const ids = new Set(pool.map((card) => card.id))
 
-    expect(pool.length).toBeGreaterThanOrEqual(120)
+    expect(pool).toHaveLength(150)
     expect(ids.has('bill-russell')).toBe(true)
     expect(ids.has('wilt-chamberlain')).toBe(true)
     expect(ids.has('shai-gilgeous-alexander')).toBe(true)
     expect(ids.has('victor-wembanyama')).toBe(true)
     expect(ids.has('jalen-brunson')).toBe(true)
     expect(ids.has('anthony-edwards')).toBe(true)
+    expect(ids.has('domantas-sabonis')).toBe(true)
+    expect(ids.has('jalen-duren')).toBe(true)
     expect(ids.has('bob-cousy')).toBe(false)
     expect(ids.has('george-mikan')).toBe(false)
     expect(ids.has('oscar-robertson')).toBe(false)
     expect(ids.has('jerry-west')).toBe(false)
+  })
+
+  it('keeps current stars below established all-time peak tiers unless their resume supports it', () => {
+    const byId = new Map(pool.map((card) => [card.id, card]))
+
+    expect(byId.get('dwyane-wade')?.sourceRating).toBeGreaterThan(
+      byId.get('jaylen-brown')?.sourceRating ?? 0,
+    )
+    expect(byId.get('shai-gilgeous-alexander')?.sourceRating).toBeGreaterThanOrEqual(
+      byId.get('jalen-brunson')?.sourceRating ?? 0,
+    )
+    expect(byId.get('victor-wembanyama')?.sourceRating).toBeLessThan(
+      byId.get('tim-duncan')?.sourceRating ?? 0,
+    )
+  })
+
+  it('attaches sourced multidimensional ratings when 2K attribute snapshots exist', () => {
+    const byId = new Map(pool.map((card) => [card.id, card]))
+
+    expect(byId.get('michael-jordan')?.ratingModelVersion).toBe('2k-attributes-v1')
+    expect(byId.get('michael-jordan')?.attributeSourceStatus).toBe('verified-2k-snapshot')
+    expect(byId.get('michael-jordan')?.ratings).toEqual({
+      offense: 91,
+      defense: 90,
+      physical: 94,
+      mentality: 96,
+    })
+    expect(byId.get('dennis-rodman')?.ratings).toEqual({
+      offense: 45,
+      defense: 94,
+      physical: 86,
+      mentality: 69,
+    })
+  })
+
+  it('fills estimated multidimensional ratings for players without verified snapshots', () => {
+    const carter = pool.find((card) => card.id === 'vince-carter')
+
+    expect(carter?.ratings).toEqual({
+      offense: 89,
+      defense: 88,
+      physical: 90,
+      mentality: 90,
+    })
+    expect(carter?.sourceAttributes).not.toBeNull()
+    expect(carter?.attributeSourceUrl).toBeNull()
+    expect(carter?.attributeSourceStatus).toBe('estimated-archetype-v1')
+  })
+
+  it('keeps every player covered by either verified or estimated multidimensional ratings', () => {
+    expect(pool.every((card) => card.ratings !== null)).toBe(true)
+    expect(pool.filter((card) => card.attributeSourceStatus === 'verified-2k-snapshot')).toHaveLength(
+      8,
+    )
+    expect(pool.filter((card) => card.attributeSourceStatus === 'estimated-archetype-v1')).toHaveLength(
+      142,
+    )
   })
 
   it('generates four offers and keeps one signable when any legal player is affordable', () => {
@@ -107,6 +170,18 @@ describe('price and supply model', () => {
       const state = createInitialState(pool, createSeededRng(seed))
       expect(state.currentOffers).toHaveLength(4)
       expect(state.currentOffers.some((offer) => offer.offerState === 'enabled')).toBe(true)
+    }
+  })
+
+  it('uses structured offer slots for star, starter, starter, and rotation cards', () => {
+    for (let seed = 1; seed <= 200; seed += 1) {
+      const state = createInitialState(pool, createSeededRng(seed))
+      const [star, starterA, starterB, rotation] = state.currentOffers
+
+      expect(['T0', 'T1', 'T2']).toContain(star.tier)
+      expect(['T2', 'T3']).toContain(starterA.tier)
+      expect(['T2', 'T3']).toContain(starterB.tier)
+      expect(['T3', 'T4']).toContain(rotation.tier)
     }
   })
 })
@@ -134,25 +209,33 @@ describe('draft loop', () => {
     expect(next.round).toBe(2)
   })
 
-  it('spends free skips first, then paid skips', () => {
+  it('spends free skips without charging budget', () => {
     const initial = createInitialState(pool, createSeededRng(15))
     const afterFree = skipOfferGroup(initial, pool, createSeededRng(16))
 
     expect(afterFree.freeSkipsRemaining).toBe(FREE_SKIP_COUNT - 1)
     expect(afterFree.budgetRemaining).toBe(STARTING_BUDGET)
     expect(afterFree.round).toBe(2)
+  })
 
-    const paidState = buildState({
-      round: 4,
+  it('does not allow skipping after free skips are exhausted', () => {
+    const state = buildState({
       freeSkipsRemaining: 0,
-      budgetRemaining: 44,
-      currentOffers: generateOffers([], 44, buildState({}).lineupArrangement, pool, createSeededRng(4)),
+      currentOffers: generateOffers([], STARTING_BUDGET, buildState({}).lineupArrangement, pool),
     })
-    const afterPaid = skipOfferGroup(paidState, pool, createSeededRng(17))
 
-    expect(afterPaid.paidSkipsUsed).toBe(1)
-    expect(afterPaid.budgetRemaining).toBe(44 - PAID_SKIP_COST)
-    expect(afterPaid.round).toBe(5)
+    expect(() => skipOfferGroup(state, pool, createSeededRng(17))).toThrow(
+      'No free skips remaining.',
+    )
+  })
+
+  it('removes previously offered cards from future offer groups', () => {
+    const initial = createInitialState(pool, createSeededRng(15))
+    const firstOfferIds = new Set(initial.currentOffers.map((offer) => offer.id))
+    const afterSkip = skipOfferGroup(initial, pool, createSeededRng(16))
+
+    expect(afterSkip.currentOffers.every((offer) => !firstOfferIds.has(offer.id))).toBe(true)
+    expect(afterSkip.seenOfferIds).toHaveLength(8)
   })
 
   it('prevents duplicate players from being signed again', () => {
@@ -233,9 +316,14 @@ describe('run completion and scoring', () => {
       createSeededRng(99),
     )
 
-    expect(finished.result?.dynastyScore).toBeGreaterThanOrEqual(90)
+    expect(finished.result?.dynastyScore).toBeGreaterThanOrEqual(85)
+    expect(finished.result?.strengthScore).toBeGreaterThan(50)
+    expect(finished.result?.superstarScore).toBeGreaterThan(18)
+    expect(finished.result?.budgetScore).toBe(5)
+    expect(finished.result?.offenseScore).toBeGreaterThan(80)
+    expect(finished.result?.defenseScore).toBeGreaterThan(80)
     expect(finished.result?.projectedWins).toBe(
-      Math.round(15 + (finished.result?.dynastyScore ?? 0) * 0.67),
+      Math.round(35 + (finished.result?.dynastyScore ?? 0) * 0.45),
     )
     expect(finished.result?.championshipOdds).toBeLessThan(100)
   })

@@ -5,6 +5,7 @@ import {
   useState,
   type CSSProperties,
   type MouseEvent as ReactMouseEvent,
+  type PointerEvent as ReactPointerEvent,
 } from 'react'
 import legendPool from './data/legend-pool.json'
 import './App.css'
@@ -20,7 +21,6 @@ import {
   FREE_SKIP_COUNT,
   MAX_ROUNDS,
   OFFER_COUNT,
-  PAID_SKIP_COST,
   ROSTER_TARGET,
   SIXTH_SLOT,
   type CourtSlotId,
@@ -47,14 +47,26 @@ interface PlayerCardTileProps {
   statusLabel: string
   index?: number
   className?: string
+  onLongPressOpen?: (detail: PlayerDetailOverlayState) => void
 }
 
-interface FlyingCardState {
+interface DragPreviewState {
+  slot: CourtSlotId
+  card: PlayerCard
+  price: number
+  x: number
+  y: number
+  width: number
+  height: number
+  offsetX: number
+  offsetY: number
+}
+
+interface PlayerDetailOverlayState {
   card: PlayerCard
   price: number
   statusLabel: string
-  from: DOMRect
-  to: DOMRect
+  size: CardSize
 }
 
 const teamCodeByPlayerId: Record<string, string> = {
@@ -83,8 +95,8 @@ const teamCodeByPlayerId: Record<string, string> = {
   'allen-iverson': 'phi',
   'scottie-pippen': 'chi',
   'david-robinson': 'sas',
-  'john-stockton': 'uta',
-  'karl-malone': 'uta',
+  'john-stockton': 'utah',
+  'karl-malone': 'utah',
   'chris-paul': 'lac',
   'kawhi-leonard': 'tor',
   'steve-nash': 'phx',
@@ -92,7 +104,7 @@ const teamCodeByPlayerId: Record<string, string> = {
   'tracy-mcgrady': 'orl',
   'patrick-ewing': 'ny',
   'clyde-drexler': 'por',
-  'ray-allen': 'sea',
+  'ray-allen': 'okc',
   'reggie-miller': 'ind',
   'manu-ginobili': 'sas',
   'pau-gasol': 'lal',
@@ -103,7 +115,7 @@ const teamCodeByPlayerId: Record<string, string> = {
   'dominique-wilkins': 'atl',
   'paul-pierce': 'bos',
   'dennis-rodman': 'chi',
-  'gary-payton': 'sea',
+  'gary-payton': 'okc',
   'jason-kidd': 'dal',
   'rick-barry': 'gs',
   'george-gervin': 'sas',
@@ -128,7 +140,7 @@ const teamCodeByPlayerId: Record<string, string> = {
   'kyrie-irving': 'cle',
   'grant-hill': 'det',
   'penny-hardaway': 'orl',
-  'shawn-kemp': 'sea',
+  'shawn-kemp': 'okc',
   'mitch-richmond': 'sac',
   'joe-dumars': 'det',
   'sidney-moncrief': 'mil',
@@ -186,8 +198,28 @@ const teamCodeByPlayerId: Record<string, string> = {
   'tyler-herro': 'mia',
   'franz-wagner': 'orl',
   'austin-reaves': 'lal',
-  'lauri-markkanen': 'uta',
+  'lauri-markkanen': 'utah',
   'brandon-miller': 'cha',
+  'domantas-sabonis': 'sac',
+  'deaaron-fox': 'sas',
+  'darius-garland': 'cle',
+  'jalen-duren': 'det',
+  'rudy-gobert': 'min',
+  'zion-williamson': 'no',
+  'derrick-white': 'bos',
+  'jrue-holiday': 'por',
+  'julius-randle': 'min',
+  'desmond-bane': 'orl',
+  'zach-lavine': 'sac',
+  'mikal-bridges': 'ny',
+  'jarrett-allen': 'cle',
+  'kristaps-porzingis': 'atl',
+  'dejounte-murray': 'no',
+  'bradley-beal': 'lac',
+  'khris-middleton': 'was',
+  'cj-mccollum': 'was',
+  'aaron-gordon': 'den',
+  'myles-turner': 'mil',
 }
 
 function getTeamLogoUrl(code: string) {
@@ -279,6 +311,55 @@ function getTeamCode(playerId: string) {
   return teamCodeByPlayerId[playerId]
 }
 
+function formatRatingValue(value: number | null | undefined) {
+  return typeof value === 'number' ? Math.round(value) : null
+}
+
+function getRatingPercent(value: number | null | undefined) {
+  return `${Math.max(0, Math.min(100, formatRatingValue(value) ?? 0))}%`
+}
+
+function getCoreRatingRows(card: PlayerCard) {
+  const ratings = card.ratings
+
+  return [
+    { label: '进攻', value: ratings?.offense },
+    { label: '防守', value: ratings?.defense },
+    { label: '体能', value: ratings?.physical },
+    { label: '心态', value: ratings?.mentality },
+  ]
+}
+
+function getAttributeGroupRows(card: PlayerCard) {
+  const groups = card.sourceAttributes?.groups
+
+  return [
+    { label: '外线终结', value: groups?.outsideScoring },
+    { label: '内线终结', value: groups?.insideScoring },
+    { label: '组织控场', value: groups?.playmaking },
+    { label: '单防协防', value: groups?.defense },
+    { label: '篮板保护', value: groups?.rebounding },
+    { label: '运动能力', value: groups?.athleticism },
+    { label: '无形价值', value: groups?.intangibles },
+  ]
+}
+
+function getAttributeRows(card: PlayerCard) {
+  const attributes = card.sourceAttributes?.attributes
+
+  return [
+    { label: '投篮选择', value: attributes?.shotIQ },
+    { label: '进攻稳定', value: attributes?.offensiveConsistency },
+    { label: '传球判断', value: attributes?.passIQ },
+    { label: '协防判断', value: attributes?.helpDefenseIQ },
+    { label: '防守稳定', value: attributes?.defensiveConsistency },
+    { label: '耐力', value: attributes?.stamina },
+    { label: '耐用度', value: attributes?.durability },
+    { label: '力量', value: attributes?.strength },
+    { label: '敏捷', value: attributes?.agility },
+  ]
+}
+
 function getMetricTone(value: number, excellent: number, good: number) {
   if (value >= excellent) {
     return 'metric-excellent'
@@ -347,8 +428,69 @@ function PlayerCardTile({
   statusLabel,
   index = 0,
   className = '',
+  onLongPressOpen,
 }: PlayerCardTileProps) {
   const teamCode = getTeamCode(card.id)
+  const pressTimerRef = useRef<number | null>(null)
+  const pressStartRef = useRef<{ x: number; y: number } | null>(null)
+  const longPressTriggeredRef = useRef(false)
+  const [isPressing, setIsPressing] = useState(false)
+
+  useEffect(
+    () => () => {
+      if (pressTimerRef.current !== null) {
+        window.clearTimeout(pressTimerRef.current)
+      }
+    },
+    [],
+  )
+
+  function clearPressState() {
+    if (pressTimerRef.current !== null) {
+      window.clearTimeout(pressTimerRef.current)
+      pressTimerRef.current = null
+    }
+    pressStartRef.current = null
+    setIsPressing(false)
+  }
+
+  function handlePointerDown(event: ReactPointerEvent<HTMLDivElement>) {
+    if (!onLongPressOpen || (event.pointerType === 'mouse' && event.button !== 0)) {
+      return
+    }
+
+    pressStartRef.current = { x: event.clientX, y: event.clientY }
+    setIsPressing(true)
+    pressTimerRef.current = window.setTimeout(() => {
+      longPressTriggeredRef.current = true
+      pressTimerRef.current = null
+      pressStartRef.current = null
+      setIsPressing(false)
+      onLongPressOpen({ card, price, statusLabel, size })
+    }, 520)
+  }
+
+  function handlePointerMove(event: ReactPointerEvent<HTMLDivElement>) {
+    const start = pressStartRef.current
+    if (!start) {
+      return
+    }
+
+    const distance = Math.hypot(event.clientX - start.x, event.clientY - start.y)
+    if (distance > 10) {
+      clearPressState()
+    }
+  }
+
+  function handleClickCapture(event: ReactMouseEvent<HTMLDivElement>) {
+    if (!longPressTriggeredRef.current) {
+      return
+    }
+
+    event.preventDefault()
+    event.stopPropagation()
+    longPressTriggeredRef.current = false
+  }
 
   return (
     <div
@@ -356,11 +498,19 @@ function PlayerCardTile({
         'player-card',
         `player-card-${size}`,
         tierClassName(card.tier),
+        isPressing ? 'is-long-pressing' : '',
         className,
       ]
         .filter(Boolean)
         .join(' ')}
       style={{ '--offer-index': index } as CSSProperties & Record<'--offer-index', number>}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={clearPressState}
+      onPointerCancel={clearPressState}
+      onPointerLeave={clearPressState}
+      onClickCapture={handleClickCapture}
+      onContextMenu={(event) => event.preventDefault()}
     >
       <span className="player-card-price">{price}</span>
       {teamCode && (
@@ -391,14 +541,119 @@ function PlayerCardTile({
   )
 }
 
+function PlayerDetailOverlay({
+  detail,
+  onClose,
+}: {
+  detail: PlayerDetailOverlayState
+  onClose: () => void
+}) {
+  const coreRows = getCoreRatingRows(detail.card)
+  const groupRows = getAttributeGroupRows(detail.card)
+  const attributeRows = getAttributeRows(detail.card)
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        onClose()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [onClose])
+
+  return (
+    <section
+      className="player-detail-overlay"
+      aria-label={`${detail.card.name} 评分细分`}
+      onPointerDown={onClose}
+    >
+      <div className="player-detail-panel">
+        <header className="player-detail-head">
+          <span>{detail.card.tier} · {formatPositions(detail.card.positions)}</span>
+          <h2>{detail.card.name}</h2>
+          <p>
+            OVR {detail.card.sourceRating} · 价格 {detail.price} · {detail.statusLabel}
+          </p>
+        </header>
+
+        <section className="player-detail-core" aria-label="核心评分">
+          {coreRows.map((row) => {
+            const value = formatRatingValue(row.value)
+            return (
+              <article
+                key={row.label}
+                style={{ '--score': getRatingPercent(row.value) } as CSSProperties & Record<'--score', string>}
+              >
+                <span>{row.label}</span>
+                <strong>{value ?? '--'}</strong>
+                <i aria-hidden="true" />
+              </article>
+            )
+          })}
+        </section>
+
+        <section className="player-detail-section" aria-label="子项分数">
+          <h3>子项分数</h3>
+          <div className="player-detail-rows">
+            {groupRows.map((row) => {
+              const value = formatRatingValue(row.value)
+              return (
+                <div
+                  key={row.label}
+                  className="player-detail-row"
+                  style={{ '--score': getRatingPercent(row.value) } as CSSProperties & Record<'--score', string>}
+                >
+                  <span>{row.label}</span>
+                  <i aria-hidden="true" />
+                  <strong>{value ?? '--'}</strong>
+                </div>
+              )
+            })}
+          </div>
+        </section>
+
+        <section className="player-detail-section" aria-label="关键属性">
+          <h3>关键属性</h3>
+          <div className="player-detail-rows compact">
+            {attributeRows.map((row) => {
+              const value = formatRatingValue(row.value)
+              return (
+                <div
+                  key={row.label}
+                  className="player-detail-row"
+                  style={{ '--score': getRatingPercent(row.value) } as CSSProperties & Record<'--score', string>}
+                >
+                  <span>{row.label}</span>
+                  <i aria-hidden="true" />
+                  <strong>{value ?? '--'}</strong>
+                </div>
+              )
+            })}
+          </div>
+        </section>
+      </div>
+    </section>
+  )
+}
+
 function App() {
   const [screen, setScreen] = useState<Screen>('landing')
   const [rngSeed, setRngSeed] = useState<number>(() => randomSeed())
   const [selectedSlot, setSelectedSlot] = useState<CourtSlotId | null>(null)
   const [draggingSlot, setDraggingSlot] = useState<CourtSlotId | null>(null)
-  const [flyingCard, setFlyingCard] = useState<FlyingCardState | null>(null)
+  const [dragPreview, setDragPreview] = useState<DragPreviewState | null>(null)
+  const [revealingSlot, setRevealingSlot] = useState<CourtSlotId | null>(null)
+  const [selectedOfferId, setSelectedOfferId] = useState<string | null>(null)
+  const [isResultPending, setIsResultPending] = useState(false)
+  const [playerDetail, setPlayerDetail] = useState<PlayerDetailOverlayState | null>(null)
   const draggingSlotRef = useRef<CourtSlotId | null>(null)
-  const signTimerRef = useRef<number | null>(null)
+  const dragPreviewRef = useRef<DragPreviewState | null>(null)
+  const suppressNextSlotClickRef = useRef(false)
+  const signAnimationTimerRef = useRef<number | null>(null)
+  const revealTimerRef = useRef<number | null>(null)
+  const resultTimerRef = useRef<number | null>(null)
   const [gameState, setGameState] = useState<GameState>(() =>
     createInitialState(pool, createSeededRng(randomSeed())),
   )
@@ -414,13 +669,19 @@ function App() {
   const skipLabel =
     gameState.freeSkipsRemaining > 0
       ? `跳过本轮（免费 ${gameState.freeSkipsRemaining}）`
-      : `跳过本轮（-${PAID_SKIP_COST} 预算）`
-  const canSkip = gameState.freeSkipsRemaining > 0 || gameState.budgetRemaining >= PAID_SKIP_COST
+      : '跳过次数已用完'
+  const canSkip = gameState.freeSkipsRemaining > 0
 
   useEffect(
     () => () => {
-      if (signTimerRef.current !== null) {
-        window.clearTimeout(signTimerRef.current)
+      if (signAnimationTimerRef.current !== null) {
+        window.clearTimeout(signAnimationTimerRef.current)
+      }
+      if (resultTimerRef.current !== null) {
+        window.clearTimeout(resultTimerRef.current)
+      }
+      if (revealTimerRef.current !== null) {
+        window.clearTimeout(revealTimerRef.current)
       }
     },
     [],
@@ -438,24 +699,78 @@ function App() {
     })
   }
 
-  function beginDraggingSlot(slot: CourtSlotId) {
+  function beginDraggingSlot(
+    slot: CourtSlotId,
+    event: ReactPointerEvent<HTMLButtonElement>,
+    card: PlayerCard & { pricePaid: number },
+  ) {
+    const chip = event.currentTarget.querySelector<HTMLElement>('.court-player-chip')
+    const rect = chip?.getBoundingClientRect() ?? event.currentTarget.getBoundingClientRect()
+    const preview = {
+      slot,
+      card,
+      price: card.pricePaid,
+      x: rect.left,
+      y: rect.top,
+      width: rect.width,
+      height: rect.height,
+      offsetX: event.clientX - rect.left,
+      offsetY: event.clientY - rect.top,
+    }
+
     draggingSlotRef.current = slot
+    dragPreviewRef.current = preview
+    suppressNextSlotClickRef.current = false
     setDraggingSlot(slot)
+    setDragPreview(preview)
   }
 
   function clearDraggingSlot() {
     draggingSlotRef.current = null
+    dragPreviewRef.current = null
     setDraggingSlot(null)
+    setDragPreview(null)
+  }
+
+  function openPlayerDetail(detail: PlayerDetailOverlayState) {
+    clearDraggingSlot()
+    setPlayerDetail(detail)
   }
 
   function startRun() {
     const nextSeed = randomSeed()
+    if (resultTimerRef.current !== null) {
+      window.clearTimeout(resultTimerRef.current)
+      resultTimerRef.current = null
+    }
+    if (revealTimerRef.current !== null) {
+      window.clearTimeout(revealTimerRef.current)
+      revealTimerRef.current = null
+    }
     setRngSeed(nextSeed)
     setGameState(createInitialState(pool, createSeededRng(nextSeed)))
     setSelectedSlot(null)
+    setIsResultPending(false)
+    setSelectedOfferId(null)
+    setRevealingSlot(null)
     clearDraggingSlot()
     setScreen('draft')
     scrollToPageTop()
+  }
+
+  function scheduleResultScreen() {
+    setIsResultPending(true)
+    setScreen('draft')
+    if (resultTimerRef.current !== null) {
+      window.clearTimeout(resultTimerRef.current)
+    }
+
+    resultTimerRef.current = window.setTimeout(() => {
+      setIsResultPending(false)
+      setScreen('result')
+      scrollToPageTop()
+      resultTimerRef.current = null
+    }, 2500)
   }
 
   function commitSign(offer: OfferCard) {
@@ -472,39 +787,40 @@ function App() {
     setGameState(nextState)
     setSelectedSlot(null)
     clearDraggingSlot()
-    setScreen(nextState.result ? 'result' : 'draft')
+    if (nextState.result) {
+      scheduleResultScreen()
+    } else {
+      setScreen('draft')
+    }
   }
 
-  function handleSign(offer: OfferCard, event: ReactMouseEvent<HTMLButtonElement>) {
-    if (offer.offerState !== 'enabled' || flyingCard) {
+  function handleSign(offer: OfferCard) {
+    if (offer.offerState !== 'enabled' || selectedOfferId || isResultPending) {
       return
     }
 
     const targetSlot = getTargetSlotForOffer(offer, gameState.lineupArrangement)
-    const targetElement = document.querySelector<HTMLElement>(`[data-court-slot="${targetSlot}"]`)
-
-    if (!targetElement) {
-      commitSign(offer)
-      return
+    setSelectedOfferId(offer.id)
+    if (signAnimationTimerRef.current !== null) {
+      window.clearTimeout(signAnimationTimerRef.current)
     }
-
-    setFlyingCard({
-      card: offer,
-      price: offer.price,
-      statusLabel: getOfferStateText(offer),
-      from: event.currentTarget.getBoundingClientRect(),
-      to: targetElement.getBoundingClientRect(),
-    })
-
-    signTimerRef.current = window.setTimeout(() => {
+    signAnimationTimerRef.current = window.setTimeout(() => {
       commitSign(offer)
-      setFlyingCard(null)
-      signTimerRef.current = null
-    }, 430)
+      setRevealingSlot(targetSlot)
+      setSelectedOfferId(null)
+      signAnimationTimerRef.current = null
+      if (revealTimerRef.current !== null) {
+        window.clearTimeout(revealTimerRef.current)
+      }
+      revealTimerRef.current = window.setTimeout(() => {
+        setRevealingSlot(null)
+        revealTimerRef.current = null
+      }, 520)
+    }, 300)
   }
 
   function handleSkip() {
-    if (!canSkip || flyingCard) {
+    if (!canSkip || selectedOfferId || isResultPending) {
       return
     }
 
@@ -514,7 +830,11 @@ function App() {
       createSeededRng(rngSeed + gameState.round * 31 + 7),
     )
     setGameState(nextState)
-    setScreen(nextState.result ? 'result' : 'draft')
+    if (nextState.result) {
+      scheduleResultScreen()
+    } else {
+      setScreen('draft')
+    }
   }
 
   function swapSlots(from: CourtSlotId, to: CourtSlotId) {
@@ -533,6 +853,22 @@ function App() {
   }
 
   useEffect(() => {
+    function moveDragAt(clientX: number, clientY: number) {
+      const preview = dragPreviewRef.current
+      if (!preview) {
+        return
+      }
+
+      const next = {
+        ...preview,
+        x: clientX - preview.offsetX,
+        y: clientY - preview.offsetY,
+      }
+      dragPreviewRef.current = next
+      suppressNextSlotClickRef.current = true
+      setDragPreview(next)
+    }
+
     function finishDragAt(clientX: number, clientY: number) {
       const sourceSlot = draggingSlotRef.current
       if (!sourceSlot) {
@@ -556,12 +892,20 @@ function App() {
       }
 
       draggingSlotRef.current = null
+      dragPreviewRef.current = null
       setDraggingSlot(null)
+      setDragPreview(null)
     }
 
     function clearDrag() {
       draggingSlotRef.current = null
+      dragPreviewRef.current = null
       setDraggingSlot(null)
+      setDragPreview(null)
+    }
+
+    function handleWindowPointerMove(event: PointerEvent) {
+      moveDragAt(event.clientX, event.clientY)
     }
 
     function handleWindowPointerUp(event: PointerEvent) {
@@ -582,6 +926,7 @@ function App() {
     }
 
     window.addEventListener('pointerup', handleWindowPointerUp)
+    window.addEventListener('pointermove', handleWindowPointerMove)
     window.addEventListener('pointercancel', clearDrag)
     window.addEventListener('mouseup', handleWindowMouseUp)
     window.addEventListener('touchend', handleWindowTouchEnd)
@@ -589,6 +934,7 @@ function App() {
 
     return () => {
       window.removeEventListener('pointerup', handleWindowPointerUp)
+      window.removeEventListener('pointermove', handleWindowPointerMove)
       window.removeEventListener('pointercancel', clearDrag)
       window.removeEventListener('mouseup', handleWindowMouseUp)
       window.removeEventListener('touchend', handleWindowTouchEnd)
@@ -597,6 +943,11 @@ function App() {
   }, [])
 
   function handleSlotClick(slot: CourtSlotId) {
+    if (suppressNextSlotClickRef.current) {
+      suppressNextSlotClickRef.current = false
+      return
+    }
+
     if (!gameState.lineupArrangement[slot]) {
       if (selectedSlot) {
         swapSlots(selectedSlot, slot)
@@ -637,7 +988,7 @@ function App() {
                 开始选秀
               </button>
               <p className="micro-copy">
-                {FREE_SKIP_COUNT} 次免费跳过，用完后每次消耗 {PAID_SKIP_COST} 预算。
+                {FREE_SKIP_COUNT} 次免费跳过，用完后必须从当前报价中签人。
               </p>
             </div>
           </div>
@@ -687,15 +1038,21 @@ function App() {
             </div>
           </header>
 
-          <section className="offer-stage" key={gameState.round}>
+          <section className={`offer-stage ${selectedOfferId ? 'is-transitioning' : ''}`} key={gameState.round}>
             {gameState.currentOffers.map((offer, index) => {
               return (
                 <button
                   key={offer.id}
                   type="button"
-                  className={`offer-card-button ${offer.offerState !== 'enabled' ? 'is-disabled' : ''}`}
-                  onClick={(event) => handleSign(offer, event)}
-                  disabled={offer.offerState !== 'enabled' || Boolean(flyingCard)}
+                  className={[
+                    'offer-card-button',
+                    offer.offerState !== 'enabled' ? 'is-disabled' : '',
+                    selectedOfferId === offer.id ? 'is-selected-for-signing' : '',
+                  ]
+                    .filter(Boolean)
+                    .join(' ')}
+                  onClick={() => handleSign(offer)}
+                  aria-disabled={offer.offerState !== 'enabled' || Boolean(selectedOfferId)}
                 >
                   <PlayerCardTile
                     card={offer}
@@ -703,6 +1060,7 @@ function App() {
                     size="large"
                     statusLabel={getOfferStateText(offer)}
                     index={index}
+                    onLongPressOpen={openPlayerDetail}
                   />
                 </button>
               )
@@ -719,7 +1077,12 @@ function App() {
             >
               <RestartIcon />
             </button>
-            <button type="button" className="primary-button skip-button" onClick={handleSkip} disabled={!canSkip}>
+            <button
+              type="button"
+              className="primary-button skip-button"
+              onClick={handleSkip}
+              disabled={!canSkip || isResultPending}
+            >
               {skipLabel}
             </button>
           </section>
@@ -740,6 +1103,7 @@ function App() {
                 )
                 const isSelected = selectedSlot === slot
                 const isDragging = draggingSlot === slot
+                const isRevealingSlot = Boolean(card && revealingSlot === slot)
 
                 return (
                   <button
@@ -753,37 +1117,34 @@ function App() {
                       isInvalid ? 'is-invalid' : '',
                       isSelected ? 'is-selected' : '',
                       isDragging ? 'is-dragging' : '',
+                      isRevealingSlot ? 'is-revealing' : '',
                       getSlotRole(slot),
                     ]
                       .filter(Boolean)
                       .join(' ')}
                     onClick={() => handleSlotClick(slot)}
-                    onPointerDown={() => {
+                    onPointerDown={(event) => {
                       if (card) {
-                        beginDraggingSlot(slot)
-                      }
-                    }}
-                    onMouseDown={() => {
-                      if (card) {
-                        beginDraggingSlot(slot)
-                      }
-                    }}
-                    onTouchStart={() => {
-                      if (card) {
-                        beginDraggingSlot(slot)
+                        beginDraggingSlot(slot, event, card)
                       }
                     }}
                   >
                     <span className="court-slot-label">{formatSlotLabel(slot)}</span>
                     {card ? (
                       <span
-                        className="court-player-chip"
+                        className={[
+                          'court-player-chip',
+                          isRevealingSlot ? 'is-revealing' : '',
+                        ]
+                          .filter(Boolean)
+                          .join(' ')}
                       >
                         <PlayerCardTile
                           card={card}
                           price={card.pricePaid}
                           size="mini"
                           statusLabel="可签约"
+                          onLongPressOpen={openPlayerDetail}
                         />
                       </span>
                     ) : (
@@ -797,38 +1158,32 @@ function App() {
         </section>
       )}
 
-      {flyingCard && (
+      {isResultPending && (
+        <section className="result-pending-overlay" aria-live="polite" aria-label="王朝阵容锁定">
+          <h2>王朝阵容锁定</h2>
+          <p>thikink...</p>
+          <span aria-hidden="true" />
+        </section>
+      )}
+
+      {dragPreview && (
         <div
-          className="flying-card"
+          className="drag-preview"
           style={
             {
-              '--fly-from-x': `${flyingCard.from.left}px`,
-              '--fly-from-y': `${flyingCard.from.top}px`,
-              '--fly-to-x': `${flyingCard.to.left + 8}px`,
-              '--fly-to-y': `${flyingCard.to.top + 30}px`,
-              '--fly-from-w': `${flyingCard.from.width}px`,
-              '--fly-from-h': `${flyingCard.from.height}px`,
-              '--fly-to-w': `${Math.max(80, flyingCard.to.width - 16)}px`,
-              '--fly-to-h': `${Math.max(72, flyingCard.to.height - 38)}px`,
+              '--drag-x': `${dragPreview.x}px`,
+              '--drag-y': `${dragPreview.y}px`,
+              '--drag-w': `${dragPreview.width}px`,
+              '--drag-h': `${dragPreview.height}px`,
             } as CSSProperties &
-            Record<
-              | '--fly-from-x'
-              | '--fly-from-y'
-              | '--fly-to-x'
-              | '--fly-to-y'
-              | '--fly-from-w'
-              | '--fly-from-h'
-              | '--fly-to-w'
-              | '--fly-to-h',
-              string
-            >
+            Record<'--drag-x' | '--drag-y' | '--drag-w' | '--drag-h', string>
           }
         >
           <PlayerCardTile
-            card={flyingCard.card}
-            price={flyingCard.price}
-            size="large"
-            statusLabel={flyingCard.statusLabel}
+            card={dragPreview.card}
+            price={dragPreview.price}
+            size="mini"
+            statusLabel="可签约"
           />
         </div>
       )}
@@ -839,8 +1194,8 @@ function App() {
             <p className="eyebrow">{getResultReason(gameState.result.gameOverReason)}</p>
             <h2>王朝评分</h2>
             <p>
-              实力 {gameState.result.strengthScore} · 平衡 {gameState.result.balanceScore} · 巨星{' '}
-              {gameState.result.superstarScore} · 花费 {gameState.result.budgetSpent}
+              实力 {gameState.result.strengthScore} · 上限 {gameState.result.superstarScore} · 结构{' '}
+              {gameState.result.balanceScore} · 预算 {gameState.result.budgetScore}
             </p>
           </div>
 
@@ -867,6 +1222,25 @@ function App() {
             </article>
           </section>
 
+          <section className="result-breakdown" aria-label="阵容分析">
+            <article>
+              <span>进攻</span>
+              <strong>{gameState.result.offenseScore}</strong>
+            </article>
+            <article>
+              <span>防守</span>
+              <strong>{gameState.result.defenseScore}</strong>
+            </article>
+            <article>
+              <span>体能</span>
+              <strong>{gameState.result.physicalScore}</strong>
+            </article>
+            <article>
+              <span>心态</span>
+              <strong>{gameState.result.mentalityScore}</strong>
+            </article>
+          </section>
+
           <section className="result-lineup-grid" aria-label="最终阵容">
             {getResultLineup(gameState.result).map(({ slot, card, pricePaid }) => {
               return (
@@ -882,6 +1256,7 @@ function App() {
                       size="large"
                       statusLabel={formatSlotLabel(slot)}
                       className="result-player-card"
+                      onLongPressOpen={openPlayerDetail}
                     />
                   ) : (
                     <div className="result-empty-slot">
@@ -900,6 +1275,13 @@ function App() {
             </button>
           </section>
         </section>
+      )}
+
+      {playerDetail && (
+        <PlayerDetailOverlay
+          detail={playerDetail}
+          onClose={() => setPlayerDetail(null)}
+        />
       )}
     </main>
   )

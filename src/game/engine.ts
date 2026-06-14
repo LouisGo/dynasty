@@ -3,7 +3,6 @@ import {
   FREE_SKIP_COUNT,
   MAX_ROUNDS,
   OFFER_COUNT,
-  PAID_SKIP_COST,
   ROSTER_TARGET,
   SIXTH_SLOT,
   STARTING_BUDGET,
@@ -19,6 +18,7 @@ import {
   type Position,
   type ResultSummary,
   type StarterAssignment,
+  type Tier,
 } from './types'
 
 type Rng = () => number
@@ -28,6 +28,13 @@ interface PricedCandidate {
   price: number
   offerState: OfferState
 }
+
+const OFFER_TIER_SLOTS: Tier[][] = [
+  ['T0', 'T1', 'T2'],
+  ['T2', 'T3'],
+  ['T2', 'T3'],
+  ['T3', 'T4'],
+]
 
 function getPlayerIndex(pool: PlayerCard[]) {
   return new Map(pool.map((card) => [card.id, card]))
@@ -56,16 +63,29 @@ export function createSeededRng(seed: number): Rng {
 }
 
 export function getPlayerWeight(card: PlayerCard) {
-  return Math.max(1, 100 - card.sourceRating)
+  return Math.max(0.1, card.rarityWeight)
+}
+
+function getPriceFactorRange(card: PlayerCard) {
+  if (card.tier === 'T0' || card.tier === 'T1') {
+    return { min: 0.9, max: 1.15 }
+  }
+
+  if (card.tier === 'T2') {
+    return { min: 0.85, max: 1.15 }
+  }
+
+  return { min: 0.8, max: 1.2 }
 }
 
 export function calculateOfferPrice(card: PlayerCard, rng: Rng = Math.random) {
-  const randomFactor = 0.7 + rng() * 0.6
+  const { min, max } = getPriceFactorRange(card)
+  const randomFactor = min + rng() * (max - min)
   return Math.max(1, Math.round((card.sourceRating - 74) * randomFactor))
 }
 
 function getMinimumPossiblePrice(card: PlayerCard) {
-  return Math.max(1, Math.round((card.sourceRating - 74) * 0.7))
+  return Math.max(1, Math.round((card.sourceRating - 74) * getPriceFactorRange(card).min))
 }
 
 function weightedPick<T>(
@@ -143,12 +163,32 @@ export function canAnyPlayerBeBought(
   arrangement: LineupArrangement,
   budgetRemaining: number,
   pool: PlayerCard[],
+  excludedIds = new Set<string>(),
 ) {
   return pool.some(
     (card) =>
+      !excludedIds.has(card.id) &&
       !roster.some((player) => player.playerId === card.id) &&
       canFitOpenSlot(card, arrangement) &&
       getMinimumPossiblePrice(card) <= budgetRemaining,
+  )
+}
+
+function pickOfferForTierSlot(
+  candidates: PricedCandidate[],
+  tiers: Tier[],
+  rng: Rng,
+  blockedIds: Set<string>,
+) {
+  const tierCandidates = candidates.filter((candidate) => tiers.includes(candidate.card.tier))
+  const source = tierCandidates.length > 0 ? tierCandidates : candidates
+
+  return weightedPick(
+    source,
+    rng,
+    (candidate) => getPlayerWeight(candidate.card),
+    blockedIds,
+    (candidate) => candidate.card.id,
   )
 }
 
@@ -158,17 +198,35 @@ export function generateOffers(
   arrangement: LineupArrangement,
   pool: PlayerCard[],
   rng: Rng = Math.random,
+  excludedIds = new Set<string>(),
 ): OfferCard[] {
-  const candidates: PricedCandidate[] = pool.map((card) => {
-    const price = calculateOfferPrice(card, rng)
-    return {
-      card,
-      price,
-      offerState: getOfferState(card, price, budgetRemaining, roster, arrangement),
-    }
-  })
+  const candidates: PricedCandidate[] = pool
+    .filter((card) => !excludedIds.has(card.id))
+    .map((card) => {
+      const price = calculateOfferPrice(card, rng)
+      return {
+        card,
+        price,
+        offerState: getOfferState(card, price, budgetRemaining, roster, arrangement),
+      }
+    })
   const blockedIds = new Set<string>()
   const offers: OfferCard[] = []
+
+  for (const tiers of OFFER_TIER_SLOTS) {
+    const picked = pickOfferForTierSlot(candidates, tiers, rng, blockedIds)
+
+    if (!picked) {
+      break
+    }
+
+    blockedIds.add(picked.card.id)
+    offers.push({
+      ...picked.card,
+      price: picked.price,
+      offerState: picked.offerState,
+    })
+  }
 
   while (offers.length < OFFER_COUNT) {
     const picked = weightedPick(
@@ -261,22 +319,35 @@ function createResultSummary(
     return card?.sourceRating ?? 0
   })
   const sixthRating = sixthMan?.ovr ?? 0
-  const starterAverage =
-    starterRatings.reduce((sum, rating) => sum + rating, 0) / STARTING_POSITIONS.length
-  const strengthScore = starterAverage * 0.8 + sixthRating * 0.2
   const isComplete = roster.length >= ROSTER_TARGET && COURT_SLOTS.every((slot) => arrangement[slot])
   const nonZeroRatings = [...starterRatings, sixthRating].filter((rating) => rating > 0)
   const ratingSpread =
     nonZeroRatings.length > 0 ? Math.max(...nonZeroRatings) - Math.min(...nonZeroRatings) : 100
-  const balanceScore = getBalanceScore(isComplete, ratingSpread)
-  const superstarScore = getSuperstarScore(nonZeroRatings.filter((rating) => rating >= 95).length)
+  const lineupCards = COURT_SLOTS.map((slot) => {
+    const playerId = arrangement[slot]
+    return playerId ? (playerIndex.get(playerId) ?? null) : null
+  })
+  const coreAverages = getCoreRatingAverages(lineupCards)
+  const coreRating =
+    coreAverages.offense * 0.35 +
+    coreAverages.defense * 0.3 +
+    coreAverages.physical * 0.15 +
+    coreAverages.mentality * 0.2
+  const coreSpread =
+    Math.max(coreAverages.offense, coreAverages.defense, coreAverages.physical, coreAverages.mentality) -
+    Math.min(coreAverages.offense, coreAverages.defense, coreAverages.physical, coreAverages.mentality)
+  const strengthScore = Number(Math.min(60, coreRating * 0.6).toFixed(1))
+  const balanceScore = getStructureScore(isComplete, roster.length, ratingSpread, coreSpread)
+  const superstarScore = getStarPowerScore(nonZeroRatings)
+  const budgetSpent = STARTING_BUDGET - budgetRemaining
+  const budgetScore = getBudgetScore(isComplete, budgetRemaining)
   const dynastyScore = Math.min(
     100,
-    Number((strengthScore * 0.6 + balanceScore + superstarScore).toFixed(1)),
+    Number((strengthScore + balanceScore + superstarScore + budgetScore).toFixed(1)),
   )
-  const projectedWins = Math.min(82, Math.max(0, Math.round(15 + dynastyScore * 0.67)))
+  const projectedWins = Math.min(82, Math.max(0, Math.round(35 + dynastyScore * 0.45)))
   const championshipOdds = Math.round(
-    (1 / (1 + Math.exp(-((dynastyScore - 78) / 5)))) * 100,
+    (1 / (1 + Math.exp(-((dynastyScore - 84) / 5)))) * 100,
   )
 
   return {
@@ -289,51 +360,132 @@ function createResultSummary(
     strengthScore: Number(strengthScore.toFixed(1)),
     balanceScore,
     superstarScore,
-    budgetSpent: STARTING_BUDGET - budgetRemaining,
+    budgetScore,
+    offenseScore: coreAverages.offense,
+    defenseScore: coreAverages.defense,
+    physicalScore: coreAverages.physical,
+    mentalityScore: coreAverages.mentality,
+    budgetSpent,
     budgetRemaining,
     roundReached,
     gameOverReason,
   }
 }
 
-function getBalanceScore(isComplete: boolean, ratingSpread: number) {
+function getCoreRatingAverages(cards: Array<PlayerCard | null>) {
+  let totalWeight = 0
+  const totals = {
+    offense: 0,
+    defense: 0,
+    physical: 0,
+    mentality: 0,
+  }
+
+  cards.forEach((card, index) => {
+    if (!card) {
+      return
+    }
+
+    const weight = index === COURT_SLOTS.length - 1 ? 0.75 : 1
+    const ratings =
+      card.ratings ?? {
+        offense: card.sourceRating,
+        defense: card.sourceRating,
+        physical: card.sourceRating,
+        mentality: card.sourceRating,
+      }
+
+    totals.offense += ratings.offense * weight
+    totals.defense += ratings.defense * weight
+    totals.physical += ratings.physical * weight
+    totals.mentality += ratings.mentality * weight
+    totalWeight += weight
+  })
+
+  if (totalWeight === 0) {
+    return {
+      offense: 0,
+      defense: 0,
+      physical: 0,
+      mentality: 0,
+    }
+  }
+
+  return {
+    offense: Number((totals.offense / totalWeight).toFixed(1)),
+    defense: Number((totals.defense / totalWeight).toFixed(1)),
+    physical: Number((totals.physical / totalWeight).toFixed(1)),
+    mentality: Number((totals.mentality / totalWeight).toFixed(1)),
+  }
+}
+
+function getStructureScore(
+  isComplete: boolean,
+  rosterSize: number,
+  ratingSpread: number,
+  coreSpread: number,
+) {
+  if (!isComplete) {
+    return Math.round((rosterSize / ROSTER_TARGET) * 4)
+  }
+
+  let score = 6
+
+  if (ratingSpread <= 5) {
+    score += 3
+  } else if (ratingSpread <= 10) {
+    score += 2
+  } else if (ratingSpread <= 15) {
+    score += 1
+  }
+
+  if (coreSpread <= 8) {
+    score += 3
+  } else if (coreSpread <= 14) {
+    score += 2
+  } else if (coreSpread <= 20) {
+    score += 1
+  }
+
+  return score
+}
+
+function getStarPowerScore(ratings: number[]) {
+  const slotMax = [8, 7, 5]
+  return Number(
+    [...ratings]
+      .sort((left, right) => right - left)
+      .slice(0, slotMax.length)
+      .reduce((sum, rating, index) => {
+        const normalized = Math.max(0, Math.min(1, (rating - 90) / 9))
+        return sum + normalized * slotMax[index]
+      }, 0)
+      .toFixed(1),
+  )
+}
+
+function getBudgetScore(isComplete: boolean, budgetRemaining: number) {
   if (!isComplete) {
     return 0
   }
 
-  if (ratingSpread <= 5) {
-    return 20
+  if (budgetRemaining >= 9 && budgetRemaining <= 20) {
+    return 8
   }
 
-  if (ratingSpread <= 10) {
-    return 16
+  if (budgetRemaining >= 21 && budgetRemaining <= 30) {
+    return 6
   }
 
-  if (ratingSpread <= 15) {
-    return 12
-  }
-
-  return 8
-}
-
-function getSuperstarScore(superstarCount: number) {
-  if (superstarCount <= 0) {
+  if (budgetRemaining >= 1 && budgetRemaining <= 8) {
     return 5
   }
 
-  if (superstarCount === 1) {
-    return 10
+  if (budgetRemaining === 0 || budgetRemaining <= 40) {
+    return 3
   }
 
-  if (superstarCount === 2) {
-    return 15
-  }
-
-  if (superstarCount === 3) {
-    return 18
-  }
-
-  return 20
+  return 1
 }
 
 function finishRun(
@@ -383,7 +535,17 @@ function advanceOrFinish(
     )
   }
 
-  if (!canAnyPlayerBeBought(state.roster, state.lineupArrangement, state.budgetRemaining, pool)) {
+  const seenOfferIds = new Set(state.seenOfferIds)
+
+  if (
+    !canAnyPlayerBeBought(
+      state.roster,
+      state.lineupArrangement,
+      state.budgetRemaining,
+      pool,
+      seenOfferIds,
+    )
+  ) {
     return finishRun(
       {
         ...state,
@@ -395,16 +557,24 @@ function advanceOrFinish(
   }
 
   const nextRound = state.round + 1
+  const currentOffers = generateOffers(
+    state.roster,
+    state.budgetRemaining,
+    state.lineupArrangement,
+    pool,
+    rng,
+    seenOfferIds,
+  )
+  const nextSeenOfferIds = new Set(seenOfferIds)
+  for (const offer of currentOffers) {
+    nextSeenOfferIds.add(offer.id)
+  }
+
   return {
     ...state,
     round: nextRound,
-    currentOffers: generateOffers(
-      state.roster,
-      state.budgetRemaining,
-      state.lineupArrangement,
-      pool,
-      rng,
-    ),
+    currentOffers,
+    seenOfferIds: [...nextSeenOfferIds],
     lastAction,
     result: null,
   }
@@ -412,14 +582,15 @@ function advanceOrFinish(
 
 export function createInitialState(pool: PlayerCard[], rng: Rng = Math.random): GameState {
   const lineupArrangement = createEmptyArrangement()
+  const currentOffers = generateOffers([], STARTING_BUDGET, lineupArrangement, pool, rng)
 
   return {
     budgetRemaining: STARTING_BUDGET,
     round: 1,
     freeSkipsRemaining: FREE_SKIP_COUNT,
-    paidSkipsUsed: 0,
     roster: [],
-    currentOffers: generateOffers([], STARTING_BUDGET, lineupArrangement, pool, rng),
+    currentOffers,
+    seenOfferIds: currentOffers.map((offer) => offer.id),
     lineupArrangement,
     lastAction: '第一组历史报价已送达。预算 100，目标 6 人王朝。',
     result: null,
@@ -485,27 +656,18 @@ export function skipOfferGroup(
     throw new Error('Cannot skip after the run is complete.')
   }
 
-  const isFreeSkip = state.freeSkipsRemaining > 0
-  if (!isFreeSkip && state.budgetRemaining < PAID_SKIP_COST) {
-    throw new Error('Not enough budget for a paid skip.')
+  if (state.freeSkipsRemaining <= 0) {
+    throw new Error('No free skips remaining.')
   }
 
-  const budgetRemaining = isFreeSkip
-    ? state.budgetRemaining
-    : state.budgetRemaining - PAID_SKIP_COST
-  const freeSkipsRemaining = isFreeSkip ? state.freeSkipsRemaining - 1 : 0
-  const paidSkipsUsed = isFreeSkip ? state.paidSkipsUsed : state.paidSkipsUsed + 1
+  const freeSkipsRemaining = state.freeSkipsRemaining - 1
   const nextState = {
     ...state,
-    budgetRemaining,
     freeSkipsRemaining,
-    paidSkipsUsed,
     currentOffers: [],
     result: null,
   }
-  const lastAction = isFreeSkip
-    ? `你免费跳过了本轮，还剩 ${freeSkipsRemaining} 次免费跳过。`
-    : `你花费 ${PAID_SKIP_COST} 预算跳过了本轮。`
+  const lastAction = `你免费跳过了本轮，还剩 ${freeSkipsRemaining} 次免费跳过。`
 
   return advanceOrFinish(nextState, pool, rng, lastAction)
 }

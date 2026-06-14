@@ -1,8 +1,7 @@
 export const STARTING_POSITIONS = ['PG', 'SG', 'SF', 'PF', 'C'] as const
 export const STARTING_BUDGET = 100
 export const ROSTER_TARGET = 6
-export const FREE_SKIP_COUNT = 3
-export const PAID_SKIP_COST = 3
+export const FREE_SKIP_COUNT = 5
 export const OFFER_COUNT = 4
 export const MAX_ROUNDS = 20
 export const SIXTH_SLOT = 'SIX' as const
@@ -13,6 +12,40 @@ export type CourtSlotId = (typeof COURT_SLOTS)[number]
 export type Tier = 'T0' | 'T1' | 'T2' | 'T3' | 'T4'
 export type OfferState = 'enabled' | 'too-expensive' | 'duplicate' | 'slot-blocked'
 export type GameOverReason = 'lineup-complete' | 'budget-exhausted' | 'round-limit'
+export type AttributeSourceStatus = 'verified-2k-snapshot' | 'estimated-archetype-v1'
+
+export interface CoreRatings {
+  offense: number
+  defense: number
+  physical: number
+  mentality: number
+}
+
+export interface AttributeGroups {
+  outsideScoring: number
+  insideScoring: number
+  playmaking: number
+  defense: number
+  rebounding: number
+  athleticism: number
+  intangibles: number
+}
+
+export interface SourceAttributes {
+  sourceVersion: string
+  groups: AttributeGroups
+  attributes: {
+    shotIQ: number
+    offensiveConsistency: number
+    passIQ: number
+    helpDefenseIQ: number
+    defensiveConsistency: number
+    stamina: number
+    durability: number
+    strength: number
+    agility: number
+  }
+}
 
 export interface PlayerCard {
   id: string
@@ -25,6 +58,11 @@ export interface PlayerCard {
   tagline: string
   source: string
   sourceStatus: string
+  ratingModelVersion: '2k-attributes-v1'
+  ratings: CoreRatings | null
+  sourceAttributes: SourceAttributes | null
+  attributeSourceUrl: string | null
+  attributeSourceStatus: AttributeSourceStatus
 }
 
 export interface DraftedPlayer {
@@ -64,6 +102,11 @@ export interface ResultSummary {
   strengthScore: number
   balanceScore: number
   superstarScore: number
+  budgetScore: number
+  offenseScore: number
+  defenseScore: number
+  physicalScore: number
+  mentalityScore: number
   budgetSpent: number
   budgetRemaining: number
   roundReached: number
@@ -74,9 +117,9 @@ export interface GameState {
   budgetRemaining: number
   round: number
   freeSkipsRemaining: number
-  paidSkipsUsed: number
   roster: DraftedPlayer[]
   currentOffers: OfferCard[]
+  seenOfferIds: string[]
   lineupArrangement: LineupArrangement
   lastAction: string
   result: ResultSummary | null

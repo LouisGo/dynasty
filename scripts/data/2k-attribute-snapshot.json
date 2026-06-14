@@ -1,0 +1,3652 @@
+{
+  "michael-jordan": {
+    "sourceUrl": "https://www.2kratings.com/michael-jordan-all-time-chicago-bulls",
+    "sourceVersion": "NBA 2K26 All-Time Chicago Bulls",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 95,
+      "insideScoring": 84,
+      "playmaking": 89,
+      "defense": 94,
+      "rebounding": 74,
+      "athleticism": 95,
+      "intangibles": 95
+    },
+    "attributes": {
+      "shotIQ": 98,
+      "offensiveConsistency": 98,
+      "passIQ": 92,
+      "helpDefenseIQ": 95,
+      "defensiveConsistency": 98,
+      "stamina": 98,
+      "durability": 98,
+      "strength": 74,
+      "agility": 98
+    }
+  },
+  "lebron-james": {
+    "sourceUrl": "https://www.2kratings.com/lebron-james-all-time-cleveland-cavaliers",
+    "sourceVersion": "NBA 2K26 All-Time Cleveland Cavaliers",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 87,
+      "insideScoring": 89,
+      "playmaking": 91,
+      "defense": 88,
+      "rebounding": 77,
+      "athleticism": 92,
+      "intangibles": 98
+    },
+    "attributes": {
+      "shotIQ": 98,
+      "offensiveConsistency": 98,
+      "passIQ": 95,
+      "helpDefenseIQ": 95,
+      "defensiveConsistency": 95,
+      "stamina": 98,
+      "durability": 98,
+      "strength": 95,
+      "agility": 96
+    }
+  },
+  "magic-johnson": {
+    "sourceUrl": "https://www.2kratings.com/magic-johnson-all-time-los-angeles-lakers",
+    "sourceVersion": "NBA 2K26 All-Time Los Angeles Lakers",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 82,
+      "insideScoring": 75,
+      "playmaking": 98,
+      "defense": 75,
+      "rebounding": 74,
+      "athleticism": 82,
+      "intangibles": 98
+    },
+    "attributes": {
+      "shotIQ": 98,
+      "offensiveConsistency": 98,
+      "passIQ": 98,
+      "helpDefenseIQ": 95,
+      "defensiveConsistency": 90,
+      "stamina": 98,
+      "durability": 98,
+      "strength": 78,
+      "agility": 82
+    }
+  },
+  "kobe-bryant": {
+    "sourceUrl": "https://www.2kratings.com/kobe-bryant-all-time-los-angeles-lakers",
+    "sourceVersion": "NBA 2K26 All-Time Los Angeles Lakers",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 93,
+      "insideScoring": 83,
+      "playmaking": 86,
+      "defense": 90,
+      "rebounding": 60,
+      "athleticism": 88,
+      "intangibles": 98
+    },
+    "attributes": {
+      "shotIQ": 98,
+      "offensiveConsistency": 98,
+      "passIQ": 90,
+      "helpDefenseIQ": 95,
+      "defensiveConsistency": 98,
+      "stamina": 98,
+      "durability": 98,
+      "strength": 78,
+      "agility": 98
+    }
+  },
+  "shaquille-oneal": {
+    "sourceUrl": "https://www.2kratings.com/shaquille-oneal-all-time-los-angeles-lakers",
+    "sourceVersion": "NBA 2K26 All-Time Los Angeles Lakers",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 38,
+      "insideScoring": 95,
+      "playmaking": 49,
+      "defense": 89,
+      "rebounding": 98,
+      "athleticism": 80,
+      "intangibles": 90
+    },
+    "attributes": {
+      "shotIQ": 98,
+      "offensiveConsistency": 98,
+      "passIQ": 75,
+      "helpDefenseIQ": 95,
+      "defensiveConsistency": 95,
+      "stamina": 90,
+      "durability": 95,
+      "strength": 98,
+      "agility": 75
+    }
+  },
+  "stephen-curry": {
+    "sourceUrl": "https://www.2kratings.com/stephen-curry-all-time-golden-state-warriors",
+    "sourceVersion": "NBA 2K26 All-Time Golden State Warriors",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 98,
+      "insideScoring": 56,
+      "playmaking": 91,
+      "defense": 66,
+      "rebounding": 50,
+      "athleticism": 81,
+      "intangibles": 98
+    },
+    "attributes": {
+      "shotIQ": 98,
+      "offensiveConsistency": 98,
+      "passIQ": 97,
+      "helpDefenseIQ": 74,
+      "defensiveConsistency": 75,
+      "stamina": 98,
+      "durability": 88,
+      "strength": 46,
+      "agility": 95
+    }
+  },
+  "tim-duncan": {
+    "sourceUrl": "https://www.2kratings.com/tim-duncan-all-time-san-antonio-spurs",
+    "sourceVersion": "NBA 2K26 All-Time San Antonio Spurs",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 80,
+      "insideScoring": 92,
+      "playmaking": 57,
+      "defense": 94,
+      "rebounding": 90,
+      "athleticism": 77,
+      "intangibles": 98
+    },
+    "attributes": {
+      "shotIQ": 98,
+      "offensiveConsistency": 98,
+      "passIQ": 78,
+      "helpDefenseIQ": 98,
+      "defensiveConsistency": 98,
+      "stamina": 95,
+      "durability": 95,
+      "strength": 90,
+      "agility": 77
+    }
+  },
+  "dennis-rodman": {
+    "sourceUrl": "https://www.2kratings.com/dennis-rodman-all-time-chicago-bulls",
+    "sourceVersion": "NBA 2K26 All-Time Chicago Bulls",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 48,
+      "insideScoring": 49,
+      "playmaking": 44,
+      "defense": 92,
+      "rebounding": 98,
+      "athleticism": 78,
+      "intangibles": 95
+    },
+    "attributes": {
+      "shotIQ": 40,
+      "offensiveConsistency": 30,
+      "passIQ": 60,
+      "helpDefenseIQ": 98,
+      "defensiveConsistency": 98,
+      "stamina": 98,
+      "durability": 95,
+      "strength": 82,
+      "agility": 84
+    }
+  },
+  "kareem-abdul-jabbar": {
+    "sourceUrl": "https://www.2kratings.com/kareem-abdul-jabbar-1986-87-los-angeles-lakers",
+    "sourceVersion": "Kareem Abdul-Jabbar NBA 2K26 Rating (1986-87 Los Angeles Lakers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 76,
+      "athleticism": 71,
+      "insideScoring": 88,
+      "playmaking": 55,
+      "defense": 79,
+      "rebounding": 90,
+      "intangibles": 65
+    },
+    "attributes": {
+      "offensiveConsistency": 99,
+      "shotIQ": 80,
+      "strength": 74,
+      "agility": 37,
+      "stamina": 95,
+      "durability": 82,
+      "passIQ": 79,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 95
+    }
+  },
+  "larry-bird": {
+    "sourceUrl": "https://www.2kratings.com/larry-bird-1985-86-boston-celtics",
+    "sourceVersion": "Larry Bird NBA 2K26 Rating (1985-86 Boston Celtics)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 96,
+      "athleticism": 79,
+      "insideScoring": 74,
+      "playmaking": 81,
+      "defense": 84,
+      "rebounding": 69,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 99,
+      "strength": 65,
+      "agility": 88,
+      "stamina": 97,
+      "durability": 91,
+      "passIQ": 95,
+      "defensiveConsistency": 99,
+      "helpDefenseIQ": 97
+    }
+  },
+  "hakeem-olajuwon": {
+    "sourceUrl": "https://www.2kratings.com/hakeem-olajuwon-1993-94-houston-rockets",
+    "sourceVersion": "Hakeem Olajuwon NBA 2K26 Rating (1993-94 Houston Rockets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 84,
+      "athleticism": 73,
+      "insideScoring": 88,
+      "playmaking": 55,
+      "defense": 85,
+      "rebounding": 94,
+      "intangibles": 98
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 88,
+      "agility": 49,
+      "stamina": 95,
+      "durability": 89,
+      "passIQ": 60,
+      "defensiveConsistency": 98,
+      "helpDefenseIQ": 98
+    }
+  },
+  "wilt-chamberlain": {
+    "sourceUrl": "https://www.2kratings.com/wilt-chamberlain-1970-71-los-angeles-lakers",
+    "sourceVersion": "Wilt Chamberlain NBA 2K26 Rating (1970-71 Los Angeles Lakers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 63,
+      "athleticism": 81,
+      "insideScoring": 77,
+      "playmaking": 59,
+      "defense": 81,
+      "rebounding": 97,
+      "intangibles": 98
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 88,
+      "strength": 98,
+      "agility": 40,
+      "stamina": 98,
+      "durability": 99,
+      "passIQ": 77,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 96
+    }
+  },
+  "kevin-durant": {
+    "sourceUrl": "https://www.2kratings.com/kevin-durant",
+    "sourceVersion": "Kevin Durant NBA 2K26 Rating (Current Houston Rockets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 92,
+      "athleticism": 81,
+      "insideScoring": 84,
+      "playmaking": 82,
+      "defense": 67,
+      "rebounding": 48,
+      "intangibles": 40
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 80,
+      "strength": 63,
+      "agility": 78,
+      "stamina": 94,
+      "durability": 88,
+      "passIQ": 88,
+      "defensiveConsistency": 75,
+      "helpDefenseIQ": 75
+    }
+  },
+  "julius-erving": {
+    "sourceUrl": "https://www.2kratings.com/julius-erving-1976-77-philadelphia-76ers",
+    "sourceVersion": "Julius Erving NBA 2K26 Rating (1976-77 Philadelphia 76ers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 85,
+      "athleticism": 93,
+      "insideScoring": 88,
+      "playmaking": 81,
+      "defense": 77,
+      "rebounding": 78,
+      "intangibles": 90
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 84,
+      "strength": 85,
+      "agility": 84,
+      "stamina": 98,
+      "durability": 95,
+      "passIQ": 84,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 84
+    }
+  },
+  "dirk-nowitzki": {
+    "sourceUrl": "https://www.2kratings.com/dirk-nowitzki-2010-11-dallas-mavericks",
+    "sourceVersion": "Dirk Nowitzki NBA 2K26 Rating (2010-11 Dallas Mavericks)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 95,
+      "athleticism": 68,
+      "insideScoring": 86,
+      "playmaking": 57,
+      "defense": 68,
+      "rebounding": 84,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 80,
+      "agility": 43,
+      "stamina": 98,
+      "durability": 82,
+      "passIQ": 69,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 84
+    }
+  },
+  "kevin-garnett": {
+    "sourceUrl": "https://www.2kratings.com/kevin-garnett-2003-04-minnesota-timberwolves",
+    "sourceVersion": "Kevin Garnett NBA 2K26 Rating (2003-04 Minnesota Timberwolves)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 89,
+      "athleticism": 89,
+      "insideScoring": 90,
+      "playmaking": 74,
+      "defense": 82,
+      "rebounding": 94,
+      "intangibles": 50
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 88,
+      "agility": 79,
+      "stamina": 98,
+      "durability": 88,
+      "passIQ": 85,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 88
+    }
+  },
+  "moses-malone": {
+    "sourceUrl": "https://www.2kratings.com/moses-malone-all-decade-1980s",
+    "sourceVersion": "Moses Malone NBA 2K26 Rating (All-Decade 1980s All-Stars)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 84,
+      "athleticism": 86,
+      "insideScoring": 95,
+      "playmaking": 51,
+      "defense": 88,
+      "rebounding": 99,
+      "intangibles": 56
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 99,
+      "strength": 97,
+      "agility": 57,
+      "stamina": 98,
+      "durability": 92,
+      "passIQ": 73,
+      "defensiveConsistency": 98,
+      "helpDefenseIQ": 99
+    }
+  },
+  "nikola-jokic": {
+    "sourceUrl": "https://www.2kratings.com/nikola-jokic",
+    "sourceVersion": "Nikola Jokic NBA 2K26 Rating (Current Denver Nuggets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 91,
+      "athleticism": 78,
+      "insideScoring": 90,
+      "playmaking": 85,
+      "defense": 72,
+      "rebounding": 85,
+      "intangibles": 75
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 85,
+      "strength": 96,
+      "agility": 62,
+      "stamina": 97,
+      "durability": 83,
+      "passIQ": 98,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 83
+    }
+  },
+  "giannis-antetokounmpo": {
+    "sourceUrl": "https://www.2kratings.com/giannis-antetokounmpo",
+    "sourceVersion": "Giannis Antetokounmpo NBA 2K26 Rating (Current Milwaukee Bucks)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 81,
+      "athleticism": 91,
+      "insideScoring": 89,
+      "playmaking": 86,
+      "defense": 83,
+      "rebounding": 85,
+      "intangibles": 85
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 90,
+      "strength": 94,
+      "agility": 86,
+      "stamina": 98,
+      "durability": 91,
+      "passIQ": 95,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 92
+    }
+  },
+  "dwyane-wade": {
+    "sourceUrl": "https://www.2kratings.com/dwyane-wade-2012-13-miami-heat",
+    "sourceVersion": "Dwyane Wade NBA 2K26 Rating (2012-13 Miami Heat)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 84,
+      "athleticism": 86,
+      "insideScoring": 74,
+      "playmaking": 87,
+      "defense": 81,
+      "rebounding": 57,
+      "intangibles": 50
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 90,
+      "strength": 74,
+      "agility": 89,
+      "stamina": 98,
+      "durability": 74,
+      "passIQ": 89,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 89
+    }
+  },
+  "isiah-thomas": {
+    "sourceUrl": "https://www.2kratings.com/isiah-thomas-1988-89-detroit-pistons",
+    "sourceVersion": "Isiah Thomas NBA 2K26 Rating (1988-89 Detroit Pistons)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 83,
+      "athleticism": 85,
+      "insideScoring": 54,
+      "playmaking": 95,
+      "defense": 68,
+      "rebounding": 40,
+      "intangibles": 85
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 85,
+      "strength": 60,
+      "agility": 88,
+      "stamina": 94,
+      "durability": 90,
+      "passIQ": 95,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 84
+    }
+  },
+  "allen-iverson": {
+    "sourceUrl": "https://www.2kratings.com/allen-iverson-2007-08-denver-nuggets",
+    "sourceVersion": "Allen Iverson NBA 2K26 Rating (2007-08 Denver Nuggets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 88,
+      "athleticism": 89,
+      "insideScoring": 60,
+      "playmaking": 85,
+      "defense": 62,
+      "rebounding": 40,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 90,
+      "strength": 65,
+      "agility": 91,
+      "stamina": 95,
+      "durability": 85,
+      "passIQ": 85,
+      "defensiveConsistency": 65,
+      "helpDefenseIQ": 70
+    }
+  },
+  "scottie-pippen": {
+    "sourceUrl": "https://www.2kratings.com/scottie-pippen-1999-00-portland-trail-blazers",
+    "sourceVersion": "Scottie Pippen NBA 2K26 Rating (1999-00 Portland Trail Blazers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 78,
+      "athleticism": 84,
+      "insideScoring": 78,
+      "playmaking": 80,
+      "defense": 72,
+      "rebounding": 58,
+      "intangibles": 75
+    },
+    "attributes": {
+      "offensiveConsistency": 50,
+      "shotIQ": 98,
+      "strength": 69,
+      "agility": 87,
+      "stamina": 98,
+      "durability": 87,
+      "passIQ": 88,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 78
+    }
+  },
+  "david-robinson": {
+    "sourceUrl": "https://www.2kratings.com/david-robinson-1997-98-san-antonio-spurs",
+    "sourceVersion": "David Robinson NBA 2K26 Rating (1997-98 San Antonio Spurs)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 80,
+      "athleticism": 76,
+      "insideScoring": 83,
+      "playmaking": 47,
+      "defense": 80,
+      "rebounding": 87,
+      "intangibles": 75
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 96,
+      "strength": 85,
+      "agility": 43,
+      "stamina": 85,
+      "durability": 83,
+      "passIQ": 48,
+      "defensiveConsistency": 98,
+      "helpDefenseIQ": 90
+    }
+  },
+  "john-stockton": {
+    "sourceUrl": "https://www.2kratings.com/john-stockton-1997-98-utah-jazz",
+    "sourceVersion": "John Stockton NBA 2K26 Rating (1997-98 Utah Jazz)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 86,
+      "athleticism": 81,
+      "insideScoring": 52,
+      "playmaking": 94,
+      "defense": 67,
+      "rebounding": 47,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 98,
+      "strength": 39,
+      "agility": 96,
+      "stamina": 98,
+      "durability": 98,
+      "passIQ": 99,
+      "defensiveConsistency": 90,
+      "helpDefenseIQ": 80
+    }
+  },
+  "karl-malone": {
+    "sourceUrl": "https://www.2kratings.com/karl-malone-2003-04-los-angeles-lakers",
+    "sourceVersion": "Karl Malone NBA 2K26 Rating (2003-04 Los Angeles Lakers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 81,
+      "athleticism": 72,
+      "insideScoring": 82,
+      "playmaking": 58,
+      "defense": 65,
+      "rebounding": 76,
+      "intangibles": 50
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 95,
+      "strength": 85,
+      "agility": 39,
+      "stamina": 85,
+      "durability": 99,
+      "passIQ": 66,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 78
+    }
+  },
+  "chris-paul": {
+    "sourceUrl": "https://www.2kratings.com/chris-paul-2013-14-los-angeles-clippers",
+    "sourceVersion": "Chris Paul NBA 2K26 Rating (2013-14 Los Angeles Clippers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 88,
+      "athleticism": 82,
+      "insideScoring": 57,
+      "playmaking": 92,
+      "defense": 78,
+      "rebounding": 50,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 85,
+      "strength": 58,
+      "agility": 95,
+      "stamina": 95,
+      "durability": 77,
+      "passIQ": 95,
+      "defensiveConsistency": 90,
+      "helpDefenseIQ": 82
+    }
+  },
+  "kawhi-leonard": {
+    "sourceUrl": "https://www.2kratings.com/kawhi-leonard",
+    "sourceVersion": "Kawhi Leonard NBA 2K26 Rating (Current Los Angeles Clippers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 92,
+      "athleticism": 83,
+      "insideScoring": 81,
+      "playmaking": 80,
+      "defense": 84,
+      "rebounding": 59,
+      "intangibles": 98
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 98,
+      "strength": 79,
+      "agility": 89,
+      "stamina": 85,
+      "durability": 82,
+      "passIQ": 82,
+      "defensiveConsistency": 90,
+      "helpDefenseIQ": 91
+    }
+  },
+  "steve-nash": {
+    "sourceUrl": "https://www.2kratings.com/steve-nash-2004-05-phoenix-suns",
+    "sourceVersion": "Steve Nash NBA 2K26 Rating (2004-05 Phoenix Suns)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 93,
+      "athleticism": 80,
+      "insideScoring": 52,
+      "playmaking": 94,
+      "defense": 66,
+      "rebounding": 40,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 50,
+      "agility": 84,
+      "stamina": 98,
+      "durability": 82,
+      "passIQ": 99,
+      "defensiveConsistency": 90,
+      "helpDefenseIQ": 80
+    }
+  },
+  "james-harden": {
+    "sourceUrl": "https://www.2kratings.com/james-harden-2011-12-oklahoma-city-thunder",
+    "sourceVersion": "James Harden NBA 2K26 Rating (2011-12 Oklahoma City Thunder)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 83,
+      "athleticism": 85,
+      "insideScoring": 73,
+      "playmaking": 81,
+      "defense": 52,
+      "rebounding": 43,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 88,
+      "strength": 72,
+      "agility": 76,
+      "stamina": 90,
+      "durability": 88,
+      "passIQ": 77,
+      "defensiveConsistency": 25,
+      "helpDefenseIQ": 43
+    }
+  },
+  "tracy-mcgrady": {
+    "sourceUrl": "https://www.2kratings.com/tracy-mcgrady-2007-08-houston-rockets",
+    "sourceVersion": "Tracy McGrady NBA 2K26 Rating (2007-08 Houston Rockets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 86,
+      "athleticism": 84,
+      "insideScoring": 80,
+      "playmaking": 83,
+      "defense": 74,
+      "rebounding": 48,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 68,
+      "agility": 84,
+      "stamina": 98,
+      "durability": 73,
+      "passIQ": 84,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 84
+    }
+  },
+  "patrick-ewing": {
+    "sourceUrl": "https://www.2kratings.com/patrick-ewing-1998-99-new-york-knicks",
+    "sourceVersion": "Patrick Ewing NBA 2K26 Rating (1998-99 New York Knicks)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 76,
+      "athleticism": 62,
+      "insideScoring": 84,
+      "playmaking": 53,
+      "defense": 71,
+      "rebounding": 78,
+      "intangibles": 40
+    },
+    "attributes": {
+      "offensiveConsistency": 70,
+      "shotIQ": 91,
+      "strength": 92,
+      "agility": 35,
+      "stamina": 85,
+      "durability": 88,
+      "passIQ": 78,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 88
+    }
+  },
+  "clyde-drexler": {
+    "sourceUrl": "https://www.2kratings.com/clyde-drexler-1990-91-portland-trail-blazers",
+    "sourceVersion": "Clyde Drexler NBA 2K26 Rating (1990-91 Portland Trail Blazers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 87,
+      "athleticism": 84,
+      "insideScoring": 81,
+      "playmaking": 76,
+      "defense": 78,
+      "rebounding": 61,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 85,
+      "strength": 67,
+      "agility": 89,
+      "stamina": 90,
+      "durability": 88,
+      "passIQ": 77,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 85
+    }
+  },
+  "ray-allen": {
+    "sourceUrl": "https://www.2kratings.com/ray-allen-2012-13-miami-heat",
+    "sourceVersion": "Ray Allen NBA 2K26 Rating (2012-13 Miami Heat)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 84,
+      "athleticism": 73,
+      "insideScoring": 61,
+      "playmaking": 59,
+      "defense": 59,
+      "rebounding": 44,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 80,
+      "shotIQ": 90,
+      "strength": 54,
+      "agility": 76,
+      "stamina": 85,
+      "durability": 81,
+      "passIQ": 70,
+      "defensiveConsistency": 60,
+      "helpDefenseIQ": 70
+    }
+  },
+  "manu-ginobili": {
+    "sourceUrl": "https://www.2kratings.com/manu-ginobili-2004-05-san-antonio-spurs",
+    "sourceVersion": "Manu Ginobili NBA 2K26 Rating (2004-05 San Antonio Spurs)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 88,
+      "athleticism": 77,
+      "insideScoring": 64,
+      "playmaking": 81,
+      "defense": 65,
+      "rebounding": 57,
+      "intangibles": 85
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 98,
+      "strength": 43,
+      "agility": 75,
+      "stamina": 90,
+      "durability": 95,
+      "passIQ": 82,
+      "defensiveConsistency": 65,
+      "helpDefenseIQ": 72
+    }
+  },
+  "pau-gasol": {
+    "sourceUrl": "https://www.2kratings.com/pau-gasol-2005-06-memphis-grizzlies",
+    "sourceVersion": "Pau Gasol NBA 2K26 Rating (2005-06 Memphis Grizzlies)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 83,
+      "athleticism": 70,
+      "insideScoring": 86,
+      "playmaking": 57,
+      "defense": 72,
+      "rebounding": 86,
+      "intangibles": 75
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 97,
+      "strength": 85,
+      "agility": 36,
+      "stamina": 95,
+      "durability": 78,
+      "passIQ": 82,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 89
+    }
+  },
+  "dwight-howard": {
+    "sourceUrl": "https://www.2kratings.com/dwight-howard-all-decade-2010s",
+    "sourceVersion": "Dwight Howard NBA 2K26 Rating (All-Decade 2010s All-Stars)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 69,
+      "athleticism": 89,
+      "insideScoring": 89,
+      "playmaking": 44,
+      "defense": 89,
+      "rebounding": 99,
+      "intangibles": 40
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 98,
+      "agility": 66,
+      "stamina": 98,
+      "durability": 86,
+      "passIQ": 74,
+      "defensiveConsistency": 98,
+      "helpDefenseIQ": 98
+    }
+  },
+  "yao-ming": {
+    "sourceUrl": "https://www.2kratings.com/yao-ming-2007-08-houston-rockets",
+    "sourceVersion": "Yao Ming NBA 2K26 Rating (2007-08 Houston Rockets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 84,
+      "athleticism": 59,
+      "insideScoring": 78,
+      "playmaking": 51,
+      "defense": 72,
+      "rebounding": 91,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 88,
+      "strength": 93,
+      "agility": 26,
+      "stamina": 90,
+      "durability": 79,
+      "passIQ": 80,
+      "defensiveConsistency": 90,
+      "helpDefenseIQ": 90
+    }
+  },
+  "vince-carter": {
+    "sourceUrl": "https://www.2kratings.com/vince-carter-1999-00-toronto-raptors",
+    "sourceVersion": "Vince Carter NBA 2K26 Rating (1999-00 Toronto Raptors)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 90,
+      "athleticism": 85,
+      "insideScoring": 81,
+      "playmaking": 82,
+      "defense": 73,
+      "rebounding": 53,
+      "intangibles": 90
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 57,
+      "agility": 82,
+      "stamina": 98,
+      "durability": 81,
+      "passIQ": 79,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 77
+    }
+  },
+  "damian-lillard": {
+    "sourceUrl": "https://www.2kratings.com/damian-lillard",
+    "sourceVersion": "Damian Lillard NBA 2K26 Rating (Current Portland Trail Blazers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 86,
+      "athleticism": 88,
+      "insideScoring": 58,
+      "playmaking": 84,
+      "defense": 56,
+      "rebounding": 44,
+      "intangibles": 75
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 70,
+      "strength": 63,
+      "agility": 87,
+      "stamina": 97,
+      "durability": 98,
+      "passIQ": 84,
+      "defensiveConsistency": 60,
+      "helpDefenseIQ": 72
+    }
+  },
+  "dominique-wilkins": {
+    "sourceUrl": "https://www.2kratings.com/dominique-wilkins-1985-86-atlanta-hawks",
+    "sourceVersion": "Dominique Wilkins NBA 2K26 Rating (1985-86 Atlanta Hawks)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 86,
+      "athleticism": 91,
+      "insideScoring": 82,
+      "playmaking": 72,
+      "defense": 76,
+      "rebounding": 69,
+      "intangibles": 75
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 91,
+      "strength": 79,
+      "agility": 85,
+      "stamina": 96,
+      "durability": 94,
+      "passIQ": 90,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 84
+    }
+  },
+  "paul-pierce": {
+    "sourceUrl": "https://www.2kratings.com/paul-pierce-2007-08-boston-celtics",
+    "sourceVersion": "Paul Pierce NBA 2K26 Rating (2007-08 Boston Celtics)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 91,
+      "athleticism": 85,
+      "insideScoring": 77,
+      "playmaking": 73,
+      "defense": 75,
+      "rebounding": 59,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 80,
+      "agility": 87,
+      "stamina": 98,
+      "durability": 86,
+      "passIQ": 75,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 87
+    }
+  },
+  "gary-payton": {
+    "sourceUrl": "https://www.2kratings.com/gary-payton-1995-96-seattle-supersonics",
+    "sourceVersion": "Gary Payton NBA 2K26 Rating (1995-96 Seattle Supersonics)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 77,
+      "athleticism": 87,
+      "insideScoring": 63,
+      "playmaking": 90,
+      "defense": 83,
+      "rebounding": 46,
+      "intangibles": 55
+    },
+    "attributes": {
+      "offensiveConsistency": 80,
+      "shotIQ": 60,
+      "strength": 65,
+      "agility": 99,
+      "stamina": 98,
+      "durability": 93,
+      "passIQ": 97,
+      "defensiveConsistency": 98,
+      "helpDefenseIQ": 98
+    }
+  },
+  "jason-kidd": {
+    "sourceUrl": "https://www.2kratings.com/jason-kidd-2001-02-new-jersey-nets",
+    "sourceVersion": "Jason Kidd NBA 2K26 Rating (2001-02 New Jersey Nets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 78,
+      "athleticism": 88,
+      "insideScoring": 63,
+      "playmaking": 96,
+      "defense": 82,
+      "rebounding": 60,
+      "intangibles": 40
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 60,
+      "strength": 70,
+      "agility": 97,
+      "stamina": 98,
+      "durability": 84,
+      "passIQ": 98,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 95
+    }
+  },
+  "rick-barry": {
+    "sourceUrl": "https://www.2kratings.com/rick-barry-all-decade-1970s",
+    "sourceVersion": "Rick Barry NBA 2K26 Rating (All-Decade 1970s All-Stars)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 94,
+      "athleticism": 85,
+      "insideScoring": 87,
+      "playmaking": 82,
+      "defense": 83,
+      "rebounding": 89,
+      "intangibles": 98
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 79,
+      "agility": 80,
+      "stamina": 98,
+      "durability": 80,
+      "passIQ": 82,
+      "defensiveConsistency": 90,
+      "helpDefenseIQ": 81
+    }
+  },
+  "george-gervin": {
+    "sourceUrl": "https://www.2kratings.com/george-gervin-1985-86-chicago-bulls",
+    "sourceVersion": "George Gervin NBA 2K26 Rating (1985-86 Chicago Bulls)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 80,
+      "athleticism": 76,
+      "insideScoring": 76,
+      "playmaking": 65,
+      "defense": 63,
+      "rebounding": 45,
+      "intangibles": 85
+    },
+    "attributes": {
+      "offensiveConsistency": 80,
+      "shotIQ": 85,
+      "strength": 45,
+      "agility": 76,
+      "stamina": 90,
+      "durability": 79,
+      "passIQ": 68,
+      "defensiveConsistency": 70,
+      "helpDefenseIQ": 78
+    }
+  },
+  "elvin-hayes": {
+    "sourceUrl": "https://www.2kratings.com/elvin-hayes-all-decade-1970s",
+    "sourceVersion": "Elvin Hayes NBA 2K26 Rating (All-Decade 1970s All-Stars)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 84,
+      "athleticism": 84,
+      "insideScoring": 91,
+      "playmaking": 65,
+      "defense": 88,
+      "rebounding": 99,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 95,
+      "agility": 60,
+      "stamina": 98,
+      "durability": 84,
+      "passIQ": 75,
+      "defensiveConsistency": 98,
+      "helpDefenseIQ": 97
+    }
+  },
+  "bob-mcadoo": {
+    "sourceUrl": "https://www.2kratings.com/bob-mcadoo-all-decade-1970s",
+    "sourceVersion": "Bob McAdoo NBA 2K26 Rating (All-Decade 1970s All-Stars)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 77,
+      "athleticism": 84,
+      "insideScoring": 95,
+      "playmaking": 69,
+      "defense": 82,
+      "rebounding": 99,
+      "intangibles": 55
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 70,
+      "strength": 85,
+      "agility": 65,
+      "stamina": 95,
+      "durability": 84,
+      "passIQ": 85,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 89
+    }
+  },
+  "anthony-davis": {
+    "sourceUrl": "https://www.2kratings.com/anthony-davis",
+    "sourceVersion": "Anthony Davis NBA 2K26 Rating (Current Washington Wizards)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 78,
+      "athleticism": 84,
+      "insideScoring": 86,
+      "playmaking": 67,
+      "defense": 82,
+      "rebounding": 81,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 85,
+      "shotIQ": 80,
+      "strength": 92,
+      "agility": 78,
+      "stamina": 87,
+      "durability": 78,
+      "passIQ": 72,
+      "defensiveConsistency": 90,
+      "helpDefenseIQ": 90
+    }
+  },
+  "russell-westbrook": {
+    "sourceUrl": "https://www.2kratings.com/russell-westbrook-2011-12-oklahoma-city-thunder",
+    "sourceVersion": "Russell Westbrook NBA 2K26 Rating (2011-12 Oklahoma City Thunder)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 83,
+      "athleticism": 91,
+      "insideScoring": 64,
+      "playmaking": 87,
+      "defense": 63,
+      "rebounding": 50,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 84,
+      "strength": 74,
+      "agility": 92,
+      "stamina": 98,
+      "durability": 88,
+      "passIQ": 88,
+      "defensiveConsistency": 75,
+      "helpDefenseIQ": 74
+    }
+  },
+  "luka-doncic": {
+    "sourceUrl": "https://www.2kratings.com/luka-doncic",
+    "sourceVersion": "Luka Doncic NBA 2K26 Rating (Current Los Angeles Lakers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 93,
+      "athleticism": 84,
+      "insideScoring": 86,
+      "playmaking": 93,
+      "defense": 57,
+      "rebounding": 59,
+      "intangibles": 95
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 72,
+      "agility": 77,
+      "stamina": 90,
+      "durability": 85,
+      "passIQ": 95,
+      "defensiveConsistency": 45,
+      "helpDefenseIQ": 60
+    }
+  },
+  "joel-embiid": {
+    "sourceUrl": "https://www.2kratings.com/joel-embiid",
+    "sourceVersion": "Joel Embiid NBA 2K26 Rating (Current Philadelphia 76ers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 87,
+      "athleticism": 67,
+      "insideScoring": 91,
+      "playmaking": 68,
+      "defense": 70,
+      "rebounding": 76,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 80,
+      "strength": 96,
+      "agility": 59,
+      "stamina": 70,
+      "durability": 56,
+      "passIQ": 82,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 83
+    }
+  },
+  "nate-archibald": {
+    "sourceUrl": "https://www.2kratings.com/nate-archibald-all-decade-1970s",
+    "sourceVersion": "Nate Archibald NBA 2K26 Rating (All-Decade 1970s All-Stars)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 92,
+      "athleticism": 89,
+      "insideScoring": 64,
+      "playmaking": 95,
+      "defense": 67,
+      "rebounding": 33,
+      "intangibles": 55
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 50,
+      "agility": 98,
+      "stamina": 98,
+      "durability": 92,
+      "passIQ": 95,
+      "defensiveConsistency": 75,
+      "helpDefenseIQ": 83
+    }
+  },
+  "alex-english": {
+    "sourceUrl": "https://www.2kratings.com/alex-english-all-decade-1980s",
+    "sourceVersion": "Alex English NBA 2K26 Rating (All-Decade 1980s All-Stars)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 92,
+      "athleticism": 88,
+      "insideScoring": 88,
+      "playmaking": 80,
+      "defense": 76,
+      "rebounding": 78,
+      "intangibles": 68
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 99,
+      "strength": 82,
+      "agility": 78,
+      "stamina": 98,
+      "durability": 83,
+      "passIQ": 79,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 89
+    }
+  },
+  "bernard-king": {
+    "sourceUrl": "https://www.2kratings.com/bernard-king-all-time-washington-wizards",
+    "sourceVersion": "Bernard King NBA 2K26 Rating (All-Time Washington Wizards)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 87,
+      "athleticism": 82,
+      "insideScoring": 80,
+      "playmaking": 82,
+      "defense": 75,
+      "rebounding": 55,
+      "intangibles": 68
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 61,
+      "agility": 79,
+      "stamina": 98,
+      "durability": 79,
+      "passIQ": 84,
+      "defensiveConsistency": 90,
+      "helpDefenseIQ": 90
+    }
+  },
+  "chris-webber": {
+    "sourceUrl": "https://www.2kratings.com/chris-webber-2001-02-sacramento-kings",
+    "sourceVersion": "Chris Webber NBA 2K26 Rating (2001-02 Sacramento Kings)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 81,
+      "athleticism": 82,
+      "insideScoring": 88,
+      "playmaking": 72,
+      "defense": 76,
+      "rebounding": 86,
+      "intangibles": 85
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 85,
+      "strength": 88,
+      "agility": 59,
+      "stamina": 98,
+      "durability": 85,
+      "passIQ": 78,
+      "defensiveConsistency": 75,
+      "helpDefenseIQ": 79
+    }
+  },
+  "alonzomourning": {
+    "sourceUrl": "https://www.2kratings.com/alonzo-mourning-1992-93-charlotte-hornets",
+    "sourceVersion": "Alonzo Mourning NBA 2K26 Rating (1992-93 Charlotte Hornets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 73,
+      "athleticism": 70,
+      "insideScoring": 78,
+      "playmaking": 35,
+      "defense": 78,
+      "rebounding": 77,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 85,
+      "shotIQ": 80,
+      "strength": 90,
+      "agility": 41,
+      "stamina": 85,
+      "durability": 80,
+      "passIQ": 32,
+      "defensiveConsistency": 90,
+      "helpDefenseIQ": 94
+    }
+  },
+  "dikembe-mutombo": {
+    "sourceUrl": "https://www.2kratings.com/dikembe-mutombo-2007-08-houston-rockets",
+    "sourceVersion": "Dikembe Mutombo NBA 2K26 Rating (2007-08 Houston Rockets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 47,
+      "athleticism": 55,
+      "insideScoring": 55,
+      "playmaking": 29,
+      "defense": 70,
+      "rebounding": 84,
+      "intangibles": 90
+    },
+    "attributes": {
+      "offensiveConsistency": 35,
+      "shotIQ": 80,
+      "strength": 70,
+      "agility": 28,
+      "stamina": 72,
+      "durability": 82,
+      "passIQ": 34,
+      "defensiveConsistency": 70,
+      "helpDefenseIQ": 89
+    }
+  },
+  "tony-parker": {
+    "sourceUrl": "https://www.2kratings.com/tony-parker-2004-05-san-antonio-spurs",
+    "sourceVersion": "Tony Parker NBA 2K26 Rating (2004-05 San Antonio Spurs)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 81,
+      "athleticism": 84,
+      "insideScoring": 57,
+      "playmaking": 92,
+      "defense": 73,
+      "rebounding": 39,
+      "intangibles": 50
+    },
+    "attributes": {
+      "offensiveConsistency": 85,
+      "shotIQ": 80,
+      "strength": 50,
+      "agility": 86,
+      "stamina": 95,
+      "durability": 80,
+      "passIQ": 95,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 84
+    }
+  },
+  "carmelo-anthony": {
+    "sourceUrl": "https://www.2kratings.com/carmelo-anthony-2007-08-denver-nuggets",
+    "sourceVersion": "Carmelo Anthony NBA 2K26 Rating (2007-08 Denver Nuggets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 83,
+      "athleticism": 88,
+      "insideScoring": 86,
+      "playmaking": 82,
+      "defense": 71,
+      "rebounding": 62,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 75,
+      "strength": 82,
+      "agility": 80,
+      "stamina": 98,
+      "durability": 95,
+      "passIQ": 94,
+      "defensiveConsistency": 65,
+      "helpDefenseIQ": 70
+    }
+  },
+  "klay-thompson": {
+    "sourceUrl": "https://www.2kratings.com/klay-thompson-2015-16-golden-state-warriors",
+    "sourceVersion": "Klay Thompson NBA 2K26 Rating (2015-16 Golden State Warriors)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 92,
+      "athleticism": 79,
+      "insideScoring": 67,
+      "playmaking": 74,
+      "defense": 77,
+      "rebounding": 42,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 55,
+      "agility": 94,
+      "stamina": 91,
+      "durability": 94,
+      "passIQ": 80,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 90
+    }
+  },
+  "draymond-green": {
+    "sourceUrl": "https://www.2kratings.com/draymond-green-2015-16-golden-state-warriors",
+    "sourceVersion": "Draymond Green NBA 2K26 Rating (2015-16 Golden State Warriors)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 77,
+      "athleticism": 83,
+      "insideScoring": 71,
+      "playmaking": 79,
+      "defense": 88,
+      "rebounding": 70,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 65,
+      "shotIQ": 98,
+      "strength": 90,
+      "agility": 69,
+      "stamina": 93,
+      "durability": 88,
+      "passIQ": 84,
+      "defensiveConsistency": 98,
+      "helpDefenseIQ": 97
+    }
+  },
+  "jimmy-butler": {
+    "sourceUrl": "https://www.2kratings.com/jimmy-butler",
+    "sourceVersion": "Jimmy Butler NBA 2K26 Rating (Current Golden State Warriors)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 77,
+      "athleticism": 87,
+      "insideScoring": 78,
+      "playmaking": 83,
+      "defense": 76,
+      "rebounding": 59,
+      "intangibles": 85
+    },
+    "attributes": {
+      "offensiveConsistency": 80,
+      "shotIQ": 55,
+      "strength": 76,
+      "agility": 92,
+      "stamina": 97,
+      "durability": 81,
+      "passIQ": 89,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 89
+    }
+  },
+  "paul-george": {
+    "sourceUrl": "https://www.2kratings.com/paul-george-2013-14-indiana-pacers",
+    "sourceVersion": "Paul George NBA 2K26 Rating (2013-14 Indiana Pacers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 88,
+      "athleticism": 85,
+      "insideScoring": 73,
+      "playmaking": 80,
+      "defense": 77,
+      "rebounding": 53,
+      "intangibles": 98
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 98,
+      "strength": 60,
+      "agility": 94,
+      "stamina": 95,
+      "durability": 93,
+      "passIQ": 84,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 90
+    }
+  },
+  "kyrie-irving": {
+    "sourceUrl": "https://www.2kratings.com/kyrie-irving-2015-16-cleveland-cavaliers",
+    "sourceVersion": "Kyrie Irving NBA 2K26 Rating (2015-16 Cleveland Cavaliers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 93,
+      "athleticism": 79,
+      "insideScoring": 60,
+      "playmaking": 85,
+      "defense": 57,
+      "rebounding": 40,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 94,
+      "strength": 37,
+      "agility": 83,
+      "stamina": 97,
+      "durability": 79,
+      "passIQ": 82,
+      "defensiveConsistency": 40,
+      "helpDefenseIQ": 74
+    }
+  },
+  "grant-hill": {
+    "sourceUrl": "https://www.2kratings.com/grant-hill-all-decade-1990s",
+    "sourceVersion": "Grant Hill NBA 2K26 Rating (All-Decade 1990s All-Stars)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 89,
+      "athleticism": 90,
+      "insideScoring": 80,
+      "playmaking": 87,
+      "defense": 72,
+      "rebounding": 68,
+      "intangibles": 45
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 70,
+      "agility": 87,
+      "stamina": 97,
+      "durability": 91,
+      "passIQ": 91,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 88
+    }
+  },
+  "penny-hardaway": {
+    "sourceUrl": "https://www.2kratings.com/penny-hardaway-2002-03-phoenix-suns",
+    "sourceVersion": "Penny Hardaway NBA 2K26 Rating (2002-03 Phoenix Suns)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 77,
+      "athleticism": 76,
+      "insideScoring": 68,
+      "playmaking": 78,
+      "defense": 67,
+      "rebounding": 51,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 65,
+      "shotIQ": 92,
+      "strength": 58,
+      "agility": 71,
+      "stamina": 94,
+      "durability": 82,
+      "passIQ": 84,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 79
+    }
+  },
+  "shawn-kemp": {
+    "sourceUrl": "https://www.2kratings.com/shawn-kemp-1995-96-seattle-supersonics",
+    "sourceVersion": "Shawn Kemp NBA 2K26 Rating (1995-96 Seattle Supersonics)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 72,
+      "athleticism": 86,
+      "insideScoring": 87,
+      "playmaking": 67,
+      "defense": 81,
+      "rebounding": 87,
+      "intangibles": 85
+    },
+    "attributes": {
+      "offensiveConsistency": 75,
+      "shotIQ": 90,
+      "strength": 85,
+      "agility": 59,
+      "stamina": 98,
+      "durability": 85,
+      "passIQ": 74,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 85
+    }
+  },
+  "mitch-richmond": {
+    "sourceUrl": "https://www.2kratings.com/mitch-richmond-1990-91-golden-state-warriors",
+    "sourceVersion": "Mitch Richmond NBA 2K26 Rating (1990-91 Golden State Warriors)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 90,
+      "athleticism": 80,
+      "insideScoring": 63,
+      "playmaking": 61,
+      "defense": 63,
+      "rebounding": 52,
+      "intangibles": 98
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 95,
+      "strength": 71,
+      "agility": 77,
+      "stamina": 92,
+      "durability": 90,
+      "passIQ": 55,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 74
+    }
+  },
+  "joe-dumars": {
+    "sourceUrl": "https://www.2kratings.com/joe-dumars-1988-89-detroit-pistons",
+    "sourceVersion": "Joe Dumars NBA 2K26 Rating (1988-89 Detroit Pistons)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 87,
+      "athleticism": 84,
+      "insideScoring": 62,
+      "playmaking": 77,
+      "defense": 82,
+      "rebounding": 55,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 90,
+      "strength": 75,
+      "agility": 97,
+      "stamina": 98,
+      "durability": 79,
+      "passIQ": 79,
+      "defensiveConsistency": 98,
+      "helpDefenseIQ": 95
+    }
+  },
+  "sidney-moncrief": {
+    "sourceUrl": "https://www.2kratings.com/sidney-moncrief-1984-85-milwaukee-bucks",
+    "sourceVersion": "Sidney Moncrief NBA 2K26 Rating (1984-85 Milwaukee Bucks)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 82,
+      "athleticism": 85,
+      "insideScoring": 71,
+      "playmaking": 78,
+      "defense": 81,
+      "rebounding": 70,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 84,
+      "strength": 65,
+      "agility": 97,
+      "stamina": 98,
+      "durability": 82,
+      "passIQ": 79,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 98
+    }
+  },
+  "artis-gilmore": {
+    "sourceUrl": "https://www.2kratings.com/artis-gilmore-all-decade-1970s",
+    "sourceVersion": "Artis Gilmore NBA 2K26 Rating (All-Decade 1970s All-Stars)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 80,
+      "athleticism": 79,
+      "insideScoring": 85,
+      "playmaking": 48,
+      "defense": 82,
+      "rebounding": 99,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 96,
+      "strength": 95,
+      "agility": 49,
+      "stamina": 96,
+      "durability": 81,
+      "passIQ": 54,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 96
+    }
+  },
+  "robert-parish": {
+    "sourceUrl": "https://www.2kratings.com/robert-parish-1985-86-boston-celtics",
+    "sourceVersion": "Robert Parish NBA 2K26 Rating (1985-86 Boston Celtics)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 67,
+      "athleticism": 71,
+      "insideScoring": 77,
+      "playmaking": 48,
+      "defense": 75,
+      "rebounding": 89,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 80,
+      "strength": 85,
+      "agility": 26,
+      "stamina": 98,
+      "durability": 85,
+      "passIQ": 54,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 94
+    }
+  },
+  "kevin-mchale": {
+    "sourceUrl": "https://www.2kratings.com/kevin-mchale-1985-86-boston-celtics",
+    "sourceVersion": "Kevin McHale NBA 2K26 Rating (1985-86 Boston Celtics)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 79,
+      "athleticism": 71,
+      "insideScoring": 83,
+      "playmaking": 61,
+      "defense": 80,
+      "rebounding": 93,
+      "intangibles": 98
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 98,
+      "strength": 82,
+      "agility": 38,
+      "stamina": 98,
+      "durability": 85,
+      "passIQ": 75,
+      "defensiveConsistency": 98,
+      "helpDefenseIQ": 98
+    }
+  },
+  "bill-walton": {
+    "sourceUrl": "https://www.2kratings.com/bill-walton-1985-86-boston-celtics",
+    "sourceVersion": "Bill Walton NBA 2K26 Rating (1985-86 Boston Celtics)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 62,
+      "athleticism": 57,
+      "insideScoring": 72,
+      "playmaking": 56,
+      "defense": 73,
+      "rebounding": 87,
+      "intangibles": 95
+    },
+    "attributes": {
+      "offensiveConsistency": 85,
+      "shotIQ": 70,
+      "strength": 70,
+      "agility": 27,
+      "stamina": 70,
+      "durability": 71,
+      "passIQ": 68,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 88
+    }
+  },
+  "tim-hardaway": {
+    "sourceUrl": "https://www.2kratings.com/tim-hardaway-1990-91-golden-state-warriors",
+    "sourceVersion": "Tim Hardaway NBA 2K26 Rating (1990-91 Golden State Warriors)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 84,
+      "athleticism": 83,
+      "insideScoring": 52,
+      "playmaking": 91,
+      "defense": 63,
+      "rebounding": 43,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 80,
+      "strength": 70,
+      "agility": 90,
+      "stamina": 95,
+      "durability": 85,
+      "passIQ": 94,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 70
+    }
+  },
+  "mark-price": {
+    "sourceUrl": "https://www.2kratings.com/mark-price-1989-90-cleveland-cavaliers",
+    "sourceVersion": "Mark Price NBA 2K26 Rating (1989-90 Cleveland Cavaliers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 90,
+      "athleticism": 75,
+      "insideScoring": 47,
+      "playmaking": 88,
+      "defense": 55,
+      "rebounding": 41,
+      "intangibles": 98
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 93,
+      "strength": 40,
+      "agility": 81,
+      "stamina": 85,
+      "durability": 85,
+      "passIQ": 95,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 68
+    }
+  },
+  "derrick-rose": {
+    "sourceUrl": "https://www.2kratings.com/derrick-rose-2010-11-chicago-bulls",
+    "sourceVersion": "Derrick Rose NBA 2K26 Rating (2010-11 Chicago Bulls)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 89,
+      "athleticism": 91,
+      "insideScoring": 69,
+      "playmaking": 93,
+      "defense": 66,
+      "rebounding": 46,
+      "intangibles": 90
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 95,
+      "strength": 70,
+      "agility": 90,
+      "stamina": 98,
+      "durability": 83,
+      "passIQ": 88,
+      "defensiveConsistency": 75,
+      "helpDefenseIQ": 77
+    }
+  },
+  "chauncey-billups": {
+    "sourceUrl": "https://www.2kratings.com/chauncey-billups-2003-04-detroit-pistons",
+    "sourceVersion": "Chauncey Billups NBA 2K26 Rating (2003-04 Detroit Pistons)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 86,
+      "athleticism": 85,
+      "insideScoring": 53,
+      "playmaking": 87,
+      "defense": 75,
+      "rebounding": 41,
+      "intangibles": 50
+    },
+    "attributes": {
+      "offensiveConsistency": 85,
+      "shotIQ": 94,
+      "strength": 75,
+      "agility": 96,
+      "stamina": 93,
+      "durability": 80,
+      "passIQ": 91,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 88
+    }
+  },
+  "rajon-rondo": {
+    "sourceUrl": "https://www.2kratings.com/rajon-rondo-2007-08-boston-celtics",
+    "sourceVersion": "Rajon Rondo NBA 2K26 Rating (2007-08 Boston Celtics)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 67,
+      "athleticism": 83,
+      "insideScoring": 56,
+      "playmaking": 95,
+      "defense": 73,
+      "rebounding": 50,
+      "intangibles": 40
+    },
+    "attributes": {
+      "offensiveConsistency": 50,
+      "shotIQ": 70,
+      "strength": 48,
+      "agility": 95,
+      "stamina": 88,
+      "durability": 79,
+      "passIQ": 97,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 84
+    }
+  },
+  "amar-e-stoudemire": {
+    "sourceUrl": "https://www.2kratings.com/amare-stoudemire-2004-05-phoenix-suns",
+    "sourceVersion": "Amar’e Stoudemire NBA 2K26 Rating (2004-05 Phoenix Suns)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 82,
+      "athleticism": 76,
+      "insideScoring": 90,
+      "playmaking": 48,
+      "defense": 70,
+      "rebounding": 77,
+      "intangibles": 65
+    },
+    "attributes": {
+      "offensiveConsistency": 97,
+      "shotIQ": 98,
+      "strength": 82,
+      "agility": 52,
+      "stamina": 82,
+      "durability": 75,
+      "passIQ": 60,
+      "defensiveConsistency": 70,
+      "helpDefenseIQ": 75
+    }
+  },
+  "chris-bosh": {
+    "sourceUrl": "https://www.2kratings.com/chris-bosh-2012-13-miami-heat",
+    "sourceVersion": "Chris Bosh NBA 2K26 Rating (2012-13 Miami Heat)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 87,
+      "athleticism": 74,
+      "insideScoring": 79,
+      "playmaking": 48,
+      "defense": 73,
+      "rebounding": 81,
+      "intangibles": 40
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 86,
+      "strength": 67,
+      "agility": 56,
+      "stamina": 95,
+      "durability": 87,
+      "passIQ": 60,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 78
+    }
+  },
+  "blake-griffin": {
+    "sourceUrl": "https://www.2kratings.com/blake-griffin-2013-14-los-angeles-clippers",
+    "sourceVersion": "Blake Griffin NBA 2K26 Rating (2013-14 Los Angeles Clippers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 82,
+      "athleticism": 84,
+      "insideScoring": 87,
+      "playmaking": 74,
+      "defense": 63,
+      "rebounding": 85,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 80,
+      "strength": 94,
+      "agility": 50,
+      "stamina": 95,
+      "durability": 88,
+      "passIQ": 74,
+      "defensiveConsistency": 65,
+      "helpDefenseIQ": 72
+    }
+  },
+  "lamarcus-aldridge": {
+    "sourceUrl": "https://www.2kratings.com/lamarcus-aldridge-2009-10-portland-trail-blazers",
+    "sourceVersion": "LaMarcus Aldridge NBA 2K26 Rating (2009-10 Portland Trail Blazers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 86,
+      "athleticism": 69,
+      "insideScoring": 75,
+      "playmaking": 47,
+      "defense": 65,
+      "rebounding": 69,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 98,
+      "strength": 80,
+      "agility": 45,
+      "stamina": 84,
+      "durability": 80,
+      "passIQ": 60,
+      "defensiveConsistency": 65,
+      "helpDefenseIQ": 75
+    }
+  },
+  "marc-gasol": {
+    "sourceUrl": "https://www.2kratings.com/marc-gasol-2018-19-toronto-raptors",
+    "sourceVersion": "Marc Gasol NBA 2K26 Rating (2018-19 Toronto Raptors)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 80,
+      "athleticism": 70,
+      "insideScoring": 76,
+      "playmaking": 56,
+      "defense": 71,
+      "rebounding": 60,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 70,
+      "shotIQ": 90,
+      "strength": 90,
+      "agility": 63,
+      "stamina": 95,
+      "durability": 79,
+      "passIQ": 74,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 84
+    }
+  },
+  "ben-wallace": {
+    "sourceUrl": "https://www.2kratings.com/ben-wallace-2003-04-detroit-pistons",
+    "sourceVersion": "Ben Wallace NBA 2K26 Rating (2003-04 Detroit Pistons)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 52,
+      "athleticism": 82,
+      "insideScoring": 65,
+      "playmaking": 44,
+      "defense": 88,
+      "rebounding": 84,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 45,
+      "shotIQ": 80,
+      "strength": 92,
+      "agility": 49,
+      "stamina": 91,
+      "durability": 83,
+      "passIQ": 55,
+      "defensiveConsistency": 99,
+      "helpDefenseIQ": 98
+    }
+  },
+  "peja-stojakovic": {
+    "sourceUrl": "https://www.2kratings.com/peja-stojakovic-2010-11-dallas-mavericks",
+    "sourceVersion": "Peja Stojakovic NBA 2K26 Rating (2010-11 Dallas Mavericks)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 79,
+      "athleticism": 72,
+      "insideScoring": 56,
+      "playmaking": 56,
+      "defense": 54,
+      "rebounding": 46,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 60,
+      "shotIQ": 85,
+      "strength": 54,
+      "agility": 66,
+      "stamina": 80,
+      "durability": 94,
+      "passIQ": 64,
+      "defensiveConsistency": 55,
+      "helpDefenseIQ": 65
+    }
+  },
+  "chris-mullin": {
+    "sourceUrl": "https://www.2kratings.com/chris-mullin-1990-91-golden-state-warriors",
+    "sourceVersion": "Chris Mullin NBA 2K26 Rating (1990-91 Golden State Warriors)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 92,
+      "athleticism": 84,
+      "insideScoring": 64,
+      "playmaking": 68,
+      "defense": 79,
+      "rebounding": 49,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 90,
+      "strength": 76,
+      "agility": 87,
+      "stamina": 98,
+      "durability": 95,
+      "passIQ": 69,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 89
+    }
+  },
+  "gilbert-arenas": {
+    "sourceUrl": "https://www.2kratings.com/gilbert-arenas-2006-07-washington-wizards",
+    "sourceVersion": "Gilbert Arenas NBA 2K26 Rating (2006-07 Washington Wizards)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 90,
+      "athleticism": 88,
+      "insideScoring": 69,
+      "playmaking": 84,
+      "defense": 71,
+      "rebounding": 58,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 78,
+      "agility": 78,
+      "stamina": 98,
+      "durability": 95,
+      "passIQ": 85,
+      "defensiveConsistency": 75,
+      "helpDefenseIQ": 75
+    }
+  },
+  "demar-derozan": {
+    "sourceUrl": "https://www.2kratings.com/demar-derozan",
+    "sourceVersion": "DeMar DeRozan NBA 2K26 Rating (Current Sacramento Kings)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 87,
+      "athleticism": 83,
+      "insideScoring": 73,
+      "playmaking": 76,
+      "defense": 56,
+      "rebounding": 40,
+      "intangibles": 50
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 80,
+      "strength": 73,
+      "agility": 80,
+      "stamina": 88,
+      "durability": 91,
+      "passIQ": 75,
+      "defensiveConsistency": 55,
+      "helpDefenseIQ": 64
+    }
+  },
+  "john-wall": {
+    "sourceUrl": "https://www.2kratings.com/john-wall-all-time-washington-wizards",
+    "sourceVersion": "John Wall NBA 2K26 Rating (All-Time Washington Wizards)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 84,
+      "athleticism": 87,
+      "insideScoring": 63,
+      "playmaking": 92,
+      "defense": 74,
+      "rebounding": 44,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 96,
+      "strength": 60,
+      "agility": 92,
+      "stamina": 95,
+      "durability": 83,
+      "passIQ": 96,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 82
+    }
+  },
+  "shai-gilgeous-alexander": {
+    "sourceUrl": "https://www.2kratings.com/shai-gilgeous-alexander",
+    "sourceVersion": "Shai Gilgeous-Alexander NBA 2K26 Rating (Current Oklahoma City Thunder)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 92,
+      "athleticism": 84,
+      "insideScoring": 77,
+      "playmaking": 92,
+      "defense": 79,
+      "rebounding": 44,
+      "intangibles": 90
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 90,
+      "strength": 62,
+      "agility": 86,
+      "stamina": 98,
+      "durability": 80,
+      "passIQ": 98,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 89
+    }
+  },
+  "victor-wembanyama": {
+    "sourceUrl": "https://www.2kratings.com/victor-wembanyama",
+    "sourceVersion": "Victor Wembanyama NBA 2K26 Rating (Current San Antonio Spurs)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 88,
+      "athleticism": 80,
+      "insideScoring": 91,
+      "playmaking": 72,
+      "defense": 88,
+      "rebounding": 87,
+      "intangibles": 95
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 95,
+      "strength": 69,
+      "agility": 69,
+      "stamina": 97,
+      "durability": 88,
+      "passIQ": 84,
+      "defensiveConsistency": 98,
+      "helpDefenseIQ": 97
+    }
+  },
+  "anthony-edwards": {
+    "sourceUrl": "https://www.2kratings.com/anthony-edwards",
+    "sourceVersion": "Anthony Edwards NBA 2K26 Rating (Current Minnesota Timberwolves)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 90,
+      "athleticism": 87,
+      "insideScoring": 78,
+      "playmaking": 79,
+      "defense": 74,
+      "rebounding": 47,
+      "intangibles": 95
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 95,
+      "strength": 62,
+      "agility": 90,
+      "stamina": 97,
+      "durability": 83,
+      "passIQ": 80,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 84
+    }
+  },
+  "jalen-brunson": {
+    "sourceUrl": "https://www.2kratings.com/jalen-brunson",
+    "sourceVersion": "Jalen Brunson NBA 2K26 Rating (Current New York Knicks)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 94,
+      "athleticism": 82,
+      "insideScoring": 71,
+      "playmaking": 90,
+      "defense": 59,
+      "rebounding": 40,
+      "intangibles": 90
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 95,
+      "strength": 60,
+      "agility": 84,
+      "stamina": 98,
+      "durability": 81,
+      "passIQ": 98,
+      "defensiveConsistency": 75,
+      "helpDefenseIQ": 72
+    }
+  },
+  "cade-cunningham": {
+    "sourceUrl": "https://www.2kratings.com/cade-cunningham",
+    "sourceVersion": "Cade Cunningham NBA 2K26 Rating (Current Detroit Pistons)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 91,
+      "athleticism": 83,
+      "insideScoring": 74,
+      "playmaking": 90,
+      "defense": 73,
+      "rebounding": 51,
+      "intangibles": 98
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 90,
+      "strength": 62,
+      "agility": 84,
+      "stamina": 94,
+      "durability": 80,
+      "passIQ": 95,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 82
+    }
+  },
+  "jaylen-brown": {
+    "sourceUrl": "https://www.2kratings.com/jaylen-brown",
+    "sourceVersion": "Jaylen Brown NBA 2K26 Rating (Current Boston Celtics)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 90,
+      "athleticism": 85,
+      "insideScoring": 82,
+      "playmaking": 79,
+      "defense": 74,
+      "rebounding": 57,
+      "intangibles": 98
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 72,
+      "agility": 88,
+      "stamina": 95,
+      "durability": 82,
+      "passIQ": 84,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 86
+    }
+  },
+  "jayson-tatum": {
+    "sourceUrl": "https://www.2kratings.com/jayson-tatum",
+    "sourceVersion": "Jayson Tatum NBA 2K26 Rating (Current Boston Celtics)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 88,
+      "athleticism": 85,
+      "insideScoring": 84,
+      "playmaking": 80,
+      "defense": 75,
+      "rebounding": 62,
+      "intangibles": 90
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 90,
+      "strength": 71,
+      "agility": 88,
+      "stamina": 95,
+      "durability": 80,
+      "passIQ": 84,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 89
+    }
+  },
+  "donovan-mitchell": {
+    "sourceUrl": "https://www.2kratings.com/donovan-mitchell",
+    "sourceVersion": "Donovan Mitchell NBA 2K26 Rating (Current Cleveland Cavaliers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 89,
+      "athleticism": 86,
+      "insideScoring": 68,
+      "playmaking": 83,
+      "defense": 70,
+      "rebounding": 46,
+      "intangibles": 90
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 85,
+      "strength": 60,
+      "agility": 90,
+      "stamina": 96,
+      "durability": 80,
+      "passIQ": 83,
+      "defensiveConsistency": 75,
+      "helpDefenseIQ": 79
+    }
+  },
+  "tyrese-haliburton": {
+    "sourceUrl": "https://www.2kratings.com/tyrese-haliburton",
+    "sourceVersion": "Tyrese Haliburton NBA 2K26 Rating (Current Indiana Pacers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 89,
+      "athleticism": 81,
+      "insideScoring": 61,
+      "playmaking": 92,
+      "defense": 69,
+      "rebounding": 42,
+      "intangibles": 98
+    },
+    "attributes": {
+      "offensiveConsistency": 80,
+      "shotIQ": 95,
+      "strength": 59,
+      "agility": 84,
+      "stamina": 95,
+      "durability": 80,
+      "passIQ": 96,
+      "defensiveConsistency": 75,
+      "helpDefenseIQ": 78
+    }
+  },
+  "devin-booker": {
+    "sourceUrl": "https://www.2kratings.com/devin-booker",
+    "sourceVersion": "Devin Booker NBA 2K26 Rating (Current Phoenix Suns)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 91,
+      "athleticism": 82,
+      "insideScoring": 78,
+      "playmaking": 82,
+      "defense": 62,
+      "rebounding": 44,
+      "intangibles": 85
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 95,
+      "strength": 59,
+      "agility": 80,
+      "stamina": 95,
+      "durability": 81,
+      "passIQ": 80,
+      "defensiveConsistency": 65,
+      "helpDefenseIQ": 74
+    }
+  },
+  "tyrese-maxey": {
+    "sourceUrl": "https://www.2kratings.com/tyrese-maxey",
+    "sourceVersion": "Tyrese Maxey NBA 2K26 Rating (Current Philadelphia 76ers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 91,
+      "athleticism": 82,
+      "insideScoring": 66,
+      "playmaking": 84,
+      "defense": 67,
+      "rebounding": 41,
+      "intangibles": 98
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 44,
+      "agility": 90,
+      "stamina": 98,
+      "durability": 77,
+      "passIQ": 87,
+      "defensiveConsistency": 65,
+      "helpDefenseIQ": 69
+    }
+  },
+  "karl-anthony-towns": {
+    "sourceUrl": "https://www.2kratings.com/karl-anthony-towns",
+    "sourceVersion": "Karl-Anthony Towns NBA 2K26 Rating (Current New York Knicks)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 84,
+      "athleticism": 83,
+      "insideScoring": 87,
+      "playmaking": 71,
+      "defense": 60,
+      "rebounding": 85,
+      "intangibles": 85
+    },
+    "attributes": {
+      "offensiveConsistency": 85,
+      "shotIQ": 85,
+      "strength": 87,
+      "agility": 76,
+      "stamina": 98,
+      "durability": 82,
+      "passIQ": 79,
+      "defensiveConsistency": 65,
+      "helpDefenseIQ": 79
+    }
+  },
+  "trae-young": {
+    "sourceUrl": "https://www.2kratings.com/trae-young",
+    "sourceVersion": "Trae Young NBA 2K26 Rating (Current Washington Wizards)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 87,
+      "athleticism": 79,
+      "insideScoring": 56,
+      "playmaking": 91,
+      "defense": 46,
+      "rebounding": 36,
+      "intangibles": 75
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 70,
+      "strength": 50,
+      "agility": 84,
+      "stamina": 95,
+      "durability": 86,
+      "passIQ": 92,
+      "defensiveConsistency": 30,
+      "helpDefenseIQ": 58
+    }
+  },
+  "bam-adebayo": {
+    "sourceUrl": "https://www.2kratings.com/bam-adebayo",
+    "sourceVersion": "Bam Adebayo NBA 2K26 Rating (Current Miami Heat)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 83,
+      "athleticism": 85,
+      "insideScoring": 80,
+      "playmaking": 67,
+      "defense": 79,
+      "rebounding": 72,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 85,
+      "strength": 85,
+      "agility": 84,
+      "stamina": 92,
+      "durability": 90,
+      "passIQ": 74,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 94
+    }
+  },
+  "jamal-murray": {
+    "sourceUrl": "https://www.2kratings.com/jamal-murray",
+    "sourceVersion": "Jamal Murray NBA 2K26 Rating (Current Denver Nuggets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 89,
+      "athleticism": 79,
+      "insideScoring": 65,
+      "playmaking": 83,
+      "defense": 59,
+      "rebounding": 44,
+      "intangibles": 90
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 90,
+      "strength": 54,
+      "agility": 80,
+      "stamina": 95,
+      "durability": 78,
+      "passIQ": 85,
+      "defensiveConsistency": 70,
+      "helpDefenseIQ": 74
+    }
+  },
+  "scottie-barnes": {
+    "sourceUrl": "https://www.2kratings.com/scottie-barnes",
+    "sourceVersion": "Scottie Barnes NBA 2K26 Rating (Current Toronto Raptors)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 85,
+      "athleticism": 85,
+      "insideScoring": 81,
+      "playmaking": 81,
+      "defense": 78,
+      "rebounding": 65,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 80,
+      "strength": 74,
+      "agility": 82,
+      "stamina": 88,
+      "durability": 80,
+      "passIQ": 88,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 80
+    }
+  },
+  "jalen-johnson": {
+    "sourceUrl": "https://www.2kratings.com/jalen-johnson",
+    "sourceVersion": "Jalen Johnson NBA 2K26 Rating (Current Atlanta Hawks)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 86,
+      "athleticism": 78,
+      "insideScoring": 85,
+      "playmaking": 80,
+      "defense": 57,
+      "rebounding": 68,
+      "intangibles": 90
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 95,
+      "strength": 68,
+      "agility": 76,
+      "stamina": 85,
+      "durability": 80,
+      "passIQ": 86,
+      "defensiveConsistency": 50,
+      "helpDefenseIQ": 60
+    }
+  },
+  "paolo-banchero": {
+    "sourceUrl": "https://www.2kratings.com/paolo-banchero",
+    "sourceVersion": "Paolo Banchero NBA 2K26 Rating (Current Orlando Magic)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 81,
+      "athleticism": 82,
+      "insideScoring": 85,
+      "playmaking": 76,
+      "defense": 57,
+      "rebounding": 63,
+      "intangibles": 90
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 70,
+      "strength": 77,
+      "agility": 80,
+      "stamina": 90,
+      "durability": 80,
+      "passIQ": 84,
+      "defensiveConsistency": 45,
+      "helpDefenseIQ": 64
+    }
+  },
+  "alperen-sengun": {
+    "sourceUrl": "https://www.2kratings.com/alperen-sengun",
+    "sourceVersion": "Alperen Sengun NBA 2K26 Rating (Current Houston Rockets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 82,
+      "athleticism": 76,
+      "insideScoring": 83,
+      "playmaking": 69,
+      "defense": 69,
+      "rebounding": 72,
+      "intangibles": 90
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 90,
+      "strength": 86,
+      "agility": 64,
+      "stamina": 88,
+      "durability": 80,
+      "passIQ": 84,
+      "defensiveConsistency": 65,
+      "helpDefenseIQ": 69
+    }
+  },
+  "lamelo-ball": {
+    "sourceUrl": "https://www.2kratings.com/lamelo-ball",
+    "sourceVersion": "LaMelo Ball NBA 2K26 Rating (Current Charlotte Hornets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 85,
+      "athleticism": 80,
+      "insideScoring": 67,
+      "playmaking": 90,
+      "defense": 66,
+      "rebounding": 54,
+      "intangibles": 85
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 85,
+      "strength": 50,
+      "agility": 84,
+      "stamina": 93,
+      "durability": 82,
+      "passIQ": 93,
+      "defensiveConsistency": 75,
+      "helpDefenseIQ": 79
+    }
+  },
+  "og-anunoby": {
+    "sourceUrl": "https://www.2kratings.com/og-anunoby-2018-19-toronto-raptors",
+    "sourceVersion": "OG Anunoby NBA 2K26 Rating (2018-19 Toronto Raptors)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 68,
+      "athleticism": 79,
+      "insideScoring": 57,
+      "playmaking": 57,
+      "defense": 70,
+      "rebounding": 55,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 60,
+      "shotIQ": 70,
+      "strength": 60,
+      "agility": 83,
+      "stamina": 80,
+      "durability": 81,
+      "passIQ": 52,
+      "defensiveConsistency": 75,
+      "helpDefenseIQ": 77
+    }
+  },
+  "stephon-castle": {
+    "sourceUrl": "https://www.2kratings.com/stephon-castle",
+    "sourceVersion": "Stephon Castle NBA 2K26 Rating (Current San Antonio Spurs)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 85,
+      "athleticism": 81,
+      "insideScoring": 63,
+      "playmaking": 82,
+      "defense": 68,
+      "rebounding": 55,
+      "intangibles": 95
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 95,
+      "strength": 59,
+      "agility": 93,
+      "stamina": 90,
+      "durability": 80,
+      "passIQ": 85,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 77
+    }
+  },
+  "deni-avdija": {
+    "sourceUrl": "https://www.2kratings.com/deni-avdija",
+    "sourceVersion": "Deni Avdija NBA 2K26 Rating (Current Portland Trail Blazers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 85,
+      "athleticism": 81,
+      "insideScoring": 69,
+      "playmaking": 76,
+      "defense": 67,
+      "rebounding": 59,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 90,
+      "strength": 65,
+      "agility": 81,
+      "stamina": 89,
+      "durability": 84,
+      "passIQ": 79,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 78
+    }
+  },
+  "cooper-flagg": {
+    "sourceUrl": "https://www.2kratings.com/cooper-flagg",
+    "sourceVersion": "Cooper Flagg NBA 2K26 Rating (Current Dallas Mavericks)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 86,
+      "athleticism": 81,
+      "insideScoring": 74,
+      "playmaking": 72,
+      "defense": 73,
+      "rebounding": 56,
+      "intangibles": 95
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 95,
+      "strength": 65,
+      "agility": 85,
+      "stamina": 90,
+      "durability": 80,
+      "passIQ": 70,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 82
+    }
+  },
+  "ja-morant": {
+    "sourceUrl": "https://www.2kratings.com/ja-morant",
+    "sourceVersion": "Ja Morant NBA 2K26 Rating (Current Memphis Grizzlies)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 79,
+      "athleticism": 84,
+      "insideScoring": 70,
+      "playmaking": 90,
+      "defense": 63,
+      "rebounding": 42,
+      "intangibles": 50
+    },
+    "attributes": {
+      "offensiveConsistency": 85,
+      "shotIQ": 70,
+      "strength": 52,
+      "agility": 95,
+      "stamina": 97,
+      "durability": 80,
+      "passIQ": 85,
+      "defensiveConsistency": 75,
+      "helpDefenseIQ": 79
+    }
+  },
+  "jalen-williams": {
+    "sourceUrl": "https://www.2kratings.com/jalen-williams",
+    "sourceVersion": "Jalen Williams NBA 2K26 Rating (Current Oklahoma City Thunder)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 78,
+      "athleticism": 84,
+      "insideScoring": 67,
+      "playmaking": 80,
+      "defense": 81,
+      "rebounding": 51,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 70,
+      "shotIQ": 70,
+      "strength": 68,
+      "agility": 92,
+      "stamina": 90,
+      "durability": 80,
+      "passIQ": 78,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 92
+    }
+  },
+  "evan-mobley": {
+    "sourceUrl": "https://www.2kratings.com/evan-mobley",
+    "sourceVersion": "Evan Mobley NBA 2K26 Rating (Current Cleveland Cavaliers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 75,
+      "athleticism": 81,
+      "insideScoring": 82,
+      "playmaking": 67,
+      "defense": 83,
+      "rebounding": 74,
+      "intangibles": 50
+    },
+    "attributes": {
+      "offensiveConsistency": 75,
+      "shotIQ": 70,
+      "strength": 74,
+      "agility": 79,
+      "stamina": 90,
+      "durability": 80,
+      "passIQ": 74,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 95
+    }
+  },
+  "pascal-siakam": {
+    "sourceUrl": "https://www.2kratings.com/pascal-siakam",
+    "sourceVersion": "Pascal Siakam NBA 2K26 Rating (Current Indiana Pacers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 81,
+      "athleticism": 80,
+      "insideScoring": 85,
+      "playmaking": 74,
+      "defense": 73,
+      "rebounding": 58,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 85,
+      "shotIQ": 85,
+      "strength": 70,
+      "agility": 78,
+      "stamina": 95,
+      "durability": 82,
+      "passIQ": 79,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 86
+    }
+  },
+  "chet-holmgren": {
+    "sourceUrl": "https://www.2kratings.com/chet-holmgren",
+    "sourceVersion": "Chet Holmgren NBA 2K26 Rating (Current Oklahoma City Thunder)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 82,
+      "athleticism": 75,
+      "insideScoring": 82,
+      "playmaking": 57,
+      "defense": 83,
+      "rebounding": 74,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 75,
+      "shotIQ": 75,
+      "strength": 45,
+      "agility": 75,
+      "stamina": 87,
+      "durability": 80,
+      "passIQ": 59,
+      "defensiveConsistency": 90,
+      "helpDefenseIQ": 92
+    }
+  },
+  "amen-thompson": {
+    "sourceUrl": "https://www.2kratings.com/amen-thompson",
+    "sourceVersion": "Amen Thompson NBA 2K26 Rating (Current Houston Rockets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 71,
+      "athleticism": 87,
+      "insideScoring": 64,
+      "playmaking": 81,
+      "defense": 80,
+      "rebounding": 64,
+      "intangibles": 75
+    },
+    "attributes": {
+      "offensiveConsistency": 60,
+      "shotIQ": 75,
+      "strength": 59,
+      "agility": 93,
+      "stamina": 95,
+      "durability": 80,
+      "passIQ": 80,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 92
+    }
+  },
+  "tyler-herro": {
+    "sourceUrl": "https://www.2kratings.com/tyler-herro",
+    "sourceVersion": "Tyler Herro NBA 2K26 Rating (Current Miami Heat)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 90,
+      "athleticism": 75,
+      "insideScoring": 60,
+      "playmaking": 77,
+      "defense": 54,
+      "rebounding": 46,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 80,
+      "strength": 59,
+      "agility": 78,
+      "stamina": 85,
+      "durability": 80,
+      "passIQ": 84,
+      "defensiveConsistency": 50,
+      "helpDefenseIQ": 65
+    }
+  },
+  "franz-wagner": {
+    "sourceUrl": "https://www.2kratings.com/franz-wagner",
+    "sourceVersion": "Franz Wagner NBA 2K26 Rating (Current Orlando Magic)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 85,
+      "athleticism": 76,
+      "insideScoring": 74,
+      "playmaking": 76,
+      "defense": 64,
+      "rebounding": 56,
+      "intangibles": 75
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 80,
+      "strength": 65,
+      "agility": 73,
+      "stamina": 85,
+      "durability": 80,
+      "passIQ": 84,
+      "defensiveConsistency": 70,
+      "helpDefenseIQ": 74
+    }
+  },
+  "austin-reaves": {
+    "sourceUrl": "https://www.2kratings.com/austin-reaves",
+    "sourceVersion": "Austin Reaves NBA 2K26 Rating (Current Los Angeles Lakers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 85,
+      "athleticism": 77,
+      "insideScoring": 57,
+      "playmaking": 81,
+      "defense": 53,
+      "rebounding": 48,
+      "intangibles": 85
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 85,
+      "strength": 44,
+      "agility": 80,
+      "stamina": 94,
+      "durability": 80,
+      "passIQ": 85,
+      "defensiveConsistency": 55,
+      "helpDefenseIQ": 64
+    }
+  },
+  "lauri-markkanen": {
+    "sourceUrl": "https://www.2kratings.com/lauri-markkanen",
+    "sourceVersion": "Lauri Markkanen NBA 2K26 Rating (Current Utah Jazz)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 87,
+      "athleticism": 72,
+      "insideScoring": 84,
+      "playmaking": 58,
+      "defense": 60,
+      "rebounding": 61,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 90,
+      "strength": 61,
+      "agility": 65,
+      "stamina": 85,
+      "durability": 80,
+      "passIQ": 75,
+      "defensiveConsistency": 65,
+      "helpDefenseIQ": 66
+    }
+  },
+  "brandon-miller": {
+    "sourceUrl": "https://www.2kratings.com/brandon-miller",
+    "sourceVersion": "Brandon Miller NBA 2K26 Rating (Current Charlotte Hornets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 87,
+      "athleticism": 79,
+      "insideScoring": 67,
+      "playmaking": 76,
+      "defense": 62,
+      "rebounding": 53,
+      "intangibles": 95
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 95,
+      "strength": 51,
+      "agility": 82,
+      "stamina": 95,
+      "durability": 80,
+      "passIQ": 75,
+      "defensiveConsistency": 65,
+      "helpDefenseIQ": 67
+    }
+  },
+  "domantas-sabonis": {
+    "sourceUrl": "https://www.2kratings.com/domantas-sabonis",
+    "sourceVersion": "Domantas Sabonis NBA 2K26 Rating (Current Sacramento Kings)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 83,
+      "athleticism": 72,
+      "insideScoring": 85,
+      "playmaking": 68,
+      "defense": 55,
+      "rebounding": 84,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 85,
+      "strength": 82,
+      "agility": 49,
+      "stamina": 95,
+      "durability": 86,
+      "passIQ": 85,
+      "defensiveConsistency": 60,
+      "helpDefenseIQ": 69
+    }
+  },
+  "deaaron-fox": {
+    "sourceUrl": "https://www.2kratings.com/deaaron-fox",
+    "sourceVersion": "De’Aaron Fox NBA 2K26 Rating (Current San Antonio Spurs)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 84,
+      "athleticism": 84,
+      "insideScoring": 53,
+      "playmaking": 85,
+      "defense": 66,
+      "rebounding": 44,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 80,
+      "shotIQ": 80,
+      "strength": 46,
+      "agility": 93,
+      "stamina": 96,
+      "durability": 80,
+      "passIQ": 85,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 82
+    }
+  },
+  "darius-garland": {
+    "sourceUrl": "https://www.2kratings.com/darius-garland",
+    "sourceVersion": "Darius Garland NBA 2K26 Rating (Current Los Angeles Clippers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 89,
+      "athleticism": 81,
+      "insideScoring": 49,
+      "playmaking": 85,
+      "defense": 52,
+      "rebounding": 38,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 85,
+      "strength": 40,
+      "agility": 88,
+      "stamina": 95,
+      "durability": 80,
+      "passIQ": 85,
+      "defensiveConsistency": 50,
+      "helpDefenseIQ": 69
+    }
+  },
+  "jalen-duren": {
+    "sourceUrl": "https://www.2kratings.com/jalen-duren",
+    "sourceVersion": "Jalen Duren NBA 2K26 Rating (Current Detroit Pistons)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 67,
+      "athleticism": 81,
+      "insideScoring": 75,
+      "playmaking": 54,
+      "defense": 75,
+      "rebounding": 92,
+      "intangibles": 65
+    },
+    "attributes": {
+      "offensiveConsistency": 60,
+      "shotIQ": 70,
+      "strength": 95,
+      "agility": 68,
+      "stamina": 89,
+      "durability": 80,
+      "passIQ": 50,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 89
+    }
+  },
+  "rudy-gobert": {
+    "sourceUrl": "https://www.2kratings.com/rudy-gobert",
+    "sourceVersion": "Rudy Gobert NBA 2K26 Rating (Current Minnesota Timberwolves)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 55,
+      "athleticism": 75,
+      "insideScoring": 70,
+      "playmaking": 44,
+      "defense": 77,
+      "rebounding": 89,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 40,
+      "shotIQ": 75,
+      "strength": 87,
+      "agility": 65,
+      "stamina": 90,
+      "durability": 81,
+      "passIQ": 58,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 95
+    }
+  },
+  "zion-williamson": {
+    "sourceUrl": "https://www.2kratings.com/zion-williamson",
+    "sourceVersion": "Zion Williamson NBA 2K26 Rating (Current New Orleans Pelicans)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 76,
+      "athleticism": 85,
+      "insideScoring": 87,
+      "playmaking": 71,
+      "defense": 56,
+      "rebounding": 60,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 85,
+      "shotIQ": 70,
+      "strength": 92,
+      "agility": 81,
+      "stamina": 83,
+      "durability": 60,
+      "passIQ": 72,
+      "defensiveConsistency": 40,
+      "helpDefenseIQ": 64
+    }
+  },
+  "derrick-white": {
+    "sourceUrl": "https://www.2kratings.com/derrick-white",
+    "sourceVersion": "Derrick White NBA 2K26 Rating (Current Boston Celtics)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 82,
+      "athleticism": 80,
+      "insideScoring": 57,
+      "playmaking": 83,
+      "defense": 78,
+      "rebounding": 47,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 75,
+      "shotIQ": 85,
+      "strength": 46,
+      "agility": 93,
+      "stamina": 85,
+      "durability": 81,
+      "passIQ": 82,
+      "defensiveConsistency": 95,
+      "helpDefenseIQ": 92
+    }
+  },
+  "jrue-holiday": {
+    "sourceUrl": "https://www.2kratings.com/jrue-holiday",
+    "sourceVersion": "Jrue Holiday NBA 2K26 Rating (Current Portland Trail Blazers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 79,
+      "athleticism": 77,
+      "insideScoring": 57,
+      "playmaking": 79,
+      "defense": 77,
+      "rebounding": 52,
+      "intangibles": 35
+    },
+    "attributes": {
+      "offensiveConsistency": 65,
+      "shotIQ": 70,
+      "strength": 49,
+      "agility": 90,
+      "stamina": 80,
+      "durability": 80,
+      "passIQ": 80,
+      "defensiveConsistency": 90,
+      "helpDefenseIQ": 89
+    }
+  },
+  "julius-randle": {
+    "sourceUrl": "https://www.2kratings.com/julius-randle",
+    "sourceVersion": "Julius Randle NBA 2K26 Rating (Current Minnesota Timberwolves)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 81,
+      "athleticism": 82,
+      "insideScoring": 81,
+      "playmaking": 72,
+      "defense": 62,
+      "rebounding": 60,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 80,
+      "shotIQ": 85,
+      "strength": 87,
+      "agility": 76,
+      "stamina": 95,
+      "durability": 84,
+      "passIQ": 75,
+      "defensiveConsistency": 75,
+      "helpDefenseIQ": 73
+    }
+  },
+  "desmond-bane": {
+    "sourceUrl": "https://www.2kratings.com/desmond-bane",
+    "sourceVersion": "Desmond Bane NBA 2K26 Rating (Current Orlando Magic)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 88,
+      "athleticism": 78,
+      "insideScoring": 62,
+      "playmaking": 73,
+      "defense": 65,
+      "rebounding": 47,
+      "intangibles": 90
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 80,
+      "strength": 56,
+      "agility": 80,
+      "stamina": 92,
+      "durability": 78,
+      "passIQ": 74,
+      "defensiveConsistency": 70,
+      "helpDefenseIQ": 78
+    }
+  },
+  "zach-lavine": {
+    "sourceUrl": "https://www.2kratings.com/zach-lavine",
+    "sourceVersion": "Zach LaVine NBA 2K26 Rating (Current Sacramento Kings)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 84,
+      "athleticism": 80,
+      "insideScoring": 72,
+      "playmaking": 70,
+      "defense": 46,
+      "rebounding": 37,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 85,
+      "shotIQ": 70,
+      "strength": 49,
+      "agility": 82,
+      "stamina": 98,
+      "durability": 83,
+      "passIQ": 67,
+      "defensiveConsistency": 40,
+      "helpDefenseIQ": 57
+    }
+  },
+  "mikal-bridges": {
+    "sourceUrl": "https://www.2kratings.com/mikal-bridges",
+    "sourceVersion": "Mikal Bridges NBA 2K26 Rating (Current New York Knicks)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 83,
+      "athleticism": 84,
+      "insideScoring": 62,
+      "playmaking": 76,
+      "defense": 78,
+      "rebounding": 45,
+      "intangibles": 50
+    },
+    "attributes": {
+      "offensiveConsistency": 75,
+      "shotIQ": 75,
+      "strength": 68,
+      "agility": 87,
+      "stamina": 92,
+      "durability": 84,
+      "passIQ": 88,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 82
+    }
+  },
+  "jarrett-allen": {
+    "sourceUrl": "https://www.2kratings.com/jarrett-allen",
+    "sourceVersion": "Jarrett Allen NBA 2K26 Rating (Current Cleveland Cavaliers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 82,
+      "athleticism": 82,
+      "insideScoring": 83,
+      "playmaking": 37,
+      "defense": 74,
+      "rebounding": 78,
+      "intangibles": 50
+    },
+    "attributes": {
+      "offensiveConsistency": 90,
+      "shotIQ": 90,
+      "strength": 84,
+      "agility": 72,
+      "stamina": 90,
+      "durability": 82,
+      "passIQ": 48,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 88
+    }
+  },
+  "kristaps-porzingis": {
+    "sourceUrl": "https://www.2kratings.com/kristaps-porzingis",
+    "sourceVersion": "Kristaps Porzingis NBA 2K26 Rating (Current Golden State Warriors)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 84,
+      "athleticism": 73,
+      "insideScoring": 77,
+      "playmaking": 56,
+      "defense": 63,
+      "rebounding": 60,
+      "intangibles": 50
+    },
+    "attributes": {
+      "offensiveConsistency": 80,
+      "shotIQ": 75,
+      "strength": 74,
+      "agility": 65,
+      "stamina": 80,
+      "durability": 77,
+      "passIQ": 40,
+      "defensiveConsistency": 55,
+      "helpDefenseIQ": 74
+    }
+  },
+  "dejounte-murray": {
+    "sourceUrl": "https://www.2kratings.com/dejounte-murray",
+    "sourceVersion": "Dejounte Murray NBA 2K26 Rating (Current New Orleans Pelicans)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 87,
+      "athleticism": 75,
+      "insideScoring": 62,
+      "playmaking": 83,
+      "defense": 72,
+      "rebounding": 53,
+      "intangibles": 70
+    },
+    "attributes": {
+      "offensiveConsistency": 85,
+      "shotIQ": 80,
+      "strength": 40,
+      "agility": 85,
+      "stamina": 90,
+      "durability": 80,
+      "passIQ": 82,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 80
+    }
+  },
+  "bradley-beal": {
+    "sourceUrl": "https://www.2kratings.com/bradley-beal",
+    "sourceVersion": "Bradley Beal NBA 2K26 Rating (Current Los Angeles Clippers)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 77,
+      "athleticism": 79,
+      "insideScoring": 61,
+      "playmaking": 71,
+      "defense": 49,
+      "rebounding": 42,
+      "intangibles": 60
+    },
+    "attributes": {
+      "offensiveConsistency": 70,
+      "shotIQ": 65,
+      "strength": 62,
+      "agility": 83,
+      "stamina": 84,
+      "durability": 82,
+      "passIQ": 74,
+      "defensiveConsistency": 40,
+      "helpDefenseIQ": 57
+    }
+  },
+  "khris-middleton": {
+    "sourceUrl": "https://www.2kratings.com/khris-middleton",
+    "sourceVersion": "Khris Middleton NBA 2K26 Rating (Current Dallas Mavericks)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 72,
+      "athleticism": 76,
+      "insideScoring": 64,
+      "playmaking": 72,
+      "defense": 62,
+      "rebounding": 52,
+      "intangibles": 35
+    },
+    "attributes": {
+      "offensiveConsistency": 40,
+      "shotIQ": 60,
+      "strength": 73,
+      "agility": 74,
+      "stamina": 75,
+      "durability": 90,
+      "passIQ": 74,
+      "defensiveConsistency": 70,
+      "helpDefenseIQ": 74
+    }
+  },
+  "cj-mccollum": {
+    "sourceUrl": "https://www.2kratings.com/cj-mccollum",
+    "sourceVersion": "C.J. McCollum NBA 2K26 Rating (Current Atlanta Hawks)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 86,
+      "athleticism": 83,
+      "insideScoring": 51,
+      "playmaking": 78,
+      "defense": 55,
+      "rebounding": 43,
+      "intangibles": 85
+    },
+    "attributes": {
+      "offensiveConsistency": 95,
+      "shotIQ": 75,
+      "strength": 60,
+      "agility": 84,
+      "stamina": 98,
+      "durability": 80,
+      "passIQ": 79,
+      "defensiveConsistency": 65,
+      "helpDefenseIQ": 70
+    }
+  },
+  "aaron-gordon": {
+    "sourceUrl": "https://www.2kratings.com/aaron-gordon",
+    "sourceVersion": "Aaron Gordon NBA 2K26 Rating (Current Denver Nuggets)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 75,
+      "athleticism": 85,
+      "insideScoring": 79,
+      "playmaking": 60,
+      "defense": 71,
+      "rebounding": 61,
+      "intangibles": 80
+    },
+    "attributes": {
+      "offensiveConsistency": 70,
+      "shotIQ": 75,
+      "strength": 72,
+      "agility": 84,
+      "stamina": 95,
+      "durability": 84,
+      "passIQ": 60,
+      "defensiveConsistency": 80,
+      "helpDefenseIQ": 84
+    }
+  },
+  "myles-turner": {
+    "sourceUrl": "https://www.2kratings.com/myles-turner",
+    "sourceVersion": "Myles Turner NBA 2K26 Rating (Current Milwaukee Bucks)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 72,
+      "athleticism": 76,
+      "insideScoring": 72,
+      "playmaking": 40,
+      "defense": 75,
+      "rebounding": 58,
+      "intangibles": 35
+    },
+    "attributes": {
+      "offensiveConsistency": 40,
+      "shotIQ": 60,
+      "strength": 80,
+      "agility": 66,
+      "stamina": 95,
+      "durability": 83,
+      "passIQ": 68,
+      "defensiveConsistency": 85,
+      "helpDefenseIQ": 87
+    }
+  }
+}

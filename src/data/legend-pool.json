@@ -12,7 +12,39 @@
     "rarityWeight": 1,
     "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 91,
+      "defense": 90,
+      "physical": 94,
+      "mentality": 96
+    },
+    "sourceAttributes": {
+      "sourceVersion": "NBA 2K26 All-Time Chicago Bulls",
+      "groups": {
+        "outsideScoring": 95,
+        "insideScoring": 84,
+        "playmaking": 89,
+        "defense": 94,
+        "rebounding": 74,
+        "athleticism": 95,
+        "intangibles": 95
+      },
+      "attributes": {
+        "shotIQ": 98,
+        "offensiveConsistency": 98,
+        "passIQ": 92,
+        "helpDefenseIQ": 95,
+        "defensiveConsistency": 98,
+        "stamina": 98,
+        "durability": 98,
+        "strength": 74,
+        "agility": 98
+      }
+    },
+    "attributeSourceUrl": "https://www.2kratings.com/michael-jordan-all-time-chicago-bulls",
+    "attributeSourceStatus": "verified-2k-snapshot"
   },
   {
     "id": "lebron-james",
@@ -23,13 +55,45 @@
       "SF",
       "PF"
     ],
-    "sourceRating": 98,
+    "sourceRating": 99,
     "tier": "T0",
-    "contractCost": 24,
-    "rarityWeight": 2,
+    "contractCost": 25,
+    "rarityWeight": 1,
     "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 90,
+      "defense": 87,
+      "physical": 95,
+      "mentality": 97
+    },
+    "sourceAttributes": {
+      "sourceVersion": "NBA 2K26 All-Time Cleveland Cavaliers",
+      "groups": {
+        "outsideScoring": 87,
+        "insideScoring": 89,
+        "playmaking": 91,
+        "defense": 88,
+        "rebounding": 77,
+        "athleticism": 92,
+        "intangibles": 98
+      },
+      "attributes": {
+        "shotIQ": 98,
+        "offensiveConsistency": 98,
+        "passIQ": 95,
+        "helpDefenseIQ": 95,
+        "defensiveConsistency": 95,
+        "stamina": 98,
+        "durability": 98,
+        "strength": 95,
+        "agility": 96
+      }
+    },
+    "attributeSourceUrl": "https://www.2kratings.com/lebron-james-all-time-cleveland-cavaliers",
+    "attributeSourceStatus": "verified-2k-snapshot"
   },
   {
     "id": "kareem-abdul-jabbar",
@@ -37,13 +101,45 @@
     "positions": [
       "C"
     ],
-    "sourceRating": 98,
+    "sourceRating": 99,
     "tier": "T0",
-    "contractCost": 24,
-    "rarityWeight": 2,
+    "contractCost": 25,
+    "rarityWeight": 1,
     "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 94,
+      "defense": 99,
+      "physical": 96,
+      "mentality": 97
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 91,
+        "insideScoring": 99,
+        "playmaking": 91,
+        "defense": 99,
+        "rebounding": 99,
+        "athleticism": 95,
+        "intangibles": 97
+      },
+      "attributes": {
+        "shotIQ": 98,
+        "offensiveConsistency": 99,
+        "passIQ": 94,
+        "helpDefenseIQ": 99,
+        "defensiveConsistency": 99,
+        "stamina": 99,
+        "durability": 98,
+        "strength": 99,
+        "agility": 93
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "magic-johnson",
@@ -52,13 +148,45 @@
       "PG",
       "SG"
     ],
-    "sourceRating": 97,
+    "sourceRating": 98,
     "tier": "T0",
-    "contractCost": 23,
-    "rarityWeight": 3,
+    "contractCost": 24,
+    "rarityWeight": 2,
     "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 87,
+      "defense": 77,
+      "physical": 87,
+      "mentality": 97
+    },
+    "sourceAttributes": {
+      "sourceVersion": "NBA 2K26 All-Time Los Angeles Lakers",
+      "groups": {
+        "outsideScoring": 82,
+        "insideScoring": 75,
+        "playmaking": 98,
+        "defense": 75,
+        "rebounding": 74,
+        "athleticism": 82,
+        "intangibles": 98
+      },
+      "attributes": {
+        "shotIQ": 98,
+        "offensiveConsistency": 98,
+        "passIQ": 98,
+        "helpDefenseIQ": 95,
+        "defensiveConsistency": 90,
+        "stamina": 98,
+        "durability": 98,
+        "strength": 78,
+        "agility": 82
+      }
+    },
+    "attributeSourceUrl": "https://www.2kratings.com/magic-johnson-all-time-los-angeles-lakers",
+    "attributeSourceStatus": "verified-2k-snapshot"
   },
   {
     "id": "kobe-bryant",
@@ -67,13 +195,45 @@
       "SG",
       "SF"
     ],
-    "sourceRating": 97,
+    "sourceRating": 98,
     "tier": "T0",
-    "contractCost": 23,
-    "rarityWeight": 3,
+    "contractCost": 24,
+    "rarityWeight": 2,
     "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 90,
+      "defense": 85,
+      "physical": 92,
+      "mentality": 97
+    },
+    "sourceAttributes": {
+      "sourceVersion": "NBA 2K26 All-Time Los Angeles Lakers",
+      "groups": {
+        "outsideScoring": 93,
+        "insideScoring": 83,
+        "playmaking": 86,
+        "defense": 90,
+        "rebounding": 60,
+        "athleticism": 88,
+        "intangibles": 98
+      },
+      "attributes": {
+        "shotIQ": 98,
+        "offensiveConsistency": 98,
+        "passIQ": 90,
+        "helpDefenseIQ": 95,
+        "defensiveConsistency": 98,
+        "stamina": 98,
+        "durability": 98,
+        "strength": 78,
+        "agility": 98
+      }
+    },
+    "attributeSourceUrl": "https://www.2kratings.com/kobe-bryant-all-time-los-angeles-lakers",
+    "attributeSourceStatus": "verified-2k-snapshot"
   },
   {
     "id": "shaquille-oneal",
@@ -81,13 +241,45 @@
     "positions": [
       "C"
     ],
-    "sourceRating": 97,
+    "sourceRating": 98,
     "tier": "T0",
-    "contractCost": 23,
-    "rarityWeight": 3,
+    "contractCost": 24,
+    "rarityWeight": 2,
     "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 64,
+      "defense": 92,
+      "physical": 86,
+      "mentality": 91
+    },
+    "sourceAttributes": {
+      "sourceVersion": "NBA 2K26 All-Time Los Angeles Lakers",
+      "groups": {
+        "outsideScoring": 38,
+        "insideScoring": 95,
+        "playmaking": 49,
+        "defense": 89,
+        "rebounding": 98,
+        "athleticism": 80,
+        "intangibles": 90
+      },
+      "attributes": {
+        "shotIQ": 98,
+        "offensiveConsistency": 98,
+        "passIQ": 75,
+        "helpDefenseIQ": 95,
+        "defensiveConsistency": 95,
+        "stamina": 90,
+        "durability": 95,
+        "strength": 98,
+        "agility": 75
+      }
+    },
+    "attributeSourceUrl": "https://www.2kratings.com/shaquille-oneal-all-time-los-angeles-lakers",
+    "attributeSourceStatus": "verified-2k-snapshot"
   },
   {
     "id": "tim-duncan",
@@ -96,13 +288,45 @@
       "PF",
       "C"
     ],
-    "sourceRating": 97,
+    "sourceRating": 98,
     "tier": "T0",
-    "contractCost": 23,
-    "rarityWeight": 3,
+    "contractCost": 24,
+    "rarityWeight": 2,
     "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 80,
+      "defense": 94,
+      "physical": 85,
+      "mentality": 95
+    },
+    "sourceAttributes": {
+      "sourceVersion": "NBA 2K26 All-Time San Antonio Spurs",
+      "groups": {
+        "outsideScoring": 80,
+        "insideScoring": 92,
+        "playmaking": 57,
+        "defense": 94,
+        "rebounding": 90,
+        "athleticism": 77,
+        "intangibles": 98
+      },
+      "attributes": {
+        "shotIQ": 98,
+        "offensiveConsistency": 98,
+        "passIQ": 78,
+        "helpDefenseIQ": 98,
+        "defensiveConsistency": 98,
+        "stamina": 95,
+        "durability": 95,
+        "strength": 90,
+        "agility": 77
+      }
+    },
+    "attributeSourceUrl": "https://www.2kratings.com/tim-duncan-all-time-san-antonio-spurs",
+    "attributeSourceStatus": "verified-2k-snapshot"
   },
   {
     "id": "larry-bird",
@@ -111,13 +335,45 @@
       "SF",
       "PF"
     ],
-    "sourceRating": 97,
+    "sourceRating": 98,
     "tier": "T0",
-    "contractCost": 23,
-    "rarityWeight": 3,
+    "contractCost": 24,
+    "rarityWeight": 2,
     "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 96,
+      "defense": 96,
+      "physical": 97,
+      "mentality": 97
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 95,
+        "insideScoring": 97,
+        "playmaking": 94,
+        "defense": 96,
+        "rebounding": 96,
+        "athleticism": 96,
+        "intangibles": 96
+      },
+      "attributes": {
+        "shotIQ": 99,
+        "offensiveConsistency": 98,
+        "passIQ": 97,
+        "helpDefenseIQ": 98,
+        "defensiveConsistency": 97,
+        "stamina": 98,
+        "durability": 97,
+        "strength": 96,
+        "agility": 96
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "hakeem-olajuwon",
@@ -131,7 +387,39 @@
     "rarityWeight": 3,
     "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 93,
+      "defense": 98,
+      "physical": 95,
+      "mentality": 96
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 89,
+        "insideScoring": 99,
+        "playmaking": 89,
+        "defense": 97,
+        "rebounding": 99,
+        "athleticism": 93,
+        "intangibles": 95
+      },
+      "attributes": {
+        "shotIQ": 97,
+        "offensiveConsistency": 97,
+        "passIQ": 92,
+        "helpDefenseIQ": 99,
+        "defensiveConsistency": 98,
+        "stamina": 97,
+        "durability": 96,
+        "strength": 99,
+        "agility": 91
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "wilt-chamberlain",
@@ -145,7 +433,39 @@
     "rarityWeight": 3,
     "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 93,
+      "defense": 98,
+      "physical": 95,
+      "mentality": 96
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 89,
+        "insideScoring": 99,
+        "playmaking": 89,
+        "defense": 97,
+        "rebounding": 99,
+        "athleticism": 93,
+        "intangibles": 95
+      },
+      "attributes": {
+        "shotIQ": 97,
+        "offensiveConsistency": 97,
+        "passIQ": 92,
+        "helpDefenseIQ": 99,
+        "defensiveConsistency": 98,
+        "stamina": 97,
+        "durability": 96,
+        "strength": 99,
+        "agility": 91
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "stephen-curry",
@@ -154,13 +474,45 @@
       "PG",
       "SG"
     ],
-    "sourceRating": 96,
-    "tier": "T1",
-    "contractCost": 22,
-    "rarityWeight": 4,
-    "tagline": "能改变阵容上限的超巨。",
+    "sourceRating": 97,
+    "tier": "T0",
+    "contractCost": 23,
+    "rarityWeight": 3,
+    "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 64,
+      "physical": 83,
+      "mentality": 94
+    },
+    "sourceAttributes": {
+      "sourceVersion": "NBA 2K26 All-Time Golden State Warriors",
+      "groups": {
+        "outsideScoring": 98,
+        "insideScoring": 56,
+        "playmaking": 91,
+        "defense": 66,
+        "rebounding": 50,
+        "athleticism": 81,
+        "intangibles": 98
+      },
+      "attributes": {
+        "shotIQ": 98,
+        "offensiveConsistency": 98,
+        "passIQ": 97,
+        "helpDefenseIQ": 74,
+        "defensiveConsistency": 75,
+        "stamina": 98,
+        "durability": 88,
+        "strength": 46,
+        "agility": 95
+      }
+    },
+    "attributeSourceUrl": "https://www.2kratings.com/stephen-curry-all-time-golden-state-warriors",
+    "attributeSourceStatus": "verified-2k-snapshot"
   },
   {
     "id": "bill-russell",
@@ -168,13 +520,45 @@
     "positions": [
       "C"
     ],
-    "sourceRating": 96,
-    "tier": "T1",
-    "contractCost": 22,
-    "rarityWeight": 4,
-    "tagline": "能改变阵容上限的超巨。",
+    "sourceRating": 97,
+    "tier": "T0",
+    "contractCost": 23,
+    "rarityWeight": 3,
+    "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 93,
+      "defense": 98,
+      "physical": 95,
+      "mentality": 96
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 89,
+        "insideScoring": 99,
+        "playmaking": 89,
+        "defense": 97,
+        "rebounding": 99,
+        "athleticism": 93,
+        "intangibles": 95
+      },
+      "attributes": {
+        "shotIQ": 97,
+        "offensiveConsistency": 97,
+        "passIQ": 92,
+        "helpDefenseIQ": 99,
+        "defensiveConsistency": 98,
+        "stamina": 97,
+        "durability": 96,
+        "strength": 99,
+        "agility": 91
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "kevin-durant",
@@ -189,7 +573,39 @@
     "rarityWeight": 4,
     "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 94,
+      "defense": 94,
+      "physical": 95,
+      "mentality": 95
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 93,
+        "insideScoring": 95,
+        "playmaking": 92,
+        "defense": 94,
+        "rebounding": 94,
+        "athleticism": 94,
+        "intangibles": 94
+      },
+      "attributes": {
+        "shotIQ": 97,
+        "offensiveConsistency": 96,
+        "passIQ": 95,
+        "helpDefenseIQ": 96,
+        "defensiveConsistency": 95,
+        "stamina": 96,
+        "durability": 95,
+        "strength": 94,
+        "agility": 94
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "julius-erving",
@@ -198,13 +614,45 @@
       "SG",
       "SF"
     ],
-    "sourceRating": 95,
+    "sourceRating": 96,
     "tier": "T1",
-    "contractCost": 21,
-    "rarityWeight": 5,
+    "contractCost": 22,
+    "rarityWeight": 4,
     "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 94,
+      "defense": 93,
+      "physical": 95,
+      "mentality": 95
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 95,
+        "insideScoring": 93,
+        "playmaking": 93,
+        "defense": 93,
+        "rebounding": 90,
+        "athleticism": 95,
+        "intangibles": 94
+      },
+      "attributes": {
+        "shotIQ": 97,
+        "offensiveConsistency": 96,
+        "passIQ": 96,
+        "helpDefenseIQ": 95,
+        "defensiveConsistency": 94,
+        "stamina": 96,
+        "durability": 95,
+        "strength": 90,
+        "agility": 96
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "dirk-nowitzki",
@@ -219,7 +667,39 @@
     "rarityWeight": 5,
     "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 91,
+      "defense": 96,
+      "physical": 93,
+      "mentality": 94
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 89,
+        "insideScoring": 96,
+        "playmaking": 88,
+        "defense": 95,
+        "rebounding": 97,
+        "athleticism": 91,
+        "intangibles": 93
+      },
+      "attributes": {
+        "shotIQ": 96,
+        "offensiveConsistency": 95,
+        "passIQ": 91,
+        "helpDefenseIQ": 97,
+        "defensiveConsistency": 96,
+        "stamina": 95,
+        "durability": 94,
+        "strength": 97,
+        "agility": 90
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "kevin-garnett",
@@ -234,7 +714,39 @@
     "rarityWeight": 5,
     "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 91,
+      "defense": 96,
+      "physical": 93,
+      "mentality": 94
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 89,
+        "insideScoring": 96,
+        "playmaking": 88,
+        "defense": 95,
+        "rebounding": 97,
+        "athleticism": 91,
+        "intangibles": 93
+      },
+      "attributes": {
+        "shotIQ": 96,
+        "offensiveConsistency": 95,
+        "passIQ": 91,
+        "helpDefenseIQ": 97,
+        "defensiveConsistency": 96,
+        "stamina": 95,
+        "durability": 94,
+        "strength": 97,
+        "agility": 90
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "moses-malone",
@@ -248,7 +760,39 @@
     "rarityWeight": 5,
     "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 91,
+      "defense": 96,
+      "physical": 93,
+      "mentality": 94
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 87,
+        "insideScoring": 97,
+        "playmaking": 87,
+        "defense": 95,
+        "rebounding": 97,
+        "athleticism": 91,
+        "intangibles": 93
+      },
+      "attributes": {
+        "shotIQ": 95,
+        "offensiveConsistency": 95,
+        "passIQ": 90,
+        "helpDefenseIQ": 97,
+        "defensiveConsistency": 96,
+        "stamina": 95,
+        "durability": 94,
+        "strength": 97,
+        "agility": 89
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "nikola-jokic",
@@ -256,13 +800,45 @@
     "positions": [
       "C"
     ],
-    "sourceRating": 95,
-    "tier": "T1",
-    "contractCost": 21,
-    "rarityWeight": 5,
-    "tagline": "能改变阵容上限的超巨。",
+    "sourceRating": 97,
+    "tier": "T0",
+    "contractCost": 23,
+    "rarityWeight": 3,
+    "tagline": "历史级建队核心。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 93,
+      "defense": 98,
+      "physical": 95,
+      "mentality": 96
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 89,
+        "insideScoring": 99,
+        "playmaking": 89,
+        "defense": 97,
+        "rebounding": 99,
+        "athleticism": 93,
+        "intangibles": 95
+      },
+      "attributes": {
+        "shotIQ": 97,
+        "offensiveConsistency": 97,
+        "passIQ": 92,
+        "helpDefenseIQ": 99,
+        "defensiveConsistency": 98,
+        "stamina": 97,
+        "durability": 96,
+        "strength": 99,
+        "agility": 91
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "giannis-antetokounmpo",
@@ -272,13 +848,45 @@
       "PF",
       "C"
     ],
-    "sourceRating": 95,
+    "sourceRating": 96,
     "tier": "T1",
-    "contractCost": 21,
-    "rarityWeight": 5,
+    "contractCost": 22,
+    "rarityWeight": 4,
     "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 93,
+      "defense": 95,
+      "physical": 94,
+      "mentality": 95
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 91,
+        "insideScoring": 96,
+        "playmaking": 91,
+        "defense": 95,
+        "rebounding": 96,
+        "athleticism": 93,
+        "intangibles": 94
+      },
+      "attributes": {
+        "shotIQ": 97,
+        "offensiveConsistency": 96,
+        "passIQ": 94,
+        "helpDefenseIQ": 97,
+        "defensiveConsistency": 96,
+        "stamina": 96,
+        "durability": 95,
+        "strength": 96,
+        "agility": 93
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "dwyane-wade",
@@ -293,7 +901,39 @@
     "rarityWeight": 5,
     "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 93,
+      "defense": 90,
+      "physical": 93,
+      "mentality": 94
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 94,
+        "insideScoring": 90,
+        "playmaking": 95,
+        "defense": 91,
+        "rebounding": 86,
+        "athleticism": 93,
+        "intangibles": 93
+      },
+      "attributes": {
+        "shotIQ": 95,
+        "offensiveConsistency": 95,
+        "passIQ": 98,
+        "helpDefenseIQ": 93,
+        "defensiveConsistency": 92,
+        "stamina": 95,
+        "durability": 94,
+        "strength": 86,
+        "agility": 96
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "isiah-thomas",
@@ -307,7 +947,39 @@
     "rarityWeight": 6,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 92,
+      "defense": 89,
+      "physical": 92,
+      "mentality": 93
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 92,
+        "insideScoring": 88,
+        "playmaking": 96,
+        "defense": 90,
+        "rebounding": 85,
+        "athleticism": 92,
+        "intangibles": 92
+      },
+      "attributes": {
+        "shotIQ": 93,
+        "offensiveConsistency": 94,
+        "passIQ": 99,
+        "helpDefenseIQ": 92,
+        "defensiveConsistency": 91,
+        "stamina": 94,
+        "durability": 93,
+        "strength": 85,
+        "agility": 96
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "charles-barkley",
@@ -322,7 +994,39 @@
     "rarityWeight": 6,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 90,
+      "defense": 95,
+      "physical": 92,
+      "mentality": 93
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 88,
+        "insideScoring": 95,
+        "playmaking": 87,
+        "defense": 94,
+        "rebounding": 96,
+        "athleticism": 90,
+        "intangibles": 92
+      },
+      "attributes": {
+        "shotIQ": 95,
+        "offensiveConsistency": 94,
+        "passIQ": 90,
+        "helpDefenseIQ": 96,
+        "defensiveConsistency": 95,
+        "stamina": 94,
+        "durability": 93,
+        "strength": 96,
+        "agility": 89
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "allen-iverson",
@@ -337,7 +1041,39 @@
     "rarityWeight": 6,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 92,
+      "defense": 89,
+      "physical": 92,
+      "mentality": 93
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 93,
+        "insideScoring": 89,
+        "playmaking": 94,
+        "defense": 90,
+        "rebounding": 85,
+        "athleticism": 92,
+        "intangibles": 92
+      },
+      "attributes": {
+        "shotIQ": 94,
+        "offensiveConsistency": 94,
+        "passIQ": 97,
+        "helpDefenseIQ": 92,
+        "defensiveConsistency": 91,
+        "stamina": 94,
+        "durability": 93,
+        "strength": 85,
+        "agility": 95
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "scottie-pippen",
@@ -353,7 +1089,39 @@
     "rarityWeight": 6,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 92,
+      "defense": 92,
+      "physical": 92,
+      "mentality": 93
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 92,
+        "insideScoring": 92,
+        "playmaking": 90,
+        "defense": 92,
+        "rebounding": 90,
+        "athleticism": 92,
+        "intangibles": 92
+      },
+      "attributes": {
+        "shotIQ": 95,
+        "offensiveConsistency": 94,
+        "passIQ": 93,
+        "helpDefenseIQ": 94,
+        "defensiveConsistency": 93,
+        "stamina": 94,
+        "durability": 93,
+        "strength": 90,
+        "agility": 93
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "david-robinson",
@@ -367,7 +1135,39 @@
     "rarityWeight": 6,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 90,
+      "defense": 95,
+      "physical": 92,
+      "mentality": 93
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 86,
+        "insideScoring": 96,
+        "playmaking": 86,
+        "defense": 94,
+        "rebounding": 96,
+        "athleticism": 90,
+        "intangibles": 92
+      },
+      "attributes": {
+        "shotIQ": 94,
+        "offensiveConsistency": 94,
+        "passIQ": 89,
+        "helpDefenseIQ": 96,
+        "defensiveConsistency": 95,
+        "stamina": 94,
+        "durability": 93,
+        "strength": 96,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "john-stockton",
@@ -381,7 +1181,39 @@
     "rarityWeight": 6,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 92,
+      "defense": 89,
+      "physical": 92,
+      "mentality": 93
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 92,
+        "insideScoring": 88,
+        "playmaking": 96,
+        "defense": 90,
+        "rebounding": 85,
+        "athleticism": 92,
+        "intangibles": 92
+      },
+      "attributes": {
+        "shotIQ": 93,
+        "offensiveConsistency": 94,
+        "passIQ": 99,
+        "helpDefenseIQ": 92,
+        "defensiveConsistency": 91,
+        "stamina": 94,
+        "durability": 93,
+        "strength": 85,
+        "agility": 96
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "karl-malone",
@@ -395,7 +1227,39 @@
     "rarityWeight": 6,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 91,
+      "defense": 94,
+      "physical": 92,
+      "mentality": 93
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 90,
+        "insideScoring": 94,
+        "playmaking": 88,
+        "defense": 93,
+        "rebounding": 95,
+        "athleticism": 91,
+        "intangibles": 92
+      },
+      "attributes": {
+        "shotIQ": 95,
+        "offensiveConsistency": 94,
+        "passIQ": 91,
+        "helpDefenseIQ": 95,
+        "defensiveConsistency": 94,
+        "stamina": 94,
+        "durability": 93,
+        "strength": 95,
+        "agility": 90
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "chris-paul",
@@ -409,7 +1273,39 @@
     "rarityWeight": 7,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 91,
+      "defense": 88,
+      "physical": 91,
+      "mentality": 92
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 91,
+        "insideScoring": 87,
+        "playmaking": 95,
+        "defense": 89,
+        "rebounding": 84,
+        "athleticism": 91,
+        "intangibles": 91
+      },
+      "attributes": {
+        "shotIQ": 92,
+        "offensiveConsistency": 93,
+        "passIQ": 98,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 93,
+        "durability": 92,
+        "strength": 84,
+        "agility": 95
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "kawhi-leonard",
@@ -424,7 +1320,39 @@
     "rarityWeight": 7,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 91,
+      "defense": 91,
+      "physical": 92,
+      "mentality": 92
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 90,
+        "insideScoring": 92,
+        "playmaking": 89,
+        "defense": 91,
+        "rebounding": 91,
+        "athleticism": 91,
+        "intangibles": 91
+      },
+      "attributes": {
+        "shotIQ": 94,
+        "offensiveConsistency": 93,
+        "passIQ": 92,
+        "helpDefenseIQ": 93,
+        "defensiveConsistency": 92,
+        "stamina": 93,
+        "durability": 92,
+        "strength": 91,
+        "agility": 91
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "steve-nash",
@@ -438,7 +1366,39 @@
     "rarityWeight": 7,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 91,
+      "defense": 88,
+      "physical": 91,
+      "mentality": 92
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 91,
+        "insideScoring": 87,
+        "playmaking": 95,
+        "defense": 89,
+        "rebounding": 84,
+        "athleticism": 91,
+        "intangibles": 91
+      },
+      "attributes": {
+        "shotIQ": 92,
+        "offensiveConsistency": 93,
+        "passIQ": 98,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 93,
+        "durability": 92,
+        "strength": 84,
+        "agility": 95
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "james-harden",
@@ -453,7 +1413,39 @@
     "rarityWeight": 7,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 91,
+      "defense": 88,
+      "physical": 91,
+      "mentality": 92
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 92,
+        "insideScoring": 88,
+        "playmaking": 93,
+        "defense": 89,
+        "rebounding": 84,
+        "athleticism": 91,
+        "intangibles": 91
+      },
+      "attributes": {
+        "shotIQ": 93,
+        "offensiveConsistency": 93,
+        "passIQ": 96,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 93,
+        "durability": 92,
+        "strength": 84,
+        "agility": 94
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "tracy-mcgrady",
@@ -468,7 +1460,39 @@
     "rarityWeight": 7,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 91,
+      "defense": 90,
+      "physical": 92,
+      "mentality": 92
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 92,
+        "insideScoring": 90,
+        "playmaking": 90,
+        "defense": 90,
+        "rebounding": 87,
+        "athleticism": 92,
+        "intangibles": 91
+      },
+      "attributes": {
+        "shotIQ": 94,
+        "offensiveConsistency": 93,
+        "passIQ": 93,
+        "helpDefenseIQ": 92,
+        "defensiveConsistency": 91,
+        "stamina": 93,
+        "durability": 92,
+        "strength": 87,
+        "agility": 93
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "patrick-ewing",
@@ -482,7 +1506,39 @@
     "rarityWeight": 7,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 89,
+      "defense": 94,
+      "physical": 91,
+      "mentality": 92
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 85,
+        "insideScoring": 95,
+        "playmaking": 85,
+        "defense": 93,
+        "rebounding": 95,
+        "athleticism": 89,
+        "intangibles": 91
+      },
+      "attributes": {
+        "shotIQ": 93,
+        "offensiveConsistency": 93,
+        "passIQ": 88,
+        "helpDefenseIQ": 95,
+        "defensiveConsistency": 94,
+        "stamina": 93,
+        "durability": 92,
+        "strength": 95,
+        "agility": 87
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "clyde-drexler",
@@ -497,7 +1553,39 @@
     "rarityWeight": 8,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 90,
+      "defense": 89,
+      "physical": 91,
+      "mentality": 91
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 91,
+        "insideScoring": 89,
+        "playmaking": 89,
+        "defense": 89,
+        "rebounding": 86,
+        "athleticism": 91,
+        "intangibles": 90
+      },
+      "attributes": {
+        "shotIQ": 93,
+        "offensiveConsistency": 92,
+        "passIQ": 92,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 92,
+        "durability": 91,
+        "strength": 86,
+        "agility": 92
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "ray-allen",
@@ -512,7 +1600,39 @@
     "rarityWeight": 8,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 90,
+      "defense": 89,
+      "physical": 91,
+      "mentality": 91
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 91,
+        "insideScoring": 89,
+        "playmaking": 89,
+        "defense": 89,
+        "rebounding": 86,
+        "athleticism": 91,
+        "intangibles": 90
+      },
+      "attributes": {
+        "shotIQ": 93,
+        "offensiveConsistency": 92,
+        "passIQ": 92,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 92,
+        "durability": 91,
+        "strength": 86,
+        "agility": 92
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "reggie-miller",
@@ -527,7 +1647,39 @@
     "rarityWeight": 8,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 90,
+      "defense": 89,
+      "physical": 91,
+      "mentality": 91
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 91,
+        "insideScoring": 89,
+        "playmaking": 89,
+        "defense": 89,
+        "rebounding": 86,
+        "athleticism": 91,
+        "intangibles": 90
+      },
+      "attributes": {
+        "shotIQ": 93,
+        "offensiveConsistency": 92,
+        "passIQ": 92,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 92,
+        "durability": 91,
+        "strength": 86,
+        "agility": 92
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "manu-ginobili",
@@ -542,7 +1694,39 @@
     "rarityWeight": 8,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 90,
+      "defense": 89,
+      "physical": 91,
+      "mentality": 91
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 91,
+        "insideScoring": 89,
+        "playmaking": 89,
+        "defense": 89,
+        "rebounding": 86,
+        "athleticism": 91,
+        "intangibles": 90
+      },
+      "attributes": {
+        "shotIQ": 93,
+        "offensiveConsistency": 92,
+        "passIQ": 92,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 92,
+        "durability": 91,
+        "strength": 86,
+        "agility": 92
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "pau-gasol",
@@ -557,7 +1741,39 @@
     "rarityWeight": 8,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 88,
+      "defense": 93,
+      "physical": 90,
+      "mentality": 91
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 86,
+        "insideScoring": 93,
+        "playmaking": 85,
+        "defense": 92,
+        "rebounding": 94,
+        "athleticism": 88,
+        "intangibles": 90
+      },
+      "attributes": {
+        "shotIQ": 93,
+        "offensiveConsistency": 92,
+        "passIQ": 88,
+        "helpDefenseIQ": 94,
+        "defensiveConsistency": 93,
+        "stamina": 92,
+        "durability": 91,
+        "strength": 94,
+        "agility": 87
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "dwight-howard",
@@ -571,7 +1787,39 @@
     "rarityWeight": 8,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 88,
+      "defense": 93,
+      "physical": 90,
+      "mentality": 91
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 94,
+        "playmaking": 84,
+        "defense": 92,
+        "rebounding": 94,
+        "athleticism": 88,
+        "intangibles": 90
+      },
+      "attributes": {
+        "shotIQ": 92,
+        "offensiveConsistency": 92,
+        "passIQ": 87,
+        "helpDefenseIQ": 94,
+        "defensiveConsistency": 93,
+        "stamina": 92,
+        "durability": 91,
+        "strength": 94,
+        "agility": 86
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "yao-ming",
@@ -585,7 +1833,39 @@
     "rarityWeight": 8,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 88,
+      "defense": 93,
+      "physical": 90,
+      "mentality": 91
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 94,
+        "playmaking": 84,
+        "defense": 92,
+        "rebounding": 94,
+        "athleticism": 88,
+        "intangibles": 90
+      },
+      "attributes": {
+        "shotIQ": 92,
+        "offensiveConsistency": 92,
+        "passIQ": 87,
+        "helpDefenseIQ": 94,
+        "defensiveConsistency": 93,
+        "stamina": 92,
+        "durability": 91,
+        "strength": 94,
+        "agility": 86
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "vince-carter",
@@ -600,7 +1880,39 @@
     "rarityWeight": 9,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 89,
+      "defense": 88,
+      "physical": 90,
+      "mentality": 90
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 90,
+        "insideScoring": 88,
+        "playmaking": 88,
+        "defense": 88,
+        "rebounding": 85,
+        "athleticism": 90,
+        "intangibles": 89
+      },
+      "attributes": {
+        "shotIQ": 92,
+        "offensiveConsistency": 91,
+        "passIQ": 91,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 91,
+        "durability": 90,
+        "strength": 85,
+        "agility": 91
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "damian-lillard",
@@ -614,7 +1926,39 @@
     "rarityWeight": 9,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 89,
+      "defense": 86,
+      "physical": 89,
+      "mentality": 90
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 89,
+        "insideScoring": 85,
+        "playmaking": 93,
+        "defense": 87,
+        "rebounding": 82,
+        "athleticism": 89,
+        "intangibles": 89
+      },
+      "attributes": {
+        "shotIQ": 90,
+        "offensiveConsistency": 91,
+        "passIQ": 96,
+        "helpDefenseIQ": 89,
+        "defensiveConsistency": 88,
+        "stamina": 91,
+        "durability": 90,
+        "strength": 82,
+        "agility": 93
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "dominique-wilkins",
@@ -629,7 +1973,39 @@
     "rarityWeight": 9,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 89,
+      "defense": 89,
+      "physical": 90,
+      "mentality": 90
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 88,
+        "insideScoring": 90,
+        "playmaking": 87,
+        "defense": 89,
+        "rebounding": 89,
+        "athleticism": 89,
+        "intangibles": 89
+      },
+      "attributes": {
+        "shotIQ": 92,
+        "offensiveConsistency": 91,
+        "passIQ": 90,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 91,
+        "durability": 90,
+        "strength": 89,
+        "agility": 89
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "paul-pierce",
@@ -644,7 +2020,39 @@
     "rarityWeight": 9,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 89,
+      "defense": 89,
+      "physical": 90,
+      "mentality": 90
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 88,
+        "insideScoring": 90,
+        "playmaking": 87,
+        "defense": 89,
+        "rebounding": 89,
+        "athleticism": 89,
+        "intangibles": 89
+      },
+      "attributes": {
+        "shotIQ": 92,
+        "offensiveConsistency": 91,
+        "passIQ": 90,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 91,
+        "durability": 90,
+        "strength": 89,
+        "agility": 89
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "dennis-rodman",
@@ -659,7 +2067,39 @@
     "rarityWeight": 9,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 45,
+      "defense": 94,
+      "physical": 86,
+      "mentality": 69
+    },
+    "sourceAttributes": {
+      "sourceVersion": "NBA 2K26 All-Time Chicago Bulls",
+      "groups": {
+        "outsideScoring": 48,
+        "insideScoring": 49,
+        "playmaking": 44,
+        "defense": 92,
+        "rebounding": 98,
+        "athleticism": 78,
+        "intangibles": 95
+      },
+      "attributes": {
+        "shotIQ": 40,
+        "offensiveConsistency": 30,
+        "passIQ": 60,
+        "helpDefenseIQ": 98,
+        "defensiveConsistency": 98,
+        "stamina": 98,
+        "durability": 95,
+        "strength": 82,
+        "agility": 84
+      }
+    },
+    "attributeSourceUrl": "https://www.2kratings.com/dennis-rodman-all-time-chicago-bulls",
+    "attributeSourceStatus": "verified-2k-snapshot"
   },
   {
     "id": "gary-payton",
@@ -673,7 +2113,39 @@
     "rarityWeight": 10,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 88,
+      "defense": 85,
+      "physical": 88,
+      "mentality": 89
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 88,
+        "insideScoring": 84,
+        "playmaking": 92,
+        "defense": 86,
+        "rebounding": 81,
+        "athleticism": 88,
+        "intangibles": 88
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 90,
+        "passIQ": 95,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 90,
+        "durability": 89,
+        "strength": 81,
+        "agility": 92
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "jason-kidd",
@@ -687,7 +2159,39 @@
     "rarityWeight": 10,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 88,
+      "defense": 85,
+      "physical": 88,
+      "mentality": 89
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 88,
+        "insideScoring": 84,
+        "playmaking": 92,
+        "defense": 86,
+        "rebounding": 81,
+        "athleticism": 88,
+        "intangibles": 88
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 90,
+        "passIQ": 95,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 90,
+        "durability": 89,
+        "strength": 81,
+        "agility": 92
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "rick-barry",
@@ -701,7 +2205,39 @@
     "rarityWeight": 10,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 88,
+      "defense": 88,
+      "physical": 89,
+      "mentality": 89
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 88,
+        "insideScoring": 88,
+        "playmaking": 87,
+        "defense": 88,
+        "rebounding": 86,
+        "athleticism": 89,
+        "intangibles": 88
+      },
+      "attributes": {
+        "shotIQ": 91,
+        "offensiveConsistency": 90,
+        "passIQ": 90,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 90,
+        "durability": 89,
+        "strength": 86,
+        "agility": 89
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "george-gervin",
@@ -716,7 +2252,39 @@
     "rarityWeight": 10,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 88,
+      "defense": 87,
+      "physical": 89,
+      "mentality": 89
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 89,
+        "insideScoring": 87,
+        "playmaking": 87,
+        "defense": 87,
+        "rebounding": 84,
+        "athleticism": 89,
+        "intangibles": 88
+      },
+      "attributes": {
+        "shotIQ": 91,
+        "offensiveConsistency": 90,
+        "passIQ": 90,
+        "helpDefenseIQ": 89,
+        "defensiveConsistency": 88,
+        "stamina": 90,
+        "durability": 89,
+        "strength": 84,
+        "agility": 90
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "elvin-hayes",
@@ -731,7 +2299,39 @@
     "rarityWeight": 10,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 91,
+      "physical": 88,
+      "mentality": 89
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 91,
+        "playmaking": 83,
+        "defense": 90,
+        "rebounding": 92,
+        "athleticism": 86,
+        "intangibles": 88
+      },
+      "attributes": {
+        "shotIQ": 91,
+        "offensiveConsistency": 90,
+        "passIQ": 86,
+        "helpDefenseIQ": 92,
+        "defensiveConsistency": 91,
+        "stamina": 90,
+        "durability": 89,
+        "strength": 92,
+        "agility": 85
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "bob-mcadoo",
@@ -746,7 +2346,39 @@
     "rarityWeight": 10,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 91,
+      "physical": 88,
+      "mentality": 89
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 91,
+        "playmaking": 83,
+        "defense": 90,
+        "rebounding": 92,
+        "athleticism": 86,
+        "intangibles": 88
+      },
+      "attributes": {
+        "shotIQ": 91,
+        "offensiveConsistency": 90,
+        "passIQ": 86,
+        "helpDefenseIQ": 92,
+        "defensiveConsistency": 91,
+        "stamina": 90,
+        "durability": 89,
+        "strength": 92,
+        "agility": 85
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "anthony-davis",
@@ -761,7 +2393,39 @@
     "rarityWeight": 10,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 91,
+      "physical": 88,
+      "mentality": 89
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 91,
+        "playmaking": 83,
+        "defense": 90,
+        "rebounding": 92,
+        "athleticism": 86,
+        "intangibles": 88
+      },
+      "attributes": {
+        "shotIQ": 91,
+        "offensiveConsistency": 90,
+        "passIQ": 86,
+        "helpDefenseIQ": 92,
+        "defensiveConsistency": 91,
+        "stamina": 90,
+        "durability": 89,
+        "strength": 92,
+        "agility": 85
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "russell-westbrook",
@@ -775,7 +2439,39 @@
     "rarityWeight": 10,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 88,
+      "defense": 85,
+      "physical": 88,
+      "mentality": 89
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 88,
+        "insideScoring": 84,
+        "playmaking": 92,
+        "defense": 86,
+        "rebounding": 81,
+        "athleticism": 88,
+        "intangibles": 88
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 90,
+        "passIQ": 95,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 90,
+        "durability": 89,
+        "strength": 81,
+        "agility": 92
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "luka-doncic",
@@ -785,13 +2481,45 @@
       "SG",
       "SF"
     ],
-    "sourceRating": 90,
-    "tier": "T3",
-    "contractCost": 16,
-    "rarityWeight": 10,
-    "tagline": "稳定的明星主力。",
+    "sourceRating": 96,
+    "tier": "T1",
+    "contractCost": 22,
+    "rarityWeight": 4,
+    "tagline": "能改变阵容上限的超巨。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 94,
+      "defense": 92,
+      "physical": 95,
+      "mentality": 96
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 95,
+        "insideScoring": 92,
+        "playmaking": 95,
+        "defense": 93,
+        "rebounding": 89,
+        "athleticism": 95,
+        "intangibles": 94
+      },
+      "attributes": {
+        "shotIQ": 97,
+        "offensiveConsistency": 96,
+        "passIQ": 98,
+        "helpDefenseIQ": 95,
+        "defensiveConsistency": 94,
+        "stamina": 96,
+        "durability": 95,
+        "strength": 89,
+        "agility": 96
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "joel-embiid",
@@ -805,7 +2533,39 @@
     "rarityWeight": 10,
     "tagline": "稳定的明星主力。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 91,
+      "physical": 88,
+      "mentality": 89
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 82,
+        "insideScoring": 92,
+        "playmaking": 82,
+        "defense": 90,
+        "rebounding": 92,
+        "athleticism": 86,
+        "intangibles": 88
+      },
+      "attributes": {
+        "shotIQ": 90,
+        "offensiveConsistency": 90,
+        "passIQ": 85,
+        "helpDefenseIQ": 92,
+        "defensiveConsistency": 91,
+        "stamina": 90,
+        "durability": 89,
+        "strength": 92,
+        "agility": 84
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "nate-archibald",
@@ -819,7 +2579,39 @@
     "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 87,
+      "defense": 84,
+      "physical": 87,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 87,
+        "insideScoring": 83,
+        "playmaking": 91,
+        "defense": 85,
+        "rebounding": 80,
+        "athleticism": 87,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 89,
+        "passIQ": 94,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 80,
+        "agility": 91
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "alex-english",
@@ -833,7 +2625,39 @@
     "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 87,
+      "defense": 87,
+      "physical": 88,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 87,
+        "insideScoring": 87,
+        "playmaking": 86,
+        "defense": 87,
+        "rebounding": 85,
+        "athleticism": 88,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 90,
+        "offensiveConsistency": 89,
+        "passIQ": 89,
+        "helpDefenseIQ": 89,
+        "defensiveConsistency": 88,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 85,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "bernard-king",
@@ -847,7 +2671,39 @@
     "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 87,
+      "defense": 87,
+      "physical": 88,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 87,
+        "insideScoring": 87,
+        "playmaking": 86,
+        "defense": 87,
+        "rebounding": 85,
+        "athleticism": 88,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 90,
+        "offensiveConsistency": 89,
+        "passIQ": 89,
+        "helpDefenseIQ": 89,
+        "defensiveConsistency": 88,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 85,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "chris-webber",
@@ -862,7 +2718,39 @@
     "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 85,
+      "defense": 90,
+      "physical": 87,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 83,
+        "insideScoring": 90,
+        "playmaking": 82,
+        "defense": 89,
+        "rebounding": 91,
+        "athleticism": 85,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 90,
+        "offensiveConsistency": 89,
+        "passIQ": 85,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 91,
+        "agility": 84
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "alonzomourning",
@@ -876,7 +2764,39 @@
     "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 85,
+      "defense": 90,
+      "physical": 87,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 81,
+        "insideScoring": 91,
+        "playmaking": 81,
+        "defense": 89,
+        "rebounding": 91,
+        "athleticism": 85,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 89,
+        "passIQ": 84,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 91,
+        "agility": 83
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "dikembe-mutombo",
@@ -890,7 +2810,39 @@
     "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 85,
+      "defense": 90,
+      "physical": 87,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 81,
+        "insideScoring": 91,
+        "playmaking": 81,
+        "defense": 89,
+        "rebounding": 91,
+        "athleticism": 85,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 89,
+        "passIQ": 84,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 91,
+        "agility": 83
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "tony-parker",
@@ -904,7 +2856,39 @@
     "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 87,
+      "defense": 84,
+      "physical": 87,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 87,
+        "insideScoring": 83,
+        "playmaking": 91,
+        "defense": 85,
+        "rebounding": 80,
+        "athleticism": 87,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 89,
+        "passIQ": 94,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 80,
+        "agility": 91
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "carmelo-anthony",
@@ -919,7 +2903,39 @@
     "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 87,
+      "defense": 87,
+      "physical": 88,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 86,
+        "insideScoring": 88,
+        "playmaking": 85,
+        "defense": 87,
+        "rebounding": 87,
+        "athleticism": 87,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 90,
+        "offensiveConsistency": 89,
+        "passIQ": 88,
+        "helpDefenseIQ": 89,
+        "defensiveConsistency": 88,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 87,
+        "agility": 87
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "klay-thompson",
@@ -934,7 +2950,39 @@
     "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 87,
+      "defense": 86,
+      "physical": 88,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 88,
+        "insideScoring": 86,
+        "playmaking": 86,
+        "defense": 86,
+        "rebounding": 83,
+        "athleticism": 88,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 90,
+        "offensiveConsistency": 89,
+        "passIQ": 89,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 83,
+        "agility": 89
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "draymond-green",
@@ -949,7 +2997,39 @@
     "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 85,
+      "defense": 90,
+      "physical": 87,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 83,
+        "insideScoring": 90,
+        "playmaking": 82,
+        "defense": 89,
+        "rebounding": 91,
+        "athleticism": 85,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 90,
+        "offensiveConsistency": 89,
+        "passIQ": 85,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 91,
+        "agility": 84
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "jimmy-butler",
@@ -964,7 +3044,39 @@
     "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 87,
+      "defense": 86,
+      "physical": 88,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 88,
+        "insideScoring": 86,
+        "playmaking": 86,
+        "defense": 86,
+        "rebounding": 83,
+        "athleticism": 88,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 90,
+        "offensiveConsistency": 89,
+        "passIQ": 89,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 83,
+        "agility": 89
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "paul-george",
@@ -979,7 +3091,39 @@
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 85,
+      "physical": 87,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 87,
+        "insideScoring": 85,
+        "playmaking": 85,
+        "defense": 85,
+        "rebounding": 82,
+        "athleticism": 87,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 88,
+        "passIQ": 88,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 82,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "kyrie-irving",
@@ -994,7 +3138,39 @@
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 83,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 87,
+        "insideScoring": 83,
+        "playmaking": 88,
+        "defense": 84,
+        "rebounding": 79,
+        "athleticism": 86,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 88,
+        "passIQ": 91,
+        "helpDefenseIQ": 86,
+        "defensiveConsistency": 85,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 79,
+        "agility": 89
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "grant-hill",
@@ -1009,7 +3185,39 @@
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 85,
+      "physical": 87,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 87,
+        "insideScoring": 85,
+        "playmaking": 85,
+        "defense": 85,
+        "rebounding": 82,
+        "athleticism": 87,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 88,
+        "passIQ": 88,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 82,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "penny-hardaway",
@@ -1024,7 +3232,39 @@
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 83,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 87,
+        "insideScoring": 83,
+        "playmaking": 88,
+        "defense": 84,
+        "rebounding": 79,
+        "athleticism": 86,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 88,
+        "passIQ": 91,
+        "helpDefenseIQ": 86,
+        "defensiveConsistency": 85,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 79,
+        "agility": 89
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "shawn-kemp",
@@ -1039,7 +3279,39 @@
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 89,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 82,
+        "insideScoring": 89,
+        "playmaking": 81,
+        "defense": 88,
+        "rebounding": 90,
+        "athleticism": 84,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 88,
+        "passIQ": 84,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 90,
+        "agility": 83
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "mitch-richmond",
@@ -1053,7 +3325,39 @@
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 87,
+      "defense": 84,
+      "physical": 87,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 88,
+        "insideScoring": 84,
+        "playmaking": 86,
+        "defense": 85,
+        "rebounding": 80,
+        "athleticism": 87,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 88,
+        "passIQ": 89,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 80,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "joe-dumars",
@@ -1068,7 +3372,39 @@
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 83,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 87,
+        "insideScoring": 83,
+        "playmaking": 88,
+        "defense": 84,
+        "rebounding": 79,
+        "athleticism": 86,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 88,
+        "passIQ": 91,
+        "helpDefenseIQ": 86,
+        "defensiveConsistency": 85,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 79,
+        "agility": 89
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "sidney-moncrief",
@@ -1082,7 +3418,39 @@
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 87,
+      "defense": 84,
+      "physical": 87,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 88,
+        "insideScoring": 84,
+        "playmaking": 86,
+        "defense": 85,
+        "rebounding": 80,
+        "athleticism": 87,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 88,
+        "passIQ": 89,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 80,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "artis-gilmore",
@@ -1096,7 +3464,39 @@
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 89,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 80,
+        "insideScoring": 90,
+        "playmaking": 80,
+        "defense": 88,
+        "rebounding": 90,
+        "athleticism": 84,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 88,
+        "passIQ": 83,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 90,
+        "agility": 82
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "robert-parish",
@@ -1110,7 +3510,39 @@
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 89,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 80,
+        "insideScoring": 90,
+        "playmaking": 80,
+        "defense": 88,
+        "rebounding": 90,
+        "athleticism": 84,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 88,
+        "passIQ": 83,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 90,
+        "agility": 82
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "kevin-mchale",
@@ -1125,7 +3557,39 @@
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 89,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 82,
+        "insideScoring": 89,
+        "playmaking": 81,
+        "defense": 88,
+        "rebounding": 90,
+        "athleticism": 84,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 88,
+        "passIQ": 84,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 90,
+        "agility": 83
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "bill-walton",
@@ -1139,7 +3603,39 @@
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 89,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 80,
+        "insideScoring": 90,
+        "playmaking": 80,
+        "defense": 88,
+        "rebounding": 90,
+        "athleticism": 84,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 88,
+        "passIQ": 83,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 90,
+        "agility": 82
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "tim-hardaway",
@@ -1153,7 +3649,39 @@
     "rarityWeight": 14,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 81,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 80,
+        "playmaking": 88,
+        "defense": 82,
+        "rebounding": 77,
+        "athleticism": 84,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 85,
+        "offensiveConsistency": 86,
+        "passIQ": 91,
+        "helpDefenseIQ": 84,
+        "defensiveConsistency": 83,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 77,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "mark-price",
@@ -1167,7 +3695,39 @@
     "rarityWeight": 14,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 81,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 80,
+        "playmaking": 88,
+        "defense": 82,
+        "rebounding": 77,
+        "athleticism": 84,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 85,
+        "offensiveConsistency": 86,
+        "passIQ": 91,
+        "helpDefenseIQ": 84,
+        "defensiveConsistency": 83,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 77,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "derrick-rose",
@@ -1181,7 +3741,39 @@
     "rarityWeight": 14,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 81,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 80,
+        "playmaking": 88,
+        "defense": 82,
+        "rebounding": 77,
+        "athleticism": 84,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 85,
+        "offensiveConsistency": 86,
+        "passIQ": 91,
+        "helpDefenseIQ": 84,
+        "defensiveConsistency": 83,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 77,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "chauncey-billups",
@@ -1195,7 +3787,39 @@
     "rarityWeight": 14,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 81,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 80,
+        "playmaking": 88,
+        "defense": 82,
+        "rebounding": 77,
+        "athleticism": 84,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 85,
+        "offensiveConsistency": 86,
+        "passIQ": 91,
+        "helpDefenseIQ": 84,
+        "defensiveConsistency": 83,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 77,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "rajon-rondo",
@@ -1209,7 +3833,39 @@
     "rarityWeight": 14,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 81,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 80,
+        "playmaking": 88,
+        "defense": 82,
+        "rebounding": 77,
+        "athleticism": 84,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 85,
+        "offensiveConsistency": 86,
+        "passIQ": 91,
+        "helpDefenseIQ": 84,
+        "defensiveConsistency": 83,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 77,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "amar-e-stoudemire",
@@ -1224,7 +3880,39 @@
     "rarityWeight": 14,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 82,
+      "defense": 87,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 80,
+        "insideScoring": 87,
+        "playmaking": 79,
+        "defense": 86,
+        "rebounding": 88,
+        "athleticism": 82,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 86,
+        "passIQ": 82,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 88,
+        "agility": 81
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "chris-bosh",
@@ -1239,7 +3927,39 @@
     "rarityWeight": 14,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 82,
+      "defense": 87,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 80,
+        "insideScoring": 87,
+        "playmaking": 79,
+        "defense": 86,
+        "rebounding": 88,
+        "athleticism": 82,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 86,
+        "passIQ": 82,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 88,
+        "agility": 81
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "blake-griffin",
@@ -1254,7 +3974,39 @@
     "rarityWeight": 14,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 82,
+      "defense": 87,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 80,
+        "insideScoring": 87,
+        "playmaking": 79,
+        "defense": 86,
+        "rebounding": 88,
+        "athleticism": 82,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 86,
+        "passIQ": 82,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 88,
+        "agility": 81
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "lamarcus-aldridge",
@@ -1269,7 +4021,39 @@
     "rarityWeight": 14,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 82,
+      "defense": 87,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 80,
+        "insideScoring": 87,
+        "playmaking": 79,
+        "defense": 86,
+        "rebounding": 88,
+        "athleticism": 82,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 86,
+        "passIQ": 82,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 88,
+        "agility": 81
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "marc-gasol",
@@ -1283,7 +4067,39 @@
     "rarityWeight": 14,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 82,
+      "defense": 87,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 78,
+        "insideScoring": 88,
+        "playmaking": 78,
+        "defense": 86,
+        "rebounding": 88,
+        "athleticism": 82,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 86,
+        "offensiveConsistency": 86,
+        "passIQ": 81,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 88,
+        "agility": 80
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "ben-wallace",
@@ -1297,7 +4113,39 @@
     "rarityWeight": 14,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 82,
+      "defense": 87,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 78,
+        "insideScoring": 88,
+        "playmaking": 78,
+        "defense": 86,
+        "rebounding": 88,
+        "athleticism": 82,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 86,
+        "offensiveConsistency": 86,
+        "passIQ": 81,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 88,
+        "agility": 80
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "rasheed-wallace",
@@ -1312,7 +4160,39 @@
     "rarityWeight": 14,
     "tagline": "适合补齐阵容结构的强力拼图。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 82,
+      "defense": 87,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 80,
+        "insideScoring": 87,
+        "playmaking": 79,
+        "defense": 86,
+        "rebounding": 88,
+        "athleticism": 82,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 86,
+        "passIQ": 82,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 88,
+        "agility": 81
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "peja-stojakovic",
@@ -1327,7 +4207,39 @@
     "rarityWeight": 15,
     "tagline": "预算紧张时的可靠轮换。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 83,
+      "defense": 83,
+      "physical": 84,
+      "mentality": 84
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 82,
+        "insideScoring": 84,
+        "playmaking": 81,
+        "defense": 83,
+        "rebounding": 83,
+        "athleticism": 83,
+        "intangibles": 83
+      },
+      "attributes": {
+        "shotIQ": 86,
+        "offensiveConsistency": 85,
+        "passIQ": 84,
+        "helpDefenseIQ": 85,
+        "defensiveConsistency": 84,
+        "stamina": 85,
+        "durability": 84,
+        "strength": 83,
+        "agility": 83
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "chris-mullin",
@@ -1341,7 +4253,39 @@
     "rarityWeight": 15,
     "tagline": "预算紧张时的可靠轮换。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 83,
+      "defense": 83,
+      "physical": 84,
+      "mentality": 84
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 83,
+        "insideScoring": 83,
+        "playmaking": 82,
+        "defense": 83,
+        "rebounding": 81,
+        "athleticism": 84,
+        "intangibles": 83
+      },
+      "attributes": {
+        "shotIQ": 86,
+        "offensiveConsistency": 85,
+        "passIQ": 85,
+        "helpDefenseIQ": 85,
+        "defensiveConsistency": 84,
+        "stamina": 85,
+        "durability": 84,
+        "strength": 81,
+        "agility": 84
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "gilbert-arenas",
@@ -1356,7 +4300,39 @@
     "rarityWeight": 15,
     "tagline": "预算紧张时的可靠轮换。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 83,
+      "defense": 80,
+      "physical": 83,
+      "mentality": 84
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 80,
+        "playmaking": 85,
+        "defense": 81,
+        "rebounding": 76,
+        "athleticism": 83,
+        "intangibles": 83
+      },
+      "attributes": {
+        "shotIQ": 85,
+        "offensiveConsistency": 85,
+        "passIQ": 88,
+        "helpDefenseIQ": 83,
+        "defensiveConsistency": 82,
+        "stamina": 85,
+        "durability": 84,
+        "strength": 76,
+        "agility": 86
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "demar-derozan",
@@ -1371,7 +4347,39 @@
     "rarityWeight": 15,
     "tagline": "预算紧张时的可靠轮换。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 83,
+      "defense": 82,
+      "physical": 84,
+      "mentality": 84
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 82,
+        "playmaking": 82,
+        "defense": 82,
+        "rebounding": 79,
+        "athleticism": 84,
+        "intangibles": 83
+      },
+      "attributes": {
+        "shotIQ": 86,
+        "offensiveConsistency": 85,
+        "passIQ": 85,
+        "helpDefenseIQ": 84,
+        "defensiveConsistency": 83,
+        "stamina": 85,
+        "durability": 84,
+        "strength": 79,
+        "agility": 85
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "john-wall",
@@ -1385,7 +4393,39 @@
     "rarityWeight": 16,
     "tagline": "预算紧张时的可靠轮换。",
     "source": "snapshot-2026-06-13",
-    "sourceStatus": "focused-modern-snapshot"
+    "sourceStatus": "focused-modern-snapshot",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 82,
+      "defense": 79,
+      "physical": 82,
+      "mentality": 83
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 82,
+        "insideScoring": 78,
+        "playmaking": 86,
+        "defense": 80,
+        "rebounding": 75,
+        "athleticism": 82,
+        "intangibles": 82
+      },
+      "attributes": {
+        "shotIQ": 83,
+        "offensiveConsistency": 84,
+        "passIQ": 89,
+        "helpDefenseIQ": 82,
+        "defensiveConsistency": 81,
+        "stamina": 84,
+        "durability": 83,
+        "strength": 75,
+        "agility": 86
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "shai-gilgeous-alexander",
@@ -1394,13 +4434,45 @@
       "PG",
       "SG"
     ],
-    "sourceRating": 98,
+    "sourceRating": 97,
     "tier": "T0",
-    "contractCost": 24,
-    "rarityWeight": 2,
+    "contractCost": 23,
+    "rarityWeight": 3,
     "tagline": "历史级建队核心。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 95,
+      "defense": 92,
+      "physical": 95,
+      "mentality": 96
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 96,
+        "insideScoring": 92,
+        "playmaking": 97,
+        "defense": 93,
+        "rebounding": 88,
+        "athleticism": 95,
+        "intangibles": 95
+      },
+      "attributes": {
+        "shotIQ": 97,
+        "offensiveConsistency": 97,
+        "passIQ": 99,
+        "helpDefenseIQ": 95,
+        "defensiveConsistency": 94,
+        "stamina": 97,
+        "durability": 96,
+        "strength": 88,
+        "agility": 98
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "victor-wembanyama",
@@ -1409,13 +4481,45 @@
       "C",
       "PF"
     ],
-    "sourceRating": 97,
-    "tier": "T0",
-    "contractCost": 23,
-    "rarityWeight": 3,
-    "tagline": "历史级建队核心。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "sourceRating": 95,
+    "tier": "T1",
+    "contractCost": 21,
+    "rarityWeight": 5,
+    "tagline": "能改变阵容上限的超巨。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 91,
+      "defense": 96,
+      "physical": 93,
+      "mentality": 94
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 89,
+        "insideScoring": 96,
+        "playmaking": 88,
+        "defense": 95,
+        "rebounding": 97,
+        "athleticism": 91,
+        "intangibles": 93
+      },
+      "attributes": {
+        "shotIQ": 96,
+        "offensiveConsistency": 95,
+        "passIQ": 91,
+        "helpDefenseIQ": 97,
+        "defensiveConsistency": 96,
+        "stamina": 95,
+        "durability": 94,
+        "strength": 97,
+        "agility": 90
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "anthony-edwards",
@@ -1424,13 +4528,45 @@
       "SG",
       "SF"
     ],
-    "sourceRating": 96,
-    "tier": "T1",
-    "contractCost": 22,
-    "rarityWeight": 4,
-    "tagline": "能改变阵容上限的超巨。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "sourceRating": 92,
+    "tier": "T2",
+    "contractCost": 18,
+    "rarityWeight": 8,
+    "tagline": "稳定的明星主力。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 90,
+      "defense": 89,
+      "physical": 91,
+      "mentality": 91
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 91,
+        "insideScoring": 89,
+        "playmaking": 89,
+        "defense": 89,
+        "rebounding": 86,
+        "athleticism": 91,
+        "intangibles": 90
+      },
+      "attributes": {
+        "shotIQ": 93,
+        "offensiveConsistency": 92,
+        "passIQ": 92,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 92,
+        "durability": 91,
+        "strength": 86,
+        "agility": 92
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "jalen-brunson",
@@ -1438,13 +4574,45 @@
     "positions": [
       "PG"
     ],
-    "sourceRating": 96,
-    "tier": "T1",
-    "contractCost": 22,
-    "rarityWeight": 4,
-    "tagline": "能改变阵容上限的超巨。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "sourceRating": 92,
+    "tier": "T2",
+    "contractCost": 18,
+    "rarityWeight": 8,
+    "tagline": "稳定的明星主力。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 90,
+      "defense": 87,
+      "physical": 90,
+      "mentality": 91
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 90,
+        "insideScoring": 86,
+        "playmaking": 94,
+        "defense": 88,
+        "rebounding": 83,
+        "athleticism": 90,
+        "intangibles": 90
+      },
+      "attributes": {
+        "shotIQ": 91,
+        "offensiveConsistency": 92,
+        "passIQ": 97,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 92,
+        "durability": 91,
+        "strength": 83,
+        "agility": 94
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "cade-cunningham",
@@ -1453,13 +4621,45 @@
       "PG",
       "SG"
     ],
-    "sourceRating": 95,
-    "tier": "T1",
-    "contractCost": 21,
-    "rarityWeight": 5,
-    "tagline": "能改变阵容上限的超巨。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "sourceRating": 92,
+    "tier": "T2",
+    "contractCost": 18,
+    "rarityWeight": 8,
+    "tagline": "稳定的明星主力。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 90,
+      "defense": 87,
+      "physical": 90,
+      "mentality": 91
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 91,
+        "insideScoring": 87,
+        "playmaking": 92,
+        "defense": 88,
+        "rebounding": 83,
+        "athleticism": 90,
+        "intangibles": 90
+      },
+      "attributes": {
+        "shotIQ": 92,
+        "offensiveConsistency": 92,
+        "passIQ": 95,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 92,
+        "durability": 91,
+        "strength": 83,
+        "agility": 93
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "jaylen-brown",
@@ -1468,13 +4668,45 @@
       "SG",
       "SF"
     ],
-    "sourceRating": 95,
-    "tier": "T1",
-    "contractCost": 21,
-    "rarityWeight": 5,
-    "tagline": "能改变阵容上限的超巨。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "sourceRating": 91,
+    "tier": "T3",
+    "contractCost": 17,
+    "rarityWeight": 9,
+    "tagline": "稳定的明星主力。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 89,
+      "defense": 88,
+      "physical": 90,
+      "mentality": 90
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 90,
+        "insideScoring": 88,
+        "playmaking": 88,
+        "defense": 88,
+        "rebounding": 85,
+        "athleticism": 90,
+        "intangibles": 89
+      },
+      "attributes": {
+        "shotIQ": 92,
+        "offensiveConsistency": 91,
+        "passIQ": 91,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 91,
+        "durability": 90,
+        "strength": 85,
+        "agility": 91
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "jayson-tatum",
@@ -1488,8 +4720,40 @@
     "contractCost": 19,
     "rarityWeight": 7,
     "tagline": "稳定的明星主力。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 91,
+      "defense": 91,
+      "physical": 92,
+      "mentality": 92
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 90,
+        "insideScoring": 92,
+        "playmaking": 89,
+        "defense": 91,
+        "rebounding": 91,
+        "athleticism": 91,
+        "intangibles": 91
+      },
+      "attributes": {
+        "shotIQ": 94,
+        "offensiveConsistency": 93,
+        "passIQ": 92,
+        "helpDefenseIQ": 93,
+        "defensiveConsistency": 92,
+        "stamina": 93,
+        "durability": 92,
+        "strength": 91,
+        "agility": 91
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "donovan-mitchell",
@@ -1498,13 +4762,45 @@
       "SG",
       "PG"
     ],
-    "sourceRating": 93,
+    "sourceRating": 92,
     "tier": "T2",
-    "contractCost": 19,
-    "rarityWeight": 7,
+    "contractCost": 18,
+    "rarityWeight": 8,
     "tagline": "稳定的明星主力。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 90,
+      "defense": 87,
+      "physical": 90,
+      "mentality": 91
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 91,
+        "insideScoring": 87,
+        "playmaking": 92,
+        "defense": 88,
+        "rebounding": 83,
+        "athleticism": 90,
+        "intangibles": 90
+      },
+      "attributes": {
+        "shotIQ": 92,
+        "offensiveConsistency": 92,
+        "passIQ": 95,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 92,
+        "durability": 91,
+        "strength": 83,
+        "agility": 93
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "tyrese-haliburton",
@@ -1513,13 +4809,45 @@
       "PG",
       "SG"
     ],
-    "sourceRating": 93,
-    "tier": "T2",
-    "contractCost": 19,
-    "rarityWeight": 7,
+    "sourceRating": 91,
+    "tier": "T3",
+    "contractCost": 17,
+    "rarityWeight": 9,
     "tagline": "稳定的明星主力。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 89,
+      "defense": 86,
+      "physical": 89,
+      "mentality": 90
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 90,
+        "insideScoring": 86,
+        "playmaking": 91,
+        "defense": 87,
+        "rebounding": 82,
+        "athleticism": 89,
+        "intangibles": 89
+      },
+      "attributes": {
+        "shotIQ": 91,
+        "offensiveConsistency": 91,
+        "passIQ": 94,
+        "helpDefenseIQ": 89,
+        "defensiveConsistency": 88,
+        "stamina": 91,
+        "durability": 90,
+        "strength": 82,
+        "agility": 92
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "devin-booker",
@@ -1528,13 +4856,45 @@
       "SG",
       "PG"
     ],
-    "sourceRating": 93,
+    "sourceRating": 92,
     "tier": "T2",
-    "contractCost": 19,
-    "rarityWeight": 7,
+    "contractCost": 18,
+    "rarityWeight": 8,
     "tagline": "稳定的明星主力。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 90,
+      "defense": 87,
+      "physical": 90,
+      "mentality": 91
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 91,
+        "insideScoring": 87,
+        "playmaking": 92,
+        "defense": 88,
+        "rebounding": 83,
+        "athleticism": 90,
+        "intangibles": 90
+      },
+      "attributes": {
+        "shotIQ": 92,
+        "offensiveConsistency": 92,
+        "passIQ": 95,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 92,
+        "durability": 91,
+        "strength": 83,
+        "agility": 93
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "tyrese-maxey",
@@ -1543,13 +4903,45 @@
       "PG",
       "SG"
     ],
-    "sourceRating": 93,
-    "tier": "T2",
-    "contractCost": 19,
-    "rarityWeight": 7,
+    "sourceRating": 91,
+    "tier": "T3",
+    "contractCost": 17,
+    "rarityWeight": 9,
     "tagline": "稳定的明星主力。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 89,
+      "defense": 86,
+      "physical": 89,
+      "mentality": 90
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 90,
+        "insideScoring": 86,
+        "playmaking": 91,
+        "defense": 87,
+        "rebounding": 82,
+        "athleticism": 89,
+        "intangibles": 89
+      },
+      "attributes": {
+        "shotIQ": 91,
+        "offensiveConsistency": 91,
+        "passIQ": 94,
+        "helpDefenseIQ": 89,
+        "defensiveConsistency": 88,
+        "stamina": 91,
+        "durability": 90,
+        "strength": 82,
+        "agility": 92
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "karl-anthony-towns",
@@ -1558,13 +4950,45 @@
       "C",
       "PF"
     ],
-    "sourceRating": 91,
+    "sourceRating": 90,
     "tier": "T3",
-    "contractCost": 17,
-    "rarityWeight": 9,
+    "contractCost": 16,
+    "rarityWeight": 10,
     "tagline": "稳定的明星主力。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 91,
+      "physical": 88,
+      "mentality": 89
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 91,
+        "playmaking": 83,
+        "defense": 90,
+        "rebounding": 92,
+        "athleticism": 86,
+        "intangibles": 88
+      },
+      "attributes": {
+        "shotIQ": 91,
+        "offensiveConsistency": 90,
+        "passIQ": 86,
+        "helpDefenseIQ": 92,
+        "defensiveConsistency": 91,
+        "stamina": 90,
+        "durability": 89,
+        "strength": 92,
+        "agility": 85
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "trae-young",
@@ -1577,8 +5001,40 @@
     "contractCost": 15,
     "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 87,
+      "defense": 84,
+      "physical": 87,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 87,
+        "insideScoring": 83,
+        "playmaking": 91,
+        "defense": 85,
+        "rebounding": 80,
+        "athleticism": 87,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 89,
+        "passIQ": 94,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 80,
+        "agility": 91
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "bam-adebayo",
@@ -1592,8 +5048,40 @@
     "contractCost": 15,
     "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 85,
+      "defense": 90,
+      "physical": 87,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 83,
+        "insideScoring": 90,
+        "playmaking": 82,
+        "defense": 89,
+        "rebounding": 91,
+        "athleticism": 85,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 90,
+        "offensiveConsistency": 89,
+        "passIQ": 85,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 91,
+        "agility": 84
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "jamal-murray",
@@ -1607,8 +5095,40 @@
     "contractCost": 15,
     "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 87,
+      "defense": 84,
+      "physical": 87,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 88,
+        "insideScoring": 84,
+        "playmaking": 89,
+        "defense": 85,
+        "rebounding": 80,
+        "athleticism": 87,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 89,
+        "passIQ": 92,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 80,
+        "agility": 90
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "scottie-barnes",
@@ -1617,13 +5137,45 @@
       "PF",
       "PG"
     ],
-    "sourceRating": 89,
+    "sourceRating": 88,
     "tier": "T3",
-    "contractCost": 15,
-    "rarityWeight": 11,
+    "contractCost": 14,
+    "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 85,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 85,
+        "insideScoring": 85,
+        "playmaking": 86,
+        "defense": 85,
+        "rebounding": 84,
+        "athleticism": 85,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 88,
+        "passIQ": 89,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 84,
+        "agility": 87
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "jalen-johnson",
@@ -1632,13 +5184,45 @@
       "PF",
       "SF"
     ],
-    "sourceRating": 89,
+    "sourceRating": 88,
     "tier": "T3",
-    "contractCost": 15,
-    "rarityWeight": 11,
+    "contractCost": 14,
+    "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 86,
+      "physical": 87,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 85,
+        "insideScoring": 87,
+        "playmaking": 84,
+        "defense": 86,
+        "rebounding": 86,
+        "athleticism": 86,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 88,
+        "passIQ": 87,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 86,
+        "agility": 86
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "paolo-banchero",
@@ -1652,8 +5236,40 @@
     "contractCost": 14,
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 86,
+      "physical": 87,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 85,
+        "insideScoring": 87,
+        "playmaking": 84,
+        "defense": 86,
+        "rebounding": 86,
+        "athleticism": 86,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 88,
+        "passIQ": 87,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 86,
+        "agility": 86
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "alperen-sengun",
@@ -1667,8 +5283,40 @@
     "contractCost": 14,
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 89,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 82,
+        "insideScoring": 89,
+        "playmaking": 81,
+        "defense": 88,
+        "rebounding": 90,
+        "athleticism": 84,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 88,
+        "passIQ": 84,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 90,
+        "agility": 83
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "lamelo-ball",
@@ -1682,8 +5330,40 @@
     "contractCost": 14,
     "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 83,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 87,
+        "insideScoring": 83,
+        "playmaking": 88,
+        "defense": 84,
+        "rebounding": 79,
+        "athleticism": 86,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 88,
+        "passIQ": 91,
+        "helpDefenseIQ": 86,
+        "defensiveConsistency": 85,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 79,
+        "agility": 89
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "og-anunoby",
@@ -1692,13 +5372,45 @@
       "SF",
       "PF"
     ],
-    "sourceRating": 88,
+    "sourceRating": 87,
     "tier": "T3",
-    "contractCost": 14,
-    "rarityWeight": 12,
+    "contractCost": 13,
+    "rarityWeight": 13,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 85,
+      "defense": 85,
+      "physical": 86,
+      "mentality": 86
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 86,
+        "playmaking": 83,
+        "defense": 85,
+        "rebounding": 85,
+        "athleticism": 85,
+        "intangibles": 85
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 87,
+        "passIQ": 86,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 87,
+        "durability": 86,
+        "strength": 85,
+        "agility": 85
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "stephon-castle",
@@ -1707,13 +5419,45 @@
       "SG",
       "PG"
     ],
-    "sourceRating": 88,
+    "sourceRating": 87,
     "tier": "T3",
-    "contractCost": 14,
-    "rarityWeight": 12,
+    "contractCost": 13,
+    "rarityWeight": 13,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 85,
+      "defense": 82,
+      "physical": 85,
+      "mentality": 86
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 86,
+        "insideScoring": 82,
+        "playmaking": 87,
+        "defense": 83,
+        "rebounding": 78,
+        "athleticism": 85,
+        "intangibles": 85
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 87,
+        "passIQ": 90,
+        "helpDefenseIQ": 85,
+        "defensiveConsistency": 84,
+        "stamina": 87,
+        "durability": 86,
+        "strength": 78,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "deni-avdija",
@@ -1722,13 +5466,45 @@
       "SF",
       "SG"
     ],
-    "sourceRating": 88,
+    "sourceRating": 87,
     "tier": "T3",
-    "contractCost": 14,
-    "rarityWeight": 12,
+    "contractCost": 13,
+    "rarityWeight": 13,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 85,
+      "defense": 84,
+      "physical": 86,
+      "mentality": 86
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 86,
+        "insideScoring": 84,
+        "playmaking": 84,
+        "defense": 84,
+        "rebounding": 81,
+        "athleticism": 86,
+        "intangibles": 85
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 87,
+        "passIQ": 87,
+        "helpDefenseIQ": 86,
+        "defensiveConsistency": 85,
+        "stamina": 87,
+        "durability": 86,
+        "strength": 81,
+        "agility": 87
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "cooper-flagg",
@@ -1737,13 +5513,45 @@
       "SF",
       "PG"
     ],
-    "sourceRating": 88,
+    "sourceRating": 87,
     "tier": "T3",
-    "contractCost": 14,
-    "rarityWeight": 12,
+    "contractCost": 13,
+    "rarityWeight": 13,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 85,
+      "defense": 83,
+      "physical": 85,
+      "mentality": 86
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 85,
+        "insideScoring": 83,
+        "playmaking": 86,
+        "defense": 84,
+        "rebounding": 80,
+        "athleticism": 85,
+        "intangibles": 85
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 87,
+        "passIQ": 89,
+        "helpDefenseIQ": 86,
+        "defensiveConsistency": 85,
+        "stamina": 87,
+        "durability": 86,
+        "strength": 80,
+        "agility": 87
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "ja-morant",
@@ -1752,13 +5560,45 @@
       "PG",
       "SG"
     ],
-    "sourceRating": 87,
+    "sourceRating": 89,
     "tier": "T3",
-    "contractCost": 13,
-    "rarityWeight": 13,
+    "contractCost": 15,
+    "rarityWeight": 11,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 87,
+      "defense": 84,
+      "physical": 87,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 88,
+        "insideScoring": 84,
+        "playmaking": 89,
+        "defense": 85,
+        "rebounding": 80,
+        "athleticism": 87,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 89,
+        "passIQ": 92,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 80,
+        "agility": 90
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "jalen-williams",
@@ -1767,13 +5607,45 @@
       "SF",
       "PF"
     ],
-    "sourceRating": 87,
+    "sourceRating": 90,
     "tier": "T3",
-    "contractCost": 13,
-    "rarityWeight": 13,
-    "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "contractCost": 16,
+    "rarityWeight": 10,
+    "tagline": "稳定的明星主力。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 88,
+      "defense": 88,
+      "physical": 89,
+      "mentality": 89
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 87,
+        "insideScoring": 89,
+        "playmaking": 86,
+        "defense": 88,
+        "rebounding": 88,
+        "athleticism": 88,
+        "intangibles": 88
+      },
+      "attributes": {
+        "shotIQ": 91,
+        "offensiveConsistency": 90,
+        "passIQ": 89,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 90,
+        "durability": 89,
+        "strength": 88,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "evan-mobley",
@@ -1782,13 +5654,45 @@
       "PF",
       "C"
     ],
-    "sourceRating": 87,
+    "sourceRating": 90,
     "tier": "T3",
-    "contractCost": 13,
-    "rarityWeight": 13,
-    "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "contractCost": 16,
+    "rarityWeight": 10,
+    "tagline": "稳定的明星主力。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 91,
+      "physical": 88,
+      "mentality": 89
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 91,
+        "playmaking": 83,
+        "defense": 90,
+        "rebounding": 92,
+        "athleticism": 86,
+        "intangibles": 88
+      },
+      "attributes": {
+        "shotIQ": 91,
+        "offensiveConsistency": 90,
+        "passIQ": 86,
+        "helpDefenseIQ": 92,
+        "defensiveConsistency": 91,
+        "stamina": 90,
+        "durability": 89,
+        "strength": 92,
+        "agility": 85
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "pascal-siakam",
@@ -1797,13 +5701,45 @@
       "PF",
       "C"
     ],
-    "sourceRating": 87,
+    "sourceRating": 88,
     "tier": "T3",
-    "contractCost": 13,
-    "rarityWeight": 13,
+    "contractCost": 14,
+    "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 89,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 82,
+        "insideScoring": 89,
+        "playmaking": 81,
+        "defense": 88,
+        "rebounding": 90,
+        "athleticism": 84,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 88,
+        "passIQ": 84,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 90,
+        "agility": 83
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "chet-holmgren",
@@ -1812,13 +5748,45 @@
       "PF",
       "C"
     ],
-    "sourceRating": 87,
+    "sourceRating": 88,
     "tier": "T3",
-    "contractCost": 13,
-    "rarityWeight": 13,
+    "contractCost": 14,
+    "rarityWeight": 12,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 89,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 82,
+        "insideScoring": 89,
+        "playmaking": 81,
+        "defense": 88,
+        "rebounding": 90,
+        "athleticism": 84,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 89,
+        "offensiveConsistency": 88,
+        "passIQ": 84,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 90,
+        "agility": 83
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "amen-thompson",
@@ -1832,8 +5800,40 @@
     "contractCost": 13,
     "rarityWeight": 13,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 85,
+      "defense": 82,
+      "physical": 85,
+      "mentality": 86
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 86,
+        "insideScoring": 82,
+        "playmaking": 87,
+        "defense": 83,
+        "rebounding": 78,
+        "athleticism": 85,
+        "intangibles": 85
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 87,
+        "passIQ": 90,
+        "helpDefenseIQ": 85,
+        "defensiveConsistency": 84,
+        "stamina": 87,
+        "durability": 86,
+        "strength": 78,
+        "agility": 88
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "tyler-herro",
@@ -1842,13 +5842,45 @@
       "SG",
       "PG"
     ],
-    "sourceRating": 87,
+    "sourceRating": 86,
     "tier": "T3",
-    "contractCost": 13,
-    "rarityWeight": 13,
+    "contractCost": 12,
+    "rarityWeight": 14,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 81,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 85,
+        "insideScoring": 81,
+        "playmaking": 86,
+        "defense": 82,
+        "rebounding": 77,
+        "athleticism": 84,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 86,
+        "offensiveConsistency": 86,
+        "passIQ": 89,
+        "helpDefenseIQ": 84,
+        "defensiveConsistency": 83,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 77,
+        "agility": 87
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "franz-wagner",
@@ -1862,8 +5894,40 @@
     "contractCost": 13,
     "rarityWeight": 13,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 85,
+      "defense": 85,
+      "physical": 86,
+      "mentality": 86
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 86,
+        "playmaking": 83,
+        "defense": 85,
+        "rebounding": 85,
+        "athleticism": 85,
+        "intangibles": 85
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 87,
+        "passIQ": 86,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 87,
+        "durability": 86,
+        "strength": 85,
+        "agility": 85
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "austin-reaves",
@@ -1872,13 +5936,45 @@
       "SG",
       "SF"
     ],
-    "sourceRating": 87,
-    "tier": "T3",
-    "contractCost": 13,
-    "rarityWeight": 13,
-    "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "sourceRating": 85,
+    "tier": "T4",
+    "contractCost": 11,
+    "rarityWeight": 15,
+    "tagline": "预算紧张时的可靠轮换。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 83,
+      "defense": 82,
+      "physical": 84,
+      "mentality": 84
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 82,
+        "playmaking": 82,
+        "defense": 82,
+        "rebounding": 79,
+        "athleticism": 84,
+        "intangibles": 83
+      },
+      "attributes": {
+        "shotIQ": 86,
+        "offensiveConsistency": 85,
+        "passIQ": 85,
+        "helpDefenseIQ": 84,
+        "defensiveConsistency": 83,
+        "stamina": 85,
+        "durability": 84,
+        "strength": 79,
+        "agility": 85
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "lauri-markkanen",
@@ -1892,8 +5988,40 @@
     "contractCost": 13,
     "rarityWeight": 13,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 85,
+      "defense": 85,
+      "physical": 86,
+      "mentality": 86
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 86,
+        "playmaking": 83,
+        "defense": 85,
+        "rebounding": 85,
+        "athleticism": 85,
+        "intangibles": 85
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 87,
+        "passIQ": 86,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 87,
+        "durability": 86,
+        "strength": 85,
+        "agility": 85
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   },
   {
     "id": "brandon-miller",
@@ -1902,12 +6030,978 @@
       "SG",
       "SF"
     ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 83,
+      "physical": 85,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 85,
+        "insideScoring": 83,
+        "playmaking": 83,
+        "defense": 83,
+        "rebounding": 80,
+        "athleticism": 85,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 86,
+        "passIQ": 86,
+        "helpDefenseIQ": 85,
+        "defensiveConsistency": 84,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 80,
+        "agility": 86
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "domantas-sabonis",
+    "name": "Domantas Sabonis",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 89,
+    "tier": "T3",
+    "contractCost": 15,
+    "rarityWeight": 11,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 85,
+      "defense": 90,
+      "physical": 87,
+      "mentality": 88
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 83,
+        "insideScoring": 90,
+        "playmaking": 82,
+        "defense": 89,
+        "rebounding": 91,
+        "athleticism": 85,
+        "intangibles": 87
+      },
+      "attributes": {
+        "shotIQ": 90,
+        "offensiveConsistency": 89,
+        "passIQ": 85,
+        "helpDefenseIQ": 91,
+        "defensiveConsistency": 90,
+        "stamina": 89,
+        "durability": 88,
+        "strength": 91,
+        "agility": 84
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "deaaron-fox",
+    "name": "De'Aaron Fox",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 83,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 86,
+        "insideScoring": 82,
+        "playmaking": 90,
+        "defense": 84,
+        "rebounding": 79,
+        "athleticism": 86,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 88,
+        "passIQ": 93,
+        "helpDefenseIQ": 86,
+        "defensiveConsistency": 85,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 79,
+        "agility": 90
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "darius-garland",
+    "name": "Darius Garland",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 86,
+      "defense": 83,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 86,
+        "insideScoring": 82,
+        "playmaking": 90,
+        "defense": 84,
+        "rebounding": 79,
+        "athleticism": 86,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 88,
+        "passIQ": 93,
+        "helpDefenseIQ": 86,
+        "defensiveConsistency": 85,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 79,
+        "agility": 90
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "jalen-duren",
+    "name": "Jalen Duren",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 89,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 80,
+        "insideScoring": 90,
+        "playmaking": 80,
+        "defense": 88,
+        "rebounding": 90,
+        "athleticism": 84,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 88,
+        "passIQ": 83,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 90,
+        "agility": 82
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "rudy-gobert",
+    "name": "Rudy Gobert",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 88,
+    "tier": "T3",
+    "contractCost": 14,
+    "rarityWeight": 12,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 89,
+      "physical": 86,
+      "mentality": 87
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 80,
+        "insideScoring": 90,
+        "playmaking": 80,
+        "defense": 88,
+        "rebounding": 90,
+        "athleticism": 84,
+        "intangibles": 86
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 88,
+        "passIQ": 83,
+        "helpDefenseIQ": 90,
+        "defensiveConsistency": 89,
+        "stamina": 88,
+        "durability": 87,
+        "strength": 90,
+        "agility": 82
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "zion-williamson",
+    "name": "Zion Williamson",
+    "positions": [
+      "SF",
+      "PF"
+    ],
     "sourceRating": 87,
     "tier": "T3",
     "contractCost": 13,
     "rarityWeight": 13,
     "tagline": "适合补齐阵容结构的强力拼图。",
-    "source": "nba-2k26-current-ratings-2026-06-14",
-    "sourceStatus": "current-2k26-ratings"
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 85,
+      "defense": 85,
+      "physical": 86,
+      "mentality": 86
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 86,
+        "playmaking": 83,
+        "defense": 85,
+        "rebounding": 85,
+        "athleticism": 85,
+        "intangibles": 85
+      },
+      "attributes": {
+        "shotIQ": 88,
+        "offensiveConsistency": 87,
+        "passIQ": 86,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 87,
+        "durability": 86,
+        "strength": 85,
+        "agility": 85
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "derrick-white",
+    "name": "Derrick White",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 81,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 85,
+        "insideScoring": 81,
+        "playmaking": 86,
+        "defense": 82,
+        "rebounding": 77,
+        "athleticism": 84,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 86,
+        "offensiveConsistency": 86,
+        "passIQ": 89,
+        "helpDefenseIQ": 84,
+        "defensiveConsistency": 83,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 77,
+        "agility": 87
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "jrue-holiday",
+    "name": "Jrue Holiday",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 81,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 85,
+        "insideScoring": 81,
+        "playmaking": 86,
+        "defense": 82,
+        "rebounding": 77,
+        "athleticism": 84,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 86,
+        "offensiveConsistency": 86,
+        "passIQ": 89,
+        "helpDefenseIQ": 84,
+        "defensiveConsistency": 83,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 77,
+        "agility": 87
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "julius-randle",
+    "name": "Julius Randle",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 82,
+      "defense": 87,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 80,
+        "insideScoring": 87,
+        "playmaking": 79,
+        "defense": 86,
+        "rebounding": 88,
+        "athleticism": 82,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 86,
+        "passIQ": 82,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 88,
+        "agility": 81
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "desmond-bane",
+    "name": "Desmond Bane",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 83,
+      "physical": 85,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 85,
+        "insideScoring": 83,
+        "playmaking": 83,
+        "defense": 83,
+        "rebounding": 80,
+        "athleticism": 85,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 86,
+        "passIQ": 86,
+        "helpDefenseIQ": 85,
+        "defensiveConsistency": 84,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 80,
+        "agility": 86
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "zach-lavine",
+    "name": "Zach LaVine",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 83,
+      "physical": 85,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 85,
+        "insideScoring": 83,
+        "playmaking": 83,
+        "defense": 83,
+        "rebounding": 80,
+        "athleticism": 85,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 86,
+        "passIQ": 86,
+        "helpDefenseIQ": 85,
+        "defensiveConsistency": 84,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 80,
+        "agility": 86
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "mikal-bridges",
+    "name": "Mikal Bridges",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 84,
+      "defense": 83,
+      "physical": 85,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 85,
+        "insideScoring": 83,
+        "playmaking": 83,
+        "defense": 83,
+        "rebounding": 80,
+        "athleticism": 85,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 86,
+        "passIQ": 86,
+        "helpDefenseIQ": 85,
+        "defensiveConsistency": 84,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 80,
+        "agility": 86
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "jarrett-allen",
+    "name": "Jarrett Allen",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 82,
+      "defense": 87,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 78,
+        "insideScoring": 88,
+        "playmaking": 78,
+        "defense": 86,
+        "rebounding": 88,
+        "athleticism": 82,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 86,
+        "offensiveConsistency": 86,
+        "passIQ": 81,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 88,
+        "agility": 80
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "kristaps-porzingis",
+    "name": "Kristaps Porzingis",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 86,
+    "tier": "T3",
+    "contractCost": 12,
+    "rarityWeight": 14,
+    "tagline": "适合补齐阵容结构的强力拼图。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 82,
+      "defense": 87,
+      "physical": 84,
+      "mentality": 85
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 80,
+        "insideScoring": 87,
+        "playmaking": 79,
+        "defense": 86,
+        "rebounding": 88,
+        "athleticism": 82,
+        "intangibles": 84
+      },
+      "attributes": {
+        "shotIQ": 87,
+        "offensiveConsistency": 86,
+        "passIQ": 82,
+        "helpDefenseIQ": 88,
+        "defensiveConsistency": 87,
+        "stamina": 86,
+        "durability": 85,
+        "strength": 88,
+        "agility": 81
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "dejounte-murray",
+    "name": "Dejounte Murray",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 85,
+    "tier": "T4",
+    "contractCost": 11,
+    "rarityWeight": 15,
+    "tagline": "预算紧张时的可靠轮换。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 83,
+      "defense": 80,
+      "physical": 83,
+      "mentality": 84
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 80,
+        "playmaking": 85,
+        "defense": 81,
+        "rebounding": 76,
+        "athleticism": 83,
+        "intangibles": 83
+      },
+      "attributes": {
+        "shotIQ": 85,
+        "offensiveConsistency": 85,
+        "passIQ": 88,
+        "helpDefenseIQ": 83,
+        "defensiveConsistency": 82,
+        "stamina": 85,
+        "durability": 84,
+        "strength": 76,
+        "agility": 86
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "bradley-beal",
+    "name": "Bradley Beal",
+    "positions": [
+      "SG",
+      "PG"
+    ],
+    "sourceRating": 85,
+    "tier": "T4",
+    "contractCost": 11,
+    "rarityWeight": 15,
+    "tagline": "预算紧张时的可靠轮换。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 83,
+      "defense": 80,
+      "physical": 83,
+      "mentality": 84
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 80,
+        "playmaking": 85,
+        "defense": 81,
+        "rebounding": 76,
+        "athleticism": 83,
+        "intangibles": 83
+      },
+      "attributes": {
+        "shotIQ": 85,
+        "offensiveConsistency": 85,
+        "passIQ": 88,
+        "helpDefenseIQ": 83,
+        "defensiveConsistency": 82,
+        "stamina": 85,
+        "durability": 84,
+        "strength": 76,
+        "agility": 86
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "khris-middleton",
+    "name": "Khris Middleton",
+    "positions": [
+      "SF",
+      "SG"
+    ],
+    "sourceRating": 85,
+    "tier": "T4",
+    "contractCost": 11,
+    "rarityWeight": 15,
+    "tagline": "预算紧张时的可靠轮换。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 83,
+      "defense": 82,
+      "physical": 84,
+      "mentality": 84
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 82,
+        "playmaking": 82,
+        "defense": 82,
+        "rebounding": 79,
+        "athleticism": 84,
+        "intangibles": 83
+      },
+      "attributes": {
+        "shotIQ": 86,
+        "offensiveConsistency": 85,
+        "passIQ": 85,
+        "helpDefenseIQ": 84,
+        "defensiveConsistency": 83,
+        "stamina": 85,
+        "durability": 84,
+        "strength": 79,
+        "agility": 85
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "cj-mccollum",
+    "name": "CJ McCollum",
+    "positions": [
+      "SG",
+      "PG"
+    ],
+    "sourceRating": 85,
+    "tier": "T4",
+    "contractCost": 11,
+    "rarityWeight": 15,
+    "tagline": "预算紧张时的可靠轮换。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 83,
+      "defense": 80,
+      "physical": 83,
+      "mentality": 84
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 84,
+        "insideScoring": 80,
+        "playmaking": 85,
+        "defense": 81,
+        "rebounding": 76,
+        "athleticism": 83,
+        "intangibles": 83
+      },
+      "attributes": {
+        "shotIQ": 85,
+        "offensiveConsistency": 85,
+        "passIQ": 88,
+        "helpDefenseIQ": 83,
+        "defensiveConsistency": 82,
+        "stamina": 85,
+        "durability": 84,
+        "strength": 76,
+        "agility": 86
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "aaron-gordon",
+    "name": "Aaron Gordon",
+    "positions": [
+      "PF",
+      "SF"
+    ],
+    "sourceRating": 85,
+    "tier": "T4",
+    "contractCost": 11,
+    "rarityWeight": 15,
+    "tagline": "预算紧张时的可靠轮换。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 83,
+      "defense": 83,
+      "physical": 84,
+      "mentality": 84
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 82,
+        "insideScoring": 84,
+        "playmaking": 81,
+        "defense": 83,
+        "rebounding": 83,
+        "athleticism": 83,
+        "intangibles": 83
+      },
+      "attributes": {
+        "shotIQ": 86,
+        "offensiveConsistency": 85,
+        "passIQ": 84,
+        "helpDefenseIQ": 85,
+        "defensiveConsistency": 84,
+        "stamina": 85,
+        "durability": 84,
+        "strength": 83,
+        "agility": 83
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
+  },
+  {
+    "id": "myles-turner",
+    "name": "Myles Turner",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 85,
+    "tier": "T4",
+    "contractCost": 11,
+    "rarityWeight": 15,
+    "tagline": "预算紧张时的可靠轮换。",
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "ratingModelVersion": "2k-attributes-v1",
+    "ratings": {
+      "offense": 81,
+      "defense": 86,
+      "physical": 83,
+      "mentality": 84
+    },
+    "sourceAttributes": {
+      "sourceVersion": "estimated from OVR and position archetype",
+      "groups": {
+        "outsideScoring": 77,
+        "insideScoring": 87,
+        "playmaking": 77,
+        "defense": 85,
+        "rebounding": 87,
+        "athleticism": 81,
+        "intangibles": 83
+      },
+      "attributes": {
+        "shotIQ": 85,
+        "offensiveConsistency": 85,
+        "passIQ": 80,
+        "helpDefenseIQ": 87,
+        "defensiveConsistency": 86,
+        "stamina": 85,
+        "durability": 84,
+        "strength": 87,
+        "agility": 79
+      }
+    },
+    "attributeSourceUrl": null,
+    "attributeSourceStatus": "estimated-archetype-v1"
   }
 ]
