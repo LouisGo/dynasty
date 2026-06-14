@@ -7,6 +7,7 @@ const projectRoot = path.resolve(__dirname, '..')
 const seedPath = path.join(__dirname, 'data', 'legend-seed-snapshot.json')
 const overridesPath = path.join(__dirname, 'data', 'legend-overrides.json')
 const attributesPath = path.join(__dirname, 'data', '2k-attribute-snapshot.json')
+const chineseNamesPath = path.join(__dirname, 'data', 'legend-chinese-names.json')
 const outputPath = path.join(projectRoot, 'src', 'data', 'legend-pool.json')
 
 function getTier(sourceRating) {
@@ -306,6 +307,7 @@ async function main() {
   const seed = await readJson(seedPath)
   const overrides = await readJson(overridesPath)
   const attributes = await readJson(attributesPath)
+  const chineseNames = await readJson(chineseNamesPath)
   const remote = await tryRemoteFetch()
   const sourcePool = seed.length >= 150 ? seed : await readJson(outputPath)
 
@@ -323,6 +325,7 @@ async function main() {
     return {
       id: player.id,
       name: player.name,
+      chineseName: chineseNames[player.id] ?? player.name,
       positions,
       sourceRating: player.sourceRating,
       tier,

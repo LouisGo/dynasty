@@ -249,6 +249,10 @@ function formatPositions(positions: Position[]) {
   return positions.join(' / ')
 }
 
+function getDisplayName(card: Pick<PlayerCard, 'name' | 'chineseName'>) {
+  return card.chineseName || card.name
+}
+
 function tierClassName(tier: Tier) {
   return `tier-${tier.toLowerCase()}`
 }
@@ -526,7 +530,7 @@ function PlayerCardTile({
         />
       )}
       <div className="player-card-head">
-        <h3>{card.name}</h3>
+        <h3>{getDisplayName(card)}</h3>
         {size === 'large' && <p className="player-card-subtitle">{getRatingLabel(card.sourceRating)}</p>}
       </div>
       <div className="player-card-stats">
@@ -568,13 +572,13 @@ function PlayerDetailOverlay({
   return (
     <section
       className="player-detail-overlay"
-      aria-label={`${detail.card.name} 评分细分`}
+      aria-label={`${getDisplayName(detail.card)} 评分细分`}
       onPointerDown={onClose}
     >
       <div className="player-detail-panel">
         <header className="player-detail-head">
           <span>{detail.card.tier} · {formatPositions(detail.card.positions)}</span>
-          <h2>{detail.card.name}</h2>
+          <h2>{getDisplayName(detail.card)}</h2>
           <p>
             OVR {detail.card.sourceRating} · 价格 {detail.price} · {detail.statusLabel}
           </p>
@@ -650,6 +654,7 @@ function App() {
   const [selectedOfferId, setSelectedOfferId] = useState<string | null>(null)
   const [isResultPending, setIsResultPending] = useState(false)
   const [playerDetail, setPlayerDetail] = useState<PlayerDetailOverlayState | null>(null)
+  const [budgetPulseKey, setBudgetPulseKey] = useState(0)
   const draggingSlotRef = useRef<CourtSlotId | null>(null)
   const dragPreviewRef = useRef<DragPreviewState | null>(null)
   const suppressNextSlotClickRef = useRef(false)
@@ -659,6 +664,7 @@ function App() {
   const [gameState, setGameState] = useState<GameState>(() =>
     createInitialState(pool, createSeededRng(randomSeed())),
   )
+  const previousBudgetRef = useRef(gameState.budgetRemaining)
 
   const rosterCards = useMemo(
     () => gameState.roster.map((owned) => getRosterCard(owned)),
@@ -677,6 +683,14 @@ function App() {
   const canSkip =
     gameState.freeSkipsRemaining > 0 ||
     gameState.budgetRemaining >= getPaidSkipCost(gameState.paidSkipsUsed)
+
+  useEffect(() => {
+    const previousBudget = previousBudgetRef.current
+    if (gameState.budgetRemaining < previousBudget) {
+      setBudgetPulseKey((current) => current + 1)
+    }
+    previousBudgetRef.current = gameState.budgetRemaining
+  }, [gameState.budgetRemaining])
 
   useEffect(
     () => () => {
@@ -1020,11 +1034,11 @@ function App() {
       {screen === 'draft' && (
         <section className="screen draft-screen">
           <header className="draft-header">
+            <article className="budget-chip">
+              <span>预算</span>
+              <strong key={budgetPulseKey}>{gameState.budgetRemaining}</strong>
+            </article>
             <div className="status-row">
-              <article className="status-chip">
-                <span>预算</span>
-                <strong>{gameState.budgetRemaining}</strong>
-              </article>
               <article className="status-chip">
                 <span>回合</span>
                 <strong>

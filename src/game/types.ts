@@ -51,6 +51,7 @@ export interface SourceAttributes {
 export interface PlayerCard {
   id: string
   name: string
+  chineseName: string
   positions: Position[]
   sourceRating: number
   tier: Tier

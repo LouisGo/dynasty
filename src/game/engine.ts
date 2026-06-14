@@ -52,6 +52,10 @@ function createEmptyArrangement(): LineupArrangement {
   }
 }
 
+function getDisplayName(card: Pick<PlayerCard, 'name' | 'chineseName'>) {
+  return card.chineseName || card.name
+}
+
 export function createSeededRng(seed: number): Rng {
   let value = seed >>> 0
 
@@ -134,7 +138,7 @@ function chooseSlotForPlayer(card: PlayerCard, arrangement: LineupArrangement): 
     return SIXTH_SLOT
   }
 
-  throw new Error(`${card.name} cannot fit the remaining lineup slots.`)
+  throw new Error(`${getDisplayName(card)} cannot fit the remaining lineup slots.`)
 }
 
 function getOfferState(
@@ -645,7 +649,7 @@ export function signOffer(
     nextState,
     pool,
     rng,
-    `${offer.name} 以 ${offer.price} 预算加盟，落位 ${slotLabel}。`,
+    `${getDisplayName(offer)} 以 ${offer.price} 预算加盟，落位 ${slotLabel}。`,
   )
 }
 
