@@ -266,8 +266,12 @@ function getSlotRole(slot: CourtSlotId) {
 }
 
 function getOfferStateText(offer: OfferCard) {
-  if (offer.isFreeOffer && offer.offerState === 'enabled') {
+  if (offer.discountType === 'free' && offer.offerState === 'enabled') {
     return '免费签约'
+  }
+
+  if (offer.discountType === 'half-price' && offer.offerState === 'enabled') {
+    return '半价签约'
   }
 
   if (offer.offerState === 'too-expensive') {

@@ -30,8 +30,8 @@ export function PlayerCardTile({
   const teamCode = getTeamCode(card.id)
   const isFreeOffer = price === 0
   // discountType and originalPrice come from OfferCard; cast for generic PlayerCard usage
-  const discountType = (card as Record<string, unknown>).discountType as string | undefined
-  const originalPrice = (card as Record<string, unknown>).originalPrice as number | undefined
+  const discountType = (card as unknown as Record<string, unknown>).discountType as string | undefined
+  const originalPrice = (card as unknown as Record<string, unknown>).originalPrice as number | undefined
   const isHalfPrice = discountType === 'half-price'
 
   const { isPressing, longPressHandlers } = useLongPress({
