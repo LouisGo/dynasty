@@ -15,6 +15,8 @@ export function getRosterCard(owned: DraftedPlayer) {
   return {
     ...card,
     pricePaid: owned.pricePaid,
+    originalPrice: owned.originalPrice,
+    discountType: owned.discountType,
     assignedSlot: owned.assignedSlot,
   }
 }

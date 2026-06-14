@@ -29,6 +29,10 @@ export function PlayerCardTile({
 }: PlayerCardTileProps) {
   const teamCode = getTeamCode(card.id)
   const isFreeOffer = price === 0
+  // discountType and originalPrice come from OfferCard; cast for generic PlayerCard usage
+  const discountType = (card as Record<string, unknown>).discountType as string | undefined
+  const originalPrice = (card as Record<string, unknown>).originalPrice as number | undefined
+  const isHalfPrice = discountType === 'half-price'
 
   const { isPressing, longPressHandlers } = useLongPress({
     onLongPress: () => {
@@ -47,6 +51,7 @@ export function PlayerCardTile({
         `player-card-${size}`,
         tierClassName(card.tier),
         isFreeOffer ? 'is-free-offer' : '',
+        isHalfPrice ? 'is-half-price-offer' : '',
         isPressing ? 'is-long-pressing' : '',
         className,
       ]
@@ -56,7 +61,25 @@ export function PlayerCardTile({
       {...(hasLongPress ? longPressHandlers : {})}
     >
       <div className="player-card-shine" />
-      <span className="player-card-price">{formatPriceLabel(price)}</span>
+      <span className={[
+        'player-card-price',
+        isHalfPrice ? 'is-half-price' : '',
+        isFreeOffer ? 'is-free-price' : '',
+      ].filter(Boolean).join(' ')}>
+        {(isHalfPrice || isFreeOffer) ? (
+          <>
+            <span className="player-card-price-main">
+              <span className="player-card-price-dollar">$</span>
+              <span className="player-card-price-value">{isFreeOffer ? '0' : price}</span>
+            </span>
+            {originalPrice !== undefined && (
+              <span className="player-card-price-original">${originalPrice}</span>
+            )}
+          </>
+        ) : (
+          formatPriceLabel(price)
+        )}
+      </span>
       {teamCode && (
         <img
           className="player-card-logo"

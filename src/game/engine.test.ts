@@ -6,7 +6,6 @@ import {
   createInitialState,
   createSeededRng,
   generateOffers,
-  getFreeOfferChance,
   getPlayerWeight,
   skipOfferGroup,
   signOffer,
@@ -35,6 +34,8 @@ function buildState(overrides: Partial<GameState>): GameState {
     lineupArrangement: { PG: null, SG: null, SF: null, PF: null, C: null, SIX: null },
     lastAction: '',
     result: null,
+    freeDiscountCounter: 0,
+    halfPriceDiscountCounter: 0,
     ...overrides,
   }
 }
@@ -64,7 +65,7 @@ function playGreedyRun(seed: number) {
 }
 
 describe('price and supply model', () => {
-  it('prices cards from OVR with tier-specific random factors', () => {
+  it('prices cards from OVR with fixed pricing', () => {
     const jordan = pool.find((card) => card.id === 'michael-jordan')
     const thomas = pool.find((card) => card.id === 'isiah-thomas')
     const rotation = pool.find((card) => card.id === 'john-wall')
@@ -72,28 +73,14 @@ describe('price and supply model', () => {
       throw new Error('Price test fixtures missing.')
     }
 
-    expect(calculateOfferPrice(jordan, () => 0)).toBe(21)
-    expect(calculateOfferPrice(jordan, () => 0.999999)).toBe(30)
-
-    expect(calculateOfferPrice(thomas, () => 0)).toBe(16)
-    expect(calculateOfferPrice(thomas, () => 0.999999)).toBe(23)
-
-    expect(calculateOfferPrice(rotation, () => 0)).toBe(9)
-    expect(calculateOfferPrice(rotation, () => 0.999999)).toBe(11)
+    // Fixed prices: OVR - 74
+    expect(calculateOfferPrice(jordan)).toBe(25)
+    expect(calculateOfferPrice(thomas)).toBe(20)
+    expect(calculateOfferPrice(rotation)).toBe(10)
   })
 
-  it('uses tier-specific free offer chances', () => {
-    const byTier = new Map(pool.map((card) => [card.tier, card]))
-
-    expect(getFreeOfferChance(byTier.get('T0') as PlayerCard)).toBe(0.005)
-    expect(getFreeOfferChance(byTier.get('T1') as PlayerCard)).toBe(0.0075)
-    expect(getFreeOfferChance(byTier.get('T2') as PlayerCard)).toBe(0.011)
-    expect(getFreeOfferChance(byTier.get('T3') as PlayerCard)).toBe(0.016)
-    expect(getFreeOfferChance(byTier.get('T4') as PlayerCard)).toBe(0.022)
-  })
-
-  it('can turn generated offers into free signable cards', () => {
-    const offers = generateOffers(
+  it('can turn generated offers into free signable cards with rng=0', () => {
+    const result = generateOffers(
       [],
       0,
       buildState({}).lineupArrangement,
@@ -101,10 +88,10 @@ describe('price and supply model', () => {
       () => 0,
     )
 
-    expect(offers).toHaveLength(4)
-    expect(offers.every((offer) => offer.isFreeOffer)).toBe(true)
-    expect(offers.every((offer) => offer.price === 0)).toBe(true)
-    expect(offers.some((offer) => offer.offerState === 'enabled')).toBe(true)
+    expect(result.offers).toHaveLength(4)
+    expect(result.offers.every((offer) => offer.discountType === 'free')).toBe(true)
+    expect(result.offers.every((offer) => offer.price === 0)).toBe(true)
+    expect(result.offers.some((offer) => offer.offerState === 'enabled')).toBe(true)
   })
 
   it('uses card rarity weight as the appearance weight within each offer slot', () => {
@@ -223,7 +210,7 @@ describe('draft loop', () => {
     }
 
     const state = buildState({
-      currentOffers: [{ ...player, price: 16, offerState: 'enabled' }],
+      currentOffers: [{ ...player, price: 16, originalPrice: 16, offerState: 'enabled' }],
     })
     const next = signOffer(state, player.id, pool, createSeededRng(8))
 
@@ -251,7 +238,7 @@ describe('draft loop', () => {
     const state = buildState({
       freeSkipsRemaining: 0,
       paidSkipsUsed: 0,
-      currentOffers: generateOffers([], STARTING_BUDGET, buildState({}).lineupArrangement, pool),
+      currentOffers: generateOffers([], STARTING_BUDGET, buildState({}).lineupArrangement, pool).offers,
     })
     const next = skipOfferGroup(state, pool, createSeededRng(17))
 
@@ -265,7 +252,7 @@ describe('draft loop', () => {
       freeSkipsRemaining: 0,
       paidSkipsUsed: 1,
       budgetRemaining: 20,
-      currentOffers: generateOffers([], 20, buildState({}).lineupArrangement, pool),
+      currentOffers: generateOffers([], 20, buildState({}).lineupArrangement, pool).offers,
     })
     const next = skipOfferGroup(state, pool, createSeededRng(18))
 
@@ -278,7 +265,7 @@ describe('draft loop', () => {
       freeSkipsRemaining: 0,
       paidSkipsUsed: 2,
       budgetRemaining: 5,
-      currentOffers: generateOffers([], 5, buildState({}).lineupArrangement, pool),
+      currentOffers: generateOffers([], 5, buildState({}).lineupArrangement, pool).offers,
     })
 
     expect(() => skipOfferGroup(state, pool, createSeededRng(19))).toThrow(
@@ -302,7 +289,7 @@ describe('draft loop', () => {
     }
 
     const arrangement = { PG: player.id, SG: null, SF: null, PF: null, C: null, SIX: null }
-    const offers = generateOffers(
+    const { offers } = generateOffers(
       [{ playerId: player.id, pricePaid: 16, assignedSlot: 'PG' }],
       84,
       arrangement,
@@ -350,6 +337,7 @@ describe('run completion and scoring', () => {
         {
           ...(pool.find((card) => card.id === 'dennis-rodman') as PlayerCard),
           price: 10,
+          originalPrice: 10,
           offerState: 'enabled',
         },
       ],
@@ -363,6 +351,7 @@ describe('run completion and scoring', () => {
           {
             ...(pool.find((card) => card.id === 'kobe-bryant') as PlayerCard),
             price: 17,
+            originalPrice: 17,
             offerState: 'enabled',
           },
         ],
@@ -379,9 +368,11 @@ describe('run completion and scoring', () => {
     expect(finished.result?.budgetScore).toBe(5)
     expect(finished.result?.offenseScore).toBeGreaterThan(80)
     expect(finished.result?.defenseScore).toBeGreaterThan(80)
-    expect(finished.result?.projectedWins).toBe(
-      Math.round(20 + (finished.result?.dynastyScore ?? 0) * 0.6),
-    )
+    const dynastyScore = finished.result?.dynastyScore ?? 0
+    const baseWins = Math.round(20 + dynastyScore * 0.6)
+    // Dimension adjustment is ±4, so projected should be within [base-4, base+4]
+    expect(finished.result?.projectedWins).toBeGreaterThanOrEqual(baseWins - 4)
+    expect(finished.result?.projectedWins).toBeLessThanOrEqual(baseWins + 4)
     expect(finished.result?.championshipOdds).toBeLessThan(100)
   })
 

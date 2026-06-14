@@ -70,13 +70,16 @@ export interface PlayerCard {
 export interface DraftedPlayer {
   playerId: string
   pricePaid: number
+  originalPrice?: number
+  discountType?: 'free' | 'half-price'
   assignedSlot: CourtSlotId
 }
 
 export interface OfferCard extends PlayerCard {
   offerState: OfferState
   price: number
-  isFreeOffer?: boolean
+  originalPrice: number
+  discountType?: 'free' | 'half-price'
 }
 
 export type LineupArrangement = Record<CourtSlotId, null | string>
@@ -86,6 +89,8 @@ export interface StarterAssignment {
   playerId: string
   ovr: number
   pricePaid: number
+  originalPrice?: number
+  discountType?: 'free' | 'half-price'
 }
 
 export interface SixthManAssignment {
@@ -93,6 +98,8 @@ export interface SixthManAssignment {
   playerId: string
   ovr: number
   pricePaid: number
+  originalPrice?: number
+  discountType?: 'free' | 'half-price'
 }
 
 export interface ResultSummary {
@@ -127,4 +134,6 @@ export interface GameState {
   lineupArrangement: LineupArrangement
   lastAction: string
   result: ResultSummary | null
+  freeDiscountCounter: number
+  halfPriceDiscountCounter: number
 }

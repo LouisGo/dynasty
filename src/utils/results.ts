@@ -31,7 +31,7 @@ export function getResultLineup(result: ResultSummary) {
       const card = result.sixthMan ? poolIndex.get(result.sixthMan.playerId) : null
       return {
         slot,
-        card,
+        card: card ? { ...card, discountType: result.sixthMan?.discountType, originalPrice: result.sixthMan?.originalPrice } : null,
         pricePaid: result.sixthMan?.pricePaid ?? 0,
       }
     }
@@ -40,15 +40,19 @@ export function getResultLineup(result: ResultSummary) {
     const card = starter ? poolIndex.get(starter.playerId) : null
     return {
       slot,
-      card,
+      card: card ? { ...card, discountType: starter?.discountType, originalPrice: starter?.originalPrice } : null,
       pricePaid: starter?.pricePaid ?? 0,
     }
   })
 }
 
 export function getOfferStateText(offer: OfferCard) {
-  if (offer.isFreeOffer && offer.offerState === 'enabled') {
+  if (offer.discountType === 'free' && offer.offerState === 'enabled') {
     return '免费签约'
+  }
+
+  if (offer.discountType === 'half-price' && offer.offerState === 'enabled') {
+    return '半价签约'
   }
 
   if (offer.offerState === 'too-expensive') {

@@ -553,26 +553,128 @@
     0 8px 16px rgba(119, 51, 17, 0.3);
 }
 
-.player-card.is-free-offer .player-card-price {
-  color: #08351f;
-  background:
-    radial-gradient(circle at 32% 24%, rgba(255, 255, 255, 0.78), transparent 34%),
-    linear-gradient(140deg, #f8ff9e, #58f0a0 48%, #08774f);
-  border-color: rgba(219, 255, 178, 0.88);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.32);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.44),
-    inset 0 -8px 14px rgba(0, 72, 43, 0.18),
-    0 0 0 3px rgba(117, 255, 171, 0.14),
-    0 10px 20px rgba(0, 113, 72, 0.28);
+.player-card-price-main {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.04rem;
+  line-height: 1;
 }
 
-.player-card.is-free-offer .player-card-price::before {
+.player-card-price-dollar {
+  font-size: 0.58em;
+  line-height: 1;
+}
+
+.player-card-price-value {
+  line-height: 1;
+}
+
+.player-card-price-original {
+  font-size: 0.48em;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: line-through;
+  opacity: 0.72;
+}
+
+.player-card-price.is-half-price::before,
+.player-card-price.is-free-price::before {
   content: none;
+}
+
+.player-card-price.is-half-price,
+.player-card-price.is-free-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+
+.player-card-price.is-half-price {
+  color: #e8f0ff;
+  background:
+    radial-gradient(circle at 30% 26%, rgba(255, 255, 255, 0.36), transparent 36%),
+    radial-gradient(circle at 72% 12%, rgba(140, 180, 250, 0.36), transparent 38%),
+    linear-gradient(140deg, rgba(68, 127, 240, 0.9), rgba(40, 95, 210, 0.74) 54%, rgba(10, 30, 70, 0.9));
+  border-color: rgba(120, 165, 245, 0.65);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.26),
+    inset 0 -8px 14px rgba(8, 25, 60, 0.14),
+    0 0 0 3px rgba(68, 127, 240, 0.18),
+    0 8px 16px rgba(30, 70, 180, 0.3);
+}
+
+.player-card-price.is-free-price {
+  color: #d4ffe8;
+  background:
+    radial-gradient(circle at 30% 26%, rgba(255, 255, 255, 0.78), transparent 36%),
+    radial-gradient(circle at 72% 12%, rgba(180, 255, 200, 0.34), transparent 38%),
+    linear-gradient(140deg, rgba(80, 220, 130, 0.88), rgba(30, 170, 90, 0.72) 54%, rgba(8, 60, 35, 0.9));
+  border-color: rgba(140, 240, 175, 0.65);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.44),
+    inset 0 -8px 14px rgba(0, 55, 30, 0.14),
+    0 0 0 3px rgba(100, 240, 150, 0.14),
+    0 8px 16px rgba(20, 140, 80, 0.3);
+}
+
+.player-card.is-half-price-offer {
+  border-color: rgba(100, 150, 240, 0.5);
 }
 
 .player-card-large.is-free-offer {
   border-color: rgba(135, 255, 176, 0.58);
+}
+
+.player-card-large.is-free-offer::after {
+  content: '';
+  position: absolute;
+  inset: 2.5px;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  border: 2px solid transparent;
+  box-shadow: none;
+  background: conic-gradient(
+    from var(--card-shine-angle, 0deg),
+    transparent 0%,
+    rgba(135, 255, 176, 0.55) 12%,
+    rgba(135, 255, 176, 0.55) 22%,
+    transparent 35%,
+    transparent 100%
+  ) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: card-border-flow 3000ms linear infinite;
+}
+
+.player-card-large.is-half-price-offer::after {
+  content: '';
+  position: absolute;
+  inset: 2.5px;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  border: 2px solid transparent;
+  box-shadow: none;
+  background: conic-gradient(
+    from var(--card-shine-angle, 0deg),
+    transparent 0%,
+    rgba(68, 127, 240, 0.6) 12%,
+    rgba(68, 127, 240, 0.6) 22%,
+    transparent 35%,
+    transparent 100%
+  ) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: card-border-flow 3000ms linear infinite;
 }
 
 .player-card-head {
@@ -670,6 +772,10 @@
 
 .player-card-mini .player-card-price::before {
   font-size: 0.55em;
+}
+
+.player-card-mini .player-card-price-original {
+  font-size: 0.4em;
 }
 
 .player-card-mini .player-card-head {

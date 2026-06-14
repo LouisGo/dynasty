@@ -20,8 +20,9 @@ export function getSlotRole(slot: CourtSlotId) {
   return slot === SIXTH_SLOT ? 'bench' : 'starter'
 }
 
-export function formatPriceLabel(price: number) {
-  return price === 0 ? '免' : `${price}`
+export function formatPriceLabel(price: number, discountType?: string) {
+  if (discountType === 'free') return '免'
+  return `${price}`
 }
 
 export function formatRatingValue(value: number | null | undefined) {

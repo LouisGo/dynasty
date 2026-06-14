@@ -10,7 +10,7 @@
     "sourceRating": 99,
     "tier": "T0",
     "contractCost": 25,
-    "rarityWeight": 1,
+    "rarityWeight": 1.3,
     "tagline": "GOAT",
     "source": "snapshot-2026-06-13",
     "sourceStatus": "focused-modern-snapshot",

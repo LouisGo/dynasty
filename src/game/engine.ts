@@ -30,14 +30,6 @@ interface PricedCandidate {
   offerState: OfferState
 }
 
-const PRICE_FACTOR_RANGE_BY_TIER: Record<Tier, { min: number; max: number }> = {
-  T0: { min: 0.84, max: 1.22 },
-  T1: { min: 0.86, max: 1.2 },
-  T2: { min: 0.82, max: 1.16 },
-  T3: { min: 0.86, max: 1.14 },
-  T4: { min: 0.9, max: 1.1 },
-}
-
 const FREE_OFFER_CHANCE_BY_TIER: Record<Tier, number> = {
   T0: 0.005,
   T1: 0.0075,
@@ -45,6 +37,18 @@ const FREE_OFFER_CHANCE_BY_TIER: Record<Tier, number> = {
   T3: 0.016,
   T4: 0.022,
 }
+
+const HALF_PRICE_CHANCE_BY_TIER: Record<Tier, number> = {
+  T0: 0.02,
+  T1: 0.028,
+  T2: 0.04,
+  T3: 0.055,
+  T4: 0.07,
+}
+
+const PRD_FACTOR = 0.5
+const MAX_FREE_CHANCE = 0.5
+const MAX_HALF_PRICE_CHANCE = 0.75
 
 const OFFER_TIER_SLOTS: Tier[][] = [
   ['T0', 'T1', 'T2'],
@@ -83,26 +87,16 @@ export function createSeededRng(seed: number): Rng {
   }
 }
 
+export function calculateOfferPrice(card: PlayerCard) {
+  return Math.max(1, Math.round((card.sourceRating - 74) * 1.0))
+}
+
 export function getPlayerWeight(card: PlayerCard) {
   return Math.max(0.1, card.rarityWeight)
 }
 
-function getPriceFactorRange(card: PlayerCard) {
-  return PRICE_FACTOR_RANGE_BY_TIER[card.tier]
-}
-
-export function calculateOfferPrice(card: PlayerCard, rng: Rng = Math.random) {
-  const { min, max } = getPriceFactorRange(card)
-  const randomFactor = min + rng() * (max - min)
-  return Math.max(1, Math.round((card.sourceRating - 74) * randomFactor))
-}
-
-function getMinimumPossiblePrice(card: PlayerCard) {
-  return Math.max(1, Math.round((card.sourceRating - 74) * getPriceFactorRange(card).min))
-}
-
-export function getFreeOfferChance(card: PlayerCard) {
-  return FREE_OFFER_CHANCE_BY_TIER[card.tier]
+function getDiscountChance(baseChance: number, counter: number, maxChance: number) {
+  return Math.min(baseChance * (1 + counter * PRD_FACTOR), maxChance)
 }
 
 function weightedPick<T>(
@@ -187,7 +181,7 @@ export function canAnyPlayerBeBought(
       !excludedIds.has(card.id) &&
       !roster.some((player) => player.playerId === card.id) &&
       canFitOpenSlot(card, arrangement) &&
-      getMinimumPossiblePrice(card) <= budgetRemaining,
+      calculateOfferPrice(card) <= budgetRemaining,
   )
 }
 
@@ -209,22 +203,62 @@ function pickOfferForTierSlot(
   )
 }
 
+interface DiscountState {
+  freeCounter: number
+  halfPriceCounter: number
+  freeTriggered: boolean
+  halfPriceTriggered: boolean
+}
+
 function createOfferFromCandidate(
   candidate: PricedCandidate,
   roster: DraftedPlayer[],
   budgetRemaining: number,
   arrangement: LineupArrangement,
   rng: Rng,
+  discountState: DiscountState,
 ): OfferCard {
-  const isFreeOffer = rng() < getFreeOfferChance(candidate.card)
-  const price = isFreeOffer ? 0 : candidate.price
+  const originalPrice = candidate.price
+  const freeChance = getDiscountChance(
+    FREE_OFFER_CHANCE_BY_TIER[candidate.card.tier],
+    discountState.freeCounter,
+    MAX_FREE_CHANCE,
+  )
+  const halfChance = getDiscountChance(
+    HALF_PRICE_CHANCE_BY_TIER[candidate.card.tier],
+    discountState.halfPriceCounter,
+    MAX_HALF_PRICE_CHANCE,
+  )
+
+  let discountType: 'free' | 'half-price' | undefined
+  let price: number
+
+  if (rng() < freeChance) {
+    discountType = 'free'
+    price = 0
+    discountState.freeTriggered = true
+  } else if (rng() < halfChance) {
+    discountType = 'half-price'
+    price = Math.ceil(originalPrice / 2)
+    discountState.halfPriceTriggered = true
+  } else {
+    discountType = undefined
+    price = originalPrice
+  }
 
   return {
     ...candidate.card,
     price,
+    originalPrice,
+    discountType,
     offerState: getOfferState(candidate.card, price, budgetRemaining, roster, arrangement),
-    isFreeOffer: isFreeOffer || undefined,
   }
+}
+
+interface GenerateOffersResult {
+  offers: OfferCard[]
+  freeDiscountCounter: number
+  halfPriceDiscountCounter: number
 }
 
 export function generateOffers(
@@ -234,11 +268,13 @@ export function generateOffers(
   pool: PlayerCard[],
   rng: Rng = Math.random,
   excludedIds = new Set<string>(),
-): OfferCard[] {
+  freeDiscountCounter = 0,
+  halfPriceDiscountCounter = 0,
+): GenerateOffersResult {
   const candidates: PricedCandidate[] = pool
     .filter((card) => !excludedIds.has(card.id))
     .map((card) => {
-      const price = calculateOfferPrice(card, rng)
+      const price = calculateOfferPrice(card)
       return {
         card,
         price,
@@ -247,6 +283,12 @@ export function generateOffers(
     })
   const blockedIds = new Set<string>()
   const offers: OfferCard[] = []
+  const discountState: DiscountState = {
+    freeCounter: freeDiscountCounter,
+    halfPriceCounter: halfPriceDiscountCounter,
+    freeTriggered: false,
+    halfPriceTriggered: false,
+  }
 
   for (const tiers of OFFER_TIER_SLOTS) {
     const picked = pickOfferForTierSlot(candidates, tiers, rng, blockedIds)
@@ -256,7 +298,7 @@ export function generateOffers(
     }
 
     blockedIds.add(picked.card.id)
-    offers.push(createOfferFromCandidate(picked, roster, budgetRemaining, arrangement, rng))
+    offers.push(createOfferFromCandidate(picked, roster, budgetRemaining, arrangement, rng, discountState))
   }
 
   while (offers.length < OFFER_COUNT) {
@@ -273,7 +315,7 @@ export function generateOffers(
     }
 
     blockedIds.add(picked.card.id)
-    offers.push(createOfferFromCandidate(picked, roster, budgetRemaining, arrangement, rng))
+    offers.push(createOfferFromCandidate(picked, roster, budgetRemaining, arrangement, rng, discountState))
   }
 
   const enabledCandidates = candidates.filter(
@@ -295,11 +337,16 @@ export function generateOffers(
         budgetRemaining,
         arrangement,
         rng,
+        discountState,
       )
     }
   }
 
-  return offers
+  return {
+    offers,
+    freeDiscountCounter: discountState.freeTriggered ? 0 : freeDiscountCounter + 1,
+    halfPriceDiscountCounter: discountState.halfPriceTriggered ? 0 : halfPriceDiscountCounter + 1,
+  }
 }
 
 function createResultSummary(
@@ -325,6 +372,8 @@ function createResultSummary(
         playerId,
         ovr: card.sourceRating,
         pricePaid: drafted.pricePaid,
+        originalPrice: drafted.originalPrice,
+        discountType: drafted.discountType,
       })
     }
   }
@@ -339,6 +388,8 @@ function createResultSummary(
           playerId: sixthPlayerId,
           ovr: sixthCard.sourceRating,
           pricePaid: sixthDrafted.pricePaid,
+          originalPrice: sixthDrafted.originalPrice,
+          discountType: sixthDrafted.discountType,
         }
       : null
 
@@ -374,7 +425,16 @@ function createResultSummary(
     100,
     Number((strengthScore + balanceScore + superstarScore + budgetScore).toFixed(1)),
   )
-  const projectedWins = Math.min(82, Math.max(0, Math.round(20 + dynastyScore * 0.6)))
+  const dimAvg =
+    (coreAverages.offense + coreAverages.defense + coreAverages.physical + coreAverages.mentality) / 4
+  const dimSpread =
+    Math.max(coreAverages.offense, coreAverages.defense, coreAverages.physical, coreAverages.mentality) -
+    Math.min(coreAverages.offense, coreAverages.defense, coreAverages.physical, coreAverages.mentality)
+  const dimBalance = Math.max(0, 1 - dimSpread / 50)
+  const dimQuality = Math.max(0, (dimAvg - 55) / 40)
+  const dimAdjustment = Math.min(4, Math.max(-4, Math.round((dimBalance * dimQuality * 2 - 0.6) * 5)))
+
+  const projectedWins = Math.min(82, Math.max(0, Math.round(20 + dynastyScore * 0.6 + dimAdjustment)))
   const championshipOdds = Math.round(
     (1 / (1 + Math.exp(-((dynastyScore - 80) / 4.5)))) * 100,
   )
@@ -586,13 +646,19 @@ function advanceOrFinish(
   }
 
   const nextRound = state.round + 1
-  const currentOffers = generateOffers(
+  const {
+    offers: currentOffers,
+    freeDiscountCounter,
+    halfPriceDiscountCounter,
+  } = generateOffers(
     state.roster,
     state.budgetRemaining,
     state.lineupArrangement,
     pool,
     rng,
     seenOfferIds,
+    state.freeDiscountCounter,
+    state.halfPriceDiscountCounter,
   )
   const nextSeenOfferIds = new Set(seenOfferIds)
   for (const offer of currentOffers) {
@@ -604,6 +670,8 @@ function advanceOrFinish(
     round: nextRound,
     currentOffers,
     seenOfferIds: [...nextSeenOfferIds],
+    freeDiscountCounter,
+    halfPriceDiscountCounter,
     lastAction,
     result: null,
   }
@@ -611,7 +679,7 @@ function advanceOrFinish(
 
 export function createInitialState(pool: PlayerCard[], rng: Rng = Math.random): GameState {
   const lineupArrangement = createEmptyArrangement()
-  const currentOffers = generateOffers([], STARTING_BUDGET, lineupArrangement, pool, rng)
+  const { offers: currentOffers } = generateOffers([], STARTING_BUDGET, lineupArrangement, pool, rng)
 
   return {
     budgetRemaining: STARTING_BUDGET,
@@ -624,6 +692,8 @@ export function createInitialState(pool: PlayerCard[], rng: Rng = Math.random): 
     lineupArrangement,
     lastAction: '第一组历史报价已送达。预算 100，目标 6 人王朝。',
     result: null,
+    freeDiscountCounter: 0,
+    halfPriceDiscountCounter: 0,
   }
 }
 
@@ -652,6 +722,8 @@ export function signOffer(
     {
       playerId: offer.id,
       pricePaid: offer.price,
+      originalPrice: offer.discountType ? offer.originalPrice : undefined,
+      discountType: offer.discountType,
       assignedSlot: slot,
     },
   ]
@@ -673,9 +745,11 @@ export function signOffer(
     nextState,
     pool,
     rng,
-    offer.isFreeOffer
+    offer.discountType === 'free'
       ? `${getDisplayName(offer)} 触发免费签约，落位 ${slotLabel}。`
-      : `${getDisplayName(offer)} 以 ${offer.price} 预算加盟，落位 ${slotLabel}。`,
+      : offer.discountType === 'half-price'
+        ? `${getDisplayName(offer)} 触发半价折扣（原价 ${offer.originalPrice}），以 ${offer.price} 预算加盟，落位 ${slotLabel}。`
+        : `${getDisplayName(offer)} 以 ${offer.price} 预算加盟，落位 ${slotLabel}。`,
   )
 }
 
