@@ -1191,7 +1191,7 @@ function App() {
       {isResultPending && (
         <section className="result-pending-overlay" aria-live="polite" aria-label="王朝阵容锁定">
           <h2>王朝阵容锁定</h2>
-          <p>thikink...</p>
+          <p>thinking...</p>
           <span aria-hidden="true" />
         </section>
       )}
