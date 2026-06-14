@@ -35,6 +35,24 @@ const ATTRIBUTE_LABELS = {
   Agility: 'agility',
 }
 
+const POSITION_PROFILES = {
+  PG: {
+    agility: 7,
+  },
+  SG: {
+    agility: 5,
+  },
+  SF: {
+    agility: 3,
+  },
+  PF: {
+    agility: -1,
+  },
+  C: {
+    agility: -4,
+  },
+}
+
 function parseArgs(argv) {
   const args = {
     headed: false,
@@ -98,6 +116,31 @@ function sleep(timeoutMs) {
   return new Promise((resolve) => {
     setTimeout(resolve, timeoutMs)
   })
+}
+
+function clampRating(value) {
+  return Math.max(25, Math.min(99, Math.round(value)))
+}
+
+function getAveragePositionModifier(positions, key) {
+  const total = positions.reduce((sum, position) => {
+    const profile = POSITION_PROFILES[position]
+    if (!profile) {
+      throw new Error(`Unknown position ${position}.`)
+    }
+    return sum + profile[key]
+  }, 0)
+
+  return total / positions.length
+}
+
+function buildEstimatedAttributeFallback(player) {
+  const base = player.sourceRating - 3
+  const agilityModifier = getAveragePositionModifier(player.positions, 'agility')
+
+  return {
+    agility: clampRating(base + agilityModifier * 0.65),
+  }
 }
 
 async function readJson(filePath) {
@@ -217,6 +260,30 @@ async function scrapePlayerAttributes(page, url) {
     (key) => !Number.isFinite(data.attributes[key]),
   )
 
+  return {
+    ...data,
+    missingGroups,
+    missingAttributes,
+  }
+}
+
+function finalizeScrapedEntry(player, scraped, url) {
+  const groups = { ...scraped.groups }
+  const attributes = { ...scraped.attributes }
+  const missingGroups = [...scraped.missingGroups]
+  const missingAttributes = [...scraped.missingAttributes]
+
+  if (
+    player.id === 'bill-russell' &&
+    missingGroups.length === 0 &&
+    missingAttributes.length === 1 &&
+    missingAttributes[0] === 'agility'
+  ) {
+    const fallback = buildEstimatedAttributeFallback(player)
+    attributes.agility = fallback.agility
+    missingAttributes.length = 0
+  }
+
   if (missingGroups.length > 0 || missingAttributes.length > 0) {
     throw new Error(
       `Incomplete scrape for ${url}. Missing groups: ${missingGroups.join(', ') || 'none'}. Missing attributes: ${
@@ -225,7 +292,13 @@ async function scrapePlayerAttributes(page, url) {
     )
   }
 
-  return data
+  return {
+    sourceUrl: url,
+    sourceVersion: scraped.pageTitle,
+    sourceStatus: 'verified-2k-snapshot',
+    groups,
+    attributes,
+  }
 }
 
 async function main() {
@@ -276,13 +349,7 @@ async function main() {
 
       try {
         const scraped = await scrapePlayerAttributes(page, url)
-        nextSnapshot[player.id] = {
-          sourceUrl: url,
-          sourceVersion: scraped.pageTitle,
-          sourceStatus: 'verified-2k-snapshot',
-          groups: scraped.groups,
-          attributes: scraped.attributes,
-        }
+        nextSnapshot[player.id] = finalizeScrapedEntry(player, scraped, url)
 
         const overall =
           Number.isFinite(scraped.overall) && scraped.overall !== player.sourceRating

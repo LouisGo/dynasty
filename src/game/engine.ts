@@ -3,6 +3,7 @@ import {
   FREE_SKIP_COUNT,
   MAX_ROUNDS,
   OFFER_COUNT,
+  PAID_SKIP_STEP_COST,
   ROSTER_TARGET,
   SIXTH_SLOT,
   STARTING_BUDGET,
@@ -588,6 +589,7 @@ export function createInitialState(pool: PlayerCard[], rng: Rng = Math.random): 
     budgetRemaining: STARTING_BUDGET,
     round: 1,
     freeSkipsRemaining: FREE_SKIP_COUNT,
+    paidSkipsUsed: 0,
     roster: [],
     currentOffers,
     seenOfferIds: currentOffers.map((offer) => offer.id),
@@ -656,18 +658,36 @@ export function skipOfferGroup(
     throw new Error('Cannot skip after the run is complete.')
   }
 
-  if (state.freeSkipsRemaining <= 0) {
-    throw new Error('No free skips remaining.')
+  if (state.freeSkipsRemaining > 0) {
+    const freeSkipsRemaining = state.freeSkipsRemaining - 1
+    const nextState = {
+      ...state,
+      freeSkipsRemaining,
+      currentOffers: [],
+      result: null,
+    }
+    const lastAction = `你免费跳过了本轮，还剩 ${freeSkipsRemaining} 次免费跳过。`
+
+    return advanceOrFinish(nextState, pool, rng, lastAction)
   }
 
-  const freeSkipsRemaining = state.freeSkipsRemaining - 1
+  const paidSkipsUsed = state.paidSkipsUsed + 1
+  const budgetCost = paidSkipsUsed * PAID_SKIP_STEP_COST
+
+  if (state.budgetRemaining < budgetCost) {
+    throw new Error(`Not enough budget to skip. Need ${budgetCost}.`)
+  }
+
   const nextState = {
     ...state,
-    freeSkipsRemaining,
+    paidSkipsUsed,
+    budgetRemaining: state.budgetRemaining - budgetCost,
     currentOffers: [],
     result: null,
   }
-  const lastAction = `你免费跳过了本轮，还剩 ${freeSkipsRemaining} 次免费跳过。`
+  const lastAction = `你支付了 ${budgetCost} 预算跳过本轮。后续下一次跳过将消耗 ${
+    (paidSkipsUsed + 1) * PAID_SKIP_STEP_COST
+  } 预算。`
 
   return advanceOrFinish(nextState, pool, rng, lastAction)
 }

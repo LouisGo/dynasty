@@ -12,6 +12,7 @@ import {
 import {
   FREE_SKIP_COUNT,
   MAX_ROUNDS,
+  PAID_SKIP_STEP_COST,
   ROSTER_TARGET,
   STARTING_BUDGET,
   type GameState,
@@ -25,6 +26,7 @@ function buildState(overrides: Partial<GameState>): GameState {
     budgetRemaining: STARTING_BUDGET,
     round: 1,
     freeSkipsRemaining: FREE_SKIP_COUNT,
+    paidSkipsUsed: 0,
     roster: [],
     currentOffers: [],
     seenOfferIds: [],
@@ -142,26 +144,26 @@ describe('price and supply model', () => {
   })
 
   it('fills estimated multidimensional ratings for players without verified snapshots', () => {
-    const carter = pool.find((card) => card.id === 'vince-carter')
+    const barkley = pool.find((card) => card.id === 'charles-barkley')
 
-    expect(carter?.ratings).toEqual({
-      offense: 89,
-      defense: 88,
-      physical: 90,
-      mentality: 90,
+    expect(barkley?.ratings).toEqual({
+      offense: 90,
+      defense: 95,
+      physical: 92,
+      mentality: 93,
     })
-    expect(carter?.sourceAttributes).not.toBeNull()
-    expect(carter?.attributeSourceUrl).toBeNull()
-    expect(carter?.attributeSourceStatus).toBe('estimated-archetype-v1')
+    expect(barkley?.sourceAttributes).not.toBeNull()
+    expect(barkley?.attributeSourceUrl).toBeNull()
+    expect(barkley?.attributeSourceStatus).toBe('estimated-archetype-v1')
   })
 
   it('keeps every player covered by either verified or estimated multidimensional ratings', () => {
     expect(pool.every((card) => card.ratings !== null)).toBe(true)
     expect(pool.filter((card) => card.attributeSourceStatus === 'verified-2k-snapshot')).toHaveLength(
-      8,
+      147,
     )
     expect(pool.filter((card) => card.attributeSourceStatus === 'estimated-archetype-v1')).toHaveLength(
-      142,
+      3,
     )
   })
 
@@ -218,14 +220,42 @@ describe('draft loop', () => {
     expect(afterFree.round).toBe(2)
   })
 
-  it('does not allow skipping after free skips are exhausted', () => {
+  it('starts charging budget after free skips are exhausted', () => {
     const state = buildState({
       freeSkipsRemaining: 0,
+      paidSkipsUsed: 0,
       currentOffers: generateOffers([], STARTING_BUDGET, buildState({}).lineupArrangement, pool),
     })
+    const next = skipOfferGroup(state, pool, createSeededRng(17))
 
-    expect(() => skipOfferGroup(state, pool, createSeededRng(17))).toThrow(
-      'No free skips remaining.',
+    expect(next.paidSkipsUsed).toBe(1)
+    expect(next.budgetRemaining).toBe(STARTING_BUDGET - PAID_SKIP_STEP_COST)
+    expect(next.round).toBe(2)
+  })
+
+  it('increases the paid skip cost each time after free skips are exhausted', () => {
+    const state = buildState({
+      freeSkipsRemaining: 0,
+      paidSkipsUsed: 1,
+      budgetRemaining: 20,
+      currentOffers: generateOffers([], 20, buildState({}).lineupArrangement, pool),
+    })
+    const next = skipOfferGroup(state, pool, createSeededRng(18))
+
+    expect(next.paidSkipsUsed).toBe(2)
+    expect(next.budgetRemaining).toBe(16)
+  })
+
+  it('does not allow paid skipping when the budget cannot cover the current skip cost', () => {
+    const state = buildState({
+      freeSkipsRemaining: 0,
+      paidSkipsUsed: 2,
+      budgetRemaining: 5,
+      currentOffers: generateOffers([], 5, buildState({}).lineupArrangement, pool),
+    })
+
+    expect(() => skipOfferGroup(state, pool, createSeededRng(19))).toThrow(
+      'Not enough budget to skip. Need 6.',
     )
   })
 

@@ -21,6 +21,7 @@ import {
   FREE_SKIP_COUNT,
   MAX_ROUNDS,
   OFFER_COUNT,
+  PAID_SKIP_STEP_COST,
   ROSTER_TARGET,
   SIXTH_SLOT,
   type CourtSlotId,
@@ -36,6 +37,7 @@ import {
 
 const pool = legendPool as PlayerCard[]
 const poolIndex = new Map(pool.map((card) => [card.id, card]))
+const getPaidSkipCost = (paidSkipsUsed: number) => (paidSkipsUsed + 1) * PAID_SKIP_STEP_COST
 
 type Screen = 'landing' | 'draft' | 'result'
 type CardSize = 'large' | 'mini'
@@ -669,8 +671,12 @@ function App() {
   const skipLabel =
     gameState.freeSkipsRemaining > 0
       ? `跳过本轮（免费 ${gameState.freeSkipsRemaining}）`
-      : '跳过次数已用完'
-  const canSkip = gameState.freeSkipsRemaining > 0
+      : gameState.budgetRemaining >= getPaidSkipCost(gameState.paidSkipsUsed)
+        ? `跳过本轮（-${getPaidSkipCost(gameState.paidSkipsUsed)} 预算）`
+        : `预算不足，无法跳过（需 ${getPaidSkipCost(gameState.paidSkipsUsed)}）`
+  const canSkip =
+    gameState.freeSkipsRemaining > 0 ||
+    gameState.budgetRemaining >= getPaidSkipCost(gameState.paidSkipsUsed)
 
   useEffect(
     () => () => {
@@ -988,7 +994,7 @@ function App() {
                 开始选秀
               </button>
               <p className="micro-copy">
-                {FREE_SKIP_COUNT} 次免费跳过，用完后必须从当前报价中签人。
+                {FREE_SKIP_COUNT} 次免费跳过，用完后可继续付预算重抽，且每次递增 +2。
               </p>
             </div>
           </div>

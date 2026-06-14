@@ -3648,5 +3648,30 @@
       "defensiveConsistency": 85,
       "helpDefenseIQ": 87
     }
+  },
+  "bill-russell": {
+    "sourceUrl": "https://www.2kratings.com/bill-russell-all-time-boston-celtics",
+    "sourceVersion": "Bill Russell NBA 2K26 Rating (All-Time Boston Celtics)",
+    "sourceStatus": "verified-2k-snapshot",
+    "groups": {
+      "outsideScoring": 71,
+      "athleticism": 81,
+      "insideScoring": 90,
+      "playmaking": 63,
+      "defense": 91,
+      "rebounding": 98,
+      "intangibles": 50
+    },
+    "attributes": {
+      "offensiveConsistency": 98,
+      "shotIQ": 98,
+      "strength": 92,
+      "stamina": 98,
+      "durability": 96,
+      "passIQ": 94,
+      "defensiveConsistency": 99,
+      "helpDefenseIQ": 99,
+      "agility": 91
+    }
   }
 }

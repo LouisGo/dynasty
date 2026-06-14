@@ -2,6 +2,7 @@ export const STARTING_POSITIONS = ['PG', 'SG', 'SF', 'PF', 'C'] as const
 export const STARTING_BUDGET = 100
 export const ROSTER_TARGET = 6
 export const FREE_SKIP_COUNT = 5
+export const PAID_SKIP_STEP_COST = 2
 export const OFFER_COUNT = 4
 export const MAX_ROUNDS = 20
 export const SIXTH_SLOT = 'SIX' as const
@@ -117,6 +118,7 @@ export interface GameState {
   budgetRemaining: number
   round: number
   freeSkipsRemaining: number
+  paidSkipsUsed: number
   roster: DraftedPlayer[]
   currentOffers: OfferCard[]
   seenOfferIds: string[]
