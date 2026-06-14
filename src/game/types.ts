@@ -76,6 +76,7 @@ export interface DraftedPlayer {
 export interface OfferCard extends PlayerCard {
   offerState: OfferState
   price: number
+  isFreeOffer?: boolean
 }
 
 export type LineupArrangement = Record<CourtSlotId, null | string>

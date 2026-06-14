@@ -266,6 +266,10 @@ function getSlotRole(slot: CourtSlotId) {
 }
 
 function getOfferStateText(offer: OfferCard) {
+  if (offer.isFreeOffer && offer.offerState === 'enabled') {
+    return '免费签约'
+  }
+
   if (offer.offerState === 'too-expensive') {
     return '预算不足'
   }
@@ -319,6 +323,10 @@ function getTeamCode(playerId: string) {
 
 function formatRatingValue(value: number | null | undefined) {
   return typeof value === 'number' ? Math.round(value) : null
+}
+
+function formatPriceLabel(price: number) {
+  return price === 0 ? '免' : `${price}`
 }
 
 function getRatingPercent(value: number | null | undefined) {
@@ -437,6 +445,7 @@ function PlayerCardTile({
   onLongPressOpen,
 }: PlayerCardTileProps) {
   const teamCode = getTeamCode(card.id)
+  const isFreeOffer = price === 0
   const pressTimerRef = useRef<number | null>(null)
   const pressStartRef = useRef<{ x: number; y: number } | null>(null)
   const longPressTriggeredRef = useRef(false)
@@ -504,6 +513,7 @@ function PlayerCardTile({
         'player-card',
         `player-card-${size}`,
         tierClassName(card.tier),
+        isFreeOffer ? 'is-free-offer' : '',
         isPressing ? 'is-long-pressing' : '',
         className,
       ]
@@ -518,7 +528,7 @@ function PlayerCardTile({
       onClickCapture={handleClickCapture}
       onContextMenu={(event) => event.preventDefault()}
     >
-      <span className="player-card-price">{price}</span>
+      <span className="player-card-price">{formatPriceLabel(price)}</span>
       {teamCode && (
         <img
           className="player-card-logo"
@@ -580,7 +590,7 @@ function PlayerDetailOverlay({
           <span>{detail.card.tier} · {formatPositions(detail.card.positions)}</span>
           <h2>{getDisplayName(detail.card)}</h2>
           <p>
-            OVR {detail.card.sourceRating} · 价格 {detail.price} · {detail.statusLabel}
+            OVR {detail.card.sourceRating} · 价格 {formatPriceLabel(detail.price)} · {detail.statusLabel}
           </p>
         </header>
 
@@ -1001,7 +1011,7 @@ function App() {
             <p className="eyebrow">王朝选秀</p>
             <h1>100 预算，20 回合，抽一套历史王朝。</h1>
             <p className="landing-body">
-              每轮四张历史球星卡，价格每次重掷。签下一人或跳过，填满五个首发和第六人即结算。
+              每轮四张历史球星卡，价格每次重掷，偶尔会出现免费签约。签下一人或跳过，填满五个首发和第六人即结算。
             </p>
             <div className="landing-actions">
               <button type="button" className="primary-button" onClick={startRun}>
@@ -1024,7 +1034,7 @@ function App() {
               <span>PG / SG / SF / PF / C / 第六人</span>
             </div>
             <div className="poster-detail">
-              <p>OVR 越高越稀有，价格每次出现都会重掷。</p>
+              <p>OVR 越高越稀有，顶级卡价格波动更大，轮换卡更容易刷到免费。</p>
               <p>第六人不限位置，重复球员禁止签约。</p>
             </div>
           </div>

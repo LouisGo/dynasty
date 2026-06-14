@@ -5,6 +5,7 @@ import {
   createInitialState,
   createSeededRng,
   generateOffers,
+  getFreeOfferChance,
   getPlayerWeight,
   skipOfferGroup,
   signOffer,
@@ -70,14 +71,39 @@ describe('price and supply model', () => {
       throw new Error('Price test fixtures missing.')
     }
 
-    expect(calculateOfferPrice(jordan, () => 0)).toBe(23)
-    expect(calculateOfferPrice(jordan, () => 0.999999)).toBe(29)
+    expect(calculateOfferPrice(jordan, () => 0)).toBe(21)
+    expect(calculateOfferPrice(jordan, () => 0.999999)).toBe(30)
 
-    expect(calculateOfferPrice(thomas, () => 0)).toBe(17)
+    expect(calculateOfferPrice(thomas, () => 0)).toBe(16)
     expect(calculateOfferPrice(thomas, () => 0.999999)).toBe(23)
 
-    expect(calculateOfferPrice(rotation, () => 0)).toBe(8)
-    expect(calculateOfferPrice(rotation, () => 0.999999)).toBe(12)
+    expect(calculateOfferPrice(rotation, () => 0)).toBe(9)
+    expect(calculateOfferPrice(rotation, () => 0.999999)).toBe(11)
+  })
+
+  it('uses tier-specific free offer chances', () => {
+    const byTier = new Map(pool.map((card) => [card.tier, card]))
+
+    expect(getFreeOfferChance(byTier.get('T0') as PlayerCard)).toBe(0.005)
+    expect(getFreeOfferChance(byTier.get('T1') as PlayerCard)).toBe(0.0075)
+    expect(getFreeOfferChance(byTier.get('T2') as PlayerCard)).toBe(0.011)
+    expect(getFreeOfferChance(byTier.get('T3') as PlayerCard)).toBe(0.016)
+    expect(getFreeOfferChance(byTier.get('T4') as PlayerCard)).toBe(0.022)
+  })
+
+  it('can turn generated offers into free signable cards', () => {
+    const offers = generateOffers(
+      [],
+      0,
+      buildState({}).lineupArrangement,
+      pool,
+      () => 0,
+    )
+
+    expect(offers).toHaveLength(4)
+    expect(offers.every((offer) => offer.isFreeOffer)).toBe(true)
+    expect(offers.every((offer) => offer.price === 0)).toBe(true)
+    expect(offers.some((offer) => offer.offerState === 'enabled')).toBe(true)
   })
 
   it('uses card rarity weight as the appearance weight within each offer slot', () => {

@@ -30,6 +30,22 @@ interface PricedCandidate {
   offerState: OfferState
 }
 
+const PRICE_FACTOR_RANGE_BY_TIER: Record<Tier, { min: number; max: number }> = {
+  T0: { min: 0.84, max: 1.22 },
+  T1: { min: 0.86, max: 1.2 },
+  T2: { min: 0.82, max: 1.16 },
+  T3: { min: 0.86, max: 1.14 },
+  T4: { min: 0.9, max: 1.1 },
+}
+
+const FREE_OFFER_CHANCE_BY_TIER: Record<Tier, number> = {
+  T0: 0.005,
+  T1: 0.0075,
+  T2: 0.011,
+  T3: 0.016,
+  T4: 0.022,
+}
+
 const OFFER_TIER_SLOTS: Tier[][] = [
   ['T0', 'T1', 'T2'],
   ['T2', 'T3'],
@@ -72,15 +88,7 @@ export function getPlayerWeight(card: PlayerCard) {
 }
 
 function getPriceFactorRange(card: PlayerCard) {
-  if (card.tier === 'T0' || card.tier === 'T1') {
-    return { min: 0.9, max: 1.15 }
-  }
-
-  if (card.tier === 'T2') {
-    return { min: 0.85, max: 1.15 }
-  }
-
-  return { min: 0.8, max: 1.2 }
+  return PRICE_FACTOR_RANGE_BY_TIER[card.tier]
 }
 
 export function calculateOfferPrice(card: PlayerCard, rng: Rng = Math.random) {
@@ -91,6 +99,10 @@ export function calculateOfferPrice(card: PlayerCard, rng: Rng = Math.random) {
 
 function getMinimumPossiblePrice(card: PlayerCard) {
   return Math.max(1, Math.round((card.sourceRating - 74) * getPriceFactorRange(card).min))
+}
+
+export function getFreeOfferChance(card: PlayerCard) {
+  return FREE_OFFER_CHANCE_BY_TIER[card.tier]
 }
 
 function weightedPick<T>(
@@ -197,6 +209,24 @@ function pickOfferForTierSlot(
   )
 }
 
+function createOfferFromCandidate(
+  candidate: PricedCandidate,
+  roster: DraftedPlayer[],
+  budgetRemaining: number,
+  arrangement: LineupArrangement,
+  rng: Rng,
+): OfferCard {
+  const isFreeOffer = rng() < getFreeOfferChance(candidate.card)
+  const price = isFreeOffer ? 0 : candidate.price
+
+  return {
+    ...candidate.card,
+    price,
+    offerState: getOfferState(candidate.card, price, budgetRemaining, roster, arrangement),
+    isFreeOffer: isFreeOffer || undefined,
+  }
+}
+
 export function generateOffers(
   roster: DraftedPlayer[],
   budgetRemaining: number,
@@ -226,11 +256,7 @@ export function generateOffers(
     }
 
     blockedIds.add(picked.card.id)
-    offers.push({
-      ...picked.card,
-      price: picked.price,
-      offerState: picked.offerState,
-    })
+    offers.push(createOfferFromCandidate(picked, roster, budgetRemaining, arrangement, rng))
   }
 
   while (offers.length < OFFER_COUNT) {
@@ -247,11 +273,7 @@ export function generateOffers(
     }
 
     blockedIds.add(picked.card.id)
-    offers.push({
-      ...picked.card,
-      price: picked.price,
-      offerState: picked.offerState,
-    })
+    offers.push(createOfferFromCandidate(picked, roster, budgetRemaining, arrangement, rng))
   }
 
   const enabledCandidates = candidates.filter(
@@ -267,11 +289,13 @@ export function generateOffers(
     )
 
     if (replacement) {
-      offers[offers.length - 1] = {
-        ...replacement.card,
-        price: replacement.price,
-        offerState: replacement.offerState,
-      }
+      offers[offers.length - 1] = createOfferFromCandidate(
+        replacement,
+        roster,
+        budgetRemaining,
+        arrangement,
+        rng,
+      )
     }
   }
 
@@ -649,7 +673,9 @@ export function signOffer(
     nextState,
     pool,
     rng,
-    `${getDisplayName(offer)} 以 ${offer.price} 预算加盟，落位 ${slotLabel}。`,
+    offer.isFreeOffer
+      ? `${getDisplayName(offer)} 触发免费签约，落位 ${slotLabel}。`
+      : `${getDisplayName(offer)} 以 ${offer.price} 预算加盟，落位 ${slotLabel}。`,
   )
 }
 
