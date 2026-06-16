@@ -64,11 +64,53 @@ function playGreedyRun(seed: number) {
   return state
 }
 
+function finishLineup(
+  lineup: GameState['lineupArrangement'],
+  sixthPlayerId: string,
+  budgetRemaining = 20,
+) {
+  const sixth = pool.find((card) => card.id === sixthPlayerId)
+  if (!sixth) {
+    throw new Error(`${sixthPlayerId} test fixture missing.`)
+  }
+
+  const roster = (['PG', 'SG', 'SF', 'PF', 'C'] as const).map((slot) => {
+    const playerId = lineup[slot]
+    if (!playerId) {
+      throw new Error(`${slot} fixture missing.`)
+    }
+
+    return { playerId, pricePaid: 0, assignedSlot: slot }
+  })
+
+  return signOffer(
+    buildState({
+      round: 6,
+      budgetRemaining,
+      roster,
+      lineupArrangement: { ...lineup, SIX: null },
+      currentOffers: [{ ...sixth, price: 0, originalPrice: 0, offerState: 'enabled' }],
+    }),
+    sixthPlayerId,
+    pool,
+    createSeededRng(99),
+  )
+}
+
+function expectPeakValue(byId: Map<string, PlayerCard>, playerId: string, expected: number) {
+  const player = byId.get(playerId)
+  if (!player) {
+    throw new Error(`${playerId} peak test fixture missing.`)
+  }
+
+  expect(player.peakImpact.peakValue).toBe(expected)
+}
+
 describe('price and supply model', () => {
   it('prices cards from OVR with fixed pricing', () => {
     const jordan = pool.find((card) => card.id === 'michael-jordan')
     const thomas = pool.find((card) => card.id === 'isiah-thomas')
-    const rotation = pool.find((card) => card.id === 'john-wall')
+    const rotation = pool.find((card) => card.id === 'demar-derozan')
     if (!jordan || !thomas || !rotation) {
       throw new Error('Price test fixtures missing.')
     }
@@ -76,7 +118,7 @@ describe('price and supply model', () => {
     // Fixed prices: OVR - 74
     expect(calculateOfferPrice(jordan)).toBe(25)
     expect(calculateOfferPrice(thomas)).toBe(20)
-    expect(calculateOfferPrice(rotation)).toBe(10)
+    expect(calculateOfferPrice(rotation)).toBe(11)
   })
 
   it('can turn generated offers into free signable cards with rng=0', () => {
@@ -106,10 +148,10 @@ describe('price and supply model', () => {
     expect(getPlayerWeight(rotation)).toBeGreaterThan(getPlayerWeight(jordan))
   })
 
-  it('keeps the draft pool expanded with recognizable modern-era and current stars', () => {
+  it('curates the draft pool to dynasty-level players while filling historical gaps', () => {
     const ids = new Set(pool.map((card) => card.id))
 
-    expect(pool).toHaveLength(150)
+    expect(pool).toHaveLength(120)
     expect(ids.has('bill-russell')).toBe(true)
     expect(ids.has('wilt-chamberlain')).toBe(true)
     expect(ids.has('shai-gilgeous-alexander')).toBe(true)
@@ -117,11 +159,14 @@ describe('price and supply model', () => {
     expect(ids.has('jalen-brunson')).toBe(true)
     expect(ids.has('anthony-edwards')).toBe(true)
     expect(ids.has('domantas-sabonis')).toBe(true)
-    expect(ids.has('jalen-duren')).toBe(true)
+    expect(ids.has('oscar-robertson')).toBe(true)
+    expect(ids.has('jerry-west')).toBe(true)
+    expect(ids.has('elgin-baylor')).toBe(true)
+    expect(ids.has('john-wall')).toBe(false)
+    expect(ids.has('kristaps-porzingis')).toBe(false)
+    expect(ids.has('jalen-duren')).toBe(false)
     expect(ids.has('bob-cousy')).toBe(false)
     expect(ids.has('george-mikan')).toBe(false)
-    expect(ids.has('oscar-robertson')).toBe(false)
-    expect(ids.has('jerry-west')).toBe(false)
   })
 
   it('keeps current stars below established all-time peak tiers unless their resume supports it', () => {
@@ -138,46 +183,91 @@ describe('price and supply model', () => {
     )
   })
 
-  it('attaches sourced multidimensional ratings when 2K attribute snapshots exist', () => {
+  it('attaches sourced 2K attributes when snapshots exist without exposing stale core ratings', () => {
     const byId = new Map(pool.map((card) => [card.id, card]))
+    const jordan = byId.get('michael-jordan') as PlayerCard
+    const rodman = byId.get('dennis-rodman') as PlayerCard
 
-    expect(byId.get('michael-jordan')?.ratingModelVersion).toBe('2k-attributes-v1')
-    expect(byId.get('michael-jordan')?.attributeSourceStatus).toBe('verified-2k-snapshot')
-    expect(byId.get('michael-jordan')?.ratings).toEqual({
-      offense: 91,
-      defense: 90,
-      physical: 94,
-      mentality: 96,
-    })
-    expect(byId.get('dennis-rodman')?.ratings).toEqual({
-      offense: 45,
-      defense: 94,
-      physical: 86,
-      mentality: 69,
-    })
+    expect(jordan.ratingModelVersion).toBe('2k-attributes-v1')
+    expect(jordan.attributeSourceStatus).toBe('verified-2k-snapshot')
+    expect(jordan.sourceAttributes?.groups.outsideScoring).toBe(95)
+    expect(jordan.sourceAttributes?.groups.defense).toBe(94)
+    expect(rodman.sourceAttributes?.groups.defense).toBe(92)
+    expect('ratings' in jordan).toBe(false)
   })
 
-  it('fills estimated multidimensional ratings for players without verified snapshots', () => {
+  it('fills estimated source attributes for players without verified snapshots', () => {
     const barkley = pool.find((card) => card.id === 'charles-barkley')
 
-    expect(barkley?.ratings).toEqual({
-      offense: 90,
-      defense: 95,
-      physical: 92,
-      mentality: 93,
-    })
     expect(barkley?.sourceAttributes).not.toBeNull()
+    expect(barkley?.sourceAttributes?.groups.rebounding).toBeGreaterThanOrEqual(90)
     expect(barkley?.attributeSourceUrl).toBeNull()
     expect(barkley?.attributeSourceStatus).toBe('estimated-archetype-v1')
   })
 
-  it('keeps every player covered by either verified or estimated multidimensional ratings', () => {
-    expect(pool.every((card) => card.ratings !== null)).toBe(true)
+  it('keeps every player covered by either verified or estimated source attributes and peak impact', () => {
+    expect(pool.every((card) => card.sourceAttributes !== null)).toBe(true)
+    expect(pool.every((card) => card.peakImpact !== null)).toBe(true)
+    expect(pool.every((card) => !('ratings' in card))).toBe(true)
     expect(pool.filter((card) => card.attributeSourceStatus === 'verified-2k-snapshot')).toHaveLength(
-      147,
+      114,
     )
     expect(pool.filter((card) => card.attributeSourceStatus === 'estimated-archetype-v1')).toHaveLength(
-      3,
+      6,
+    )
+  })
+
+  it('calibrates representative peak impact overrides for specialists and missing-license stars', () => {
+    const byId = new Map(pool.map((card) => [card.id, card]))
+
+    expect(byId.get('stephen-curry')?.peakImpact.peakValue).toBe(97)
+    expect(byId.get('stephen-curry')?.peakImpact.gravity).toBe(99)
+    expect(byId.get('dwyane-wade')?.peakImpact.peakValue).toBe(96)
+    expect(byId.get('chris-paul')?.peakImpact.peakValue).toBe(94)
+    expect(byId.get('kawhi-leonard')?.peakImpact.peakValue).toBe(96)
+    expect(byId.get('allen-iverson')?.peakImpact.peakValue).toBe(94)
+    expect(byId.get('scottie-pippen')?.peakImpact.wingValue).toBeGreaterThanOrEqual(94)
+    expect(byId.get('charles-barkley')?.peakImpact.defensiveAnchor).toBeLessThan(80)
+    expect(byId.get('charles-barkley')?.peakImpact.rebounding).toBeGreaterThanOrEqual(96)
+    expect(byId.get('dennis-rodman')?.peakImpact.rebounding).toBe(99)
+    expect(byId.get('dennis-rodman')?.peakImpact.primaryEngine).toBeLessThan(60)
+  })
+
+  it('uses dynasty-pool peak calibration instead of forcing peak value above current 2K OVR', () => {
+    const byId = new Map(pool.map((card) => [card.id, card]))
+    const shaq = byId.get('shaquille-oneal')
+    if (!shaq) {
+      throw new Error('Shaquille O’Neal peak test fixture missing.')
+    }
+
+    expect(shaq.peakImpact.peakValue).toBe(99)
+    expect(shaq.peakImpact.primaryEngine).toBeGreaterThanOrEqual(98)
+    expect(shaq.peakImpact.gravity).toBeGreaterThanOrEqual(97)
+
+    expectPeakValue(byId, 'shai-gilgeous-alexander', 92)
+    expectPeakValue(byId, 'jalen-williams', 87)
+    expectPeakValue(byId, 'ja-morant', 87)
+    expectPeakValue(byId, 'domantas-sabonis', 86)
+    expectPeakValue(byId, 'devin-booker', 90)
+    expectPeakValue(byId, 'tyrese-maxey', 87)
+    expectPeakValue(byId, 'evan-mobley', 88)
+    expectPeakValue(byId, 'james-harden', 94)
+    expectPeakValue(byId, 'zion-williamson', 85)
+    expectPeakValue(byId, 'luka-doncic', 94)
+
+    expectPeakValue(byId, 'jalen-brunson', 93)
+    expectPeakValue(byId, 'russell-westbrook', 93)
+    expectPeakValue(byId, 'jimmy-butler', 92)
+    expectPeakValue(byId, 'kyrie-irving', 92)
+    expectPeakValue(byId, 'joel-embiid', 94)
+    expectPeakValue(byId, 'carmelo-anthony', 92)
+    expectPeakValue(byId, 'gilbert-arenas', 90)
+
+    expect(byId.get('shai-gilgeous-alexander')?.peakImpact.peakValue).toBeLessThan(
+      byId.get('shai-gilgeous-alexander')?.sourceRating ?? 0,
+    )
+    expect(byId.get('luka-doncic')?.peakImpact.peakValue).toBeLessThan(
+      byId.get('luka-doncic')?.sourceRating ?? 0,
     )
   })
 
@@ -313,7 +403,7 @@ describe('run completion and scoring', () => {
     expect(resultState.result?.dynastyScore).toBeGreaterThan(0)
   })
 
-  it('uses the documented score, record, and championship odds math', () => {
+  it('uses lineup construction, not raw peak impact, for score, record, and championship odds math', () => {
     const state = buildState({
       round: 6,
       budgetRemaining: 1,
@@ -363,17 +453,121 @@ describe('run completion and scoring', () => {
     )
 
     expect(finished.result?.dynastyScore).toBeGreaterThanOrEqual(85)
-    expect(finished.result?.strengthScore).toBeGreaterThan(50)
-    expect(finished.result?.superstarScore).toBeGreaterThan(18)
+    expect(finished.result?.peakImpactScore).toBeGreaterThan(finished.result?.dynastyScore ?? 0)
+    expect(finished.result?.offenseImpactScore).toBeGreaterThan(80)
+    expect(finished.result?.defenseImpactScore).toBeGreaterThan(80)
+    expect(finished.result?.ceilingScore).toBeGreaterThan(80)
+    expect(finished.result?.synergyFitScore).toBeGreaterThan(70)
     expect(finished.result?.budgetScore).toBe(5)
-    expect(finished.result?.offenseScore).toBeGreaterThan(80)
-    expect(finished.result?.defenseScore).toBeGreaterThan(80)
-    const dynastyScore = finished.result?.dynastyScore ?? 0
-    const baseWins = Math.round(20 + dynastyScore * 0.6)
-    // Dimension adjustment is ±4, so projected should be within [base-4, base+4]
-    expect(finished.result?.projectedWins).toBeGreaterThanOrEqual(baseWins - 4)
-    expect(finished.result?.projectedWins).toBeLessThanOrEqual(baseWins + 4)
-    expect(finished.result?.championshipOdds).toBeLessThan(100)
+    expect(finished.result?.projectedWins).toBe(79)
+    expect(finished.result?.championshipOdds).toBe(87)
+  })
+
+  it('does not rate a high-OVR but overlapping random lineup as a 70-win favorite', () => {
+    const randomHighOvrLineup = finishLineup(
+      {
+        PG: 'donovan-mitchell',
+        SG: 'allen-iverson',
+        SF: 'anthony-edwards',
+        PF: 'zion-williamson',
+        C: 'moses-malone',
+        SIX: null,
+      },
+      'cade-cunningham',
+      1,
+    )
+
+    expect(randomHighOvrLineup.result?.peakImpactScore).toBeGreaterThan(80)
+    expect(randomHighOvrLineup.result?.synergyFitScore).toBeLessThanOrEqual(52)
+    expect(randomHighOvrLineup.result?.dynastyScore).toBeLessThanOrEqual(73)
+    expect(randomHighOvrLineup.result?.projectedWins).toBeLessThanOrEqual(56)
+    expect(randomHighOvrLineup.result?.championshipOdds).toBeLessThanOrEqual(10)
+  })
+
+  it('projects a real all-time superteam into the mid-70-win range', () => {
+    const allTimeSuperteam = finishLineup(
+      {
+        PG: 'allen-iverson',
+        SG: 'michael-jordan',
+        SF: 'tracy-mcgrady',
+        PF: 'elgin-baylor',
+        C: 'moses-malone',
+        SIX: null,
+      },
+      'anthony-edwards',
+      5,
+    )
+
+    expect(allTimeSuperteam.result?.peakImpactScore).toBeGreaterThanOrEqual(86)
+    expect(allTimeSuperteam.result?.synergyFitScore).toBeGreaterThanOrEqual(70)
+    expect(allTimeSuperteam.result?.defenseImpactScore).toBeGreaterThanOrEqual(82)
+    expect(allTimeSuperteam.result?.projectedWins).toBeGreaterThanOrEqual(76)
+    expect(allTimeSuperteam.result?.championshipOdds).toBeGreaterThanOrEqual(70)
+  })
+
+  it('keeps a mid-tier lineup below dynasty contention', () => {
+    const midTierLineup = finishLineup(
+      {
+        PG: 'chauncey-billups',
+        SG: 'joe-dumars',
+        SF: 'chris-mullin',
+        PF: 'pascal-siakam',
+        C: 'marc-gasol',
+        SIX: null,
+      },
+      'jrue-holiday',
+      12,
+    )
+
+    expect(midTierLineup.result?.ceilingScore).toBeLessThan(90)
+    expect(midTierLineup.result?.dynastyScore).toBeLessThan(72)
+    expect(midTierLineup.result?.projectedWins).toBeLessThanOrEqual(55)
+    expect(midTierLineup.result?.championshipOdds).toBeLessThanOrEqual(10)
+  })
+
+  it('does not let budget directly change dynasty score for the same lineup', () => {
+    const lineup = {
+      PG: 'stephen-curry',
+      SG: 'michael-jordan',
+      SF: 'lebron-james',
+      PF: 'tim-duncan',
+      C: 'shaquille-oneal',
+      SIX: null,
+    }
+    const lowBudget = finishLineup(lineup, 'kobe-bryant', 0)
+    const highBudget = finishLineup(lineup, 'kobe-bryant', 30)
+
+    expect(lowBudget.result?.dynastyScore).toBe(highBudget.result?.dynastyScore)
+    expect(lowBudget.result?.budgetScore).not.toBe(highBudget.result?.budgetScore)
+  })
+
+  it('rewards Curry gravity and expert specialists over merely balanced modern scoring', () => {
+    const currySpecialistLineup = finishLineup(
+      {
+        PG: 'stephen-curry',
+        SG: 'klay-thompson',
+        SF: 'scottie-pippen',
+        PF: 'dennis-rodman',
+        C: 'tim-duncan',
+        SIX: null,
+      },
+      'reggie-miller',
+    )
+    const balancedModernLineup = finishLineup(
+      {
+        PG: 'donovan-mitchell',
+        SG: 'anthony-edwards',
+        SF: 'jayson-tatum',
+        PF: 'bam-adebayo',
+        C: 'karl-anthony-towns',
+        SIX: null,
+      },
+      'jaylen-brown',
+    )
+
+    expect(currySpecialistLineup.result?.dynastyScore).toBeGreaterThan(
+      balancedModernLineup.result?.dynastyScore ?? 0,
+    )
   })
 
   it('can end at the 20 round limit without a full lineup', () => {

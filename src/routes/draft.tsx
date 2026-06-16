@@ -24,7 +24,10 @@ function DraftRoute() {
     return () => {
       if (resultTimerRef.current !== null) {
         window.clearTimeout(resultTimerRef.current)
+        resultTimerRef.current = null
       }
+      resultScheduledRef.current = false
+      useGameStore.setState({ isResultPending: false })
     }
   }, [])
 

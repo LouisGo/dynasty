@@ -5,9 +5,12 @@ import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const projectRoot = path.resolve(__dirname, '..')
 const seedPath = path.join(__dirname, 'data', 'legend-seed-snapshot.json')
+const baseSnapshotPath = path.join(__dirname, 'data', 'legend-base-snapshot.json')
 const overridesPath = path.join(__dirname, 'data', 'legend-overrides.json')
 const attributesPath = path.join(__dirname, 'data', '2k-attribute-snapshot.json')
 const chineseNamesPath = path.join(__dirname, 'data', 'legend-chinese-names.json')
+const curationPath = path.join(__dirname, 'data', 'legend-pool-curation.json')
+const peakImpactOverridesPath = path.join(__dirname, 'data', 'peak-impact-overrides.json')
 const outputPath = path.join(projectRoot, 'src', 'data', 'legend-pool.json')
 
 function getTier(sourceRating) {
@@ -59,6 +62,18 @@ async function readJson(filePath) {
   return JSON.parse(raw)
 }
 
+async function readJsonOptional(filePath, fallback) {
+  try {
+    return await readJson(filePath)
+  } catch (error) {
+    if (error?.code === 'ENOENT') {
+      return fallback
+    }
+
+    throw error
+  }
+}
+
 function assertRating(value, label) {
   if (!Number.isFinite(value) || value < 0 || value > 99) {
     throw new Error(`${label} must be a 0-99 number.`)
@@ -71,6 +86,22 @@ function weightedAverage(parts) {
 
 function clampRating(value) {
   return Math.max(25, Math.min(99, Math.round(value)))
+}
+
+function mergeSourcePools(primary, additions) {
+  const byId = new Map()
+
+  for (const player of primary) {
+    byId.set(player.id, player)
+  }
+
+  for (const player of additions) {
+    if (!byId.has(player.id)) {
+      byId.set(player.id, player)
+    }
+  }
+
+  return [...byId.values()]
 }
 
 const positionProfiles = {
@@ -223,35 +254,6 @@ function buildAttributeProfile(player, snapshot) {
 
   return {
     ratingModelVersion: '2k-attributes-v1',
-    ratings: {
-      offense: weightedAverage([
-        [groups.outsideScoring, 0.35],
-        [groups.insideScoring, 0.25],
-        [groups.playmaking, 0.25],
-        [attributes.offensiveConsistency, 0.1],
-        [attributes.shotIQ, 0.05],
-      ]),
-      defense: weightedAverage([
-        [groups.defense, 0.65],
-        [groups.rebounding, 0.2],
-        [attributes.defensiveConsistency, 0.1],
-        [attributes.helpDefenseIQ, 0.05],
-      ]),
-      physical: weightedAverage([
-        [groups.athleticism, 0.45],
-        [attributes.stamina, 0.2],
-        [attributes.durability, 0.15],
-        [attributes.strength, 0.1],
-        [attributes.agility, 0.1],
-      ]),
-      mentality: weightedAverage([
-        [groups.intangibles, 0.35],
-        [attributes.shotIQ, 0.2],
-        [attributes.passIQ, 0.15],
-        [attributes.offensiveConsistency, 0.15],
-        [attributes.defensiveConsistency, 0.15],
-      ]),
-    },
     sourceAttributes: {
       sourceVersion: sourceEntry.sourceVersion,
       groups,
@@ -260,6 +262,99 @@ function buildAttributeProfile(player, snapshot) {
     attributeSourceUrl: sourceEntry.sourceUrl,
     attributeSourceStatus: sourceEntry.sourceStatus,
   }
+}
+
+function getPeakSeasonLabel(sourceVersion) {
+  if (!sourceVersion) {
+    return 'peak profile'
+  }
+
+  return sourceVersion
+    .replace(/^NBA 2K26 /, '')
+    .replace(/ NBA 2K26 Rating/, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function buildPeakImpactProfile(player, attributeProfile, override) {
+  const groups = attributeProfile.sourceAttributes.groups
+  const attributes = attributeProfile.sourceAttributes.attributes
+  const sourceIsVerified = attributeProfile.attributeSourceStatus === 'verified-2k-snapshot'
+
+  const primaryEngine = weightedAverage([
+    [groups.outsideScoring, 0.22],
+    [groups.insideScoring, 0.18],
+    [groups.playmaking, 0.28],
+    [attributes.offensiveConsistency, 0.17],
+    [attributes.shotIQ, 0.1],
+    [player.sourceRating, 0.05],
+  ])
+  const gravity = weightedAverage([
+    [groups.outsideScoring, 0.52],
+    [attributes.shotIQ, 0.18],
+    [groups.playmaking, 0.13],
+    [attributes.offensiveConsistency, 0.17],
+  ])
+  const defensiveAnchor = weightedAverage([
+    [groups.defense, 0.48],
+    [groups.rebounding, 0.18],
+    [attributes.defensiveConsistency, 0.2],
+    [attributes.helpDefenseIQ, 0.14],
+  ])
+  const wingValue = weightedAverage([
+    [groups.defense, 0.28],
+    [groups.outsideScoring, 0.18],
+    [groups.playmaking, 0.16],
+    [groups.athleticism, 0.16],
+    [attributes.agility, 0.12],
+    [groups.intangibles, 0.1],
+  ])
+  const rebounding = groups.rebounding
+  const availability = weightedAverage([
+    [attributes.stamina, 0.45],
+    [attributes.durability, 0.4],
+    [player.sourceRating, 0.15],
+  ])
+  const rawPeakValue = weightedAverage([
+    [player.sourceRating, 0.32],
+    [primaryEngine, 0.22],
+    [Math.max(gravity, defensiveAnchor, wingValue), 0.16],
+    [defensiveAnchor, 0.1],
+    [rebounding, 0.08],
+    [availability, 0.12],
+  ])
+  const peakFloor = player.sourceRating
+  const peakValue = Math.max(rawPeakValue, peakFloor)
+
+  const profile = {
+    peakSeasonLabel:
+      override?.peakSeasonLabel ?? getPeakSeasonLabel(attributeProfile.sourceAttributes.sourceVersion),
+    sourceType: override?.sourceType ?? (sourceIsVerified ? 'verified-2k-snapshot' : 'estimated-peak'),
+    confidence: override?.confidence ?? (sourceIsVerified ? 'high' : 'low'),
+    manualCorrectionNote: override?.manualCorrectionNote ?? null,
+    peakValue,
+    primaryEngine,
+    gravity,
+    defensiveAnchor,
+    wingValue,
+    rebounding,
+    availability,
+  }
+
+  for (const key of [
+    'peakValue',
+    'primaryEngine',
+    'gravity',
+    'defensiveAnchor',
+    'wingValue',
+    'rebounding',
+    'availability',
+  ]) {
+    profile[key] = override?.[key] ?? profile[key]
+    assertRating(profile[key], `${player.id}.peakImpact.${key}`)
+  }
+
+  return profile
 }
 
 async function tryRemoteFetch() {
@@ -308,10 +403,14 @@ async function main() {
   const overrides = await readJson(overridesPath)
   const attributes = await readJson(attributesPath)
   const chineseNames = await readJson(chineseNamesPath)
+  const curation = await readJson(curationPath)
+  const peakImpactOverrides = await readJson(peakImpactOverridesPath)
   const remote = await tryRemoteFetch()
-  const sourcePool = seed.length >= 150 ? seed : await readJson(outputPath)
+  const baseSnapshot = await readJsonOptional(baseSnapshotPath, seed)
+  const sourcePool = mergeSourcePools(baseSnapshot, seed)
+  const excludedIds = new Set(Object.keys(curation.excludedIds ?? {}))
 
-  const legendPool = sourcePool.map((player) => {
+  const legendPool = sourcePool.filter((player) => !excludedIds.has(player.id)).map((player) => {
     const override = overrides[player.id]
     const positions = override?.positions ?? player.positions
 
@@ -321,6 +420,7 @@ async function main() {
 
     const tier = getTier(player.sourceRating)
     const attributeProfile = buildAttributeProfile({ ...player, positions }, attributes)
+    const peakImpact = buildPeakImpactProfile(player, attributeProfile, peakImpactOverrides[player.id])
 
     return {
       id: player.id,
@@ -336,8 +436,18 @@ async function main() {
       sourceStatus:
         player.sourceStatus === 'focused-modern-snapshot' ? player.sourceStatus : remote.source,
       ...attributeProfile,
+      peakImpact,
     }
-  })
+  }).sort((left, right) => right.sourceRating - left.sourceRating || left.name.localeCompare(right.name))
+
+  if (
+    curation.targetCount &&
+    Math.abs(legendPool.length - curation.targetCount) > 3
+  ) {
+    throw new Error(
+      `Curated pool has ${legendPool.length} cards, expected around ${curation.targetCount}.`,
+    )
+  }
 
   await mkdir(path.dirname(outputPath), { recursive: true })
   await writeFile(outputPath, `${JSON.stringify(legendPool, null, 2)}\n`, 'utf8')

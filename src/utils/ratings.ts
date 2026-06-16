@@ -25,15 +25,34 @@ export function getRatingPercent(value: number | null | undefined) {
   return `${Math.max(0, Math.min(100, formatRatingValue(value) ?? 0))}%`
 }
 
-export function getCoreRatingRows(card: PlayerCard) {
-  const ratings = card.ratings
+export function getPeakImpactRows(card: PlayerCard) {
+  const impact = card.peakImpact
 
   return [
-    { label: '进攻', value: ratings?.offense },
-    { label: '防守', value: ratings?.defense },
-    { label: '体能', value: ratings?.physical },
-    { label: '心态', value: ratings?.mentality },
+    { label: '巅峰值', value: impact.peakValue },
+    { label: '主攻发动', value: impact.primaryEngine },
+    { label: '空间牵制', value: impact.gravity },
+    { label: '防守支点', value: impact.defensiveAnchor },
+    { label: '侧翼价值', value: impact.wingValue },
+    { label: '篮板回合', value: impact.rebounding },
+    { label: '可持续性', value: impact.availability },
   ]
+}
+
+export function getPeakImpactSourceLabel(card: PlayerCard) {
+  const { sourceType, confidence } = card.peakImpact
+  const sourceLabel =
+    sourceType === 'manual-peak'
+      ? '人工巅峰校准'
+      : sourceType === 'hybrid-peak'
+        ? '2K 参考 + 人工巅峰校准'
+        : sourceType === 'estimated-peak'
+          ? '巅峰估算'
+          : '2K 快照参考'
+  const confidenceLabel =
+    confidence === 'high' ? '高置信' : confidence === 'medium' ? '中置信' : '低置信'
+
+  return `${sourceLabel} · ${confidenceLabel}`
 }
 
 export function getAttributeGroupRows(card: PlayerCard) {

@@ -21,18 +21,19 @@ function RootLayout() {
     if (isReload && pathname !== '/') {
       navigate({ to: '/', replace: true })
     }
-  }, [])
+  }, [navigate, pathname])
 
   return (
     <>
       <Backdrop />
-      <AnimatePresence mode="wait">
+      <AnimatePresence initial={false} mode="popLayout">
         <motion.div
           key={pathname}
-          initial={{ opacity: 0, y: 14, scale: 0.985, filter: 'saturate(0.82)' }}
+          className="route-transition-page"
+          initial={{ opacity: 0, y: 10, scale: 0.99, filter: 'saturate(0.88)' }}
           animate={{ opacity: 1, y: 0, scale: 1, filter: 'saturate(1)' }}
-          exit={{ opacity: 0, y: -14, scale: 0.985 }}
-          transition={{ duration: 0.36, ease: [0.16, 1, 0.3, 1] }}
+          exit={{ opacity: 0, y: -8, scale: 0.99, filter: 'saturate(0.9)' }}
+          transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
         >
           <Outlet />
         </motion.div>

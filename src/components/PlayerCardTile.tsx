@@ -1,4 +1,9 @@
-import type { CSSProperties } from 'react'
+import type {
+  CSSProperties,
+  KeyboardEvent as ReactKeyboardEvent,
+  MouseEvent as ReactMouseEvent,
+  PointerEvent as ReactPointerEvent,
+} from 'react'
 import { getTeamCode, getTeamLogoUrl } from '../utils/teams'
 import { getDisplayName, tierClassName, formatPriceLabel, formatPositions } from '../utils/format'
 import { getRatingLabel } from '../utils/ratings'
@@ -34,15 +39,38 @@ export function PlayerCardTile({
   const originalPrice = (card as unknown as Record<string, unknown>).originalPrice as number | undefined
   const isHalfPrice = discountType === 'half-price'
 
+  function openDetail() {
+    if (onLongPressOpen) {
+      onLongPressOpen({ card, price, statusLabel, size })
+    }
+  }
+
   const { isPressing, longPressHandlers } = useLongPress({
-    onLongPress: () => {
-      if (onLongPressOpen) {
-        onLongPressOpen({ card, price, statusLabel, size })
-      }
-    },
+    onLongPress: openDetail,
   })
 
   const hasLongPress = Boolean(onLongPressOpen)
+
+  function handleDetailIconPointerDown(event: ReactPointerEvent<HTMLSpanElement>) {
+    event.preventDefault()
+    event.stopPropagation()
+  }
+
+  function handleDetailIconClick(event: ReactMouseEvent<HTMLSpanElement>) {
+    event.preventDefault()
+    event.stopPropagation()
+    openDetail()
+  }
+
+  function handleDetailIconKeyDown(event: ReactKeyboardEvent<HTMLSpanElement>) {
+    if (event.key !== 'Enter' && event.key !== ' ') {
+      return
+    }
+
+    event.preventDefault()
+    event.stopPropagation()
+    openDetail()
+  }
 
   return (
     <div
@@ -91,13 +119,26 @@ export function PlayerCardTile({
         />
       )}
       <div className="player-card-head">
-        <h3>{getDisplayName(card)}</h3>
+        <h3>
+          <span className="player-card-name-text">{getDisplayName(card)}</span>
+          {hasLongPress && (
+            <span
+              className="player-card-detail-trigger"
+              role="button"
+              tabIndex={0}
+              aria-label={`查看 ${getDisplayName(card)} 详情`}
+              onPointerDown={handleDetailIconPointerDown}
+              onClick={handleDetailIconClick}
+              onKeyDown={handleDetailIconKeyDown}
+            />
+          )}
+        </h3>
         {size === 'large' && <p className="player-card-subtitle">{getRatingLabel(card.sourceRating)}</p>}
       </div>
       <div className="player-card-stats">
         <div className="player-card-stat">
-          <span>总评</span>
-          <strong>{card.sourceRating}</strong>
+          <span>巅峰</span>
+          <strong>{card.peakImpact.peakValue}</strong>
         </div>
         <div className="player-card-stat">
           <span>{statusLabel}</span>

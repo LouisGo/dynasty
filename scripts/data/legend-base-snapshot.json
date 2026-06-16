@@ -1,0 +1,1757 @@
+[
+  {
+    "id": "michael-jordan",
+    "name": "Michael Jordan",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 99,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "GOAT"
+  },
+  {
+    "id": "lebron-james",
+    "name": "LeBron James",
+    "positions": [
+      "PG",
+      "SG",
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 99,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "历史级建队核心。"
+  },
+  {
+    "id": "kareem-abdul-jabbar",
+    "name": "Kareem Abdul-Jabbar",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 99,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "历史级建队核心。"
+  },
+  {
+    "id": "magic-johnson",
+    "name": "Magic Johnson",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 98,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "历史级建队核心。"
+  },
+  {
+    "id": "kobe-bryant",
+    "name": "Kobe Bryant",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 98,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "历史级建队核心。"
+  },
+  {
+    "id": "shaquille-oneal",
+    "name": "Shaquille O'Neal",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 98,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "历史级建队核心。"
+  },
+  {
+    "id": "tim-duncan",
+    "name": "Tim Duncan",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 98,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "历史级建队核心。"
+  },
+  {
+    "id": "larry-bird",
+    "name": "Larry Bird",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 98,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "历史级建队核心。"
+  },
+  {
+    "id": "hakeem-olajuwon",
+    "name": "Hakeem Olajuwon",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 97,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "历史级建队核心。"
+  },
+  {
+    "id": "wilt-chamberlain",
+    "name": "Wilt Chamberlain",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 97,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "历史级建队核心。"
+  },
+  {
+    "id": "stephen-curry",
+    "name": "Stephen Curry",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 97,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "历史级建队核心。"
+  },
+  {
+    "id": "bill-russell",
+    "name": "Bill Russell",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 97,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "历史级建队核心。"
+  },
+  {
+    "id": "kevin-durant",
+    "name": "Kevin Durant",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 96,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "能改变阵容上限的超巨。"
+  },
+  {
+    "id": "julius-erving",
+    "name": "Julius Erving",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 96,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "能改变阵容上限的超巨。"
+  },
+  {
+    "id": "dirk-nowitzki",
+    "name": "Dirk Nowitzki",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 95,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "能改变阵容上限的超巨。"
+  },
+  {
+    "id": "kevin-garnett",
+    "name": "Kevin Garnett",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 95,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "能改变阵容上限的超巨。"
+  },
+  {
+    "id": "moses-malone",
+    "name": "Moses Malone",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 95,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "能改变阵容上限的超巨。"
+  },
+  {
+    "id": "nikola-jokic",
+    "name": "Nikola Jokic",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 97,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "历史级建队核心。"
+  },
+  {
+    "id": "giannis-antetokounmpo",
+    "name": "Giannis Antetokounmpo",
+    "positions": [
+      "SF",
+      "PF",
+      "C"
+    ],
+    "sourceRating": 96,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "能改变阵容上限的超巨。"
+  },
+  {
+    "id": "dwyane-wade",
+    "name": "Dwyane Wade",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 95,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "能改变阵容上限的超巨。"
+  },
+  {
+    "id": "isiah-thomas",
+    "name": "Isiah Thomas",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 94,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "charles-barkley",
+    "name": "Charles Barkley",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 94,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "allen-iverson",
+    "name": "Allen Iverson",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 94,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "scottie-pippen",
+    "name": "Scottie Pippen",
+    "positions": [
+      "SG",
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 94,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "david-robinson",
+    "name": "David Robinson",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 94,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "john-stockton",
+    "name": "John Stockton",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 94,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "karl-malone",
+    "name": "Karl Malone",
+    "positions": [
+      "PF"
+    ],
+    "sourceRating": 94,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "chris-paul",
+    "name": "Chris Paul",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 93,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "kawhi-leonard",
+    "name": "Kawhi Leonard",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 93,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "steve-nash",
+    "name": "Steve Nash",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 93,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "james-harden",
+    "name": "James Harden",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 93,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "tracy-mcgrady",
+    "name": "Tracy McGrady",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 93,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "patrick-ewing",
+    "name": "Patrick Ewing",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 93,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "clyde-drexler",
+    "name": "Clyde Drexler",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 92,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "ray-allen",
+    "name": "Ray Allen",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 92,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "reggie-miller",
+    "name": "Reggie Miller",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 92,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "manu-ginobili",
+    "name": "Manu Ginobili",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 92,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "pau-gasol",
+    "name": "Pau Gasol",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 92,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "dwight-howard",
+    "name": "Dwight Howard",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 92,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "yao-ming",
+    "name": "Yao Ming",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 92,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "vince-carter",
+    "name": "Vince Carter",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 91,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "damian-lillard",
+    "name": "Damian Lillard",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 91,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "dominique-wilkins",
+    "name": "Dominique Wilkins",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 91,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "paul-pierce",
+    "name": "Paul Pierce",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 91,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "dennis-rodman",
+    "name": "Dennis Rodman",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 91,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "gary-payton",
+    "name": "Gary Payton",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 90,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "jason-kidd",
+    "name": "Jason Kidd",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 90,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "rick-barry",
+    "name": "Rick Barry",
+    "positions": [
+      "SF"
+    ],
+    "sourceRating": 90,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "george-gervin",
+    "name": "George Gervin",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 90,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "elvin-hayes",
+    "name": "Elvin Hayes",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 90,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "bob-mcadoo",
+    "name": "Bob McAdoo",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 90,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "anthony-davis",
+    "name": "Anthony Davis",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 90,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "russell-westbrook",
+    "name": "Russell Westbrook",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 90,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "luka-doncic",
+    "name": "Luka Doncic",
+    "positions": [
+      "PG",
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 96,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "能改变阵容上限的超巨。"
+  },
+  {
+    "id": "joel-embiid",
+    "name": "Joel Embiid",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 90,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "nate-archibald",
+    "name": "Nate Archibald",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 89,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "alex-english",
+    "name": "Alex English",
+    "positions": [
+      "SF"
+    ],
+    "sourceRating": 89,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "bernard-king",
+    "name": "Bernard King",
+    "positions": [
+      "SF"
+    ],
+    "sourceRating": 89,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "chris-webber",
+    "name": "Chris Webber",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 89,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "alonzomourning",
+    "name": "Alonzo Mourning",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 89,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "dikembe-mutombo",
+    "name": "Dikembe Mutombo",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 89,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "tony-parker",
+    "name": "Tony Parker",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 89,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "carmelo-anthony",
+    "name": "Carmelo Anthony",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 89,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "klay-thompson",
+    "name": "Klay Thompson",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 89,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "draymond-green",
+    "name": "Draymond Green",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 89,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "jimmy-butler",
+    "name": "Jimmy Butler",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 89,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "paul-george",
+    "name": "Paul George",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 88,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "kyrie-irving",
+    "name": "Kyrie Irving",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 88,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "grant-hill",
+    "name": "Grant Hill",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 88,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "penny-hardaway",
+    "name": "Penny Hardaway",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 88,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "shawn-kemp",
+    "name": "Shawn Kemp",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 88,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "mitch-richmond",
+    "name": "Mitch Richmond",
+    "positions": [
+      "SG"
+    ],
+    "sourceRating": 88,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "joe-dumars",
+    "name": "Joe Dumars",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 88,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "sidney-moncrief",
+    "name": "Sidney Moncrief",
+    "positions": [
+      "SG"
+    ],
+    "sourceRating": 88,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "artis-gilmore",
+    "name": "Artis Gilmore",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 88,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "robert-parish",
+    "name": "Robert Parish",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 88,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "kevin-mchale",
+    "name": "Kevin McHale",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 88,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "bill-walton",
+    "name": "Bill Walton",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 88,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "tim-hardaway",
+    "name": "Tim Hardaway",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 86,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "mark-price",
+    "name": "Mark Price",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 86,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "derrick-rose",
+    "name": "Derrick Rose",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 86,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "chauncey-billups",
+    "name": "Chauncey Billups",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 86,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "rajon-rondo",
+    "name": "Rajon Rondo",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 86,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "amar-e-stoudemire",
+    "name": "Amar'e Stoudemire",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 86,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "chris-bosh",
+    "name": "Chris Bosh",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 86,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "blake-griffin",
+    "name": "Blake Griffin",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 86,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "lamarcus-aldridge",
+    "name": "LaMarcus Aldridge",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 86,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "marc-gasol",
+    "name": "Marc Gasol",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 86,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "ben-wallace",
+    "name": "Ben Wallace",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 86,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "rasheed-wallace",
+    "name": "Rasheed Wallace",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 86,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "peja-stojakovic",
+    "name": "Peja Stojakovic",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 85,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "预算紧张时的可靠轮换。"
+  },
+  {
+    "id": "chris-mullin",
+    "name": "Chris Mullin",
+    "positions": [
+      "SF"
+    ],
+    "sourceRating": 85,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "预算紧张时的可靠轮换。"
+  },
+  {
+    "id": "gilbert-arenas",
+    "name": "Gilbert Arenas",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 85,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "预算紧张时的可靠轮换。"
+  },
+  {
+    "id": "demar-derozan",
+    "name": "DeMar DeRozan",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 85,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "预算紧张时的可靠轮换。"
+  },
+  {
+    "id": "john-wall",
+    "name": "John Wall",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 84,
+    "source": "snapshot-2026-06-13",
+    "sourceStatus": "focused-modern-snapshot",
+    "tagline": "预算紧张时的可靠轮换。"
+  },
+  {
+    "id": "shai-gilgeous-alexander",
+    "name": "Shai Gilgeous-Alexander",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 97,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "历史级建队核心。"
+  },
+  {
+    "id": "victor-wembanyama",
+    "name": "Victor Wembanyama",
+    "positions": [
+      "C",
+      "PF"
+    ],
+    "sourceRating": 95,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "能改变阵容上限的超巨。"
+  },
+  {
+    "id": "anthony-edwards",
+    "name": "Anthony Edwards",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 92,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "jalen-brunson",
+    "name": "Jalen Brunson",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 92,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "cade-cunningham",
+    "name": "Cade Cunningham",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 92,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "jaylen-brown",
+    "name": "Jaylen Brown",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 91,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "jayson-tatum",
+    "name": "Jayson Tatum",
+    "positions": [
+      "PF",
+      "SF"
+    ],
+    "sourceRating": 93,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "donovan-mitchell",
+    "name": "Donovan Mitchell",
+    "positions": [
+      "SG",
+      "PG"
+    ],
+    "sourceRating": 92,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "tyrese-haliburton",
+    "name": "Tyrese Haliburton",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 91,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "devin-booker",
+    "name": "Devin Booker",
+    "positions": [
+      "SG",
+      "PG"
+    ],
+    "sourceRating": 92,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "tyrese-maxey",
+    "name": "Tyrese Maxey",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 91,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "karl-anthony-towns",
+    "name": "Karl-Anthony Towns",
+    "positions": [
+      "C",
+      "PF"
+    ],
+    "sourceRating": 90,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "trae-young",
+    "name": "Trae Young",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 89,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "bam-adebayo",
+    "name": "Bam Adebayo",
+    "positions": [
+      "C",
+      "PF"
+    ],
+    "sourceRating": 89,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "jamal-murray",
+    "name": "Jamal Murray",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 89,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "scottie-barnes",
+    "name": "Scottie Barnes",
+    "positions": [
+      "PF",
+      "PG"
+    ],
+    "sourceRating": 88,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "jalen-johnson",
+    "name": "Jalen Johnson",
+    "positions": [
+      "PF",
+      "SF"
+    ],
+    "sourceRating": 88,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "paolo-banchero",
+    "name": "Paolo Banchero",
+    "positions": [
+      "PF",
+      "SF"
+    ],
+    "sourceRating": 88,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "alperen-sengun",
+    "name": "Alperen Sengun",
+    "positions": [
+      "C",
+      "PF"
+    ],
+    "sourceRating": 88,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "lamelo-ball",
+    "name": "LaMelo Ball",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 88,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "og-anunoby",
+    "name": "OG Anunoby",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 87,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "stephon-castle",
+    "name": "Stephon Castle",
+    "positions": [
+      "SG",
+      "PG"
+    ],
+    "sourceRating": 87,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "deni-avdija",
+    "name": "Deni Avdija",
+    "positions": [
+      "SF",
+      "SG"
+    ],
+    "sourceRating": 87,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "cooper-flagg",
+    "name": "Cooper Flagg",
+    "positions": [
+      "SF",
+      "PG"
+    ],
+    "sourceRating": 87,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "ja-morant",
+    "name": "Ja Morant",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 89,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "jalen-williams",
+    "name": "Jalen Williams",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 90,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "evan-mobley",
+    "name": "Evan Mobley",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 90,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "稳定的明星主力。"
+  },
+  {
+    "id": "pascal-siakam",
+    "name": "Pascal Siakam",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 88,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "chet-holmgren",
+    "name": "Chet Holmgren",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 88,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "amen-thompson",
+    "name": "Amen Thompson",
+    "positions": [
+      "SG",
+      "PG"
+    ],
+    "sourceRating": 87,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "tyler-herro",
+    "name": "Tyler Herro",
+    "positions": [
+      "SG",
+      "PG"
+    ],
+    "sourceRating": 86,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "franz-wagner",
+    "name": "Franz Wagner",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 87,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "austin-reaves",
+    "name": "Austin Reaves",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 85,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "预算紧张时的可靠轮换。"
+  },
+  {
+    "id": "lauri-markkanen",
+    "name": "Lauri Markkanen",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 87,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "brandon-miller",
+    "name": "Brandon Miller",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 86,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "domantas-sabonis",
+    "name": "Domantas Sabonis",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 89,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "deaaron-fox",
+    "name": "De'Aaron Fox",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 88,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "darius-garland",
+    "name": "Darius Garland",
+    "positions": [
+      "PG"
+    ],
+    "sourceRating": 88,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "jalen-duren",
+    "name": "Jalen Duren",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 88,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "rudy-gobert",
+    "name": "Rudy Gobert",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 88,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "zion-williamson",
+    "name": "Zion Williamson",
+    "positions": [
+      "SF",
+      "PF"
+    ],
+    "sourceRating": 87,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "derrick-white",
+    "name": "Derrick White",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 86,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "jrue-holiday",
+    "name": "Jrue Holiday",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 86,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "julius-randle",
+    "name": "Julius Randle",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 86,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "desmond-bane",
+    "name": "Desmond Bane",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 86,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "zach-lavine",
+    "name": "Zach LaVine",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 86,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "mikal-bridges",
+    "name": "Mikal Bridges",
+    "positions": [
+      "SG",
+      "SF"
+    ],
+    "sourceRating": 86,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "jarrett-allen",
+    "name": "Jarrett Allen",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 86,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "kristaps-porzingis",
+    "name": "Kristaps Porzingis",
+    "positions": [
+      "PF",
+      "C"
+    ],
+    "sourceRating": 86,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "适合补齐阵容结构的强力拼图。"
+  },
+  {
+    "id": "dejounte-murray",
+    "name": "Dejounte Murray",
+    "positions": [
+      "PG",
+      "SG"
+    ],
+    "sourceRating": 85,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "预算紧张时的可靠轮换。"
+  },
+  {
+    "id": "bradley-beal",
+    "name": "Bradley Beal",
+    "positions": [
+      "SG",
+      "PG"
+    ],
+    "sourceRating": 85,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "预算紧张时的可靠轮换。"
+  },
+  {
+    "id": "khris-middleton",
+    "name": "Khris Middleton",
+    "positions": [
+      "SF",
+      "SG"
+    ],
+    "sourceRating": 85,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "预算紧张时的可靠轮换。"
+  },
+  {
+    "id": "cj-mccollum",
+    "name": "CJ McCollum",
+    "positions": [
+      "SG",
+      "PG"
+    ],
+    "sourceRating": 85,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "预算紧张时的可靠轮换。"
+  },
+  {
+    "id": "aaron-gordon",
+    "name": "Aaron Gordon",
+    "positions": [
+      "PF",
+      "SF"
+    ],
+    "sourceRating": 85,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "预算紧张时的可靠轮换。"
+  },
+  {
+    "id": "myles-turner",
+    "name": "Myles Turner",
+    "positions": [
+      "C"
+    ],
+    "sourceRating": 85,
+    "source": "nba-dynasty-curated-2026-06-14",
+    "sourceStatus": "https://nba.2k.com/2k26/ratings/",
+    "tagline": "预算紧张时的可靠轮换。"
+  }
+]

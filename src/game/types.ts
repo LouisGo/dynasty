@@ -14,13 +14,8 @@ export type Tier = 'T0' | 'T1' | 'T2' | 'T3' | 'T4'
 export type OfferState = 'enabled' | 'too-expensive' | 'duplicate' | 'slot-blocked'
 export type GameOverReason = 'lineup-complete' | 'budget-exhausted' | 'round-limit'
 export type AttributeSourceStatus = 'verified-2k-snapshot' | 'estimated-archetype-v1'
-
-export interface CoreRatings {
-  offense: number
-  defense: number
-  physical: number
-  mentality: number
-}
+export type PeakImpactSourceType = 'verified-2k-snapshot' | 'manual-peak' | 'hybrid-peak' | 'estimated-peak'
+export type PeakImpactConfidence = 'high' | 'medium' | 'low'
 
 export interface AttributeGroups {
   outsideScoring: number
@@ -48,6 +43,20 @@ export interface SourceAttributes {
   }
 }
 
+export interface PeakImpact {
+  peakSeasonLabel: string
+  sourceType: PeakImpactSourceType
+  confidence: PeakImpactConfidence
+  manualCorrectionNote: string | null
+  peakValue: number
+  primaryEngine: number
+  gravity: number
+  defensiveAnchor: number
+  wingValue: number
+  rebounding: number
+  availability: number
+}
+
 export interface PlayerCard {
   id: string
   name: string
@@ -61,8 +70,8 @@ export interface PlayerCard {
   source: string
   sourceStatus: string
   ratingModelVersion: '2k-attributes-v1'
-  ratings: CoreRatings | null
   sourceAttributes: SourceAttributes | null
+  peakImpact: PeakImpact
   attributeSourceUrl: string | null
   attributeSourceStatus: AttributeSourceStatus
 }
@@ -109,14 +118,16 @@ export interface ResultSummary {
   projectedWins: number
   projectedLosses: number
   championshipOdds: number
+  peakImpactScore: number
   strengthScore: number
   balanceScore: number
   superstarScore: number
   budgetScore: number
-  offenseScore: number
-  defenseScore: number
-  physicalScore: number
-  mentalityScore: number
+  offenseImpactScore: number
+  defenseImpactScore: number
+  ceilingScore: number
+  synergyFitScore: number
+  availabilityScore: number
   budgetSpent: number
   budgetRemaining: number
   roundReached: number

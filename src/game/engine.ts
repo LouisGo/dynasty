@@ -393,50 +393,81 @@ function createResultSummary(
         }
       : null
 
-  const starterRatings = STARTING_POSITIONS.map((slot) => {
-    const playerId = arrangement[slot]
-    const card = playerId ? playerIndex.get(playerId) : null
-    return card?.sourceRating ?? 0
-  })
-  const sixthRating = sixthMan?.ovr ?? 0
   const isComplete = roster.length >= ROSTER_TARGET && COURT_SLOTS.every((slot) => arrangement[slot])
-  const nonZeroRatings = [...starterRatings, sixthRating].filter((rating) => rating > 0)
-  const ratingSpread =
-    nonZeroRatings.length > 0 ? Math.max(...nonZeroRatings) - Math.min(...nonZeroRatings) : 100
   const lineupCards = COURT_SLOTS.map((slot) => {
     const playerId = arrangement[slot]
     return playerId ? (playerIndex.get(playerId) ?? null) : null
   })
-  const coreAverages = getCoreRatingAverages(lineupCards)
-  const coreRating =
-    coreAverages.offense * 0.35 +
-    coreAverages.defense * 0.3 +
-    coreAverages.physical * 0.15 +
-    coreAverages.mentality * 0.2
-  const coreSpread =
-    Math.max(coreAverages.offense, coreAverages.defense, coreAverages.physical, coreAverages.mentality) -
-    Math.min(coreAverages.offense, coreAverages.defense, coreAverages.physical, coreAverages.mentality)
-  const strengthScore = Number(Math.min(65, coreRating * 0.7).toFixed(1))
-  const balanceScore = getStructureScore(isComplete, roster.length, ratingSpread, coreSpread)
-  const superstarScore = getStarPowerScore(nonZeroRatings)
-  const budgetSpent = STARTING_BUDGET - budgetRemaining
-  const budgetScore = getBudgetScore(isComplete, budgetRemaining)
-  const dynastyScore = Math.min(
-    100,
-    Number((strengthScore + balanceScore + superstarScore + budgetScore).toFixed(1)),
+  const completenessFactor = getCompletenessFactor(lineupCards)
+  const offenseImpactScore = scaleForCompleteness(
+    scoreTopMetric(lineupCards, (card) => card.peakImpact.primaryEngine * 0.56 + card.peakImpact.gravity * 0.44),
+    completenessFactor,
   )
-  const dimAvg =
-    (coreAverages.offense + coreAverages.defense + coreAverages.physical + coreAverages.mentality) / 4
-  const dimSpread =
-    Math.max(coreAverages.offense, coreAverages.defense, coreAverages.physical, coreAverages.mentality) -
-    Math.min(coreAverages.offense, coreAverages.defense, coreAverages.physical, coreAverages.mentality)
-  const dimBalance = Math.max(0, 1 - dimSpread / 50)
-  const dimQuality = Math.max(0, (dimAvg - 55) / 40)
-  const dimAdjustment = Math.min(4, Math.max(-4, Math.round((dimBalance * dimQuality * 2 - 0.6) * 5)))
-
-  const projectedWins = Math.min(82, Math.max(0, Math.round(20 + dynastyScore * 0.6 + dimAdjustment)))
+  const defenseImpactScore = scaleForCompleteness(
+    scoreTopMetric(
+      lineupCards,
+      (card) =>
+        card.peakImpact.defensiveAnchor * 0.5 +
+        card.peakImpact.wingValue * 0.3 +
+        card.peakImpact.rebounding * 0.2,
+    ),
+    completenessFactor,
+  )
+  const ceilingScore = scaleForCompleteness(
+    scoreTopMetric(lineupCards, (card) => card.peakImpact.peakValue),
+    completenessFactor,
+  )
+  const synergyFitScore = scaleForCompleteness(getSynergyFitScore(lineupCards), completenessFactor)
+  const availabilityScore = scaleForCompleteness(
+    scoreWeightedAverage(lineupCards, (card) => card.peakImpact.availability),
+    completenessFactor,
+  )
+  const peakImpactScore = Number(
+    (
+      offenseImpactScore * 0.34 +
+      defenseImpactScore * 0.28 +
+      ceilingScore * 0.18 +
+      synergyFitScore * 0.12 +
+      availabilityScore * 0.08
+    ).toFixed(1),
+  )
+  const budgetSpent = STARTING_BUDGET - budgetRemaining
+  const budgetScore = getDraftValueScore(isComplete, budgetRemaining)
+  const dynastyScore = roundScore(
+    peakImpactScore * 0.54 +
+      synergyFitScore * 0.24 +
+      defenseImpactScore * 0.14 +
+      availabilityScore * 0.08,
+  )
+  const contenderBonus = getContenderWinBonus(
+    dynastyScore,
+    synergyFitScore,
+    defenseImpactScore,
+    ceilingScore,
+  )
+  const projectedWins = Math.min(
+    82,
+    Math.max(
+      0,
+      Math.round(
+        16 +
+          dynastyScore * 0.38 +
+          synergyFitScore * 0.11 +
+          defenseImpactScore * 0.08 +
+          Math.max(0, ceilingScore - 82) * 0.1 +
+          contenderBonus,
+      ),
+    ),
+  )
+  const contenderScore = roundScore(
+    dynastyScore * 0.48 +
+      synergyFitScore * 0.26 +
+      defenseImpactScore * 0.16 +
+      availabilityScore * 0.1 +
+      contenderBonus * 0.6,
+  )
   const championshipOdds = Math.round(
-    (1 / (1 + Math.exp(-((dynastyScore - 80) / 4.5)))) * 100,
+    (1 / (1 + Math.exp(-((contenderScore - 81) / 5.5)))) * 100,
   )
 
   return {
@@ -446,14 +477,16 @@ function createResultSummary(
     projectedWins,
     projectedLosses: 82 - projectedWins,
     championshipOdds,
-    strengthScore: Number(strengthScore.toFixed(1)),
-    balanceScore,
-    superstarScore,
+    peakImpactScore,
+    strengthScore: peakImpactScore,
+    balanceScore: synergyFitScore,
+    superstarScore: ceilingScore,
     budgetScore,
-    offenseScore: Math.min(99, Math.round(coreAverages.offense * 1.1)),
-    defenseScore: Math.min(99, Math.round(coreAverages.defense * 1.1)),
-    physicalScore: Math.min(99, Math.round(coreAverages.physical * 1.1)),
-    mentalityScore: Math.min(99, Math.round(coreAverages.mentality * 1.1)),
+    offenseImpactScore,
+    defenseImpactScore,
+    ceilingScore,
+    synergyFitScore,
+    availabilityScore,
     budgetSpent,
     budgetRemaining,
     roundReached,
@@ -461,99 +494,173 @@ function createResultSummary(
   }
 }
 
-function getCoreRatingAverages(cards: Array<PlayerCard | null>) {
-  let totalWeight = 0
-  const totals = {
-    offense: 0,
-    defense: 0,
-    physical: 0,
-    mentality: 0,
+const TOP_METRIC_WEIGHTS = [0.34, 0.24, 0.16, 0.12, 0.08, 0.06] as const
+
+function getSlotWeight(index: number) {
+  return index === COURT_SLOTS.length - 1 ? 0.72 : 1
+}
+
+function getCompletenessFactor(cards: Array<PlayerCard | null>) {
+  return cards.filter(Boolean).length / COURT_SLOTS.length
+}
+
+function roundScore(value: number) {
+  return Number(Math.max(0, Math.min(99, value)).toFixed(1))
+}
+
+function scaleForCompleteness(score: number, completenessFactor: number) {
+  return roundScore(score * completenessFactor)
+}
+
+function getContenderWinBonus(
+  dynastyScore: number,
+  synergyFitScore: number,
+  defenseImpactScore: number,
+  ceilingScore: number,
+) {
+  if (dynastyScore < 80 || synergyFitScore < 62 || defenseImpactScore < 78) {
+    return 0
   }
+
+  return Math.min(
+    14,
+    Math.max(0, dynastyScore - 78) * 0.95 +
+      Math.max(0, synergyFitScore - 62) * 0.65 +
+      Math.max(0, defenseImpactScore - 78) * 0.55 +
+      Math.max(0, ceilingScore - 92) * 0.5,
+  )
+}
+
+function scoreTopMetric(cards: Array<PlayerCard | null>, selector: (card: PlayerCard) => number) {
+  const values = cards
+    .map((card, index) => (card ? selector(card) * getSlotWeight(index) : 0))
+    .filter((value) => value > 0)
+    .sort((left, right) => right - left)
+
+  if (!values.length) {
+    return 0
+  }
+
+  const weights = TOP_METRIC_WEIGHTS.slice(0, values.length)
+  const weightTotal = weights.reduce((sum, weight) => sum + weight, 0)
+
+  return roundScore(
+    values.reduce((sum, value, index) => sum + value * weights[index], 0) / weightTotal,
+  )
+}
+
+function scoreWeightedAverage(cards: Array<PlayerCard | null>, selector: (card: PlayerCard) => number) {
+  let total = 0
+  let weightTotal = 0
 
   cards.forEach((card, index) => {
     if (!card) {
       return
     }
 
-    const weight = index === COURT_SLOTS.length - 1 ? 0.75 : 1
-    const ratings =
-      card.ratings ?? {
-        offense: card.sourceRating,
-        defense: card.sourceRating,
-        physical: card.sourceRating,
-        mentality: card.sourceRating,
-      }
-
-    totals.offense += ratings.offense * weight
-    totals.defense += ratings.defense * weight
-    totals.physical += ratings.physical * weight
-    totals.mentality += ratings.mentality * weight
-    totalWeight += weight
+    const weight = getSlotWeight(index)
+    total += selector(card) * weight
+    weightTotal += weight
   })
 
-  if (totalWeight === 0) {
-    return {
-      offense: 0,
-      defense: 0,
-      physical: 0,
-      mentality: 0,
-    }
-  }
-
-  return {
-    offense: Number((totals.offense / totalWeight).toFixed(1)),
-    defense: Number((totals.defense / totalWeight).toFixed(1)),
-    physical: Number((totals.physical / totalWeight).toFixed(1)),
-    mentality: Number((totals.mentality / totalWeight).toFixed(1)),
-  }
+  return weightTotal > 0 ? roundScore(total / weightTotal) : 0
 }
 
-function getStructureScore(
-  isComplete: boolean,
-  rosterSize: number,
-  ratingSpread: number,
-  coreSpread: number,
+function getSynergyFitScore(cards: Array<PlayerCard | null>) {
+  const impacts = cards.flatMap((card) => (card ? [card.peakImpact] : []))
+
+  if (!impacts.length) {
+    return 0
+  }
+
+  const starters = cards.slice(0, STARTING_POSITIONS.length)
+  const starterImpacts = starters.flatMap((card) => (card ? [card.peakImpact] : []))
+  const sixthImpact = cards[STARTING_POSITIONS.length]?.peakImpact ?? null
+  const topEngine = Math.max(...impacts.map((impact) => impact.primaryEngine))
+  const topGravityAverage = getTopWeightedImpactAverage(cards, (impact) => impact.gravity, 3)
+  const interiorValues = cards
+    .slice(3, 5)
+    .flatMap((card) =>
+      card ? [card.peakImpact.defensiveAnchor * 0.58 + card.peakImpact.rebounding * 0.42] : [],
+    )
+  const interiorFoundation = Math.max(...interiorValues, 0)
+  const wingDefenseValues = cards
+    .slice(1, 4)
+    .flatMap((card) =>
+      card ? [card.peakImpact.wingValue * 0.65 + card.peakImpact.defensiveAnchor * 0.35] : [],
+    )
+    .sort((left, right) => right - left)
+  const frontcourtValues = cards
+    .slice(3, 5)
+    .flatMap((card) =>
+      card ? [card.peakImpact.defensiveAnchor * 0.56 + card.peakImpact.rebounding * 0.44] : [],
+    )
+  const availabilityAverage =
+    impacts.reduce((sum, impact) => sum + impact.availability, 0) / impacts.length
+  const sortedStarterEngines = starterImpacts
+    .map((impact) => impact.primaryEngine)
+    .sort((left, right) => right - left)
+  const usageOverlapPenalty =
+    sortedStarterEngines
+      .slice(1)
+      .reduce((sum, value) => sum + Math.max(0, value - 84), 0) *
+      0.55 +
+    (sixthImpact ? Math.max(0, sixthImpact.primaryEngine - 88) * 0.25 : 0)
+  const weakBackcourtPenalty =
+    cards[0] &&
+    cards[1] &&
+    cards[0].peakImpact.defensiveAnchor < 72 &&
+    cards[1].peakImpact.defensiveAnchor < 72
+      ? 5
+      : 0
+  const weakFrontcourtPenalty = cards
+    .slice(3, 5)
+    .some((card) => card && card.peakImpact.defensiveAnchor < 64)
+    ? 5
+    : 0
+  const noStopperPenalty = Math.max(...wingDefenseValues, 0) < 82 ? 5 : 0
+  const availabilityPenalty = Math.max(0, 82 - availabilityAverage) * 0.35
+
+  const score =
+    30 +
+    normalizeRange(topEngine, 82, 96) * 10 +
+    normalizeRange(topGravityAverage, 76, 94) * 10 +
+    normalizeRange(interiorFoundation, 72, 95) * 12 +
+    normalizeRange(getAverage(wingDefenseValues.slice(0, 2)), 74, 92) * 12 +
+    normalizeRange(getAverage(frontcourtValues), 74, 92) * 8 +
+    normalizeRange(availabilityAverage, 74, 92) * 8 -
+    usageOverlapPenalty -
+    weakBackcourtPenalty -
+    weakFrontcourtPenalty -
+    noStopperPenalty -
+    availabilityPenalty
+
+  return roundScore(score)
+}
+
+function normalizeRange(value: number, floor: number, ceiling: number) {
+  return Math.max(0, Math.min(1, (value - floor) / (ceiling - floor)))
+}
+
+function getAverage(values: number[]) {
+  return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : 0
+}
+
+function getTopWeightedImpactAverage(
+  cards: Array<PlayerCard | null>,
+  selector: (impact: PlayerCard['peakImpact']) => number,
+  count: number,
 ) {
-  if (!isComplete) {
-    return Math.round((rosterSize / ROSTER_TARGET) * 4)
-  }
+  const values = cards
+    .map((card, index) => (card ? selector(card.peakImpact) * getSlotWeight(index) : 0))
+    .filter((value) => value > 0)
+    .sort((left, right) => right - left)
+    .slice(0, count)
 
-  let score = 6
-
-  if (ratingSpread <= 5) {
-    score += 3
-  } else if (ratingSpread <= 10) {
-    score += 2
-  } else if (ratingSpread <= 15) {
-    score += 1
-  }
-
-  if (coreSpread <= 8) {
-    score += 3
-  } else if (coreSpread <= 14) {
-    score += 2
-  } else if (coreSpread <= 20) {
-    score += 1
-  }
-
-  return score
+  return getAverage(values)
 }
 
-function getStarPowerScore(ratings: number[]) {
-  const slotMax = [8, 7, 5]
-  return Number(
-    [...ratings]
-      .sort((left, right) => right - left)
-      .slice(0, slotMax.length)
-      .reduce((sum, rating, index) => {
-        const normalized = Math.max(0, Math.min(1, (rating - 90) / 9))
-        return sum + normalized * slotMax[index]
-      }, 0)
-      .toFixed(1),
-  )
-}
-
-function getBudgetScore(isComplete: boolean, budgetRemaining: number) {
+function getDraftValueScore(isComplete: boolean, budgetRemaining: number) {
   if (!isComplete) {
     return 0
   }

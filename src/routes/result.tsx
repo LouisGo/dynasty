@@ -17,13 +17,14 @@ function ResultRoute() {
   useEffect(() => {
     document.title = '阵容结算 — NBA Dynasty Draft'
     scrollToPageTop()
+    useGameStore.setState({ isResultPending: false })
 
     // Guard: if there's no result (e.g. direct navigation, page refresh handled by root),
     // redirect to home so the user can start a new game
     if (!result) {
       navigate({ to: '/', replace: true })
     }
-  }, [])
+  }, [navigate, result])
 
   function handlePlayAgain() {
     startGame()
@@ -39,8 +40,8 @@ function ResultRoute() {
           <p className="eyebrow">{getResultReason(result.gameOverReason)}</p>
           <h2>王朝评分</h2>
           <p>
-            实力 {result.strengthScore} · 上限 {result.superstarScore} · 结构{' '}
-            {result.balanceScore} · 预算 {result.budgetScore}
+            巅峰 {result.peakImpactScore} · 上限 {result.ceilingScore} · 契合{' '}
+            {result.synergyFitScore} · 组队效率 {result.budgetScore}
           </p>
         </div>
 
@@ -63,20 +64,20 @@ function ResultRoute() {
 
         <section className="result-breakdown" aria-label="阵容分析">
           <article>
-            <span>进攻</span>
-            <strong>{result.offenseScore}</strong>
+            <span>进攻影响</span>
+            <strong>{result.offenseImpactScore}</strong>
           </article>
           <article>
-            <span>防守</span>
-            <strong>{result.defenseScore}</strong>
+            <span>防守体系</span>
+            <strong>{result.defenseImpactScore}</strong>
           </article>
           <article>
-            <span>体能</span>
-            <strong>{result.physicalScore}</strong>
+            <span>阵容上限</span>
+            <strong>{result.ceilingScore}</strong>
           </article>
           <article>
-            <span>心态</span>
-            <strong>{result.mentalityScore}</strong>
+            <span>角色契合</span>
+            <strong>{result.synergyFitScore}</strong>
           </article>
         </section>
 
